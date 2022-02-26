@@ -1,0 +1,115 @@
+﻿@model Web.Backend.Models.ArticleViewModel
+@{
+    ViewBag.Title = "Quản lý bài viết";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Quản lý bài viết
+                <div class="box-tools pull-right">
+                    <a href="/Article/Detail?catid=@Model.CatId" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Thêm</a>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Danh sách Bài viết</div>
+        <div class="panel-body">
+            <table class="table table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr role="row">
+                        <th>ID</th>
+                        <th>Tiêu đề</th>
+                        <th>Danh mục</th>
+                        <th>Hình</th>
+                        <th>Thứ tự</th>
+                        <th>Hiển thị</th>
+                        <th>Xem</th>
+                        <th>Bình luận</th>
+                        <th>Ngôn ngữ</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                        @foreach (var article in Model.Articles)
+                        {
+                    <tr>
+                        <td align="center">@article.ID</td>
+                        <td align="left">@article.TITLE</td>
+                        <td align="left">@article.CategoryName </td>
+                        <td align="center"><img width="50px" src="@article.PathImage" /></td>
+                        <td align="center">
+                            <div class="row">
+                                <span>@article.ORDERS</span>
+                            </div>
+                        </td>
+                        <td align="center">
+                            <span onclick="Publish('@article.ID')" style="cursor:pointer"><i class="glyphicon glyphicon-@(article.PUBLISH ? "ok" : "remove")"></i> </span>
+                        </td>
+                        <td align="center">@article.Views</td>
+                        <td align="center"><a href="/Article/Comment?id=@article.ID">@article.Comments</a></td>
+                        <td align="center">@article.Languages</td>
+                        <td>
+                            <a class="btn btn-warning" href="/Article/Detail?id=@article.ID">Sửa</a>
+                            <button class="btn btn-danger" type="button" onclick="Remove('@article.ID','@article.IMAGE');">Xóa</button>
+                        </td>
+                    </tr>
+                        }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @Html.HiddenFor(e => Model.CatId)
+    @Html.HiddenFor(e => Model.ArticleId)
+    @Html.HiddenFor(e => Model.Publish)
+    @Html.HiddenFor(e => Model.Action)
+    @Html.HiddenFor(e => Model.Image)
+    <script>
+        function Post() {
+            $("form").submit();
+        }
+        function Publish(id) {
+            $('#Action').val('PUBLISH');
+            $('#ArticleId').val(id);
+            $("form").submit();
+        }
+        function Remove(id, img) {
+            var r = confirm("Bạn chắn chắn muốn xóa bài viết?");
+            if (r == true) {
+            $('#Action').val('REMOVE');
+            $('#ArticleId').val(id);
+            $('#Image').val(img);
+            $("form").submit();
+            }
+        }
+
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable({
+                "paging": true, "sort": false, "oLanguage": {
+                    "sProcessing": "Đang xử lý...",
+                    "sLengthMenu": "Xem _MENU_ mục",
+                    "sZeroRecords": "Không tìm thấy dòng nào phù hợp",
+                    "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
+                    "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
+                    "sInfoFiltered": "(được lọc từ _MAX_ mục)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Tìm:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "Đầu",
+                        "sPrevious": "Trước",
+                        "sNext": "Tiếp",
+                        "sLast": "Cuối"
+                    }
+                } });
+        });
+    </script>
+}
+
+

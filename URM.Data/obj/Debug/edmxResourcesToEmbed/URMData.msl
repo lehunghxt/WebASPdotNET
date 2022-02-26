@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="crmzickivnModelStoreContainer" CdmEntityContainer="URMEntities">
+    <EntitySetMapping Name="AppInfo">
+      <EntityTypeMapping TypeName="URM.Data.AppInfo">
+        <MappingFragment StoreEntitySet="AppInfo">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group">
+      <EntityTypeMapping TypeName="URM.Data.Group">
+        <MappingFragment StoreEntitySet="Group">
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="URM.Data.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleGroup" ColumnName="RoleGroup" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAccount">
+      <EntityTypeMapping TypeName="URM.Data.UserAccount">
+        <MappingFragment StoreEntitySet="UserAccount">
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="URM.Data.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UserGroup" TypeName="URM.Data.UserGroup" StoreEntitySet="UserGroup">
+      <EndProperty Name="UserInfo">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="Group">
+        <ScalarProperty Name="Id" ColumnName="GroupId" />
+      </EndProperty>
+      <Condition ColumnName="GroupId" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

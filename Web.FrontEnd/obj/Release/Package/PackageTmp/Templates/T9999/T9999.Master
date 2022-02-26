@@ -1,0 +1,146 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="T9999.Master.cs" Inherits="Web.Asp.UI.VITTemplate" %>
+<%@ Register Assembly="Web.Asp" Namespace="Web.Asp.Controls" TagPrefix="VIT" %>
+<%@ Import Namespace="Library.Web" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/Templates/T9999/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/Templates/T9999/css/ie10-viewport-bug-workaround.css" rel="stylesheet"/>
+
+     <!-- Custom styles for this template -->
+    <link href="/Templates/T9999/css/navbar-fixed-top.css" rel="stylesheet"/>
+    <link href="/Templates/T9999/css/sticky-footer-navbar.css" rel="stylesheet"/>
+    
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/Templates/T9999/css/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/Templates/T9999/js/jquery.min.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <VIT:Form ID="frmMain" runat="server">
+        <asp:ScriptManager runat="server" ID="SptManager"></asp:ScriptManager>
+        <link href="/Templates/T9999/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/Templates/T9999/css/manual.css" rel="stylesheet">
+
+        <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/" title="<%=this.Company.FULLNAME %>">
+              <img src="<%=this.Company.PathImage %>" alt="<%=this.Company.FULLNAME %>" style="height:50px"/>
+          </a>
+          <ul class="navbar-brand" style="font-size: 14px;padding: 5px 0px 0px 15px; list-style-type:none; margin:0px">
+            <li><span class="hidden-sm hidden-xs">Holine:</span> <a href="tel:<%=this.Company.PHONE %>"><%=this.Company.PHONE %></a></li>
+            <li><span class="hidden-sm hidden-xs">Email:</span> <a href="mailto:<%=this.Company.EMAIL %>"><%=this.Company.EMAIL %></a></li>
+          </ul>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li id="mnuHome" class="active"><a href="/">Đăng ký website</a></li>
+            <li id="mnuCustomer"><a href="<%=HREF.LinkComponent("Product", "Products")%>">Hồ sơ khách hàng</a></li>
+              <li id="mnuAlbum"><a href="<%=HREF.LinkComponent("Album", "Pictures")%>">Hệ thống quản lý</a></li>
+            <li id="mnuService"><a href="<%=HREF.LinkComponent("Page", "Info3")%>">Bảng Giá</a></li>
+            <li id="mnuArticle"><a href="<%=HREF.LinkComponent("Article", "Articles")%>">Thông tin - Hướng dẫn</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+        <VIT:Position runat="server" ID="psTop"></VIT:Position>
+        <div class="container">
+            <div class="row">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                </div>
+        </div>
+
+        <!--==============================footer=================================-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="text-align:justify">
+                <%=Company.DESCRIPTION %>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <h3>Cùng hệ thống</h3>
+                <ul class="system">
+                    <li><a href="http://banchung.net" title="Website bán hàng B2B hiệu quả nhất Việt Nam">http://banchung.net</a></li>
+                    <li><a href="http://truyencuoi.website" title="Kho truyện cười hay mới nhất">http://truyencuoi.website</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <h3>Cộng đồng <a href="http://Vdoni.com" title="Nơi làm web bán hàng tốt nhất Việt Nam">Vdoni</a></h3>
+                <ul class="mxh">
+                    <li>
+                        <a class="fb-nav" href="https://www.facebook.com/WebsiteMienPhi.Vdoni">
+                        <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="t-nav" href="https://twitter.com/tamviettn">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="plus-nav" href="https://plus.google.com/u/0/104268066181863812000">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="pin-nav" href="https://www.pinterest.com/tavisoljsc">
+                            <i class="fa fa-pinterest">
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="text-align:right">
+                  	<div id="fb-root"></div>
+	                <script>(function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+	                <div class="fb-like" data-href="https://www.facebook.com/WebsiteMienPhi.Vdoni" data-width="200" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+    
+            </div>
+
+        </div>
+        
+    </div>
+</footer>
+<footer class="footer2">
+    <div class="container">
+        © Copyright <%=String.Format("{0:yyyy}", Company.CreateDate)%> <a href="http://<%=HREF.Domain %>"><%=HREF.Domain %></a> - 
+        Designed and Developed by <a target="_blank" href="http://vdoni.com" class="link">Thiết kế web Vdoni</a>
+    </div>
+</footer>
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/Templates/T9999/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/Templates/T9999/js/ie10-viewport-bug-workaround.js"></script>
+    </VIT:Form>
+</body>
+</html>

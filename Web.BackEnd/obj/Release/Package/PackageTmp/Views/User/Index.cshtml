@@ -1,0 +1,181 @@
+﻿@model Web.Backend.Models.UserChildModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary" style="margin-top:10px">
+                <div class="panel-heading">Thêm tài khoản</div>
+                <div class="panel-body">
+                    <fieldset class="row">
+                        <p id="notvalid" class="col-md-12" style="color:red">
+                            @ViewBag.Error
+                        </p>
+                        @Html.HiddenFor(model => model.UserModel.ID)
+                        <div class="form-group col-md-4">
+                            @Html.EditorFor(model => model.UserModel.UserName, new { htmlAttributes = new { @class = "form-control", placeholder = "Tài khoản", onfocus= "this.removeAttribute('readonly');", @readonly = "readonly" } })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.EditorFor(model => model.UserModel.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Mật khẩu", type = "password", onfocus = "this.removeAttribute('readonly');", @readonly = "readonly" } })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.DropDownListFor(model => model.UserModel.GroupId, Model.Groups, "-- Chọn nhóm quyền (bắt buộc) --", new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.EditorFor(model => model.UserModel.FullName, new { htmlAttributes = new { @class = "form-control", placeholder = "Họ và tên" } })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.EditorFor(model => model.UserModel.Birthday, new { htmlAttributes = new { @class = "form-control", placeholder = "Ngày sinh", type = "date" } })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.EditorFor(model => model.UserModel.Phone, new { htmlAttributes = new { @class = "form-control", placeholder = "Số điện thoại" } })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.EditorFor(model => model.UserModel.Address, new { htmlAttributes = new { @class = "form-control", placeholder = "Địa chỉ" } })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.EditorFor(model => model.UserModel.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
+                        </div>
+                        <div class="form-group col-md-4" id="btnAdd">
+                            <input type="button" class="btn btn-primary btn-block" value="Thêm" onclick="Add()"/>
+                            </div>
+                        <div class="form-group hidden" id="btnUpdate">
+                            <div class="col-md-2">
+                                <input type="button" class="btn btn-primary btn-block" value="Lưu" onclick="Update()" />
+                            </div>
+                            <div class="col-md-2">
+                                <input type="button" class="btn btn-danger btn-block" value="Hủy" onclick="Cancle()" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        @foreach (var group in Model.Childs)
+        {
+            <div class="col-md-12">
+                <div class="panel panel-info" style="margin-top:10px">
+                    <div class="panel-heading">Nhóm: @group.Key</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            @foreach (var acc in group.Value)
+                            {
+                                <div class="col-md-4">
+                                    <div class="panel panel-info">
+                                        <div class="panel-body">
+                                            <table width="100%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>ID: </td>
+                                                        <td style="padding-left:10px; text-align:left;font-weight:bold">@acc.ID</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tài khoản: </td>
+                                                        <td style="padding-left:10px; text-align:left;font-weight:bold">@acc.UserName</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Email: </td>
+                                                        <td style="padding-left:10px; text-align:left;font-weight:bold"><a href="mailto:@acc.Email">@acc.Email</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <hr class="divider">
+                                            <table width="100%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Tên: </td>
+                                                        <td style="padding-left:10px; text-align:left;font-weight:bold">@acc.FullName</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Ngày sinh: </td>
+                                                        <td style="padding-left:10px; text-align:left;font-weight:bold">@string.Format("{0:dd/MM/yyy}", acc.Birthday)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Điện thoại: </td>
+                                                        <td style="padding-left:10px; text-align:left;font-weight:bold">@acc.Phone</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Địa chỉ: </td>
+                                                        <td style="padding-left:10px; text-align:left;font-weight:bold">@acc.Address</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <hr class="divider">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <input type="button" class="btn btn-info btn-block" value="Sửa" onclick="Edit(@acc.ID, '@acc.UserName', @acc.GroupId, '@acc.FullName', '@acc.Email', '@acc.Phone', '@acc.Address', '@string.Format("{0:yyyy-MM-dd}", acc.Birthday)')" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="button" class="btn btn-danger btn-block" value="Xóa" onclick="Delete(@acc.ID)" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    @Html.HiddenFor(model => model.Action)
+    @Html.HiddenFor(model => model.AccountId)
+    <script language="javascript">
+        function Add() {
+            $('#Action').val('ADDUSER');
+                    $("#frm").submit();
+        }
+        function Cancle()
+        {
+            $('#btnAdd').removeClass('hidden');
+            $('#btnUpdate').addClass('hidden');
+
+            $('#UserModel_ID').val('');
+            $('#UserModel_UserName').val('');
+            $('#UserModel_Password').val('');
+            $('#UserModel_GroupId').val('');
+            $('#UserModel_FullName').val('');
+            $('#UserModel_Birthday').val('');
+            $('#UserModel_Email').val('');
+            $('#UserModel_Phone').val('');
+            $('#UserModel_Address').val('');
+
+            $('#UserModel_UserName').removeAttr("disabled") 
+            $("#UserModel_UserName").prop("readonly", false);
+        }
+        function Edit(id, userName, groupId, name, email, phone, address, birthday) {
+            $('#btnAdd').addClass('hidden');
+            $('#btnUpdate').removeClass('hidden');
+            
+            $('#UserModel_ID').val(id);
+            $('#UserModel_UserName').val(userName);
+            $('#UserModel_Password').val('');
+            $('#UserModel_GroupId').val(groupId);
+            $('#UserModel_FullName').val(name);
+            $('#UserModel_Birthday').val(birthday);
+            $('#UserModel_Email').val(email);
+            $('#UserModel_Phone').val(phone);
+            $('#UserModel_Address').val(address);
+
+            $('#UserModel_UserName').attr("disabled","disabled") 
+            $("#UserModel_UserName").prop("readonly", true);
+        }
+        function Update() {
+            $('#Action').val('UPDATEUSER');
+            $("#frm").submit();
+        }
+        function Delete(value) {
+            $('#Action').val('DELETEUSER');
+            $('#AccountId').val(value);
+            $("#frm").submit();
+        }
+    </script>
+}

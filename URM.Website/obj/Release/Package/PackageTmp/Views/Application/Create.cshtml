@@ -1,0 +1,72 @@
+﻿@model URM.Model.URMAppCreateModel
+
+@{
+    ViewBag.Title = "Tạo ứng dụng mới - Hệ thống quản lý tài khoản";
+    Layout = "~/Views/Shared/Blank.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <h2 class="text-center">Tạo ứng dụng mới</h2>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <p class="text-error" style="color:red">
+                @ViewBag.Error
+            </p>
+
+            <div class="panel panel-primary" style="margin-top:10px">
+                <div class="panel-heading">Thông tin tài khoản</div>
+                 <div class="panel-body">
+                         <div class="form-group">
+                             @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", placeholder = "Tài khoản" } })
+                         </div>
+                     <div class="form-group">
+                         @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Mật khẩu", type = "password" } })
+                     </div>
+                     <div class="form-group">
+                         @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập lại mật khẩu", type = "password" } })
+                     </div>
+                 </div>
+           </div>
+
+            <div class="panel panel-success" style="margin-top:10px">
+                <div class="panel-heading">Thông tin ứng dụng</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.AppName, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên ứng dụng" } })
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info" style="margin-top:10px">
+                <div class="panel-heading">Thông tin cá nhân</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", placeholder = "Họ và tên" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Birthday, new { htmlAttributes = new { @class = "form-control", placeholder = "Ngày sinh", type = "date" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", placeholder = "Số điện thoại" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", placeholder = "Địa chỉ" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-lg btn-success btn-block" value="Đăng ký">
+            </div>
+            <div class="form-group">
+                @Html.ActionLink("Back to Login", "Index", "login")
+            </div>
+        </div>
+    </div>
+}
+
+

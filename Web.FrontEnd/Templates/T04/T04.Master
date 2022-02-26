@@ -1,0 +1,301 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Web.Asp.UI.VITTemplate" %>
+<%@ Import Namespace="Web.Asp.Provider"%>
+<%@ Import Namespace="Library" %>
+<%@ Register TagPrefix="VIT" Namespace="Web.Asp.Controls" Assembly="Web.Asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="/templates/T04/data/css.css">
+<link rel="stylesheet" href="/templates/T04/data/w3.css">
+    <script src="/Templates/t02/js/jquery-3.2.1.min.js"></script>
+<script language="javascript" src="/templates/T04/data/js.js"></script>
+<script language="javascript" src="/templates/T04/data/w3js.js"></script>
+<style>
+   
+body{
+    width:100%
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+</style>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="container">
+    <VIT:Form ID="frmMain" runat="server">
+        <asp:ScriptManager runat="server" ID="SptManager"></asp:ScriptManager>
+        <div>
+            <header>
+                <div class="top_bar_outer w3-hide-small">
+                <div class="top_bar">
+                    <div class="ht_left">
+                        <div class="info_item email">
+                                <div class="info_icon w3-center">
+                                        <span><i style="font-size: 22px;line-height: 2; " class="material-icons"></i></span>
+                                </div>
+                                <a class="info_txt" href="mailto:<%=Company.EMAIL%>">
+                                    <%=Company.EMAIL%>	
+                                </a>
+                        </div>
+                        <div class="info_item phone">
+                                <div class="info_icon w3-center">
+                                        <span><i style="font-size: 22px;line-height: 2; " class="material-icons"></i></span>
+                                </div>
+                                <div class="info_txt">
+                                    <a href="tel:<%=Company.PHONE%>"><%=Company.PHONE%></a>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="ht_right" id="carts">
+                        <%if (!string.IsNullOrEmpty(this.FullConfig.FacebookFanpage))
+                            { %>
+						<a class="share_header_icon w3-hover-text-blue w3-center" href="<%= this.FullConfig.FacebookFanpage%>" target="_blank" title="Facebook">
+                            <span> <i style="font-size:22px; line-height: 1.7;" class="fa"></i></span>
+                        </a>
+                        <%} %>
+						<a id="hanggio" class="share_header_icon w3-hover-text-orange w3-center" href="<%=HREF.LinkComponent("Carts")%>" title="(<%=GioHang.Select(o => o.Quantity).Sum() %>) Products">
+                            <span><i style="line-height: 1.7;" class="material-icons"></i><span>
+				        </a>
+                        <%if(Language.Languages.Count >1) { %>
+                        <select class="w3-bar-item language" name="option" id="languages" onchange="changelang()">
+                            <option value="" disabled="" selected=""><%=Language.Languages.Where(e => e.ID.ToLower() == Language.LanguageId.ToLower()   ).Select(e => e.NAME).FirstOrDefault() %></option>
+                            <%foreach (var lang in Language.Languages.Where(e => e.ID != Language.LanguageId))
+                                { %>
+                            <option value="<%=lang.ID %>"><%=lang.NAME %></option>
+                            <%} %>
+                          </select>
+                        <script>
+                             function changelang(lang)
+                             {
+                                 var e = document.getElementById("languages");
+                                 var value = e.options[e.selectedIndex].value;
+
+                                var url = window.location.href;
+                                window.location = url.split('?')[0] + "?<%=SettingsManager.Constants.SendLanguage%>=" + value;
+                            }
+                        </script>
+                        <%} %>
+		            </div>
+                </div>
+            </div>
+                <div style="z-index: 99;" id="navbar" class="w3-bar w3-white w3-wide w3-padding w3-card">
+                    <a href="\" class="w3-bar-item"><img src="<%=HREF.DomainStore + this.Company.PathImage %>" alt="<%=this.Company.FULLNAME %>" style="max-height:75px; max-width:350px"></a>
+                    <!-- Float links to the right. Hide them on small screens -->
+                     <div style="line-height: 60px;" class="w3-right w3-hide-large w3-hide-medium">
+                        <a href="javascript:void(0)" onclick="w3_open()" class="w3-bar-item w3-button"><i style="font-size:24px" class="fa"></i></a>
+                    </div>
+                    
+                      <VIT:Position runat="server" ID="psTopRight"></VIT:Position>
+                    
+
+            </div>
+                <!-- banner -->
+            <div id="banner">
+                    <VIT:Position runat="server" ID="psTop"></VIT:Position>
+
+            <div class="search">
+                    <input id="search" type="text" name="" placeholder="Tìm kiếm sản phẩm..."/>
+                <script type="text/javascript">
+                    $("#search").keypress(function (event) {
+						        var keycode = (event.keyCode ? event.keyCode : event.which);
+                                    if (keycode == '13') {
+                                        searchTitle();
+                                    }
+                                });
+						    function searchTitle() {
+						        var key = $("#search").val();
+                                if (key) {
+                                    window.location = 'http://<%=HREF.Domain%>/Products/vit/key/' + key;
+                                }
+                            }
+                        </script>
+            </div>
+            </div>
+                </header>
+            </div>
+
+        <div>
+            <div class="w3-row plr70">
+                <div class="w3-quarter w3-hide-small">
+                    <VIT:Position runat="server" ID="psLeft"></VIT:Position>
+                </div>
+                <div class="w3-threequarter">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer_outer">
+                <div class="footer">
+                    <div class="w3-row">
+                        <div class="w3-col m5 w3-text-white" style="padding-right:20px">
+                                <div class="w3-padding-16">
+                                    <h1 class="w3-xlarge w3-border-teal w3-bottombar" title="<%=Company.FULLNAME %>"><%=Company.DISPLAYNAME %></h1></div>
+                                    <h2 style="font-size: 18px;" title="<%=Company.SLOGAN %>"><%=Company.SLOGAN %></h2>
+                                    <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  <%=Company.ADDRESS %></p>
+                                    <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  <%=Company.PHONE %></p>
+                                    <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  <%=Company.EMAIL %></p>
+                        </div>
+                        <div class="w3-col m4">
+                            <div style="margin-top: 50px;" class="footer_contact">
+                                <div class="lib_feedback_form">
+                                    <div id="gmap" class="contact-map">
+                                                <iframe style="Width:100%" src="//www.google.com/maps/embed/v1/search?q=<%=Company.GoogleMapAddress %>&zoom=15&key=<%=Company.GoogleApiKey %>">
+                                          </iframe> 
+                                    </div>
+                                </div>		
+                            </div>
+                        </div>
+                        <div class="w3-col m3 w3-text-white">
+                            <div style="margin: 50px 0px 0px 20px" class="footer_contact">
+                                    <VIT:Position runat="server" ID="psBottom"></VIT:Position>	
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="w3-row">
+                        <div class="w3-col m12 w3-text-white w3-center" style="font-size:11px">
+                            <h5 style="font-size:11px;margin:0px">© <%=string.Format("{0:dd/MM/yyyy}", Company.CreateDate)%> - Bản quyền của <%=Company.FULLNAME %></h5>
+                            Giấy chứng nhận Đăng ký Kinh doanh số: <%=Company.Certificate %>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </footer>
+        <!--END FOOTER-->
+         <!--LIÊN HỆ RIGHT-->
+         <div class="w3-hide-small" id="float_chat" class="ChatColor float_chat_0">
+                <div class="inner_chat">
+                    <div class="chat_box ChatColor">
+                            <a class="online_item item QQ" style="background-color:#8AC759;" href="<%=Company.FacebookFanpage %>" title="FB">
+                                <i style="font-size:26px;    padding: 20px 22px 15px 22px;color:white" class="fa"></i>
+                                                </a>
+                            <div class="blank6"></div>
+                                        <a class="online_item item Skype" style="background-color:#8AC759;" href="/dat-may-thu-nhoi-bong-vit-contact" title="Skype">
+                                                <i style="font-size:26px;    padding: 20px 18px 15px 18px;color:white" class="fa">&#xf1a0;</i>
+                                                </a>
+                            <div class="blank6"></div>
+                                    <a class="contact item" style="background: url('/static/themes/default/images/global/contact.png') no-repeat center #8AC759;" href="tel:<%=Company.PHONE %>" target="_self" title="Contact Us">
+                                        <i style="font-size:26px;    padding: 20px 18px 15px 18px;color:white" class="material-icons">&#xe0b0;</i>                                        </a>
+                        <div class="blank6"></div>
+                    </div>
+                </div>
+                <a href="#" style="background-color:#8AC759;" id="go_top"  onclick="topFunction()">
+                    <img style="padding: 20px 15px 15px 15px;" src="/templates/T04/img/top.png">
+                </a>
+            </div>
+
+        <input type="hidden" id="ProdicyId" value="" />
+<div id="buyModal" class="w3-modal">
+    <!-- Modal content-->
+    <div class="w3-modal-content">
+      <div class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('buyModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <h4><%=Language["AddToCart"] %></h4>
+      </div>
+      <div class="w3-container">
+          <div style="padding:20px">
+          <div class="row">
+              <div class="w3-col m5 s6 i6" style="padding-right:15px">
+                  <img id="muaImage"/>
+              </div>
+              <div class="w3-col m7 s6 i6">
+                  <div id="muaTitle"></div>
+                  <hr />
+                  <div id="muaPrice"></div>
+                  <br />
+                  <div id="muaBrief"></div>
+                  <br />
+                  <label><%=Language["Quantity"] %>:</label> <input type="number" value="1" id="txtQuantity" placeholder="100" class="form-control" style="display:unset"/>
+              </div>
+          </div>
+        </div>
+      </div>
+       <div class="w3-container w3-teal" style="padding: 10px">
+        <button type="button" class="w3-button w3-green" onclick="AddToCart(false);document.getElementById('buyModal').style.display='none'"><%=Language["ContinueShopping"] %></button>
+        <button type="button" class="w3-button w3-red" onclick="AddToCart(true);"><%=Language["ViewCart"] %></button>
+      </div>
+    </div>
+</div>
+
+         <script type="text/javascript">
+
+                            // Send the rating information somewhere using Ajax or something like that.
+                            function sendRate(sel) {
+                                var rid = sel.id.split('_');
+                                var id = rid[0].replace("rate", '');
+
+                                $.ajax({
+                                    type: "POST",
+                                    url: "<%=HREF.BaseUrl %>/JsonPost.aspx/UpdateVote",
+                     data: JSON.stringify({ Id: id, Rate: rid[1] }),
+                     contentType: "application/json; charset=utf-8",
+                     dataType: "json",
+                     success: function (data) {
+                         if (data != "") {
+                             current(rid[0], data.d.VoteRate, 5);
+                         }
+                     }
+
+                 })
+                            }
+</script>
+
+<script type="text/javascript">
+             function SelectProduct(id, title, image, brief, price) {
+                 $("#ProdicyId").val(id);
+                 $("#muaTitle").html(title);
+                 $("#muaImage").attr("src", image);
+                 $("#muaBrief").html(brief);
+                 $("#muaPrice").html("Giá: " + price + " đ");
+
+                 document.getElementById('buyModal').style.display='block';
+             }
+
+             // Send the rating information somewhere using Ajax or something like that.
+             function AddToCart(go) {
+                 var productQuantity = $("#txtQuantity").val();
+                 var proId = $("#ProdicyId").val();
+                 $.ajax({
+                     type: "POST",
+                     url: "<%=HREF.BaseUrl %>JsonPost.aspx/AddProductsToCarts",
+                     data: JSON.stringify({ productId: proId, quantity: productQuantity, properties: '' }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                if (data != "") {
+                    if (go == true) {
+                        location.href = '<%=HREF.BaseUrl %>vit-carts';
+                    } else {
+                        $.ajax({
+                            type: "POST",
+                            url: "<%=HREF.BaseUrl %>JsonPost.aspx/GetCarts",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (data) {
+                                var total = 0;
+                                for (var i = 0; i < data.d.length; i++) {
+                                    total += data.d[i].Quantity;
+                                }
+                                
+                                $("#hanggio").html('<a class="share_header_icon w3-hover-text-orange w3-center" href="/vit-carts" title="('+ total +') Products"><span><i style="line-height: 1.7;" class="material-icons"></i><span></span></span></a>');
+                            }
+                        });
+                    }
+                }
+            }
+        });
+    }
+</script>
+    </VIT:Form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <Language Key ="Language">Ngôn ngữ</Language>
+  <Language Key ="vi-VN">Tiếng Việt</Language>
+  <Language Key ="en-US">Tiếng Anh</Language>
+
+  <Language Key ="Download">Tải về</Language>
+  <Language Key ="Upload">Tải lên</Language>
+  <Language Key ="Default">Mặc định</Language>
+  <Language Key ="Code">Mã</Language>
+  <Language Key ="Description">Mô tả</Language>
+  
+  <Language Key ="Home">Trang chủ</Language>
+  
+  <!--Exception-->
+  <Language Key ="DeleteTemplateUsing">Template đang được sử dụng [CompanyTemplate]</Language>
+  
+  <!--Module-->
+  <Language Key ="FullName">Họ và tên</Language>
+  <Language Key ="Address">Địa chỉ</Language>
+  <Language Key ="Phone">Điện thoại</Language>
+  <Language Key ="Title">Tiêu đề</Language>
+  <Language Key ="Content">Nội dung</Language>
+  <Language Key ="Note">Ghi chú</Language>
+  <Language Key ="ConfirmCode">Mã xác nhận</Language>
+  <Language Key ="ChangeCode">Đổi mã</Language>
+  <Language Key ="Send">Gửi</Language>
+
+  <Language Key ="Name">Tên</Language>
+  <Language Key ="Image">Hình</Language>
+  <Language Key ="Quality">Số lượng</Language>
+  <Language Key ="Fee">Phí</Language>
+  <Language Key ="Total">Tổng tiền</Language>
+  <Language Key ="TotalDue">Tổng thanh toán</Language>
+  <Language Key ="OrderDetail">Thông tin đơn hàng</Language>
+  <Language Key ="PaymentMethod">Phương thức thanh toán</Language>
+  <Language Key ="Cash">Nhận tiền mặt</Language>
+  <Language Key ="Transfer">Chuyển khoản qua ngân hàng</Language>
+  <Language Key ="Delivery">Giao nhận</Language>
+  <Language Key ="FromShop">Đến cửa hàng lấy hàng</Language>
+  <Language Key ="ToHome">Giao hàng theo địa chỉ</Language>
+  <Language Key ="Finish">Hoàn Tất</Language>
+
+  <Language Key ="Style">Kiểu</Language>
+  <Language Key ="Color">Màu sắc</Language>
+</Languages>

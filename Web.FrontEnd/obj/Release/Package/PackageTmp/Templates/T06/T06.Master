@@ -1,0 +1,319 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Web.Asp.UI.VITTemplate"%>
+<%@ Register Assembly="Web.Asp" Namespace="Web.Asp.Controls" TagPrefix="VIT" %>
+<%@ Import Namespace="Library.Web" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Custom Theme files -->
+    <link href="/Templates/T06/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="/Templates/T06/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- features slider -->
+    <link rel="stylesheet" href="/Templates/T06/css/flexslider.css" type="text/css" media="screen" property="" />
+    <!-- gallery  -->
+    <link href="/Templates/T06/css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+    <!-- font-awesome icons -->
+    <%--<link href="/Templates/T06/css/fontawesome-all.min.css" rel="stylesheet">--%>
+    <link href="/Templates/T06/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <!-- //online-fonts -->
+
+    <script src="/Templates/T06/js/jquery-2.2.3.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <VIT:Form ID="frmMain" runat="server">
+        <asp:ScriptManager runat="server" ID="SptManager"></asp:ScriptManager>
+        <!-- banner -->
+    <div class="d-lg-flex banner-main">
+        <div class="col-lg-4 header-left">
+            <h1 title="<%=this.Company.FULLNAME %>">
+                <a href="/" title="<%=this.Company.FULLNAME %>" style="color:#fff">
+                    <%=this.Company.DISPLAYNAME %>
+                </a>
+            </h1>
+            <div class="banner-text-w3ls">
+                <p>
+                    <%=this.Company.DESCRIPTION %></p>
+            </div>
+            <div class="footerv2-w3ls pt-4">
+                <ul class="social-iconsv2 agileinfo pt-3" style="margin-bottom:20px">
+                    <%if (!string.IsNullOrEmpty(Company.FacebookFanpage))
+                        { %>
+                    <li>
+                        <a class="fb-nav" href="<%=Company.FacebookFanpage %>">
+                        <i class="fab fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <%}%>
+                     <%if (!string.IsNullOrEmpty(Company.Twitter))
+                        { %>
+                    <li>
+                        <a class="t-nav" href="<%=Company.Twitter %>">
+                            <i class="fab fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <%}%>
+                     <%if (!string.IsNullOrEmpty(Company.GooglePlus))
+                        { %>
+                    <li>
+                        <a class="plus-nav" href="<%=Company.GooglePlus %>">
+                            <i class="fab fa fa-google-plus"></i>
+                        </a>
+                    </li>
+                    <%}%>
+                     <%if (!string.IsNullOrEmpty(Company.Youtube))
+                         { %>
+                    <li>
+                        <a class="pin-nav" href="<%=Company.Youtube %>">
+                            <i class="fab fa fa-youtube">
+                            </i>
+                        </a>
+                    </li>
+                    <%}%>
+                     <%if (!string.IsNullOrEmpty(Company.Instagram))
+                         { %>
+                    <li>
+                        <a class="pin-nav" href="<%=Company.Instagram %>">
+                            <i class="fab fa fa-instagram">
+                            </i>
+                        </a>
+                    </li>
+                    <%} %>
+                </ul>
+            </div>
+        </div>
+        <!-- header -->
+        <div class="col-lg-8 banner p-0" id="home" style="<%=string.IsNullOrEmpty(this.Company.Background) ? "" : this.Company.Background.StartsWith("#") ? "background:" + this.Company.Background : "background:url('" + HREF.DomainStore + this.Company.Background + "') no-repeat center center fixed;background-size: cover;"%>">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary pt-3">
+                    <button class="navbar-toggler home-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        Danh mục
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <VIT:Position runat="server" ID="psRight" SkinName="Empty"></VIT:Position>
+                    </div>
+
+                </nav>
+            </header>
+            <!-- //header -->
+        </div>
+    </div>
+    <!-- //banner -->
+       
+
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+        <footer class="footer py-md-5 pt-sm-3 pb-sm-5">
+        <div class="container-fluid py-lg-5">
+            <div class="px-4 pt-5 footer-top">
+                <h2 title="<%=this.Company.FULLNAME %>">
+                    <a href="/" title="<%=this.Company.FULLNAME %>">
+                        <%=this.Company.FULLNAME %>
+                    </a>
+                </h2>
+            </div>
+            <div class="row p-sm-4 px-3 py-5">
+                <div class="col-lg-4 col-md-6 footer-top mt-md-0 mt-sm-5">
+                    <h4 class="footer-title"><%=this.Company.SLOGAN %></h4>
+                    <p class="mt-2"><%=this.Company.DESCRIPTION %>
+                    </p>
+                </div>
+                <div class="col-lg-2  col-md-6 footv3-left mt-md-0 mt-5">
+                     <div class="address_mail_footer_grids">
+         <div id="gmap" class="contact-map">
+                                                <iframe style="Width:100%" src="//www.google.com/maps/embed/v1/search?q=<%=Company.GoogleMapAddress %>&zoom=15&key=<%=Company.GoogleApiKey %>">
+                                          </iframe> 
+                                    </div>
+      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-lg-0 mt-5">
+                    <h3 class="mb-3 w3f_title">Liên hệ</h3>
+                    <div class="fv3-contact">
+                        <span class="fa fa fa-envelope mr-2"></span>
+                        <p>
+                            <a href="mailto:<%=this.Company.EMAIL %>"><%=this.Company.EMAIL %></a>
+                        </p>
+                    </div>
+                    <div class="fv3-contact my-2">
+                        <span class="fa fa-phone mr-2"></span>
+                        <p> <a href="tel:<%=this.Company.PHONE %>"><%=this.Company.PHONE %></a> 
+                            <%if (!string.IsNullOrEmpty(Company.Zalo))
+                                { %>
+                                <a class="t-nav" href="https://zalo.me/<%=Company.Zalo %>" title="zalo">
+                                    <img src="/templates/t06/images/zalo.png" style='height:28px' alt="zalo"/>
+                                </a>
+                            <%}%>
+                            <%if (!string.IsNullOrEmpty(Company.Whatsapp))
+                                { %>
+                                <a class="t-nav" href="viber://chat/?number=<%=Company.Whatsapp %>" title="whatsapp">
+                                    <img src="/templates/t06/images/whatsapp.png" style='height:28px' alt="whatsapp"/>
+                                </a>
+                            <%}%>
+                        </p>
+                    </div>
+                    <div class="fv3-contact">
+                        <span class="fa fa-home mr-2"></span>
+                        <p><%=this.Company.ADDRESS %></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6  footerv2-w3ls mt-lg-0 mt-5">
+                    <h3 class="w3f_title">Cộng đồng</h3>
+                    <ul class="social-iconsv2 agileinfo pt-3" style="margin-bottom:15px">
+                        <%if (!string.IsNullOrEmpty(Company.FacebookFanpage))
+                        { %>
+                    <li>
+                        <a class="fb-nav" href="<%=Company.FacebookFanpage %>">
+                        <i class="fab fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <%}%>
+                     <%if (!string.IsNullOrEmpty(Company.Twitter))
+                        { %>
+                    <li>
+                        <a class="t-nav" href="<%=Company.Twitter %>">
+                            <i class="fab fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <%}%>
+                     <%if (!string.IsNullOrEmpty(Company.GooglePlus))
+                        { %>
+                    <li>
+                        <a class="plus-nav" href="<%=Company.GooglePlus %>">
+                            <i class="fab fa fa-google-plus"></i>
+                        </a>
+                    </li>
+                    <%}%>
+                     <%if (!string.IsNullOrEmpty(Company.Youtube))
+                         { %>
+                    <li>
+                        <a class="pin-nav" href="<%=Company.Youtube %>">
+                            <i class="fab fa fa-youtube">
+                            </i>
+                        </a>
+                    </li>
+                    <%}%>
+                     <%if (!string.IsNullOrEmpty(Company.Instagram))
+                         { %>
+                    <li>
+                        <a class="pin-nav" href="<%=Company.Instagram %>">
+                            <i class="fab fa fa-instagram">
+                            </i>
+                        </a>
+                    </li>
+                    <%} %>
+                    </ul>
+
+                    <style>.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] 
+{
+    width: 100% !important;
+}</style>
+
+<script id="facebook-jssdk" src="//connect.facebook.net/vi_VN/all.js#xfbml=1"></script>
+<div class="fb-like" data-href="<%= Company.FacebookFanpage%>" data-width='200' data-header="true"></div>
+
+                </div>
+            </div>
+        </div>
+        <!-- //footer bottom -->
+    </footer>
+        <div class="footer_bottom">
+		    <div class="container">
+			    <div class="copy">
+			       <p>Copyright © <%=String.Format("{0:yyyy}", Company.CreateDate)%> <a href="http://<%=HREF.Domain%>"><%=this.Company.FULLNAME %></a>.</p>
+			    </div>
+		    </div>
+	    </div>
+    </VIT:Form>
+
+    <!-- //js -->
+    <!-- features slider-->
+    <link href="/Templates/T06/css/owl.carousel.css" rel="stylesheet">
+    <script src="/Templates/T06/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                items: 1,
+                lazyLoad: true,
+                autoPlay: false,
+                navigation: true,
+                navigationText: true,
+                pagination: true,
+            });
+        });
+    </script>
+    <!-- // features slider -->
+    <!-- Banner Responsiveslides -->
+    <script src="/Templates/T06/js/responsiveslides.min.js"></script>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 4
+            $("#slider3").responsiveSlides({
+                auto: false,
+                pager: true,
+                nav: false,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+
+        });
+    </script>
+    <!-- // Banner Responsiveslides -->
+    <!-- start-smooth-scrolling -->
+    <script src="/Templates/T06/js/move-top.js"></script>
+    <script src="/Templates/T06/js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="/Templates/T06/js/SmoothScroll.min.js"></script>
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/Templates/T06/js/bootstrap.js"></script>
+
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 0;"></span>To Top</a>
+</body>
+</html>

@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D27E4C5-1BF3-4563-B005-67D80114097A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web.Data</RootNamespace>
+    <AssemblyName>Web.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG; </DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.2.0\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="Library">
+      <HintPath>..\Library\Library.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\AppInfoDAL.cs" />
+    <Compile Include="DataAccess\ArticleDAL.cs" />
+    <Compile Include="DataAccess\ArticleLanguageDAL.cs" />
+    <Compile Include="DataAccess\ArticleLinkDAL.cs" />
+    <Compile Include="DataAccess\ArticleRelatiedDAL.cs" />
+    <Compile Include="DataAccess\AttributeCategoryDAL.cs" />
+    <Compile Include="DataAccess\AttributeDAL.cs" />
+    <Compile Include="DataAccess\AttributeValueDAL.cs" />
+    <Compile Include="DataAccess\BanIPDAL.cs" />
+    <Compile Include="DataAccess\CategoryDAL.cs" />
+    <Compile Include="DataAccess\CategoryFixDAL.cs" />
+    <Compile Include="DataAccess\CategoryLanguageDAL.cs" />
+    <Compile Include="DataAccess\CategoryMapDAL.cs" />
+    <Compile Include="DataAccess\CategoryTypeDAL.cs" />
+    <Compile Include="DataAccess\CompanyAddressDAL.cs" />
+    <Compile Include="DataAccess\CompanyDAL.cs" />
+    <Compile Include="DataAccess\CompanyDomainDAL.cs" />
+    <Compile Include="DataAccess\CompanyLanguageDAL.cs" />
+    <Compile Include="DataAccess\CompanyTemplateDAL.cs" />
+    <Compile Include="DataAccess\CompanyUserDAL.cs" />
+    <Compile Include="DataAccess\ConfigAccessTradeDAL.cs" />
+    <Compile Include="DataAccess\ConfigGHNDAL.cs" />
+    <Compile Include="DataAccess\ConfigGHTKDAL.cs" />
+    <Compile Include="DataAccess\ConfigMemberPointDAL.cs" />
+    <Compile Include="DataAccess\ConfigOnePayDAL.cs" />
+    <Compile Include="DataAccess\CustomerAddressDAL.cs" />
+    <Compile Include="DataAccess\CustomerDAL.cs" />
+    <Compile Include="DataAccess\CustomerPointDAL.cs" />
+    <Compile Include="DataAccess\DistrictDAL.cs" />
+    <Compile Include="DataAccess\FileDAL.cs" />
+    <Compile Include="DataAccess\FileDocumentDAL.cs" />
+    <Compile Include="DataAccess\GroupDAL.cs" />
+    <Compile Include="DataAccess\InventoryDAL.cs" />
+    <Compile Include="DataAccess\ItemCommentDAL.cs" />
+    <Compile Include="DataAccess\ItemDAL.cs" />
+    <Compile Include="DataAccess\ItemImageDAL.cs" />
+    <Compile Include="DataAccess\ItemLikeDAL.cs" />
+    <Compile Include="DataAccess\ItemViewDAL.cs" />
+    <Compile Include="DataAccess\ItemVoteDAL.cs" />
+    <Compile Include="DataAccess\LanguageDAL.cs" />
+    <Compile Include="DataAccess\MenuDAL.cs" />
+    <Compile Include="DataAccess\MenuShortcutDAL.cs" />
+    <Compile Include="DataAccess\ModuleConfigDAL.cs" />
+    <Compile Include="DataAccess\ModuleConfigLanguageDAL.cs" />
+    <Compile Include="DataAccess\ModuleConfigParamDAL.cs" />
+    <Compile Include="DataAccess\ModuleDAL.cs" />
+    <Compile Include="DataAccess\ModuleParamDAL.cs" />
+    <Compile Include="DataAccess\OrderDAL.cs" />
+    <Compile Include="DataAccess\OrderProductDAL.cs" />
+    <Compile Include="DataAccess\OrderTransactionDAL.cs" />
+    <Compile Include="DataAccess\ProductAddOnDAL.cs" />
+    <Compile Include="DataAccess\ProductAttributeDAL.cs" />
+    <Compile Include="DataAccess\ProductColorDAL.cs" />
+    <Compile Include="DataAccess\ProductDAL.cs" />
+    <Compile Include="DataAccess\ProductGrouponDAL.cs" />
+    <Compile Include="DataAccess\ProductPriceDAL.cs" />
+    <Compile Include="DataAccess\ProvinceDAL.cs" />
+    <Compile Include="DataAccess\RoleDAL.cs" />
+    <Compile Include="DataAccess\SEODAL.cs" />
+    <Compile Include="DataAccess\SupplierDAL.cs" />
+    <Compile Include="DataAccess\SupportOnlineDAL.cs" />
+    <Compile Include="DataAccess\SupportOnlineTypeDAL.cs" />
+    <Compile Include="DataAccess\TB_ThongKeDAL.cs" />
+    <Compile Include="DataAccess\TemplateComponentDAL.cs" />
+    <Compile Include="DataAccess\TemplateComponentPositionDAL.cs" />
+    <Compile Include="DataAccess\TemplateConfigDAL.cs" />
+    <Compile Include="DataAccess\TemplateDAL.cs" />
+    <Compile Include="DataAccess\TemplateDemoDAL.cs" />
+    <Compile Include="DataAccess\TemplatePositionDAL.cs" />
+    <Compile Include="DataAccess\TemplateSkinDAL.cs" />
+    <Compile Include="DataAccess\ThirdPartyDAL.cs" />
+    <Compile Include="DataAccess\UserAccountDAL.cs" />
+    <Compile Include="DataAccess\UserGroupDAL.cs" />
+    <Compile Include="DataAccess\UserInfoDAL.cs" />
+    <Compile Include="DataAccess\VoucherDAL.cs" />
+    <Compile Include="DataAccess\WardDAL.cs" />
+    <Compile Include="DataAccess\WarehouseIOColectionDAL.cs" />
+    <Compile Include="DataAccess\WarehouseIODAL.cs" />
+    <Compile Include="DataAccess\WebConfigDAL.cs" />
+    <Compile Include="Entity\AppInfo.cs" />
+    <Compile Include="Entity\Article.cs" />
+    <Compile Include="Entity\ArticleLanguage.cs" />
+    <Compile Include="Entity\ArticleLink.cs" />
+    <Compile Include="Entity\ArticleRelatied.cs" />
+    <Compile Include="Entity\Attribute.cs" />
+    <Compile Include="Entity\AttributeCategory.cs" />
+    <Compile Include="Entity\AttributeValue.cs" />
+    <Compile Include="Entity\BanIP.cs" />
+    <Compile Include="Entity\Category.cs" />
+    <Compile Include="Entity\CategoryFix.cs" />
+    <Compile Include="Entity\CategoryLanguage.cs" />
+    <Compile Include="Entity\CategoryMap.cs" />
+    <Compile Include="Entity\CategoryType.cs" />
+    <Compile Include="Entity\Company.cs" />
+    <Compile Include="Entity\CompanyAddress.cs" />
+    <Compile Include="Entity\CompanyDomain.cs" />
+    <Compile Include="Entity\CompanyLanguage.cs" />
+    <Compile Include="Entity\CompanyTemplate.cs" />
+    <Compile Include="Entity\CompanyUser.cs" />
+    <Compile Include="Entity\ConfigAccessTrade.cs" />
+    <Compile Include="Entity\ConfigGHN.cs" />
+    <Compile Include="Entity\ConfigGHTK.cs" />
+    <Compile Include="Entity\ConfigMemberPoint.cs" />
+    <Compile Include="Entity\ConfigOnePay.cs" />
+    <Compile Include="Entity\Customer.cs" />
+    <Compile Include="Entity\CustomerAddress.cs" />
+    <Compile Include="Entity\CustomerPoint.cs" />
+    <Compile Include="Entity\District.cs" />
+    <Compile Include="Entity\File.cs" />
+    <Compile Include="Entity\FileDocument.cs" />
+    <Compile Include="Entity\Group.cs" />
+    <Compile Include="Entity\Inventory.cs" />
+    <Compile Include="Entity\Item.cs" />
+    <Compile Include="Entity\ItemComment.cs" />
+    <Compile Include="Entity\ItemImage.cs" />
+    <Compile Include="Entity\ItemLike.cs" />
+    <Compile Include="Entity\ItemView.cs" />
+    <Compile Include="Entity\ItemVote.cs" />
+    <Compile Include="Entity\Language.cs" />
+    <Compile Include="Entity\Menu.cs" />
+    <Compile Include="Entity\MenuShortcut.cs" />
+    <Compile Include="Entity\Module.cs" />
+    <Compile Include="Entity\ModuleConfig.cs" />
+    <Compile Include="Entity\ModuleConfigLanguage.cs" />
+    <Compile Include="Entity\ModuleConfigParam.cs" />
+    <Compile Include="Entity\ModuleParam.cs" />
+    <Compile Include="Entity\Order.cs" />
+    <Compile Include="Entity\OrderProduct.cs" />
+    <Compile Include="Entity\OrderTransaction.cs" />
+    <Compile Include="Entity\Product.cs" />
+    <Compile Include="Entity\ProductAddOn.cs" />
+    <Compile Include="Entity\ProductAttribute.cs" />
+    <Compile Include="Entity\ProductColor.cs" />
+    <Compile Include="Entity\ProductGroupon.cs" />
+    <Compile Include="Entity\ProductPrice.cs" />
+    <Compile Include="Entity\Province.cs" />
+    <Compile Include="Entity\Role.cs" />
+    <Compile Include="Entity\SEO.cs" />
+    <Compile Include="Entity\Supplier.cs" />
+    <Compile Include="Entity\SupportOnline.cs" />
+    <Compile Include="Entity\SupportOnlineType.cs" />
+    <Compile Include="Entity\TB_ThongKe.cs" />
+    <Compile Include="Entity\Template.cs" />
+    <Compile Include="Entity\TemplateComponent.cs" />
+    <Compile Include="Entity\TemplateComponentPosition.cs" />
+    <Compile Include="Entity\TemplateConfig.cs" />
+    <Compile Include="Entity\TemplateDemo.cs" />
+    <Compile Include="Entity\TemplatePosition.cs" />
+    <Compile Include="Entity\TemplateSkin.cs" />
+    <Compile Include="Entity\ThirdParty.cs" />
+    <Compile Include="Entity\UserAccount.cs" />
+    <Compile Include="Entity\UserGroup.cs" />
+    <Compile Include="Entity\UserInfo.cs" />
+    <Compile Include="Entity\Voucher.cs" />
+    <Compile Include="Entity\Ward.cs" />
+    <Compile Include="Entity\WarehouseIO.cs" />
+    <Compile Include="Entity\WarehouseIOColection.cs" />
+    <Compile Include="Entity\WebConfig.cs" />
+    <Compile Include="WebData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\DatabaseFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDatabaseFactory.cs" />
+    <Compile Include="Infrastructure\IRepositoryBase.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLHelper\SQLHelper.cs" />
+    <Compile Include="SQLHelper\SQLSupport.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="WebData.edmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DAL.cs</LastGenOutput>
+    </Content>
+    <Content Include="WebData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WebData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="WebData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WebData.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

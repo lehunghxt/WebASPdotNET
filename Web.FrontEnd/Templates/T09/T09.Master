@@ -1,0 +1,352 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Web.Asp.UI.VITTemplate" %>
+<%@ Import Namespace="Library" %>
+<%@ Import Namespace="Library.Web" %>
+<%@ Import Namespace="Web.Asp.Provider" %>
+<%@ Register Assembly="Web.Asp" Namespace="Web.Asp.Controls" TagPrefix="VIT" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <!-- Scripts -->
+		<%--<script type="text/javascript">
+			var yit_responsive_menu_type = "arrow";
+			var yit_responsive_menu_text = "Menu";
+		</script>--%>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="/Templates/T09/styles/reset-bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/Templates/T09/styles/style.css"/>
+
+    <!-- Touch icons -->
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/Templates/T09/Images/touch/apple-touch-icon-144x.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Templates/T09/Images/touch/apple-touch-icon-114x.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Templates/T09/Images/touch/apple-touch-icon-72x.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/Templates/T09/Images/touch/apple-touch-icon-57x.png"/>
+
+    <script type="text/javascript">
+		document.documentElement.className = document.documentElement.className + ' yes-js js_active js'
+    </script>
+		
+    <style type="text/css">
+		.wishlist_table .add_to_cart, a.add_to_wishlist.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; }
+	</style>
+
+    <style type="text/css">
+			img.wp-smiley,
+			img.emoji {
+				display: inline !important;
+				border: none !important;
+				box-shadow: none !important;
+				height: 1em !important;
+				width: 1em !important;
+				margin: 0 .07em !important;
+				vertical-align: -0.1em !important;
+				background: none !important;
+				padding: 0 !important;
+			}
+		</style>
+                
+        <link rel="stylesheet" href="/Templates/T09/Styles/iubenda_banner_style.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="/Templates/T09/Styles/style(1).css" type="text/css" media=""/>
+        <link rel="stylesheet" href="/Templates/T09/Styles/frontend.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="/Templates/T09/Styles/woo-featured-video.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="/Templates/T09/Styles/colorbox.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="/Templates/T09/Styles/prettyPhoto.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="/Templates/T09/Styles/jquery.selectBox.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="/Templates/T09/Styles/style-11.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="/Templates/T09/Styles/custom.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="/Templates/T09/Styles/custom-11.css" type="text/css" media="all"/>
+        <link rel='stylesheet' href='/Templates/T09/styles/settings.css' type='text/css' media='all' />
+        <link rel="stylesheet" href="/Templates/T09/Styles/vu.css" type="text/css" />
+        
+        <link rel="shortlink" href="/">
+        <style type="text/css">
+            body { background-color: #dedddd; background-image: url('Templates/T09/images/default.png'); background-repeat: repeat; background-position: top left; background-attachment: scroll; }   
+			.blog-big .meta, .blog-small .meta { background-color: #ffffff; }   
+			ul.products li.product.list .product-wrapper { padding-left:292px; }
+		    ul.products li.product.list .product-wrapper a.thumb { margin-left:-292px; width: 253px; }
+		   .single-product.woocommerce div.product.product-layout-1 div.images { width:54.0229885057%; }
+		   .single-product.woocommerce div.product.product-layout-1 div.images .thumbnails { width:78.5277573979%; }
+		   .single-product.woocommerce div.product.product-layout-1 div.summary { width:42.5287356322%; }
+		   .recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+        </style>
+    <script src="/Templates/T05/js/jquery.min.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body class="page responsive boxed" style="margin-top: 154px;">
+    <!-- Scripts -->
+		<script type="text/javascript">
+			var yit_responsive_menu_type = "arrow";
+			var yit_responsive_menu_text = "<%=this.Language["Menu"]%>";
+		</script>
+    <script type="text/javascript" src="/Templates/T09/scripts/jquery.js"></script>
+    <script type="text/javascript" src="/Templates/T09/scripts/jquery-migrate.min.js"></script>
+    <script type="text/javascript">
+			jQuery(document).ready(function($){
+				$('body').bind('added_to_cart', function(){
+					$('.add_to_cart_button.added').text('ADDED!');
+				});
+			});
+		</script>
+    <div class="bg-shadow">
+        <div id="wrapper" class="container group">
+            <VIT:Form ID="frmMain" runat="server">
+                <asp:ScriptManager runat="server" ID="SptManager"></asp:ScriptManager>
+                <!-- START HEADER -->
+                <div id="header" class="group margin-bottom">
+                	<style type="text/css">body { margin-top: 154px; } </style>
+            
+                    <!-- START TOP BAR -->
+                    <div id="topbar">
+                        <div class="container">
+                            <div class="row">
+                                <div class="topbar-wrapper span12">
+                                    <div id="topbar-left" class="hidden-phone">
+                                    	<div id="text-2" class="widget-1 widget-first widget widget_text">
+                                        	<div class="textwidget"><%=this.Company.FULLNAME %></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="topbar-right">
+                                        <%if (Language.Languages.Count > 1)
+                                                { %>
+                                        <div class="yit_cart_widget widget_shopping_cart">                                            
+                                        
+                                        <%=Language.Languages.Where(e => e.ID.ToLower() == Language.LanguageId.ToLower()).Select(e => e.NAME).FirstOrDefault() %>
+                            <%foreach (var lang in Language.Languages.Where(e => e.ID != Language.LanguageId))
+                                                { %>
+                                        <a href="#" onclick=changelang('<%=lang.ID %>')><%=lang.NAME %></a>
+                            <%} %>
+                                            </div>
+                                        <script>
+                                            function changelang(id) {
+                                                var url = window.location.href;
+                                                window.location = url + "?<%=SettingsManager.Constants.SendLanguage%>=" + id;
+                                            }
+                        </script>
+                                        <%} %>
+                                        <VIT:Position runat="server" ID="psTopRight1" SkinName="Empty"></VIT:Position>
+                                    </div>
+                                
+                                <div id="topbar-center" style="top: -154px;">
+                                	<VIT:Position runat="server" ID="psTop" SkinName="Empty"></VIT:Position>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END TOP BAR -->
+
+				<div id="header-container" class="header_skin1 container">
+                	<!-- START LOGO -->
+                    <div id="logo">
+                    	<a id="logo-img" href="/" title="<%=this.Company.FULLNAME %>">
+                    		<img src="<%=HREF.DomainStore %><%=this.Company.PathImage %>" alt="<%=this.Company.FULLNAME %>" height="79"></a>
+                    </div>
+                    <!-- END LOGO -->
+
+
+    				<!-- START HEADER RIGHT CONTENT -->
+        			<div id="header-right-content">
+                        <!-- START HEADER SIDEBAR -->
+                        <div id="header-sidebar" class="hidden-phone">
+                            <div id="text-image-2" class="widget-1 widget-first widget text-image">
+                            	<div class="widget-wrap">
+                                	<div>
+                                    	<div class="text-image" style="text-align:left">
+                                        	<img src="http://<%=HREF.Domain%>/Templates/T09/images/phone.png" alt="" width="7" height="20"/>
+                                        </div>
+                                        <strong>Hotline:</strong> <%=this.Company.PHONE %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="search_mini-2" class="widget-2 widget-last widget widget_search_mini">
+                                <div class="search_mini">
+                                    <input type="text" name="s" id="search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" value="" placeholder="Tìm kiếm">
+                                    <input type="button" value="Search" id="mini-search-submit" onclick="searchTitle()">
+                                </div>
+                                <script type="text/javascript">
+                                    $("#search").keypress(function (event) {
+                                        var keycode = (event.keyCode ? event.keyCode : event.which);
+                                        if (keycode == '13') {
+                                            searchTitle();
+                                        }
+                                    });
+                                    function searchTitle() {
+                                        var key = $("#search").val();
+                                        if (key) {
+                                            key = ConvertToUnSign(key);
+                                            window.location = 'http://<%=HREF.Domain%>/products/vit/tag/' + key.trim();
+                                    }
+                                    }
+                                    function ConvertToUnSign(obj) {
+                                        var str = obj;
+
+                                        str = str.toLowerCase();
+                                        str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+                                        str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+                                        str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+                                        str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+                                        str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+                                        str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+                                        str = str.replace(/đ/g, "d");
+
+                                        //str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'| |\"|\&|\#|\[|\]|~|$|_/g, "-");// tìm và thay thế các kí tự đặc biệt trong chuỗi sang kí tự -
+                                        str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|,|\.|\:|\;|\'| |\"|\&|\#|\[|\]|~|$|_/g, "-");// tìm và thay thế các kí tự đặc biệt trong chuỗi sang kí tự -
+                                        str = str.replace(/\//g, "");// tìm và thay thế các kí tự đặc biệt trong chuỗi sang kí tự -
+                                        str = str.replace(/-+-/g, "-"); //thay thế 2- thành 1-
+                                        str = str.replace(/^\-+|\-+$/g, "");//cắt bỏ ký tự - ở đầu và cuối chuỗi
+
+                                        return str;
+                                    }
+                        </script>
+                        	</div>
+                            <VIT:Position runat="server" ID="psTopRight2" SkinName="Empty"></VIT:Position>
+                        </div>
+                        <!-- END HEADER SIDEBAR -->
+
+                        <!-- START NAVIGATION -->
+                        <div id="nav">
+                            <VIT:Position runat="server" ID="psTopRight3" SkinName="Empty"></VIT:Position>
+                        </div>
+                        <!-- END NAVIGATION -->
+                        
+                    </div>
+                    <!-- END HEADER RIGHT CONTENT -->
+
+					<div class="clearfix"></div>
+
+					<div id="welcome-menu"></div>
+				</div>
+                
+                <!-- BEGIN #slider -->
+                    <%if(!MainCore.isMobileBrowser()) {%>
+                        <VIT:Position runat="server" ID="psTopBottom" SkinName="Empty"></VIT:Position>
+                    <%} %>
+                <!-- END #slider -->         
+            
+            </div>
+                <!-- END HEADER -->
+
+                <!-- START PRIMARY -->
+                <div id="primary" class="sidebar-left">
+                    <div class="container group">
+                        <div class="row">
+                            <div id="content-home" class="span9 content group">
+                                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                            </div>
+
+                            <!-- START SIDEBAR -->
+                            <div id="sidebar-home" class="span3 sidebar group">
+                                <div id="text-5" class="widget-1 widget-first widget widget_text">
+                        	        <h3><%=this.Company.DISPLAYNAME %></h3>			
+                                    <div class="textwidget"><%=this.Company.DESCRIPTION %></div>
+                                </div>
+
+                                <VIT:Position runat="server" ID="psLeft" SkinName="Empty"></VIT:Position>
+                            </div>
+
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- START FOOTER -->
+            <div id="footer">
+            	<div class="container">
+                    <div class="row">
+                        <div class="footer-row-1 footer-columns-4">
+                            <VIT:Position runat="server" ID="psBottom" SkinName="Empty"></VIT:Position>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+
+                <!-- START COPYRIGHT -->
+            <div id="copyright">	
+                <div class="container">
+                    <div class="row">
+                        <div class="left span6">
+                            <p><a href="#" style="display: inline-block;vertical-align: 3px;"> © Copyright by <%=this.Company.FULLNAME %></a></p>
+                        </div>
+                        
+                        <div class="right span6">
+                            <p>Develop by <a href="<%=SettingsManager.AppSettings.DomainPublic %>"><strong><%=SettingsManager.AppSettings.Copyright %></strong></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END COPYRIGHT -->
+            </VIT:Form>
+        </div>
+    </div>
+    
+    <!-- CUSTOM SCRIPT -->
+	<script type="text/javascript" src="/Templates/T09/scripts/jquery.commonlibraries.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/jquery.layout.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/jquery.custom.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/comment-reply.min.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/add-to-cart.min.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/jquery.blockUI.min.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/woocommerce.min.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/jq-cookie.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/cart-fragments.min.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/woo-featured-video.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/woocompare.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/jquery.colorbox-min.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/jquery.prettyPhoto.min.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/jquery.prettyPhoto.init.min.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/jquery.selectBox.min.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/responsive.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/retina.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/twitter-text.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/shortcodes.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/shortcodes(1).js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/widgets.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/woocommerce_2.3.js"></script>
+	<script type="text/javascript" src="/Templates/T09/scripts/jquery.eislideshow.js"></script>
+    <script type='text/javascript' src='/Templates/T09/scripts/jquery.themepunch.tools.min.js'></script>
+    <script type='text/javascript' src='/Templates/T09/scripts/jquery.themepunch.revolution.min.js'></script>
+
+    <!-- END BODY -->
+    <div id="cboxOverlay" style="display: none;"></div>
+    <div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
+    	<div id="cboxWrapper">
+        	<div>
+            	<div id="cboxTopLeft" style="float: left;"></div>
+                <div id="cboxTopCenter" style="float: left;"></div>
+                <div id="cboxTopRight" style="float: left;"></div>
+            </div>
+            
+            <div style="clear: left;">
+            	<div id="cboxMiddleLeft" style="float: left;"></div>
+                <div id="cboxContent" style="float: left;">
+                	<div id="cboxTitle" style="float: left;"></div>
+                    	<div id="cboxCurrent" style="float: left;"></div>
+                        <button type="button" id="cboxPrevious"></button>
+                        <button type="button" id="cboxNext"></button>
+                        <button id="cboxSlideshow"></button>
+                        <div id="cboxLoadingOverlay" style="float: left;"></div>
+                        <div id="cboxLoadingGraphic" style="float: left;"></div>
+                    </div>
+                    <div id="cboxMiddleRight" style="float: left;"></div>
+                </div>
+                <div style="clear: left;">
+                	<div id="cboxBottomLeft" style="float: left;"></div>
+                    <div id="cboxBottomCenter" style="float: left;"></div>
+                    <div id="cboxBottomRight" style="float: left;"></div>
+                </div>
+            </div>
+            <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+        </div>
+        <div id="tiptip_holder" style="max-width:auto;">
+        	<div id="tiptip_arrow">
+            	<div id="tiptip_arrow_inner"></div>
+            </div>
+            <div id="tiptip_content"></div>
+        </div>
+        
+</body>
+</html>

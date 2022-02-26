@@ -1,0 +1,2717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F9806D3-A546-474C-92B8-3DCC6A8AEBD7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web.FrontEnd</RootNamespace>
+    <AssemblyName>Web.FrontEnd</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\Libs\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="CKFinder, Version=2.0.2.1326, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Includes\ckeditor\plugins\ckfinder\bin\Debug\CKFinder.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mark.Web.UI.WebControls.DateTimePicker">
+      <HintPath>..\Libs\Mark.Web.UI.WebControls.DateTimePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Clear.aspx" />
+    <Content Include="Includes\autocomplete\currency-autocomplete.js" />
+    <Content Include="Includes\autocomplete\index.html" />
+    <Content Include="Includes\autocomplete\jquery-1.9.1.min.js" />
+    <Content Include="Includes\autocomplete\jquery.autocomplete.min.js" />
+    <Content Include="Includes\autocomplete\style.css" />
+    <Content Include="Includes\bbeditor\bbcode.htm" />
+    <Content Include="Includes\bbeditor\bbimage\bold.png" />
+    <Content Include="Includes\bbeditor\bbimage\image.png" />
+    <Content Include="Includes\bbeditor\bbimage\italic.png" />
+    <Content Include="Includes\bbeditor\bbimage\link.png" />
+    <Content Include="Includes\bbeditor\bbimage\underline.png" />
+    <Content Include="Includes\bbeditor\bbParser.php" />
+    <Content Include="Includes\bbeditor\jquery.bbcode.js" />
+    <Content Include="Includes\chosen-1.8.7\chosen-sprite%402x.png" />
+    <Content Include="Includes\chosen-1.8.7\chosen-sprite.png" />
+    <Content Include="Includes\chosen-1.8.7\chosen.css" />
+    <Content Include="Includes\chosen-1.8.7\chosen.jquery.js" />
+    <Content Include="Includes\chosen-1.8.7\chosen.jquery.min.js" />
+    <Content Include="Includes\chosen-1.8.7\chosen.min.css" />
+    <Content Include="Includes\chosen-1.8.7\chosen.proto.js" />
+    <Content Include="Includes\chosen-1.8.7\chosen.proto.min.js" />
+    <Content Include="Includes\chosen-1.8.7\docsupport\chosen.png" />
+    <Content Include="Includes\chosen-1.8.7\docsupport\init.js" />
+    <Content Include="Includes\chosen-1.8.7\docsupport\init.proto.js" />
+    <Content Include="Includes\chosen-1.8.7\docsupport\jquery-1.12.4.min.js" />
+    <Content Include="Includes\chosen-1.8.7\docsupport\jquery-3.2.1.min.js" />
+    <Content Include="Includes\chosen-1.8.7\docsupport\oss-credit.png" />
+    <Content Include="Includes\chosen-1.8.7\docsupport\prism.css" />
+    <Content Include="Includes\chosen-1.8.7\docsupport\prism.js" />
+    <Content Include="Includes\chosen-1.8.7\docsupport\prototype-1.7.0.0.js" />
+    <Content Include="Includes\chosen-1.8.7\docsupport\style.css" />
+    <Content Include="Includes\chosen-1.8.7\index.html" />
+    <Content Include="Includes\chosen-1.8.7\index.proto.html" />
+    <Content Include="Includes\chosen-1.8.7\options.html" />
+    <Content Include="Includes\disablecopy\disable-copy.css" />
+    <Content Include="Includes\disablecopy\disable-copy.js" />
+    <Content Include="Includes\Error.css" />
+    <Content Include="Includes\jquery.nicescroll.v282\jquery.nicescroll.js" />
+    <Content Include="Includes\jquery.nicescroll.v282\jquery.nicescroll.min.js" />
+    <Content Include="Includes\Rating\Rating.css" />
+    <Content Include="Includes\Rating\Rating.js" />
+    <Content Include="Includes\Rating\star_off.gif" />
+    <Content Include="Includes\Rating\star_on.gif" />
+    <Content Include="JsonPost.aspx" />
+    <Content Include="Modules\AccessTradeCampaign.ascx" />
+    <Content Include="Modules\AccessTradeDataFeed.ascx" />
+    <Content Include="Modules\AccessTradeSaleOff.ascx" />
+    <Content Include="Modules\AccessTradeTopSale.ascx" />
+    <Content Include="Modules\ArticleBilingual.ascx" />
+    <Content Include="Modules\ArticleBilinguals.ascx" />
+    <Content Include="Modules\Document.ascx" />
+    <Content Include="Modules\ArticleCommentFacebook.ascx" />
+    <Content Include="Modules\ArticleCommentItem.ascx" />
+    <Content Include="Modules\ArticleOrther.ascx" />
+    <Content Include="Modules\ArticlesByDomain.ascx" />
+    <Content Include="Modules\CartsView.ascx" />
+    <Content Include="Modules\CartsPayment.ascx" />
+    <Content Include="Modules\CategoryBackLink.ascx" />
+    <Content Include="Modules\ContactDynamic.ascx" />
+    <Content Include="Modules\Articles.ascx" />
+    <Content Include="Modules\AdpiaCoupon.ascx" />
+    <Content Include="Modules\RSSReader.ascx" />
+    <Content Include="Modules\RSS.ascx" />
+    <Content Include="Modules\ZaloChat.ascx" />
+    <Content Include="Modules\MemberProfile.ascx" />
+    <Content Include="Modules\ProductAttribute.ascx" />
+    <Content Include="Modules\MemberOrders.ascx" />
+    <Content Include="Modules\Vouchers.ascx" />
+    <Content Include="Modules\MemberPoint.ascx" />
+    <Content Include="Modules\MemberLogin.ascx" />
+    <Content Include="Modules\DataComplex.ascx" />
+    <Content Include="Modules\DataSimple.ascx" />
+    <Content Include="Modules\DataSingle.ascx" />
+    <Content Include="Modules\FacebookChat.ascx" />
+    <Content Include="Modules\FacebookComment.ascx" />
+    <Content Include="Modules\FacebookLike.ascx" />
+    <Content Include="Modules\GoogleMap.ascx" />
+    <Content Include="Modules\ItemComment.ascx" />
+    <Content Include="Modules\ProductGroupons.ascx" />
+    <Content Include="Modules\Templates.ascx" />
+    <Content Include="Templates\T01\Components\Groupon.aspx" />
+    <Content Include="Templates\T01\Components\OrderResult.aspx" />
+    <Content Include="Templates\T01\Components\Groupons.aspx" />
+    <Content Include="Templates\T01\Components\Categories.aspx" />
+    <Content Include="Templates\T01\Components\Profile.aspx" />
+    <Content Include="Templates\T01\css\breadcrumb.css" />
+    <Content Include="Templates\T01\css\cart.css" />
+    <Content Include="Templates\T01\css\checkout.css" />
+    <Content Include="Templates\T01\css\confirm.css" />
+    <Content Include="Templates\T01\css\default.css" />
+    <Content Include="Templates\T01\css\footer.css" />
+    <Content Include="Templates\T01\css\header.css" />
+    <Content Include="Templates\T01\css\icons.min.css" />
+    <Content Include="Templates\T01\css\ionicons.min.css" />
+    <Content Include="Templates\T01\css\login.css" />
+    <Content Include="Templates\T01\css\news.css" />
+    <Content Include="Templates\T01\css\plugins.css" />
+    <Content Include="Templates\T01\css\product-detail.css" />
+    <Content Include="Templates\T01\css\product-item.css" />
+    <Content Include="Templates\T01\css\profile.css" />
+    <Content Include="Templates\T01\css\section.css" />
+    <Content Include="Templates\T01\css\shop.css" />
+    <Content Include="Templates\T01\css\signup.css" />
+    <Content Include="Templates\T01\css\style.css" />
+    <Content Include="Templates\T01\css\tab.css" />
+    <Content Include="Templates\T01\css\temp.css" />
+    <Content Include="Templates\T01\fonts\ionicons.svg" />
+    <Content Include="Templates\T01\fonts\simple-line-icon\Simple-Line-Icons.svg" />
+    <Content Include="Templates\T01\IMG\categories\all-in-one-pc.png" />
+    <Content Include="Templates\T01\IMG\categories\audio-music.png" />
+    <Content Include="Templates\T01\IMG\categories\camera.png" />
+    <Content Include="Templates\T01\IMG\categories\computer-laptop.png" />
+    <Content Include="Templates\T01\IMG\categories\console-game.png" />
+    <Content Include="Templates\T01\IMG\categories\desktop-pc.png" />
+    <Content Include="Templates\T01\IMG\categories\headphone.png" />
+    <Content Include="Templates\T01\IMG\categories\laptop.png" />
+    <Content Include="Templates\T01\IMG\categories\mac.png" />
+    <Content Include="Templates\T01\IMG\categories\phone.png" />
+    <Content Include="Templates\T01\IMG\categories\speaker.png" />
+    <Content Include="Templates\T01\IMG\hotdeal\1.png" />
+    <Content Include="Templates\T01\IMG\hotdeal\10.jpg" />
+    <Content Include="Templates\T01\IMG\hotdeal\11.jpg" />
+    <Content Include="Templates\T01\IMG\hotdeal\12.jpg" />
+    <Content Include="Templates\T01\IMG\hotdeal\13.jpg" />
+    <Content Include="Templates\T01\IMG\hotdeal\14.jpg" />
+    <Content Include="Templates\T01\IMG\hotdeal\15.jpg" />
+    <Content Include="Templates\T01\IMG\hotdeal\16.jpg" />
+    <Content Include="Templates\T01\IMG\hotdeal\2.png" />
+    <Content Include="Templates\T01\IMG\hotdeal\3.png" />
+    <Content Include="Templates\T01\IMG\hotdeal\4.png" />
+    <Content Include="Templates\T01\IMG\hotdeal\5.png" />
+    <Content Include="Templates\T01\IMG\hotdeal\6.png" />
+    <Content Include="Templates\T01\IMG\hotdeal\7.png" />
+    <Content Include="Templates\T01\IMG\hotdeal\8.jpg" />
+    <Content Include="Templates\T01\IMG\hotdeal\9.jpg" />
+    <Content Include="Templates\T01\IMG\icon-img\2.png" />
+    <Content Include="Templates\T01\IMG\icon-img\cart.png" />
+    <Content Include="Templates\T01\IMG\icon-img\free-shipping.png" />
+    <Content Include="Templates\T01\IMG\icon-img\payment-2.png" />
+    <Content Include="Templates\T01\IMG\icon-img\payment.png" />
+    <Content Include="Templates\T01\IMG\icon-img\security.png" />
+    <Content Include="Templates\T01\IMG\icon-img\select.png" />
+    <Content Include="Templates\T01\IMG\icon-img\support.png" />
+    <Content Include="Templates\T01\IMG\icon-img\testi.png" />
+    <Content Include="Templates\T01\IMG\icon\1-3-star-64-64.png" />
+    <Content Include="Templates\T01\IMG\icon\ajax-loader.gif" />
+    <Content Include="Templates\T01\IMG\icon\scroll-down.gif" />
+    <Content Include="Templates\T01\IMG\icon\star-64-64.png" />
+    <Content Include="Templates\T01\IMG\icon\user_circle.png" />
+    <Content Include="Templates\T01\IMG\icon\zalo-icon.svg" />
+    <Content Include="Templates\T01\IMG\logo\logo.jpg" />
+    <Content Include="Templates\T01\IMG\menu\1.jpg" />
+    <Content Include="Templates\T01\IMG\menu\3.jpg" />
+    <Content Include="Templates\T01\IMG\menu\4.jpg" />
+    <Content Include="Templates\T01\IMG\menu\5.jpg" />
+    <Content Include="Templates\T01\IMG\menu\6.jpg" />
+    <Content Include="Templates\T01\IMG\menu\7.jpg" />
+    <Content Include="Templates\T01\IMG\menu\8.jpg" />
+    <Content Include="Templates\T01\IMG\payment\1.png" />
+    <Content Include="Templates\T01\IMG\payment\2.png" />
+    <Content Include="Templates\T01\IMG\payment\mastercard_logo.png" />
+    <Content Include="Templates\T01\IMG\payment\paypal_logo.png" />
+    <Content Include="Templates\T01\IMG\product-details\client-1.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\client-2.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\client-3.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-bl1.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-bl2.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-bl3.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-bl4.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-bl5.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-l1.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-l10.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-l2.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-l3.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-l4.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-l5.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-l6.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-l7.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-l8.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-l9.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-s1.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-s10.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-s2.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-s3.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-s4.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-s5.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-s6.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-s7.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-s8.jpg" />
+    <Content Include="Templates\T01\IMG\product-details\product-detalis-s9.jpg" />
+    <Content Include="Templates\T01\IMG\product\10.jpg" />
+    <Content Include="Templates\T01\IMG\product\11.jpg" />
+    <Content Include="Templates\T01\IMG\product\12.jpg" />
+    <Content Include="Templates\T01\IMG\product\13.jpg" />
+    <Content Include="Templates\T01\IMG\product\14.jpg" />
+    <Content Include="Templates\T01\IMG\product\15.jpg" />
+    <Content Include="Templates\T01\IMG\product\16.jpg" />
+    <Content Include="Templates\T01\IMG\product\8.jpg" />
+    <Content Include="Templates\T01\IMG\product\9.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\ActionCamera-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\Earphones-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\GamePad-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\Gear-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\Laptop-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\MiBand-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\PortableSpeaker-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\samsung-ue-ks9000_1_720x660-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\Sony-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\Speaker-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\Sprocket-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\Watch-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\product\flash-sale\watch-7_720x660-224x197.jpg" />
+    <Content Include="Templates\T01\IMG\slider\1.jpg" />
+    <Content Include="Templates\T01\IMG\slider\2.jpg" />
+    <Content Include="Templates\T01\IMG\social\facebook.png" />
+    <Content Include="Templates\T01\IMG\social\googleplus.png" />
+    <Content Include="Templates\T01\IMG\social\linkedin.png" />
+    <Content Include="Templates\T01\IMG\social\social-img1.png" />
+    <Content Include="Templates\T01\IMG\social\social-img2.png" />
+    <Content Include="Templates\T01\IMG\social\social-link1.png" />
+    <Content Include="Templates\T01\IMG\social\social-link2.png" />
+    <Content Include="Templates\T01\IMG\social\social-link3.png" />
+    <Content Include="Templates\T01\IMG\social\twitter.png" />
+    <Content Include="Templates\T01\IMG\social\youtube.png" />
+    <Content Include="Templates\T01\IMG\ticket\ticket.png" />
+    <Content Include="Templates\T01\IMG\transfer\transfers.png" />
+    <Content Include="Templates\T01\index.html" />
+    <Content Include="Templates\T01\js\cart.js" />
+    <Content Include="Templates\T01\js\checkout.js" />
+    <Content Include="Templates\T01\js\header.js" />
+    <Content Include="Templates\T01\js\index.js" />
+    <Content Include="Templates\T01\js\login.js" />
+    <Content Include="Templates\T01\js\main.js" />
+    <Content Include="Templates\T01\js\plugins.js" />
+    <Content Include="Templates\T01\js\product.js" />
+    <Content Include="Templates\T01\js\profile.js" />
+    <Content Include="Templates\T01\js\shop.js" />
+    <Content Include="Templates\T01\lib\bootstrap-autocomplete\bootstrap-autocomplete.min.js" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\chosen-sprite%402x.png" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\chosen-sprite.png" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\chosen.css" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\chosen.jquery.js" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\chosen.jquery.min.js" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\chosen.min.css" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\chosen.proto.js" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\chosen.proto.min.js" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\docsupport\chosen.png" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\docsupport\init.js" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\docsupport\init.proto.js" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\docsupport\jquery-1.12.4.min.js" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\docsupport\jquery-3.2.1.min.js" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\docsupport\oss-credit.png" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\docsupport\prism.css" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\docsupport\prism.js" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\docsupport\prototype-1.7.0.0.js" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\docsupport\style.css" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\index.html" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\index.proto.html" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\options.html" />
+    <Content Include="Templates\T01\lib\fontawesome\css\all.css" />
+    <Content Include="Templates\T01\lib\fontawesome\css\all.min.css" />
+    <Content Include="Templates\T01\lib\fontawesome\css\fa-brands.css" />
+    <Content Include="Templates\T01\lib\fontawesome\css\fa-brands.min.css" />
+    <Content Include="Templates\T01\lib\fontawesome\css\fa-regular.css" />
+    <Content Include="Templates\T01\lib\fontawesome\css\fa-regular.min.css" />
+    <Content Include="Templates\T01\lib\fontawesome\css\fa-solid.css" />
+    <Content Include="Templates\T01\lib\fontawesome\css\fa-solid.min.css" />
+    <Content Include="Templates\T01\lib\fontawesome\css\fontawesome-all.css" />
+    <Content Include="Templates\T01\lib\fontawesome\css\fontawesome-all.min.css" />
+    <Content Include="Templates\T01\lib\fontawesome\css\fontawesome.css" />
+    <Content Include="Templates\T01\lib\fontawesome\css\fontawesome.min.css" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-light-300.svg" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Templates\T01\lib\jquery.countdown-2.1.0\jquery.countdown.js" />
+    <Content Include="Templates\T01\lib\jquery.countdown-2.1.0\jquery.countdown.min.js" />
+    <Content Include="Templates\T01\lib\magic-check.min.css" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\assets\ajax-loader.gif" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\assets\owl.carousel.css" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\assets\owl.carousel.min.css" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\assets\owl.theme.default.css" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\assets\owl.theme.default.min.css" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\assets\owl.theme.green.css" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\assets\owl.theme.green.min.css" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\assets\owl.video.play.png" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\owl.carousel.js" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\owl.carousel.min.js" />
+    <Content Include="Templates\T01\lib\zInput\css\buttoncover_1.png" />
+    <Content Include="Templates\T01\lib\zInput\css\buttoncover_2.png" />
+    <Content Include="Templates\T01\lib\zInput\css\zInput_alt_stylesheet_1.css" />
+    <Content Include="Templates\T01\lib\zInput\css\zInput_alt_stylesheet_2.css" />
+    <Content Include="Templates\T01\lib\zInput\css\zInput_default_stylesheet.css" />
+    <Content Include="Templates\T01\lib\zInput\demo.html" />
+    <Content Include="Templates\T01\lib\zInput\readme_images\checkbox_multi.png" />
+    <Content Include="Templates\T01\lib\zInput\readme_images\checkbox_singles.png" />
+    <Content Include="Templates\T01\lib\zInput\readme_images\radio.png" />
+    <Content Include="Templates\T01\lib\zInput\zInput.js" />
+    <Content Include="Templates\T01\Skins\CartsView.ascx" />
+    <Content Include="Templates\T01\Skins\DataSimple.ascx" />
+    <Content Include="Templates\T01\Skins\DataSimpleCats.ascx" />
+    <Content Include="Templates\T01\Skins\DataSimpleCatScroll.ascx" />
+    <Content Include="Templates\T01\Skins\DataSimpleUl4Title.ascx" />
+    <Content Include="Templates\T01\Skins\MemberOrders.ascx" />
+    <Content Include="Templates\T01\Skins\MemberPoint.ascx" />
+    <Content Include="Templates\T01\Skins\MemberProfile.ascx" />
+    <Content Include="Templates\T01\Skins\MenuMobile.ascx" />
+    <Content Include="Templates\T01\Skins\Menu.ascx" />
+    <Content Include="Templates\T01\Skins\ProductFilter.ascx" />
+    <Content Include="Templates\T01\Skins\ProductAttribute.ascx" />
+    <Content Include="Templates\T01\Skins\ProductGroupons.ascx" />
+    <Content Include="Templates\T01\Skins\ProductList.ascx" />
+    <Content Include="Templates\T01\Skins\Vouchers.ascx" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\cart.html" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\checkout.html" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\css\bootstrap.min.css" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\css\default.css" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\css\font-awesome.min.css" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\css\ionicons.min.css" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\css\jquery-ui.min.css" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\css\jquery.fancybox.css" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\css\linearicons.css" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\css\meanmenu.min.css" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\css\nice-select.css" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\css\nivo-slider.css" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\css\owl.carousel.min.css" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\css\responsive.css" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\ionicons.svg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\Linearicons-Free.svg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\5.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner-fnd.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner-kds.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner-sidebar.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner-wmn.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner3-1.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner3-2.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner3-3.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner3-4.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner3-5.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner3-6.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner3-7.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner3-8.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner4-1.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\banner4-2.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\electorince.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\h1-band1.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\h1-band2.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\h1-banner.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\h1-banner3.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\banner\pop-banner.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\1.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\10.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\11.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\12.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\13.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\14.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\15.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\16.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\17.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\18.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\19.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\2.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\3.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\4.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\5.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\6.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\7.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\8.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\9.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\icon-collapse.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\icon-expand.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\sub-img1.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\sub-img2.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\sub-img3.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon\bg-l-sale.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon\icon-hot-deal.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon\icons_calendar_black.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon\icons_card_black.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon\icons_lock_black.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon\icons_person_black.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon\mastercard_logo.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon\paypal_logo.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon\social-img1.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon\social-img2.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon\visa_logo.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\logo\logo.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\payment\1.png" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\1.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\10.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\11.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\12.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\13.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\14.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\15.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\16.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\17.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\18.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\19.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\2.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\20.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\21.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\22.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\23.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\24.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\25.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\26.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\27.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\28.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\29.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\3.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\30.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\31.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\32.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\33.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\34.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\35.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\36.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\37.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\38.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\39.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\4.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\40.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\41.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\42.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\43.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\5.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\6.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\7.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\8.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\products\9.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\slider\1.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\slider\2.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\slider\3.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\slider\4.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\slider\5.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\slider\6.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\slider\7.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\slider\8.jpg" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\index.html" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\ajax-mail.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\bootstrap.min.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\jquery-ui.min.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\jquery.countdown.min.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\jquery.fancybox.min.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\jquery.meanmenu.min.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\jquery.nice-select.min.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\jquery.nivo.slider.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\jquery.scrollUp.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\main.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\owl.carousel.min.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\plugins.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\popper.min.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\vendor\jquery-3.2.1.min.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\vendor\modernizr-3.5.0.min.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\js\wow.min.js" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\login.html" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\product.html" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\register.html" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\shop.html" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\style.css" />
+    <Content Include="Templates\T01\v1\backup\index.html" />
+    <Content Include="Templates\T01\v1\cart.html" />
+    <Content Include="Templates\T01\v1\checkout.html" />
+    <Content Include="Templates\T01\v1\css\addition-product.css" />
+    <Content Include="Templates\T01\v1\css\bootstrap.min.css" />
+    <Content Include="Templates\T01\v1\css\breadcrumb.css" />
+    <Content Include="Templates\T01\v1\css\checkout.css" />
+    <Content Include="Templates\T01\v1\css\default.css" />
+    <Content Include="Templates\T01\v1\css\easy-responsive-tabs.css" />
+    <Content Include="Templates\T01\v1\css\font-awesome.min.css" />
+    <Content Include="Templates\T01\v1\css\ionicons.min.css" />
+    <Content Include="Templates\T01\v1\css\jquery-ui.min.css" />
+    <Content Include="Templates\T01\v1\css\jquery.fancybox.css" />
+    <Content Include="Templates\T01\v1\css\linearicons.css" />
+    <Content Include="Templates\T01\v1\css\meanmenu.min.css" />
+    <Content Include="Templates\T01\v1\css\mod.css" />
+    <Content Include="Templates\T01\v1\css\new-index.css" />
+    <Content Include="Templates\T01\v1\css\nice-select.css" />
+    <Content Include="Templates\T01\v1\css\nivo-slider.css" />
+    <Content Include="Templates\T01\v1\css\owl.carousel.min.css" />
+    <Content Include="Templates\T01\v1\css\plugins.css" />
+    <Content Include="Templates\T01\v1\css\product-categories.css" />
+    <Content Include="Templates\T01\v1\css\product-slide.css" />
+    <Content Include="Templates\T01\v1\css\product.css" />
+    <Content Include="Templates\T01\v1\css\profile.css" />
+    <Content Include="Templates\T01\v1\css\responsive.css" />
+    <Content Include="Templates\T01\v1\css\shop.css" />
+    <Content Include="Templates\T01\v1\css\tab.css" />
+    <Content Include="Templates\T01\v1\css\test.css" />
+    <Content Include="Templates\T01\v1\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\T01\v1\fonts\icofont\demo.html" />
+    <Content Include="Templates\T01\v1\fonts\icofont\fonts\icofont.svg" />
+    <Content Include="Templates\T01\v1\fonts\icofont\icofont.css" />
+    <Content Include="Templates\T01\v1\fonts\icofont\icofont.min.css" />
+    <Content Include="Templates\T01\v1\fonts\ionicons.svg" />
+    <Content Include="Templates\T01\v1\fonts\Linearicons-Free.svg" />
+    <Content Include="Templates\T01\v1\img\banner\5.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner-fnd.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner-kds.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner-sidebar.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner-wmn.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner3-1.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner3-2.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner3-3.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner3-4.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner3-5.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner3-6.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner3-7.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner3-8.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner4-1.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\banner4-2.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\electorince.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\h1-band1.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\h1-band2.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\h1-banner.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\h1-banner3.jpg" />
+    <Content Include="Templates\T01\v1\img\banner\pop-banner.jpg" />
+    <Content Include="Templates\T01\v1\img\hotdeal\1.png" />
+    <Content Include="Templates\T01\v1\img\hotdeal\10.jpg" />
+    <Content Include="Templates\T01\v1\img\hotdeal\11.jpg" />
+    <Content Include="Templates\T01\v1\img\hotdeal\12.jpg" />
+    <Content Include="Templates\T01\v1\img\hotdeal\13.jpg" />
+    <Content Include="Templates\T01\v1\img\hotdeal\14.jpg" />
+    <Content Include="Templates\T01\v1\img\hotdeal\15.jpg" />
+    <Content Include="Templates\T01\v1\img\hotdeal\16.jpg" />
+    <Content Include="Templates\T01\v1\img\hotdeal\2.png" />
+    <Content Include="Templates\T01\v1\img\hotdeal\3.png" />
+    <Content Include="Templates\T01\v1\img\hotdeal\4.png" />
+    <Content Include="Templates\T01\v1\img\hotdeal\5.png" />
+    <Content Include="Templates\T01\v1\img\hotdeal\6.png" />
+    <Content Include="Templates\T01\v1\img\hotdeal\7.png" />
+    <Content Include="Templates\T01\v1\img\hotdeal\8.jpg" />
+    <Content Include="Templates\T01\v1\img\hotdeal\9.jpg" />
+    <Content Include="Templates\T01\v1\img\icon-menu\1.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\10.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\11.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\12.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\13.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\14.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\15.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\16.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\17.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\18.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\19.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\2.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\3.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\4.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\5.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\6.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\7.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\8.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\9.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\icon-collapse.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\icon-expand.png" />
+    <Content Include="Templates\T01\v1\img\icon-menu\sub-img1.jpg" />
+    <Content Include="Templates\T01\v1\img\icon-menu\sub-img2.jpg" />
+    <Content Include="Templates\T01\v1\img\icon-menu\sub-img3.jpg" />
+    <Content Include="Templates\T01\v1\img\icon.jpg" />
+    <Content Include="Templates\T01\v1\img\icon\1-3-star-64-64.png" />
+    <Content Include="Templates\T01\v1\img\icon\bg-l-sale.png" />
+    <Content Include="Templates\T01\v1\img\icon\circle.png" />
+    <Content Include="Templates\T01\v1\img\icon\count-bar.png" />
+    <Content Include="Templates\T01\v1\img\icon\facebook.png" />
+    <Content Include="Templates\T01\v1\img\icon\googleplus.png" />
+    <Content Include="Templates\T01\v1\img\icon\icon-hot-deal.png" />
+    <Content Include="Templates\T01\v1\img\icon\icons_calendar_black.png" />
+    <Content Include="Templates\T01\v1\img\icon\icons_card_black.png" />
+    <Content Include="Templates\T01\v1\img\icon\icons_lock_black.png" />
+    <Content Include="Templates\T01\v1\img\icon\icons_person_black.png" />
+    <Content Include="Templates\T01\v1\img\icon\linkedin.png" />
+    <Content Include="Templates\T01\v1\img\icon\mastercard_logo.png" />
+    <Content Include="Templates\T01\v1\img\icon\paypal_logo.png" />
+    <Content Include="Templates\T01\v1\img\icon\scroll-down.gif" />
+    <Content Include="Templates\T01\v1\img\icon\social-img1.png" />
+    <Content Include="Templates\T01\v1\img\icon\social-img2.png" />
+    <Content Include="Templates\T01\v1\img\icon\star-64-64.png" />
+    <Content Include="Templates\T01\v1\img\icon\twitter.png" />
+    <Content Include="Templates\T01\v1\img\icon\visa_logo.png" />
+    <Content Include="Templates\T01\v1\img\icon\youtube.png" />
+    <Content Include="Templates\T01\v1\img\icon\zalo-icon.svg" />
+    <Content Include="Templates\T01\v1\img\logo\logo.jpg" />
+    <Content Include="Templates\T01\v1\img\logo\logo.png" />
+    <Content Include="Templates\T01\v1\img\logo\logo1 %282%29.jpg" />
+    <Content Include="Templates\T01\v1\img\logo\logo1.jpg" />
+    <Content Include="Templates\T01\v1\img\logo\social-link1.png" />
+    <Content Include="Templates\T01\v1\img\logo\social-link2.png" />
+    <Content Include="Templates\T01\v1\img\logo\social-link3.png" />
+    <Content Include="Templates\T01\v1\img\nganhhang\nh1.jpg" />
+    <Content Include="Templates\T01\v1\img\nganhhang\nh2.jpg" />
+    <Content Include="Templates\T01\v1\img\nganhhang\nh3.jpg" />
+    <Content Include="Templates\T01\v1\img\nganhhang\nh4.jpg" />
+    <Content Include="Templates\T01\v1\img\nganhhang\nh5.jpg" />
+    <Content Include="Templates\T01\v1\img\nganhhang\nh6.jpg" />
+    <Content Include="Templates\T01\v1\img\nganhhang\nh7.jpg" />
+    <Content Include="Templates\T01\v1\img\nganhhang\nh8.jpg" />
+    <Content Include="Templates\T01\v1\img\payment\1.png" />
+    <Content Include="Templates\T01\v1\img\payment\2.png" />
+    <Content Include="Templates\T01\v1\img\payment\transfers.png" />
+    <Content Include="Templates\T01\v1\img\products\1.jpg" />
+    <Content Include="Templates\T01\v1\img\products\10.jpg" />
+    <Content Include="Templates\T01\v1\img\products\11.jpg" />
+    <Content Include="Templates\T01\v1\img\products\12.jpg" />
+    <Content Include="Templates\T01\v1\img\products\13.jpg" />
+    <Content Include="Templates\T01\v1\img\products\14.jpg" />
+    <Content Include="Templates\T01\v1\img\products\15.jpg" />
+    <Content Include="Templates\T01\v1\img\products\16.jpg" />
+    <Content Include="Templates\T01\v1\img\products\17.jpg" />
+    <Content Include="Templates\T01\v1\img\products\18.jpg" />
+    <Content Include="Templates\T01\v1\img\products\19.jpg" />
+    <Content Include="Templates\T01\v1\img\products\2.jpg" />
+    <Content Include="Templates\T01\v1\img\products\20.jpg" />
+    <Content Include="Templates\T01\v1\img\products\21.jpg" />
+    <Content Include="Templates\T01\v1\img\products\22.jpg" />
+    <Content Include="Templates\T01\v1\img\products\23.jpg" />
+    <Content Include="Templates\T01\v1\img\products\24.jpg" />
+    <Content Include="Templates\T01\v1\img\products\25.jpg" />
+    <Content Include="Templates\T01\v1\img\products\26.jpg" />
+    <Content Include="Templates\T01\v1\img\products\27.jpg" />
+    <Content Include="Templates\T01\v1\img\products\28.jpg" />
+    <Content Include="Templates\T01\v1\img\products\29.jpg" />
+    <Content Include="Templates\T01\v1\img\products\3.jpg" />
+    <Content Include="Templates\T01\v1\img\products\30.jpg" />
+    <Content Include="Templates\T01\v1\img\products\31.jpg" />
+    <Content Include="Templates\T01\v1\img\products\32.jpg" />
+    <Content Include="Templates\T01\v1\img\products\33.jpg" />
+    <Content Include="Templates\T01\v1\img\products\34.jpg" />
+    <Content Include="Templates\T01\v1\img\products\35.jpg" />
+    <Content Include="Templates\T01\v1\img\products\36.jpg" />
+    <Content Include="Templates\T01\v1\img\products\37.jpg" />
+    <Content Include="Templates\T01\v1\img\products\38.jpg" />
+    <Content Include="Templates\T01\v1\img\products\39.jpg" />
+    <Content Include="Templates\T01\v1\img\products\4.jpg" />
+    <Content Include="Templates\T01\v1\img\products\40.jpg" />
+    <Content Include="Templates\T01\v1\img\products\41.jpg" />
+    <Content Include="Templates\T01\v1\img\products\42.jpg" />
+    <Content Include="Templates\T01\v1\img\products\43.jpg" />
+    <Content Include="Templates\T01\v1\img\products\5.jpg" />
+    <Content Include="Templates\T01\v1\img\products\6.jpg" />
+    <Content Include="Templates\T01\v1\img\products\7.jpg" />
+    <Content Include="Templates\T01\v1\img\products\8.jpg" />
+    <Content Include="Templates\T01\v1\img\products\9.jpg" />
+    <Content Include="Templates\T01\v1\img\slider\1.jpg" />
+    <Content Include="Templates\T01\v1\img\slider\2.jpg" />
+    <Content Include="Templates\T01\v1\img\slider\3.jpg" />
+    <Content Include="Templates\T01\v1\img\slider\4.jpg" />
+    <Content Include="Templates\T01\v1\img\slider\5.jpg" />
+    <Content Include="Templates\T01\v1\img\slider\6.jpg" />
+    <Content Include="Templates\T01\v1\img\slider\6654Qc.png" />
+    <Content Include="Templates\T01\v1\img\slider\7.jpg" />
+    <Content Include="Templates\T01\v1\img\slider\8.jpg" />
+    <Content Include="Templates\T01\v1\img\slider\8qogLe.jpg" />
+    <Content Include="Templates\T01\v1\img\ticket\ticket.png" />
+    <Content Include="Templates\T01\v1\index.html" />
+    <Content Include="Templates\T01\v1\js\ajax-mail.js" />
+    <Content Include="Templates\T01\v1\js\bootstrap.min.js" />
+    <Content Include="Templates\T01\v1\js\easyResponsiveTabs.js" />
+    <Content Include="Templates\T01\v1\js\jquery-ui.min.js" />
+    <Content Include="Templates\T01\v1\js\jquery.countdown.min.js" />
+    <Content Include="Templates\T01\v1\js\jquery.fancybox.min.js" />
+    <Content Include="Templates\T01\v1\js\jquery.meanmenu.min.js" />
+    <Content Include="Templates\T01\v1\js\jquery.nice-select.min.js" />
+    <Content Include="Templates\T01\v1\js\jquery.nivo.slider.js" />
+    <Content Include="Templates\T01\v1\js\jquery.scrollUp.js" />
+    <Content Include="Templates\T01\v1\js\main.js" />
+    <Content Include="Templates\T01\v1\js\menu.js" />
+    <Content Include="Templates\T01\v1\js\owl.carousel.min.js" />
+    <Content Include="Templates\T01\v1\js\plugins.js" />
+    <Content Include="Templates\T01\v1\js\popper.min.js" />
+    <Content Include="Templates\T01\v1\js\product.js" />
+    <Content Include="Templates\T01\v1\js\test.js" />
+    <Content Include="Templates\T01\v1\js\user-profile.js" />
+    <Content Include="Templates\T01\v1\js\vendor\jquery-3.2.1.min.js" />
+    <Content Include="Templates\T01\v1\js\vendor\modernizr-3.5.0.min.js" />
+    <Content Include="Templates\T01\v1\js\wow.min.js" />
+    <Content Include="Templates\T01\v1\login.html" />
+    <Content Include="Templates\T01\v1\product-categories.html" />
+    <Content Include="Templates\T01\v1\product.html" />
+    <Content Include="Templates\T01\v1\profile.html" />
+    <Content Include="Templates\T01\v1\register.html" />
+    <Content Include="Templates\T01\v1\shop.html" />
+    <Content Include="Templates\T01\v1\style.css" />
+    <Content Include="Templates\T01\v1\test.html" />
+    <Content Include="Templates\T01\Skins\LoginSignup.ascx" />
+    <Content Include="Templates\T01\Skins\Signup.ascx" />
+    <Content Include="Templates\T01\Skins\Login.ascx" />
+    <Content Include="Templates\T02\Skins\ProductAttribute.ascx" />
+    <Content Include="Templates\T03\Skins\ArticlesByDomain.ascx" />
+    <Content Include="Templates\T03\Skins\ProductAttribute.ascx" />
+    <Content Include="Templates\T03\Skins\RSSReader.ascx" />
+    <Content Include="Templates\T03\Skins\ZaloChat.ascx" />
+    <Content Include="Templates\T04\Skins\ArticlesByDomain.ascx" />
+    <Content Include="Templates\T05\Components\Article.aspx" />
+    <Content Include="Templates\T05\Components\Articles.aspx" />
+    <Content Include="Templates\T05\Components\Carts.aspx" />
+    <Content Include="Templates\T05\Components\Contact.aspx" />
+    <Content Include="Templates\T05\Components\Home.aspx" />
+    <Content Include="Templates\T05\Components\OrderInfo.aspx" />
+    <Content Include="Templates\T05\Components\PageNotFound.aspx" />
+    <Content Include="Templates\T05\Components\Payment.aspx" />
+    <Content Include="Templates\T05\Components\Product.aspx" />
+    <Content Include="Templates\T05\Components\Products.aspx" />
+    <Content Include="Templates\T05\Components\Search.aspx" />
+    <Content Include="Templates\T05\css\bootstrap-theme.css" />
+    <Content Include="Templates\T05\css\bootstrap-theme.min.css" />
+    <Content Include="Templates\T05\css\bootstrap.css" />
+    <Content Include="Templates\T05\css\bootstrap.min.css" />
+    <Content Include="Templates\T05\css\bootstrap1.css" />
+    <Content Include="Templates\T05\css\component.css" />
+    <Content Include="Templates\T05\css\flexslider.css" />
+    <Content Include="Templates\T05\css\magnific-popup.css" />
+    <Content Include="Templates\T05\css\style.css" />
+    <Content Include="Templates\T05\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Templates\T05\images\0-building-construction.jpg" />
+    <Content Include="Templates\T05\images\arrow2.gif" />
+    <Content Include="Templates\T05\images\article34_pic1.jpg" />
+    <Content Include="Templates\T05\images\background.jpg" />
+    <Content Include="Templates\T05\images\banner2.jpg" />
+    <Content Include="Templates\T05\images\cart.png" />
+    <Content Include="Templates\T05\images\close_1.png" />
+    <Content Include="Templates\T05\images\fb.png" />
+    <Content Include="Templates\T05\images\grid_view.png" />
+    <Content Include="Templates\T05\images\i1.jpg" />
+    <Content Include="Templates\T05\images\i2.jpg" />
+    <Content Include="Templates\T05\images\i3.jpg" />
+    <Content Include="Templates\T05\images\i4.jpg" />
+    <Content Include="Templates\T05\images\i5.jpg" />
+    <Content Include="Templates\T05\images\i6.jpg" />
+    <Content Include="Templates\T05\images\icon1.png" />
+    <Content Include="Templates\T05\images\icon2.png" />
+    <Content Include="Templates\T05\images\icon3.png" />
+    <Content Include="Templates\T05\images\icon4.png" />
+    <Content Include="Templates\T05\images\icon5.png" />
+    <Content Include="Templates\T05\images\img-sprite.png" />
+    <Content Include="Templates\T05\images\i_zoom.JPG" />
+    <Content Include="Templates\T05\images\list_view.png" />
+    <Content Include="Templates\T05\images\payment.png" />
+    <Content Include="Templates\T05\images\philadelphia-skyline-background-image2-1800vp.jpg" />
+    <Content Include="Templates\T05\images\pic1.jpg" />
+    <Content Include="Templates\T05\images\pic10.jpg" />
+    <Content Include="Templates\T05\images\pic11.jpg" />
+    <Content Include="Templates\T05\images\pic12.jpg" />
+    <Content Include="Templates\T05\images\pic13.jpg" />
+    <Content Include="Templates\T05\images\pic2.jpg" />
+    <Content Include="Templates\T05\images\pic3.jpg" />
+    <Content Include="Templates\T05\images\pic4.jpg" />
+    <Content Include="Templates\T05\images\pic5.jpg" />
+    <Content Include="Templates\T05\images\pic6.jpg" />
+    <Content Include="Templates\T05\images\pic7.jpg" />
+    <Content Include="Templates\T05\images\pic8.jpg" />
+    <Content Include="Templates\T05\images\pic9.jpg" />
+    <Content Include="Templates\T05\images\pin.png" />
+    <Content Include="Templates\T05\images\plus.png" />
+    <Content Include="Templates\T05\images\s1.jpg" />
+    <Content Include="Templates\T05\images\s2.jpg" />
+    <Content Include="Templates\T05\images\s3.jpg" />
+    <Content Include="Templates\T05\images\s4.jpg" />
+    <Content Include="Templates\T05\images\search.png" />
+    <Content Include="Templates\T05\images\tag_arrow.png" />
+    <Content Include="Templates\T05\images\tick1.png" />
+    <Content Include="Templates\T05\images\tw.png" />
+    <Content Include="Templates\T05\images\xay-dung-biet-thu-nghi-duong-4.jpg" />
+    <Content Include="Templates\T05\index.html" />
+    <Content Include="Templates\T05\js\bootstrap.js" />
+    <Content Include="Templates\T05\js\bootstrap.min.js" />
+    <Content Include="Templates\T05\js\cbpViewModeSwitch.js" />
+    <Content Include="Templates\T05\js\classie.js" />
+    <Content Include="Templates\T05\js\easyResponsiveTabs.js" />
+    <Content Include="Templates\T05\js\jquery.easydropdown.js" />
+    <Content Include="Templates\T05\js\jquery.flexisel.js" />
+    <Content Include="Templates\T05\js\jquery.flexslider.js" />
+    <Content Include="Templates\T05\js\jquery.magnific-popup.js" />
+    <Content Include="Templates\T05\js\jquery.min.js" />
+    <Content Include="Templates\T05\js\modernizr.custom.js" />
+    <Content Include="Templates\T05\js\npm.js" />
+    <Content Include="Templates\T05\js\simpleCart.min.js" />
+    <Content Include="Templates\T05\Skins\Article.ascx" />
+    <Content Include="Templates\T05\Skins\ArticleOrther.ascx" />
+    <Content Include="Templates\T05\Skins\Articles.ascx" />
+    <Content Include="Templates\T05\Skins\BackLink.ascx" />
+    <Content Include="Templates\T05\Skins\CartsPayment.ascx" />
+    <Content Include="Templates\T05\Skins\Contact.ascx" />
+    <Content Include="Templates\T05\Skins\DataSimple.ascx" />
+    <Content Include="Templates\T05\Skins\DataSingle.ascx" />
+    <Content Include="Templates\T05\Skins\DataTitleCenter.ascx" />
+    <Content Include="Templates\T05\Skins\DataFooter.ascx" />
+    <Content Include="Templates\T05\Skins\DataTitleH3.ascx" />
+    <Content Include="Templates\T05\Skins\FacebookChat.ascx" />
+    <Content Include="Templates\T05\Skins\FacebookComment.ascx" />
+    <Content Include="Templates\T05\Skins\FacebookLike.ascx" />
+    <Content Include="Templates\T05\Skins\GoogleMap.ascx" />
+    <Content Include="Templates\T05\Skins\ItemComment.ascx" />
+    <Content Include="Templates\T05\Skins\Menu.ascx" />
+    <Content Include="Templates\T05\Skins\OrderInfo.ascx" />
+    <Content Include="Templates\T05\Skins\Payment.ascx" />
+    <Content Include="Templates\T05\Skins\Product.ascx" />
+    <Content Include="Templates\T05\Skins\Products.ascx" />
+    <Content Include="Templates\T05\Skins\ProductSimilars.ascx" />
+    <Content Include="Templates\T02\Skins\DataSingle.ascx" />
+    <Content Include="Templates\T03\assets\arrowleft.png" />
+    <Content Include="Templates\T03\assets\arrowright.png" />
+    <Content Include="Templates\T03\assets\arrow_large_left.png" />
+    <Content Include="Templates\T03\assets\arrow_large_right.png" />
+    <Content Include="Templates\T03\assets\arrow_left.png" />
+    <Content Include="Templates\T03\assets\arrow_left2.png" />
+    <Content Include="Templates\T03\assets\arrow_right.png" />
+    <Content Include="Templates\T03\assets\arrow_right2.png" />
+    <Content Include="Templates\T03\assets\black50.png" />
+    <Content Include="Templates\T03\assets\boxed_bgtile.png" />
+    <Content Include="Templates\T03\assets\bullet.png" />
+    <Content Include="Templates\T03\assets\bullets.png" />
+    <Content Include="Templates\T03\assets\bullets2.png" />
+    <Content Include="Templates\T03\assets\bullet_boxed.png" />
+    <Content Include="Templates\T03\assets\coloredbg.png" />
+    <Content Include="Templates\T03\assets\grain.png" />
+    <Content Include="Templates\T03\assets\gridtile.png" />
+    <Content Include="Templates\T03\assets\gridtile_3x3.png" />
+    <Content Include="Templates\T03\assets\gridtile_3x3_white.png" />
+    <Content Include="Templates\T03\assets\gridtile_white.png" />
+    <Content Include="Templates\T03\assets\large_left.png" />
+    <Content Include="Templates\T03\assets\large_right.png" />
+    <Content Include="Templates\T03\assets\loader.gif" />
+    <Content Include="Templates\T03\assets\loader2.gif" />
+    <Content Include="Templates\T03\assets\navigdots.png" />
+    <Content Include="Templates\T03\assets\navigdots_bgtile.png" />
+    <Content Include="Templates\T03\assets\shadow1.png" />
+    <Content Include="Templates\T03\assets\shadow2.png" />
+    <Content Include="Templates\T03\assets\shadow3.png" />
+    <Content Include="Templates\T03\assets\small_left.png" />
+    <Content Include="Templates\T03\assets\small_left_boxed.png" />
+    <Content Include="Templates\T03\assets\small_right.png" />
+    <Content Include="Templates\T03\assets\small_right_boxed.png" />
+    <Content Include="Templates\T03\assets\timer.png" />
+    <Content Include="Templates\T03\assets\timerdot.png" />
+    <Content Include="Templates\T03\assets\transparent.jpg" />
+    <Content Include="Templates\T03\assets\white50.png" />
+    <Content Include="Templates\T03\Components\Article.aspx" />
+    <Content Include="Templates\T03\Components\Articles.aspx" />
+    <Content Include="Templates\T03\Components\Carts.aspx" />
+    <Content Include="Templates\T03\Components\Contact.aspx" />
+    <Content Include="Templates\T03\Components\Home.aspx" />
+    <Content Include="Templates\T03\Components\OrderInfo.aspx" />
+    <Content Include="Templates\T03\Components\PageNotFound.aspx" />
+    <Content Include="Templates\T03\Components\Payment.aspx" />
+    <Content Include="Templates\T03\Components\Product.aspx" />
+    <Content Include="Templates\T03\Components\Products.aspx" />
+    <Content Include="Templates\T03\Components\Search.aspx" />
+    <Content Include="Templates\T03\css\animation.css" />
+    <Content Include="Templates\T03\css\bootstrap-theme.css" />
+    <Content Include="Templates\T03\css\bootstrap-theme.min.css" />
+    <Content Include="Templates\T03\css\bootstrap.css" />
+    <Content Include="Templates\T03\css\bootstrap.min.css" />
+    <Content Include="Templates\T03\css\chosen.css" />
+    <Content Include="Templates\T03\css\cloud-zoom.css" />
+    <Content Include="Templates\T03\css\flexslider.css" />
+    <Content Include="Templates\T03\css\font-awesome.css" />
+    <Content Include="Templates\T03\css\font-awesome.min.css" />
+    <Content Include="Templates\T03\css\fontello-codes.css" />
+    <Content Include="Templates\T03\css\fontello-embedded.css" />
+    <Content Include="Templates\T03\css\fontello-ie7-codes.css" />
+    <Content Include="Templates\T03\css\fontello-ie7.css" />
+    <Content Include="Templates\T03\css\fontello.css" />
+    <Content Include="Templates\T03\css\ie.css" />
+    <Content Include="Templates\T03\css\jquery.fancybox.css" />
+    <Content Include="Templates\T03\css\jquery.nouislider.min.css" />
+    <Content Include="Templates\T03\css\owl.carousel.css" />
+    <Content Include="Templates\T03\css\owl.theme.css" />
+    <Content Include="Templates\T03\css\owl.transitions.css" />
+    <Content Include="Templates\T03\css\perfect-scrollbar.css" />
+    <Content Include="Templates\T03\css\select.css" />
+    <Content Include="Templates\T03\css\settings-ie8.css" />
+    <Content Include="Templates\T03\css\settings.css" />
+    <Content Include="Templates\T03\css\style.css" />
+    <Content Include="Templates\T03\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\T03\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Templates\T03\font\flexslider-icon.svg" />
+    <Content Include="Templates\T03\font\fontello.svg" />
+    <Content Include="Templates\T03\images\dislike.png" />
+    <Content Include="Templates\T03\images\like.png" />
+    <Content Include="Templates\T03\images\social.png" />
+    <Content Include="Templates\T03\img\background.jpg" />
+    <Content Include="Templates\T03\img\bg_play_pause.png" />
+    <Content Include="Templates\T03\img\blank.gif" />
+    <Content Include="Templates\T03\img\blank.png" />
+    <Content Include="Templates\T03\img\blog\sample1.jpg" />
+    <Content Include="Templates\T03\img\blog\sample2.jpg" />
+    <Content Include="Templates\T03\img\blog\sample3.jpg" />
+    <Content Include="Templates\T03\img\blog\sample4.jpg" />
+    <Content Include="Templates\T03\img\blog\sample5.jpg" />
+    <Content Include="Templates\T03\img\brands\sample.jpg" />
+    <Content Include="Templates\T03\img\captcha.jpg" />
+    <Content Include="Templates\T03\img\category-heading.jpg" />
+    <Content Include="Templates\T03\img\chosen-sprite.png" />
+    <Content Include="Templates\T03\img\en-US.png" />
+    <Content Include="Templates\T03\img\fancybox_loading%402x.gif" />
+    <Content Include="Templates\T03\img\fancybox_loading.gif" />
+    <Content Include="Templates\T03\img\fancybox_overlay.png" />
+    <Content Include="Templates\T03\img\fancybox_sprite%402x.png" />
+    <Content Include="Templates\T03\img\fancybox_sprite.png" />
+    <Content Include="Templates\T03\img\helpers\fancybox_buttons.png" />
+    <Content Include="Templates\T03\img\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Templates\T03\img\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Templates\T03\img\helpers\jquery.fancybox-media.js" />
+    <Content Include="Templates\T03\img\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Templates\T03\img\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Templates\T03\img\hethang.png" />
+    <Content Include="Templates\T03\img\ios-buttons.png" />
+    <Content Include="Templates\T03\img\language-icons.png" />
+    <Content Include="Templates\T03\img\logo.png" />
+    <Content Include="Templates\T03\img\news\sample1-round.jpg" />
+    <Content Include="Templates\T03\img\news\sample1.jpg" />
+    <Content Include="Templates\T03\img\news\sample2-round.jpg" />
+    <Content Include="Templates\T03\img\news\sample2.jpg" />
+    <Content Include="Templates\T03\img\payment-icons.png" />
+    <Content Include="Templates\T03\img\products\sample1-thumb.jpg" />
+    <Content Include="Templates\T03\img\products\sample1.jpg" />
+    <Content Include="Templates\T03\img\products\sample2-thumb.jpg" />
+    <Content Include="Templates\T03\img\products\sample2.jpg" />
+    <Content Include="Templates\T03\img\products\sample3-thumb.jpg" />
+    <Content Include="Templates\T03\img\products\sample3.jpg" />
+    <Content Include="Templates\T03\img\products\sample4-thumb.jpg" />
+    <Content Include="Templates\T03\img\products\sample4.jpg" />
+    <Content Include="Templates\T03\img\products\sample5.jpg" />
+    <Content Include="Templates\T03\img\products\sample6.jpg" />
+    <Content Include="Templates\T03\img\products\sample7.jpg" />
+    <Content Include="Templates\T03\img\products\sample8.jpg" />
+    <Content Include="Templates\T03\img\products\sample9.jpg" />
+    <Content Include="Templates\T03\img\products\single1.jpg" />
+    <Content Include="Templates\T03\img\products\single2.jpg" />
+    <Content Include="Templates\T03\img\products\single3.jpg" />
+    <Content Include="Templates\T03\img\products\single4.jpg" />
+    <Content Include="Templates\T03\img\products\single5.jpg" />
+    <Content Include="Templates\T03\img\sample.jpg" />
+    <Content Include="Templates\T03\img\select-arrow.png" />
+    <Content Include="Templates\T03\img\sidebar-slide1.jpg" />
+    <Content Include="Templates\T03\img\sidebar-slide2.jpg" />
+    <Content Include="Templates\T03\img\sidebar-slide3.jpg" />
+    <Content Include="Templates\T03\img\slide1.jpg" />
+    <Content Include="Templates\T03\img\slide2.jpg" />
+    <Content Include="Templates\T03\img\slide3.jpg" />
+    <Content Include="Templates\T03\img\social-icons.png" />
+    <Content Include="Templates\T03\img\tag_02_hot.png" />
+    <Content Include="Templates\T03\img\vi-VN.png" />
+    <Content Include="Templates\T03\js\bootstrap.js" />
+    <Content Include="Templates\T03\js\bootstrap.min.js" />
+    <Content Include="Templates\T03\js\chosen.jquery.min.js" />
+    <Content Include="Templates\T03\js\cloud-zoom.1.0.3.min.js" />
+    <Content Include="Templates\T03\js\flexslider.min.js" />
+    <Content Include="Templates\T03\js\img\cancel-off.png" />
+    <Content Include="Templates\T03\js\img\cancel-on.png" />
+    <Content Include="Templates\T03\js\img\star-half.png" />
+    <Content Include="Templates\T03\js\img\star-off.png" />
+    <Content Include="Templates\T03\js\img\star-on.png" />
+    <Content Include="Templates\T03\js\jquery-1.11.0.min.js" />
+    <Content Include="Templates\T03\js\jquery-ui.min.js" />
+    <Content Include="Templates\T03\js\jquery.fancybox.js" />
+    <Content Include="Templates\T03\js\jquery.fancybox.pack.js" />
+    <Content Include="Templates\T03\js\jquery.iosslider.min.js" />
+    <Content Include="Templates\T03\js\jquery.nouislider.min.js" />
+    <Content Include="Templates\T03\js\jquery.raty.min.js" />
+    <Content Include="Templates\T03\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="Templates\T03\js\jquery.themepunch.revolution.js" />
+    <Content Include="Templates\T03\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Templates\T03\js\main-script.js" />
+    <Content Include="Templates\T03\js\modernizr.min.js" />
+    <Content Include="Templates\T03\js\npm.js" />
+    <Content Include="Templates\T03\js\owl.carousel.min.js" />
+    <Content Include="Templates\T03\js\perfect-scrollbar.min.js" />
+    <Content Include="Templates\T03\js\prism.js" />
+    <Content Include="Templates\T03\js\selectJS.js" />
+    <Content Include="Templates\T03\js\tinynav.min.js" />
+    <Content Include="Templates\T03\js\zoomsl-3.0.min.js" />
+    <Content Include="Templates\T03\Skins\AccessTradeSaleOff.ascx" />
+    <Content Include="Templates\T03\Skins\Article.ascx" />
+    <Content Include="Templates\T03\Skins\ArticleOrther.ascx" />
+    <Content Include="Templates\T03\Skins\Articles.ascx" />
+    <Content Include="Templates\T03\Skins\BackLink.ascx" />
+    <Content Include="Templates\T03\Skins\CartsPayment.ascx" />
+    <Content Include="Templates\T03\Skins\Contact.ascx" />
+    <Content Include="Templates\T03\Skins\Customers.ascx" />
+    <Content Include="Templates\T03\Skins\Box3DataSimple.ascx" />
+    <Content Include="Templates\T03\Skins\DataSimple.ascx" />
+    <Content Include="Templates\T03\Skins\DataSingle.ascx" />
+    <Content Include="Templates\T03\Skins\FacebookChat.ascx" />
+    <Content Include="Templates\T03\Skins\FacebookComment.ascx" />
+    <Content Include="Templates\T03\Skins\FacebookLike.ascx" />
+    <Content Include="Templates\T03\Skins\GoogleMap.ascx" />
+    <Content Include="Templates\T03\Skins\ItemComment.ascx" />
+    <Content Include="Templates\T03\Skins\Menu.ascx" />
+    <Content Include="Templates\T03\Skins\MenuVertical.ascx" />
+    <Content Include="Templates\T03\Skins\OnePayPayment.ascx" />
+    <Content Include="Templates\T03\Skins\OrderInfo.ascx" />
+    <Content Include="Templates\T03\Skins\Partner.ascx" />
+    <Content Include="Templates\T03\Skins\Product.ascx" />
+    <Content Include="Templates\T03\Skins\Products.ascx" />
+    <Content Include="Templates\T03\Skins\ProductSimilars.ascx" />
+    <Content Include="Templates\T03\Skins\SearchTitleOutput.ascx" />
+    <Content Include="Templates\T03\Skins\Slider.ascx" />
+    <Content Include="Templates\T03\Skins\VerticalProducts.ascx" />
+    <Content Include="Templates\T01\Skins\OrderInfo.ascx" />
+    <Content Include="Modules\OrderInfo.ascx" />
+    <Content Include="Modules\OnePayPayment.ascx" />
+    <Content Include="Modules\Product.ascx" />
+    <Content Include="Modules\Products.ascx" />
+    <Content Include="Modules\ProductSearch.ascx" />
+    <Content Include="Modules\ProductSimilars.ascx" />
+    <Content Include="Properties\DataSources\VIT.Library.Web.PreAdminService.FormTicketData.datasource" />
+    <Content Include="Error.aspx" />
+    <Content Include="Templates\T01\Components\Articles.aspx" />
+    <Content Include="Templates\T01\Components\Article.aspx" />
+    <Content Include="Templates\T01\Components\OrderInfo.aspx" />
+    <Content Include="Templates\T01\Components\Order.aspx" />
+    <Content Include="Templates\T01\Components\Payment.aspx" />
+    <Content Include="Templates\T01\Components\Carts.aspx" />
+    <Content Include="Templates\T01\Components\Search.aspx" />
+    <Content Include="Templates\T01\Skins\ArticleOrther.ascx" />
+    <Content Include="Templates\T01\Skins\BackLink.ascx" />
+    <Content Include="Templates\T01\Components\PageNotFound.aspx" />
+    <Content Include="Templates\T01\Components\Product.aspx" />
+    <Content Include="Templates\T01\Components\Products.aspx" />
+    <Content Include="Templates\T01\Components\Home.aspx" />
+    <Content Include="Templates\T01\Skins\Article.ascx" />
+    <Content Include="Templates\T01\Skins\Articles.ascx" />
+    <Content Include="Templates\T01\Skins\OnePayPayment.ascx" />
+    <Content Include="Templates\T01\Skins\Slider.ascx" />
+    <Content Include="Templates\T01\Skins\CartsPayment.ascx" />
+    <Content Include="Templates\T01\Skins\DataSimpleOnlyImage.ascx" />
+    <Content Include="Templates\T01\Skins\DataSimpleUlTop.ascx" />
+    <Content Include="Templates\T01\Skins\DataSimpleUlNoTitle.ascx" />
+    <Content Include="Templates\T01\Skins\FacebookChat.ascx" />
+    <Content Include="Templates\T01\Skins\FacebookComment.ascx" />
+    <Content Include="Templates\T01\Skins\ImageOnly.ascx" />
+    <Content Include="Templates\T01\Skins\Product.ascx" />
+    <Content Include="Templates\T01\Skins\Products.ascx" />
+    <Content Include="Templates\T01\Skins\ProductSimilars.ascx" />
+    <Content Include="Templates\T02\Components\Article.aspx" />
+    <Content Include="Templates\T02\Components\Articles.aspx" />
+    <Content Include="Templates\T02\Components\Contact.aspx" />
+    <Content Include="Templates\T02\Components\Carts.aspx" />
+    <Content Include="Templates\T02\Components\Home.aspx" />
+    <Content Include="Templates\T02\Components\OrderInfo.aspx" />
+    <Content Include="Templates\T02\Components\PageNotFound.aspx" />
+    <Content Include="Templates\T02\Components\Payment.aspx" />
+    <Content Include="Templates\T02\Components\Product.aspx" />
+    <Content Include="Templates\T02\Components\Products.aspx" />
+    <Content Include="Templates\T02\Components\Search.aspx" />
+    <Content Include="Templates\T02\css\bootstrap-theme.css" />
+    <Content Include="Templates\T02\css\bootstrap-theme.min.css" />
+    <Content Include="Templates\T02\css\bootstrap.css" />
+    <Content Include="Templates\T02\css\bootstrap.min.css" />
+    <Content Include="Templates\T02\css\font-awesome.min.css" />
+    <Content Include="Templates\T02\css\reset.css" />
+    <Content Include="Templates\T02\css\style.css" />
+    <Content Include="Templates\T02\css\uikit.modify.css" />
+    <Content Include="Templates\T02\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\T02\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Templates\T02\img\arrow_down.png" />
+    <Content Include="Templates\T02\img\arrow_right.png" />
+    <Content Include="Templates\T02\img\bar.png" />
+    <Content Include="Templates\T02\img\boton-carrito-compras.gif" />
+    <Content Include="Templates\T02\img\card-in-use.png" />
+    <Content Include="Templates\T02\img\find.png" />
+    <Content Include="Templates\T02\img\icon-search.png" />
+    <Content Include="Templates\T02\img\icon_cart.png" />
+    <Content Include="Templates\T02\img\icon_cart_white.png" />
+    <Content Include="Templates\T02\img\news.png" />
+    <Content Include="Templates\T02\img\no-image-available.png" />
+    <Content Include="Templates\T02\js\bootstrap.js" />
+    <Content Include="Templates\T02\js\bootstrap.min.js" />
+    <Content Include="Templates\T02\js\jquery-3.2.1.min.js" />
+    <Content Include="Templates\T02\js\jquery.imageslider.js" />
+    <Content Include="Templates\T02\js\npm.js" />
+    <Content Include="Templates\T02\js\slider.min.js" />
+    <Content Include="Templates\T02\js\slideshow.min.js" />
+    <Content Include="Templates\T02\Skins\ArticleOrther.ascx" />
+    <Content Include="Templates\T02\Skins\BackLink.ascx" />
+    <Content Include="Templates\T02\Skins\CartsPayment.ascx" />
+    <Content Include="Templates\T02\Skins\Contact.ascx" />
+    <Content Include="Templates\T02\Skins\DataTitleColor.ascx" />
+    <Content Include="Templates\T02\Skins\DataBox3TitleH3.ascx" />
+    <Content Include="Templates\T02\Skins\DataTitleH3.ascx" />
+    <Content Include="Templates\T02\Skins\DataTitleH2.ascx" />
+    <Content Include="Templates\T02\Skins\Article.ascx" />
+    <Content Include="Templates\T02\Skins\ArticleHots.ascx" />
+    <Content Include="Templates\T02\Skins\Articles.ascx" />
+    <Content Include="Templates\T02\Skins\FacebookChat.ascx" />
+    <Content Include="Templates\T02\Skins\FacebookComment.ascx" />
+    <Content Include="Templates\T02\Skins\FacebookLike.ascx" />
+    <Content Include="Templates\T02\Skins\GoogleMap.ascx" />
+    <Content Include="Templates\T02\Skins\ItemComment.ascx" />
+    <Content Include="Templates\T02\Skins\MenuDropdown.ascx" />
+    <Content Include="Templates\T02\Skins\MenuHorizontal.ascx" />
+    <Content Include="Templates\T02\Skins\MenuVertical.ascx" />
+    <Content Include="Templates\T02\Skins\Payment.ascx" />
+    <Content Include="Templates\T02\Skins\OrderInfo.ascx" />
+    <Content Include="Templates\T02\Skins\ProductsTitle.ascx" />
+    <Content Include="Templates\T02\Skins\ProductSimilars.ascx" />
+    <Content Include="Templates\T02\Skins\Product.ascx" />
+    <Content Include="Templates\T02\Skins\Products.ascx" />
+    <Content Include="Templates\T02\Skins\ScrollData.ascx" />
+    <Content Include="Templates\T02\Skins\Slider.ascx" />
+    <Content Include="Templates\T04\Components\Article.aspx" />
+    <Content Include="Templates\T04\Components\Articles.aspx" />
+    <Content Include="Templates\T04\Components\Carts.aspx" />
+    <Content Include="Templates\T04\Components\Contact.aspx" />
+    <Content Include="Templates\T04\Components\Home.aspx" />
+    <Content Include="Templates\T04\Components\OrderInfo.aspx" />
+    <Content Include="Templates\T04\Components\PageNotFound.aspx" />
+    <Content Include="Templates\T04\Components\Payment.aspx" />
+    <Content Include="Templates\T04\Components\ProductInfo.aspx" />
+    <Content Include="Templates\T04\Components\Product.aspx" />
+    <Content Include="Templates\T04\Components\Products.aspx" />
+    <Content Include="Templates\T04\Components\Search.aspx" />
+    <Content Include="Templates\T04\data\css.css" />
+    <Content Include="Templates\T04\data\js.js" />
+    <Content Include="Templates\T04\data\w3.css" />
+    <Content Include="Templates\T04\data\w3js.js" />
+    <Content Include="Templates\T04\img\a1.jpg" />
+    <Content Include="Templates\T04\img\a11.jpg" />
+    <Content Include="Templates\T04\img\a111.jpg" />
+    <Content Include="Templates\T04\img\a2.jpg" />
+    <Content Include="Templates\T04\img\a3.jpg" />
+    <Content Include="Templates\T04\img\a4.jpg" />
+    <Content Include="Templates\T04\img\a5.jpg" />
+    <Content Include="Templates\T04\img\a6.jpg" />
+    <Content Include="Templates\T04\img\a7.jpg" />
+    <Content Include="Templates\T04\img\e93d44b6f1.jpg" />
+    <Content Include="Templates\T04\img\search-icon.png" />
+    <Content Include="Templates\T04\img\search_btn.png" />
+    <Content Include="Templates\T04\img\top.png" />
+    <Content Include="Templates\T04\img\United-States-of-Americ-icon.png" />
+    <Content Include="Templates\T04\img\Viet-Nam-icon.png" />
+    <Content Include="Templates\T04\index.html" />
+    <Content Include="Templates\T04\Skins\AccessTradeSaleOff.ascx" />
+    <Content Include="Templates\T04\Skins\Article.ascx" />
+    <Content Include="Templates\T04\Skins\ArticleOrther.ascx" />
+    <Content Include="Templates\T04\Skins\Articles.ascx" />
+    <Content Include="Templates\T04\Skins\BackLink.ascx" />
+    <Content Include="Templates\T04\Skins\Box3DataSimple.ascx" />
+    <Content Include="Templates\T04\Skins\CartsPayment.ascx" />
+    <Content Include="Templates\T04\Skins\Request.ascx" />
+    <Content Include="Templates\T04\Skins\Contact.ascx" />
+    <Content Include="Templates\T04\Skins\Customers.ascx" />
+    <Content Include="Templates\T04\Skins\DataSimple.ascx" />
+    <Content Include="Templates\T04\Skins\DataSingle.ascx" />
+    <Content Include="Templates\T04\Skins\FacebookChat.ascx" />
+    <Content Include="Templates\T04\Skins\FacebookComment.ascx" />
+    <Content Include="Templates\T04\Skins\FacebookLike.ascx" />
+    <Content Include="Templates\T04\Skins\GoogleMap.ascx" />
+    <Content Include="Templates\T04\Skins\ItemComment.ascx" />
+    <Content Include="Templates\T04\Skins\LeftData.ascx" />
+    <Content Include="Templates\T04\Skins\Menu.ascx" />
+    <Content Include="Templates\T04\Skins\MenuVertical.ascx" />
+    <Content Include="Templates\T04\Skins\OnePayPayment.ascx" />
+    <Content Include="Templates\T04\Skins\OrderInfo.ascx" />
+    <Content Include="Templates\T04\Skins\Partner.ascx" />
+    <Content Include="Templates\T04\Skins\ProductInfo.ascx" />
+    <Content Include="Templates\T04\Skins\Product.ascx" />
+    <Content Include="Templates\T04\Skins\Products.ascx" />
+    <Content Include="Templates\T04\Skins\ProductSimilars.ascx" />
+    <Content Include="Templates\T04\Skins\SearchTitleOutput.ascx" />
+    <Content Include="Templates\T04\Skins\Slider.ascx" />
+    <Content Include="Templates\T04\Skins\VerticalProducts.ascx" />
+    <Content Include="Templates\T05\Skins\Request.ascx" />
+    <Content Include="Templates\T07\font-awesome\css\font-awesome.css" />
+    <Content Include="Templates\T07\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Templates\T07\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\T07\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\T07\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Templates\T07\images\line-td.png" />
+    <Content Include="Templates\T07\img\baogia.jpg" />
+    <Content Include="Templates\T07\img\bct.png" />
+    <Content Include="Templates\T07\img\call.png" />
+    <Content Include="Templates\T07\img\chiduong.png" />
+    <Content Include="Templates\T07\img\contact-green-guy.jpg" />
+    <Content Include="Templates\T07\img\fa.png" />
+    <Content Include="Templates\T07\img\fico2.ico" />
+    <Content Include="Templates\T07\img\footer1.png" />
+    <Content Include="Templates\T07\img\footer2.jpg" />
+    <Content Include="Templates\T07\img\footer3.jpg" />
+    <Content Include="Templates\T07\img\footer4.png" />
+    <Content Include="Templates\T07\img\footer5.png" />
+    <Content Include="Templates\T07\img\footer6.jpg" />
+    <Content Include="Templates\T07\img\footer7.png" />
+    <Content Include="Templates\T07\img\hen.jpg" />
+    <Content Include="Templates\T07\img\icon_2.png" />
+    <Content Include="Templates\T07\img\icon_6.png" />
+    <Content Include="Templates\T07\img\icon_7.png" />
+    <Content Include="Templates\T07\img\icon_8.png" />
+    <Content Include="Templates\T07\img\logo.png" />
+    <Content Include="Templates\T07\img\menu_mobile.png" />
+    <Content Include="Templates\T07\img\News1.jpg" />
+    <Content Include="Templates\T07\img\News2.jpg" />
+    <Content Include="Templates\T07\img\News3.jpg" />
+    <Content Include="Templates\T07\img\News4.jpg" />
+    <Content Include="Templates\T07\img\Slider1.jpg" />
+    <Content Include="Templates\T07\img\star-off-big.png" />
+    <Content Include="Templates\T07\img\thumb1.png" />
+    <Content Include="Templates\T07\img\thumb2.jpg" />
+    <Content Include="Templates\T07\img\thumb3.jpg" />
+    <Content Include="Templates\T07\img\thumb4.jpg" />
+    <Content Include="Templates\T07\img\thumb5.jpg" />
+    <Content Include="Templates\T07\img\thumb6.png" />
+    <Content Include="Templates\T07\js\all.js" />
+    <Content Include="Templates\T07\js\analytics.js" />
+    <Content Include="Templates\T07\js\bootstrap.js" />
+    <Content Include="Templates\T07\js\bootstrap.min.js" />
+    <Content Include="Templates\T07\js\frame_script.js" />
+    <Content Include="Templates\T07\js\ie-emulation-modes-warning.js" />
+    <Content Include="Templates\T07\js\ie10-viewport-bug-workaround.js" />
+    <Content Include="Templates\T07\js\jquery.js" />
+    <Content Include="Templates\T07\js\jquery.min.js" />
+    <Content Include="Templates\T07\js\jquery.validate.js" />
+    <Content Include="Templates\T07\js\jquery.validate.min.js" />
+    <Content Include="Templates\T07\js\jquery_002.js" />
+    <Content Include="Templates\T07\js\js.js" />
+    <Content Include="Templates\T07\js\js_002.js" />
+    <Content Include="Templates\T07\js\js_003.js" />
+    <Content Include="Templates\T07\js\localization\messages_eu.js" />
+    <Content Include="Templates\T07\js\localization\messages_vi.js" />
+    <Content Include="Templates\T07\js\npm.js" />
+    <Content Include="Templates\T07\js\sdk.js" />
+    <Content Include="Templates\T07\js\sdk_002.js" />
+    <Content Include="Templates\T07\js\swiper.js" />
+    <Content Include="Templates\T07\Skins\Article.ascx" />
+    <Content Include="Templates\T07\Skins\ArticleOrther.ascx" />
+    <Content Include="Templates\T07\Skins\Articles.ascx" />
+    <Content Include="Templates\T07\Skins\BackLink.ascx" />
+    <Content Include="Templates\T07\Skins\DataSimpleRight.ascx" />
+    <Content Include="Templates\T07\Skins\MunuBottom.ascx" />
+    <Content Include="Templates\T07\Skins\Munu.ascx" />
+    <Content Include="Templates\T07\Skins\ProductSimilars.ascx" />
+    <Content Include="Templates\T07\style\binhluan.css" />
+    <Content Include="Templates\T07\style\css.css" />
+    <Content Include="Templates\T07\style\jquery.css" />
+    <Content Include="Templates\T07\style\styles.css" />
+    <Content Include="Templates\T07\style\swiper.css" />
+    <Content Include="Templates\T10\Components\AboutUs.aspx" />
+    <Content Include="Templates\T10\Components\News.aspx" />
+    <Content Include="Templates\T10\Components\Document.aspx" />
+    <Content Include="Templates\T10\Components\Documents.aspx" />
+    <Content Include="Templates\T10\Components\RSS.aspx" />
+    <Content Include="Templates\T10\images\Feed-icon.svg.png" />
+    <Content Include="Templates\T10\images\huong-dan-tai-file.jpg" />
+    <Content Include="Templates\T10\Skins\AdpiaCoupon.ascx" />
+    <Content Include="Templates\T10\Skins\ArticleCommentFacebook.ascx" />
+    <Content Include="Templates\T10\Skins\BackLink.ascx" />
+    <Content Include="Templates\T10\Skins\Document.ascx" />
+    <Content Include="Templates\T10\Skins\RSS.ascx" />
+    <Content Include="Templates\T10\Skins\RSSReader.ascx" />
+    <Content Include="Templates\T11\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Templates\T11\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Templates\T11\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Templates\T11\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Templates\T11\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Templates\T11\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Templates\T11\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Templates\T11\bootstrap\dist\js\npm.js" />
+    <Content Include="Templates\T11\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Templates\T11\bootstrap\Gruntfile.js" />
+    <Content Include="Templates\T11\bootstrap\grunt\browsers.js" />
+    <Content Include="Templates\T11\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="Templates\T11\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Templates\T11\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Templates\T11\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Templates\T11\bootstrap\grunt\change-version.js" />
+    <Content Include="Templates\T11\bootstrap\grunt\generate-sri.js" />
+    <Content Include="Templates\T11\bootstrap\grunt\karma.conf.js" />
+    <Content Include="Templates\T11\bootstrap\js\affix.js" />
+    <Content Include="Templates\T11\bootstrap\js\alert.js" />
+    <Content Include="Templates\T11\bootstrap\js\button.js" />
+    <Content Include="Templates\T11\bootstrap\js\carousel.js" />
+    <Content Include="Templates\T11\bootstrap\js\collapse.js" />
+    <Content Include="Templates\T11\bootstrap\js\dropdown.js" />
+    <Content Include="Templates\T11\bootstrap\js\modal.js" />
+    <Content Include="Templates\T11\bootstrap\js\popover.js" />
+    <Content Include="Templates\T11\bootstrap\js\scrollspy.js" />
+    <Content Include="Templates\T11\bootstrap\js\tab.js" />
+    <Content Include="Templates\T11\bootstrap\js\tooltip.js" />
+    <Content Include="Templates\T11\bootstrap\js\transition.js" />
+    <Content Include="Templates\T11\Components\AboutUs.aspx" />
+    <Content Include="Templates\T11\Components\Album.aspx" />
+    <Content Include="Templates\T11\Components\Article.aspx" />
+    <Content Include="Templates\T11\Components\Articles.aspx" />
+    <Content Include="Templates\T11\Components\Carts.aspx" />
+    <Content Include="Templates\T11\Components\Contact.aspx" />
+    <Content Include="Templates\T11\Components\Home.aspx" />
+    <Content Include="Templates\T11\Components\OrderInfo.aspx" />
+    <Content Include="Templates\T11\Components\PageNotFound.aspx" />
+    <Content Include="Templates\T11\Components\Product.aspx" />
+    <Content Include="Templates\T11\Components\Products.aspx" />
+    <Content Include="Templates\T11\Components\Search.aspx" />
+    <Content Include="Templates\T11\Components\Videos.aspx" />
+    <Content Include="Templates\T11\en-US.xml" />
+    <Content Include="Templates\T11\hotline.css" />
+    <Content Include="Templates\T11\images\27.jpg" />
+    <Content Include="Templates\T11\images\banner %281%29.jpg" />
+    <Content Include="Templates\T11\images\banner %282%29.jpg" />
+    <Content Include="Templates\T11\images\banner %283%29.jpg" />
+    <Content Include="Templates\T11\images\banner %284%29.jpg" />
+    <Content Include="Templates\T11\images\banner %285%29.jpg" />
+    <Content Include="Templates\T11\images\banner %286%29.jpg" />
+    <Content Include="Templates\T11\images\banner %287%29.jpg" />
+    <Content Include="Templates\T11\images\banner %288%29.jpg" />
+    <Content Include="Templates\T11\images\google.png" />
+    <Content Include="Templates\T11\images\logo.jpg" />
+    <Content Include="Templates\T11\images\phone.png" />
+    <Content Include="Templates\T11\images\unnamed.jpg" />
+    <Content Include="Templates\T11\images\unnamed2.jpg" />
+    <Content Include="Templates\T11\images\wood-walnut-background-tile.jpg" />
+    <Content Include="Templates\T11\images\z2231186897158_c0c01f847025f9ee95194f5212ccf80a.jpg" />
+    <Content Include="Templates\T11\images\z2231186901236_2b95833e9545a4accade846b4d4e005c.jpg" />
+    <Content Include="Templates\T11\images\z2231186901551_074eb81eab9464f09195d0570c9c6bbf.jpg" />
+    <Content Include="Templates\T11\images\z2231186903775_6f66c598eb91f667639c8148bbcff5e5.jpg" />
+    <Content Include="Templates\T11\images\z2231186904562_0a9bee89c888894199cd4d67ee762ae5.jpg" />
+    <Content Include="Templates\T11\images\z2231186905803_ef01cf8fab4b17d5a0984aa36056abd7.jpg" />
+    <Content Include="Templates\T11\images\z2231186906433_e60b03a4cd4bc64e62b558c76ffc886f.jpg" />
+    <Content Include="Templates\T11\images\z2231186910930_a3f28feaaa46a1d4465234489d402eca.jpg" />
+    <Content Include="Templates\T11\images\z2231186911306_66be17b356de3800c15f9fbd94d4b7fe.jpg" />
+    <Content Include="Templates\T11\images\z2231186913040_3af064b095305f3af2f8025a02ae4616.jpg" />
+    <Content Include="Templates\T11\images\z2231186914210_f2c94cb729139e5dc299c29f4c731048.jpg" />
+    <Content Include="Templates\T11\images\z2231186914493_2f0ff2d8eb4bcf6f02c5bc59be7bc38e.jpg" />
+    <Content Include="Templates\T11\images\z2231186916473_cf3fb29ca98cf3b7f99b7d917d92f20d.jpg" />
+    <Content Include="Templates\T11\images\z2231186917082_d975224ef3e4b3773b6489afca533852.jpg" />
+    <Content Include="Templates\T11\images\z2231186920998_aacb6beee4ccbdda74f947007e055a7b.jpg" />
+    <Content Include="Templates\T11\images\z2231186923135_bbdc3981a819cc36af8e7ec09df1a69a.jpg" />
+    <Content Include="Templates\T11\images\z2231187747561_d09c526b513fbdfcd3376b5b9e3614eb.jpg" />
+    <Content Include="Templates\T11\images\z2231187950440_f9e3b46f8c03d98dcd76e374fde0ce6b.jpg" />
+    <Content Include="Templates\T11\images\z2231187952309_dd431601928cbd1d9f94f524983a87f6.jpg" />
+    <Content Include="Templates\T11\images\z2231187953607_1c39084aa077783d2c942b26f8cddcb2.jpg" />
+    <Content Include="Templates\T11\images\z2231187955409_d63d08893bd728c428b48dcb9a74ba0a.jpg" />
+    <Content Include="Templates\T11\images\z2231187957855_e7ee0cc8881ac5b86e4e77e6a052ecae.jpg" />
+    <Content Include="Templates\T11\images\z2231187960144_3307b5e9aac326ec6968960d99f738e5.jpg" />
+    <Content Include="Templates\T11\images\z2231187961777_11cac5d701db9d24b7a7ad39b886ae65.jpg" />
+    <Content Include="Templates\T11\images\z2231187962672_a44743c2563766a63d54095460a53771.jpg" />
+    <Content Include="Templates\T11\images\z2231187964346_0fc7f7ae0169aab64bbb91c2c4c7b8fc.jpg" />
+    <Content Include="Templates\T11\images\z2231187967316_d7fc300d918c498bb27ba9f98a38e37d.jpg" />
+    <Content Include="Templates\T11\images\z2231187967764_53d4118062196a65d480a2d716e58a0c.jpg" />
+    <Content Include="Templates\T11\images\z2231187967845_0cd47cbfc72db06336905097cbe538b5.jpg" />
+    <Content Include="Templates\T11\images\z2231187968417_f405c6bb84c55a843949e0c6bb645719.jpg" />
+    <Content Include="Templates\T11\images\z2231187968520_f4bc991e94c79ceee905127930157a23.jpg" />
+    <Content Include="Templates\T11\images\z2231187971580_92e689d8c2f5a8236dd3d694d94e9be3.jpg" />
+    <Content Include="Templates\T11\images\z2231187974349_8bdf2410767840dc801f80c9a34e5863.jpg" />
+    <Content Include="Templates\T11\images\z2231187975671_279c953bdddbb856bd1190bb23274db0.jpg" />
+    <Content Include="Templates\T11\images\z2231187978092_2783a8a924d28529f22b65a3ee58ab2f.jpg" />
+    <Content Include="Templates\T11\images\z2231187978815_163967c22eda4c747743c65e32ec2d67.jpg" />
+    <Content Include="Templates\T11\images\z2231187981056_e653e2caf877766132bdedc235d7bea5.jpg" />
+    <Content Include="Templates\T11\images\z2231187981175_a8e3ef521700d500634369e5e91c6f0b.jpg" />
+    <Content Include="Templates\T11\images\z2231187981273_87076787dd3f3a3538fa4959ddbefa2b.jpg" />
+    <Content Include="Templates\T11\images\z2231187984091_ecbe350d423a3993e59683353f43644e.jpg" />
+    <Content Include="Templates\T11\images\z2231187984683_1267bb8fc55e8451ce750e3e16e62330.jpg" />
+    <Content Include="Templates\T11\images\z2231187985337_7d9de4454a8953334d67eee347e2cf3e.jpg" />
+    <Content Include="Templates\T11\images\z2231187989346_6c34bdee9a89ee07d05cd22d0e7b65d4.jpg" />
+    <Content Include="Templates\T11\images\z2231187989639_d25192348ee3356be1c853a192b52d7b.jpg" />
+    <Content Include="Templates\T11\images\z2231187990645_18e7c77cbe4384701d5364c730ffe3ff.jpg" />
+    <Content Include="Templates\T11\images\z2231187992292_28130b97901b5e66322239d497788901.jpg" />
+    <Content Include="Templates\T11\images\z2231187993695_adddf6089045d61dbcaeccbb577b27e2.jpg" />
+    <Content Include="Templates\T11\images\z2231187996078_a86c1bbc34d142d2cde745a30e2676d5.jpg" />
+    <Content Include="Templates\T11\images\z2231188280705_42a192fa0baef7abc9a69bea4e4dea43.jpg" />
+    <Content Include="Templates\T11\index.html" />
+    <Content Include="Templates\T11\responsive.css" />
+    <Content Include="Templates\T11\script.js" />
+    <Content Include="Templates\T11\Skins\Article.ascx" />
+    <Content Include="Templates\T11\Skins\ArticleOrther.ascx" />
+    <Content Include="Templates\T11\Skins\Articles.ascx" />
+    <Content Include="Templates\T11\Skins\CartsPayment.ascx" />
+    <Content Include="Templates\T11\Skins\Contact.ascx" />
+    <Content Include="Templates\T11\Skins\DataSimple.ascx" />
+    <Content Include="Templates\T11\Skins\DataSingle.ascx" />
+    <Content Include="Templates\T11\Skins\FacebookChat.ascx" />
+    <Content Include="Templates\T11\Skins\FacebookComment.ascx" />
+    <Content Include="Templates\T11\Skins\FacebookLike.ascx" />
+    <Content Include="Templates\T11\Skins\GoogleMap.ascx" />
+    <Content Include="Templates\T11\Skins\Menu.ascx" />
+    <Content Include="Templates\T11\Skins\Product.ascx" />
+    <Content Include="Templates\T11\Skins\Products.ascx" />
+    <Content Include="Templates\T11\Skins\ProductSimilars.ascx" />
+    <Content Include="Templates\T11\Skins\RSSReader.ascx" />
+    <Content Include="Templates\T11\style.css" />
+    <Content Include="Templates\T11\vi-VN.xml" />
+    <Content Include="Templates\T10\Components\Album.aspx" />
+    <Content Include="Templates\T10\Components\Articles.aspx" />
+    <Content Include="Templates\T10\Components\Videos.aspx" />
+    <Content Include="Templates\T10\Components\Search.aspx" />
+    <Content Include="Templates\T10\Components\Article.aspx" />
+    <Content Include="Templates\T10\Components\Contact.aspx" />
+    <Content Include="Templates\T10\Components\Home.aspx" />
+    <Content Include="Templates\T10\Components\PageNotFound.aspx" />
+    <Content Include="Templates\T10\css\bootstrap.min.css" />
+    <Content Include="Templates\T10\css\style.css" />
+    <Content Include="Templates\T10\en-US.xml" />
+    <Content Include="Templates\T10\images\img-sprite.png" />
+    <Content Include="Templates\T10\images\toppy1.jpg" />
+    <Content Include="Templates\T10\images\toppy2.png" />
+    <Content Include="Templates\T10\images\usa-flag.jpg" />
+    <Content Include="Templates\T10\images\vn-flag.png" />
+    <Content Include="Templates\T10\index.html" />
+    <Content Include="Templates\T10\js\bootstrap.bundle.min.js" />
+    <Content Include="Templates\T10\js\jquery-3.5.1.slim.min.js" />
+    <Content Include="Templates\T10\Skins\Article.ascx" />
+    <Content Include="Templates\T10\Skins\ArticleOrther.ascx" />
+    <Content Include="Templates\T10\Skins\Articles.ascx" />
+    <Content Include="Templates\T10\Skins\DataSimple.ascx" />
+    <Content Include="Templates\T10\Skins\DataSingle.ascx" />
+    <Content Include="Templates\T10\Skins\FacebookComment.ascx" />
+    <Content Include="Templates\T06\css\bootstrap.css" />
+    <Content Include="Templates\T06\css\flexslider.css" />
+    <Content Include="Templates\T06\css\fontawesome-all.min.css" />
+    <Content Include="Templates\T06\css\owl.carousel.css" />
+    <Content Include="Templates\T06\css\prettyPhoto.css" />
+    <Content Include="Templates\T06\css\style.css" />
+    <Content Include="Templates\T06\font-awesome\css\font-awesome.css" />
+    <Content Include="Templates\T06\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Templates\T06\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\T06\images\1.jpg" />
+    <Content Include="Templates\T06\images\b1.jpg" />
+    <Content Include="Templates\T06\images\b2.jpg" />
+    <Content Include="Templates\T06\images\b3.jpg" />
+    <Content Include="Templates\T06\images\contact.jpg" />
+    <Content Include="Templates\T06\images\f.png" />
+    <Content Include="Templates\T06\images\feature.jpg" />
+    <Content Include="Templates\T06\images\g1.jpg" />
+    <Content Include="Templates\T06\images\g2.jpg" />
+    <Content Include="Templates\T06\images\g3.jpg" />
+    <Content Include="Templates\T06\images\g4.jpg" />
+    <Content Include="Templates\T06\images\g5.jpg" />
+    <Content Include="Templates\T06\images\g6.jpg" />
+    <Content Include="Templates\T06\images\m.png" />
+    <Content Include="Templates\T06\images\move-top.png" />
+    <Content Include="Templates\T06\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Templates\T06\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Templates\T06\images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Templates\T06\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Templates\T06\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Templates\T06\images\services.jpg" />
+    <Content Include="Templates\T06\images\t1.jpg" />
+    <Content Include="Templates\T06\images\t2.jpg" />
+    <Content Include="Templates\T06\images\t3.jpg" />
+    <Content Include="Templates\T06\images\t4.jpg" />
+    <Content Include="Templates\T06\images\te1.jpg" />
+    <Content Include="Templates\T06\images\te2.jpg" />
+    <Content Include="Templates\T06\images\te3.jpg" />
+    <Content Include="Templates\T06\images\whatsapp.png" />
+    <Content Include="Templates\T06\images\zalo.png" />
+    <Content Include="Templates\T06\index.html" />
+    <Content Include="Templates\T06\js\bootstrap.js" />
+    <Content Include="Templates\T06\js\easing.js" />
+    <Content Include="Templates\T06\js\jquery-1.7.2.js" />
+    <Content Include="Templates\T06\js\jquery-2.2.3.min.js" />
+    <Content Include="Templates\T06\js\jquery.flexslider.js" />
+    <Content Include="Templates\T06\js\jquery.prettyPhoto.js" />
+    <Content Include="Templates\T06\js\jquery.quicksand.js" />
+    <Content Include="Templates\T06\js\move-top.js" />
+    <Content Include="Templates\T06\js\owl.carousel.js" />
+    <Content Include="Templates\T06\js\responsiveslides.min.js" />
+    <Content Include="Templates\T06\js\script.js" />
+    <Content Include="Templates\T06\js\SmoothScroll.min.js" />
+    <Content Include="Templates\T06\Skins\Article.ascx" />
+    <Content Include="Templates\T06\Skins\ArticleOrther.ascx" />
+    <Content Include="Templates\T06\Skins\Articles.ascx" />
+    <Content Include="Templates\T06\Skins\BackLink.ascx" />
+    <Content Include="Templates\T06\Skins\CartsPayment.ascx" />
+    <Content Include="Templates\T06\Skins\Contact.ascx" />
+    <Content Include="Templates\T06\Skins\DataFooter.ascx" />
+    <Content Include="Templates\T06\Skins\DataSimple.ascx" />
+    <Content Include="Templates\T06\Skins\DataSingle.ascx" />
+    <Content Include="Templates\T06\Skins\DataTitleH3.ascx" />
+    <Content Include="Templates\T06\Skins\FacebookChat.ascx" />
+    <Content Include="Templates\T06\Skins\FacebookComment.ascx" />
+    <Content Include="Templates\T06\Skins\FacebookLike.ascx" />
+    <Content Include="Templates\T06\Skins\GoogleMap.ascx" />
+    <Content Include="Templates\T06\Skins\ItemComment.ascx" />
+    <Content Include="Templates\T06\Skins\Menu.ascx" />
+    <Content Include="Templates\T06\Skins\OrderInfo.ascx" />
+    <Content Include="Templates\T06\Skins\Payment.ascx" />
+    <Content Include="Templates\T06\Skins\Product.ascx" />
+    <Content Include="Templates\T06\Skins\Products.ascx" />
+    <Content Include="Templates\T06\Skins\ProductSimilars.ascx" />
+    <Content Include="Templates\T06\Skins\Request.ascx" />
+    <Content Include="Templates\T06\webfonts\fa-brands-400.svg" />
+    <Content Include="Templates\T06\webfonts\fa-regular-400.svg" />
+    <Content Include="Templates\T06\webfonts\fa-solid-900.svg" />
+    <Content Include="Templates\T07\Skins\DataSingle.ascx" />
+    <Content Include="Templates\T08\Components\Article.aspx" />
+    <Content Include="Templates\T08\Components\Articles.aspx" />
+    <Content Include="Templates\T08\Components\Carts.aspx" />
+    <Content Include="Templates\T08\Components\Contact.aspx" />
+    <Content Include="Templates\T08\Components\Home.aspx" />
+    <Content Include="Templates\T08\Components\OrderInfo.aspx" />
+    <Content Include="Templates\T08\Components\PageNotFound.aspx" />
+    <Content Include="Templates\T08\Components\Payment.aspx" />
+    <Content Include="Templates\T08\Components\Product.aspx" />
+    <Content Include="Templates\T08\Components\Products.aspx" />
+    <Content Include="Templates\T08\Components\Search.aspx" />
+    <Content Include="Templates\T06\Components\Article.aspx" />
+    <Content Include="Templates\T06\Components\Articles.aspx" />
+    <Content Include="Templates\T06\Components\Carts.aspx" />
+    <Content Include="Templates\T06\Components\Contact.aspx" />
+    <Content Include="Templates\T06\Components\Home.aspx" />
+    <Content Include="Templates\T06\Components\OrderInfo.aspx" />
+    <Content Include="Templates\T06\Components\PageNotFound.aspx" />
+    <Content Include="Templates\T06\Components\Payment.aspx" />
+    <Content Include="Templates\T06\Components\Product.aspx" />
+    <Content Include="Templates\T06\Components\Products.aspx" />
+    <Content Include="Templates\T06\Components\Search.aspx" />
+    <Content Include="Templates\T07\Components\Article.aspx" />
+    <Content Include="Templates\T07\Components\Articles.aspx" />
+    <Content Include="Templates\T07\Components\Carts.aspx" />
+    <Content Include="Templates\T07\Components\Contact.aspx" />
+    <Content Include="Templates\T07\Components\Info.aspx" />
+    <Content Include="Templates\T07\Components\Home.aspx" />
+    <Content Include="Templates\T07\Components\OrderInfo.aspx" />
+    <Content Include="Templates\T07\Components\PageNotFound.aspx" />
+    <Content Include="Templates\T07\Components\Payment.aspx" />
+    <Content Include="Templates\T07\Components\Product.aspx" />
+    <Content Include="Templates\T07\Components\Products.aspx" />
+    <Content Include="Templates\T07\Components\Search.aspx" />
+    <Content Include="Templates\T07\Skins\DataSimple.ascx" />
+    <Content Include="Templates\T07\Skins\DataFooter.ascx" />
+    <Content Include="Templates\T07\Skins\FacebookChat.ascx" />
+    <Content Include="Templates\T07\Skins\FacebookComment.ascx" />
+    <Content Include="Templates\T07\Skins\FacebookLike.ascx" />
+    <Content Include="Templates\T07\Skins\Product.ascx" />
+    <Content Include="Templates\T07\Skins\Products.ascx" />
+    <Content Include="Templates\T07\Skins\Request.ascx" />
+    <Content Include="Templates\T08\css\bootstrap.min.css" />
+    <Content Include="Templates\T08\css\font-awesome.min.css" />
+    <Content Include="Templates\T08\css\style.css" />
+    <Content Include="Templates\T08\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\T08\images\aab1.jpg" />
+    <Content Include="Templates\T08\images\arrow.png" />
+    <Content Include="Templates\T08\images\b2.jpg" />
+    <Content Include="Templates\T08\images\bb1.jpg" />
+    <Content Include="Templates\T08\images\bb2.jpg" />
+    <Content Include="Templates\T08\images\g1.jpg" />
+    <Content Include="Templates\T08\images\g2.jpg" />
+    <Content Include="Templates\T08\images\g3.jpg" />
+    <Content Include="Templates\T08\images\g4.jpg" />
+    <Content Include="Templates\T08\images\g5.jpg" />
+    <Content Include="Templates\T08\images\g6.jpg" />
+    <Content Include="Templates\T08\images\g7.jpg" />
+    <Content Include="Templates\T08\images\g8.jpg" />
+    <Content Include="Templates\T08\images\g9.jpg" />
+    <Content Include="Templates\T08\images\info.png" />
+    <Content Include="Templates\T08\images\s1.jpg" />
+    <Content Include="Templates\T08\images\s2.jpg" />
+    <Content Include="Templates\T08\images\s3.jpg" />
+    <Content Include="Templates\T08\images\s4.jpg" />
+    <Content Include="Templates\T08\images\s5.jpg" />
+    <Content Include="Templates\T08\images\s6.jpg" />
+    <Content Include="Templates\T08\images\t1.jpg" />
+    <Content Include="Templates\T08\images\t2.jpg" />
+    <Content Include="Templates\T08\images\t3.jpg" />
+    <Content Include="Templates\T08\images\t4.jpg" />
+    <Content Include="Templates\T08\images\tt1.png" />
+    <Content Include="Templates\T08\images\uk.png" />
+    <Content Include="Templates\T08\images\vn.png" />
+    <Content Include="Templates\T08\index.html" />
+    <Content Include="Templates\T08\js\bootstrap.js" />
+    <Content Include="Templates\T08\js\bootstrap.min.js" />
+    <Content Include="Templates\T08\js\ie-emulation-modes-warning.js" />
+    <Content Include="Templates\T08\js\ie10-viewport-bug-workaround.js" />
+    <Content Include="Templates\T08\js\jquery.min.js" />
+    <Content Include="Templates\T08\js\jquery.validate.js" />
+    <Content Include="Templates\T08\js\jquery.validate.min.js" />
+    <Content Include="Templates\T08\js\localization\messages_eu.js" />
+    <Content Include="Templates\T08\js\localization\messages_vi.js" />
+    <Content Include="Templates\T08\js\npm.js" />
+    <Content Include="Templates\T08\Skins\Article.ascx" />
+    <Content Include="Templates\T08\Skins\ArticleOrther.ascx" />
+    <Content Include="Templates\T08\Skins\Articles.ascx" />
+    <Content Include="Templates\T08\Skins\BackLink.ascx" />
+    <Content Include="Templates\T08\Skins\CartsPayment.ascx" />
+    <Content Include="Templates\T08\Skins\Contact.ascx" />
+    <Content Include="Templates\T08\Skins\DataFooter.ascx" />
+    <Content Include="Templates\T08\Skins\DataSingle.ascx" />
+    <Content Include="Templates\T08\Skins\DataSimple.ascx" />
+    <Content Include="Templates\T08\Skins\DataTitleH3.ascx" />
+    <Content Include="Templates\T08\Skins\FacebookChat.ascx" />
+    <Content Include="Templates\T08\Skins\FacebookComment.ascx" />
+    <Content Include="Templates\T08\Skins\FacebookLike.ascx" />
+    <Content Include="Templates\T08\Skins\GoogleMap.ascx" />
+    <Content Include="Templates\T08\Skins\ItemComment.ascx" />
+    <Content Include="Templates\T08\Skins\Menu.ascx" />
+    <Content Include="Templates\T08\Skins\OrderInfo.ascx" />
+    <Content Include="Templates\T08\Skins\Payment.ascx" />
+    <Content Include="Templates\T08\Skins\Product.ascx" />
+    <Content Include="Templates\T08\Skins\Products.ascx" />
+    <Content Include="Templates\T08\Skins\ProductSimilars.ascx" />
+    <Content Include="Templates\T08\Skins\Request.ascx" />
+    <Content Include="Templates\T09\Components\Article.aspx" />
+    <Content Include="Templates\T09\Components\Articles.aspx" />
+    <Content Include="Templates\T01\Components\Signup.aspx" />
+    <Content Include="Templates\T01\Components\Login.aspx" />
+    <Content Include="Templates\T09\Components\Carts.aspx" />
+    <Content Include="Templates\T09\Components\Contact.aspx" />
+    <Content Include="Templates\T09\Components\Home.aspx" />
+    <Content Include="Templates\T09\Components\OrderInfo.aspx" />
+    <Content Include="Templates\T09\Components\PageNotFound.aspx" />
+    <Content Include="Templates\T09\Components\Payment.aspx" />
+    <Content Include="Templates\T09\Components\Product.aspx" />
+    <Content Include="Templates\T09\Components\Products.aspx" />
+    <Content Include="Templates\T09\Components\Search.aspx" />
+    <Content Include="Templates\T09\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\T09\fonts\revicons.svg" />
+    <Content Include="Templates\T09\Images\ajaxloading.gif" />
+    <Content Include="Templates\T09\Images\author.png" />
+    <Content Include="Templates\T09\Images\banner-top.png" />
+    <Content Include="Templates\T09\Images\bg_direction_nav.png" />
+    <Content Include="Templates\T09\Images\border.png" />
+    <Content Include="Templates\T09\Images\borderBottomCenter.png" />
+    <Content Include="Templates\T09\Images\borderBottomLeft.png" />
+    <Content Include="Templates\T09\Images\borderBottomRight.png" />
+    <Content Include="Templates\T09\Images\borderMiddleLeft.png" />
+    <Content Include="Templates\T09\Images\borderMiddleRight.png" />
+    <Content Include="Templates\T09\Images\borderTopCenter.png" />
+    <Content Include="Templates\T09\Images\borderTopLeft.png" />
+    <Content Include="Templates\T09\Images\borderTopRight.png" />
+    <Content Include="Templates\T09\Images\bullet.png" />
+    <Content Include="Templates\T09\Images\bullets.png" />
+    <Content Include="Templates\T09\Images\bxslider-controls.png" />
+    <Content Include="Templates\T09\Images\bx_loader.gif" />
+    <Content Include="Templates\T09\Images\categories.png" />
+    <Content Include="Templates\T09\Images\cite.png" />
+    <Content Include="Templates\T09\Images\comment.png" />
+    <Content Include="Templates\T09\Images\controls.png" />
+    <Content Include="Templates\T09\Images\customer.png" />
+    <Content Include="Templates\T09\Images\date.png" />
+    <Content Include="Templates\T09\Images\default.png" />
+    <Content Include="Templates\T09\Images\detail.png" />
+    <Content Include="Templates\T09\Images\Dislike.png" />
+    <Content Include="Templates\T09\Images\down.gif" />
+    <Content Include="Templates\T09\Images\email.png" />
+    <Content Include="Templates\T09\Images\faq-closed.png" />
+    <Content Include="Templates\T09\Images\faq-opened.png" />
+    <Content Include="Templates\T09\Images\faq-quote.png" />
+    <Content Include="Templates\T09\Images\fax.png" />
+    <Content Include="Templates\T09\Images\flag-japan.png" />
+    <Content Include="Templates\T09\Images\flag-uk.png" />
+    <Content Include="Templates\T09\Images\flag-vietnam.png" />
+    <Content Include="Templates\T09\Images\large_left.png" />
+    <Content Include="Templates\T09\Images\large_right.png" />
+    <Content Include="Templates\T09\Images\Like.png" />
+    <Content Include="Templates\T09\Images\lines.png" />
+    <Content Include="Templates\T09\Images\loader.gif" />
+    <Content Include="Templates\T09\Images\loading.gif" />
+    <Content Include="Templates\T09\Images\loading_background.png" />
+    <Content Include="Templates\T09\Images\location.png" />
+    <Content Include="Templates\T09\Images\logo-slider-line %281%29.png" />
+    <Content Include="Templates\T09\Images\logo-slider-line.png" />
+    <Content Include="Templates\T09\Images\menu-select-arrow.png" />
+    <Content Include="Templates\T09\Images\nav-arrow-down.png" />
+    <Content Include="Templates\T09\Images\newsletter-icon.png" />
+    <Content Include="Templates\T09\Images\next %281%29.png" />
+    <Content Include="Templates\T09\Images\next.png" />
+    <Content Include="Templates\T09\Images\overlay.png" />
+    <Content Include="Templates\T09\Images\phone.png" />
+    <Content Include="Templates\T09\Images\play.png" />
+    <Content Include="Templates\T09\Images\portfolio-project.png" />
+    <Content Include="Templates\T09\Images\prev %281%29.png" />
+    <Content Include="Templates\T09\Images\prev.png" />
+    <Content Include="Templates\T09\Images\project.png" />
+    <Content Include="Templates\T09\Images\review-ico.png" />
+    <Content Include="Templates\T09\Images\sale.png" />
+    <Content Include="Templates\T09\Images\search_mini.png" />
+    <Content Include="Templates\T09\Images\slider-nav.png" />
+    <Content Include="Templates\T09\Images\slide_detail_bottom.png" />
+    <Content Include="Templates\T09\Images\slide_detail_top.png" />
+    <Content Include="Templates\T09\Images\small_pause.png" />
+    <Content Include="Templates\T09\Images\small_play.png" />
+    <Content Include="Templates\T09\Images\sprite.png" />
+    <Content Include="Templates\T09\Images\tel.png" />
+    <Content Include="Templates\T09\Images\topbar-banner.png" />
+    <Content Include="Templates\T09\Images\touch\apple-touch-icon-144x.png" />
+    <Content Include="Templates\T09\Images\touch\apple-touch-icon-57x.png" />
+    <Content Include="Templates\T09\Images\touch\apple-touch-icon-72x.png" />
+    <Content Include="Templates\T09\Images\url.png" />
+    <Content Include="Templates\T09\Images\world.png" />
+    <Content Include="Templates\T09\Images\wpspin_light.gif" />
+    <Content Include="Templates\T09\Images\zoom.png" />
+    <Content Include="Templates\T09\Scripts\jquery.themepunch.revolution.min.js" />
+    <Content Include="Templates\T09\Scripts\jquery.themepunch.tools.min.js" />
+    <Content Include="Templates\T09\Skins\Article.ascx" />
+    <Content Include="Templates\T09\Skins\ArticleOrther.ascx" />
+    <Content Include="Templates\T09\Skins\Articles.ascx" />
+    <Content Include="Templates\T09\Skins\CartsPayment.ascx" />
+    <Content Include="Templates\T09\Skins\CartsView.ascx" />
+    <Content Include="Templates\T09\Skins\Colors.ascx" />
+    <Content Include="Templates\T09\Skins\CompanyInfo.ascx" />
+    <Content Include="Templates\T09\Skins\Contact.ascx" />
+    <Content Include="Templates\T09\Skins\DataSimple.ascx" />
+    <Content Include="Templates\T09\Skins\DataSimpleNoPage.ascx" />
+    <Content Include="Templates\T09\Skins\FacebookComment.ascx" />
+    <Content Include="Templates\T09\Skins\FacebookLike.ascx" />
+    <Content Include="Templates\T09\Skins\GoogleMap.ascx" />
+    <Content Include="Templates\T09\Skins\Languages.ascx" />
+    <Content Include="Templates\T09\Skins\LikeSharePrint.ascx" />
+    <Content Include="Templates\T09\Skins\Menu.ascx" />
+    <Content Include="Templates\T09\Skins\Product.ascx" />
+    <Content Include="Templates\T09\Skins\Products.ascx" />
+    <Content Include="Templates\T09\Skins\ProductSimilars.ascx" />
+    <Content Include="Templates\T09\Skins\ProductsSimple.ascx" />
+    <Content Include="Templates\T09\Skins\Request.ascx" />
+    <Content Include="Templates\T09\Skins\ScrollProduct.ascx" />
+    <Content Include="Templates\T09\Skins\SearchTitleInput.ascx" />
+    <Content Include="Templates\T09\Skins\SearchTitleOutput.ascx" />
+    <Content Include="Templates\T09\Skins\SlideArticles.ascx" />
+    <Content Include="Templates\T09\Skins\SlideImages.ascx" />
+    <Content Include="Templates\T09\Skins\Styles.ascx" />
+    <Content Include="Templates\T09\Skins\SupportOnline.ascx" />
+    <Content Include="Templates\T09\Scripts\add-to-cart.min.js" />
+    <Content Include="Templates\T09\Scripts\cart-fragments.min.js" />
+    <Content Include="Templates\T09\Scripts\comment-reply.min.js" />
+    <Content Include="Templates\T09\Scripts\core-6bced011b6f047d26942f54e71234d01.js" />
+    <Content Include="Templates\T09\Scripts\iubenda_cs.js" />
+    <Content Include="Templates\T09\Scripts\jq-cookie.js" />
+    <Content Include="Templates\T09\Scripts\jquery-migrate.min.js" />
+    <Content Include="Templates\T09\Scripts\jquery.blockUI.min.js" />
+    <Content Include="Templates\T09\Scripts\jquery.bxslider.js" />
+    <Content Include="Templates\T09\Scripts\jquery.colorbox-min.js" />
+    <Content Include="Templates\T09\Scripts\jquery.commonlibraries.js" />
+    <Content Include="Templates\T09\Scripts\jquery.custom.js" />
+    <Content Include="Templates\T09\Scripts\jquery.eislideshow.js" />
+    <Content Include="Templates\T09\Scripts\jquery.js" />
+    <Content Include="Templates\T09\Scripts\jquery.jshowoff.min.js" />
+    <Content Include="Templates\T09\Scripts\jquery.layout.js" />
+    <Content Include="Templates\T09\Scripts\jquery.prettyPhoto.init.min.js" />
+    <Content Include="Templates\T09\Scripts\jquery.prettyPhoto.min.js" />
+    <Content Include="Templates\T09\Scripts\jquery.selectBox.min.js" />
+    <Content Include="Templates\T09\Scripts\jquery.yith-wcwl.js" />
+    <Content Include="Templates\T09\Scripts\responsive.js" />
+    <Content Include="Templates\T09\Scripts\retina.js" />
+    <Content Include="Templates\T09\Scripts\sagscroller.js" />
+    <Content Include="Templates\T09\Scripts\shortcodes%281%29.js" />
+    <Content Include="Templates\T09\Scripts\shortcodes.js" />
+    <Content Include="Templates\T09\Scripts\twitter-text.js" />
+    <Content Include="Templates\T09\Scripts\widgets.js" />
+    <Content Include="Templates\T09\Scripts\woo-featured-video.js" />
+    <Content Include="Templates\T09\Scripts\woocommerce.js" />
+    <Content Include="Templates\T09\Scripts\woocommerce.min.js" />
+    <Content Include="Templates\T09\Scripts\woocommerce_2.3.js" />
+    <Content Include="Templates\T09\Scripts\woocompare.js" />
+    <Content Include="Templates\T09\Scripts\wp-emoji-release.min.js" />
+    <Content Include="Templates\T09\Scripts\yith-wcan-frontend.min.js" />
+    <Content Include="Templates\T09\da\BoxTitle.ascx" />
+    <Content Include="Templates\T09\da\BoxTitleBlue.ascx" />
+    <Content Include="Templates\T09\da\Empty.ascx" />
+    <Content Include="Templates\T09\Styles\colorbox.css" />
+    <Content Include="Templates\T09\Styles\custom-11.css" />
+    <Content Include="Templates\T09\Styles\custom.css" />
+    <Content Include="Templates\T09\Styles\font-awesome.min.css" />
+    <Content Include="Templates\T09\Styles\frontend%281%29.css" />
+    <Content Include="Templates\T09\Styles\frontend.css" />
+    <Content Include="Templates\T09\Styles\iubenda_banner_style.css" />
+    <Content Include="Templates\T09\Styles\jquery.bxslider.css" />
+    <Content Include="Templates\T09\Styles\jquery.selectBox.css" />
+    <Content Include="Templates\T09\Styles\jshowoff.css" />
+    <Content Include="Templates\T09\Styles\prettyPhoto.css" />
+    <Content Include="Templates\T09\Styles\reset-bootstrap.css" />
+    <Content Include="Templates\T09\Styles\sagscroller.css" />
+    <Content Include="Templates\T09\Styles\settings.css" />
+    <Content Include="Templates\T09\Styles\style%281%29.css" />
+    <Content Include="Templates\T09\Styles\style-11.css" />
+    <Content Include="Templates\T09\Styles\style.css" />
+    <Content Include="Templates\T09\Styles\vu.css" />
+    <Content Include="Templates\T09\Styles\wishlist.css" />
+    <Content Include="Templates\T09\Styles\woo-featured-video.css" />
+    <Content Include="Templates\T09\Styles\yith_magnifier.css" />
+    <Content Include="Templates\T10\Skins\FacebookLike.ascx" />
+    <Content Include="Templates\T10\vi-VN.xml" />
+    <Content Include="Templates\T9999\Components\Home.aspx" />
+    <Content Include="Templates\T9999\css\manual.css" />
+    <Content Include="Templates\T9999\css\bootstrap-theme.css" />
+    <Content Include="Templates\T9999\css\bootstrap-theme.min.css" />
+    <Content Include="Templates\T9999\css\bootstrap.css" />
+    <Content Include="Templates\T9999\css\bootstrap.min.css" />
+    <Content Include="Templates\T9999\css\ie10-viewport-bug-workaround.css" />
+    <Content Include="Templates\T9999\css\navbar-fixed-top.css" />
+    <Content Include="Templates\T9999\css\sticky-footer-navbar.css" />
+    <Content Include="Templates\T9999\font-awesome\css\font-awesome.css" />
+    <Content Include="Templates\T9999\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Templates\T9999\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\T9999\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Templates\T9999\js\bootstrap.js" />
+    <Content Include="Templates\T9999\js\bootstrap.min.js" />
+    <Content Include="Templates\T9999\js\ie-emulation-modes-warning.js" />
+    <Content Include="Templates\T9999\js\ie10-viewport-bug-workaround.js" />
+    <Content Include="Templates\T9999\js\jquery.min.js" />
+    <Content Include="Templates\T9999\js\jquery.validate.js" />
+    <Content Include="Templates\T9999\js\jquery.validate.min.js" />
+    <Content Include="Templates\T9999\js\localization\messages_eu.js" />
+    <Content Include="Templates\T9999\js\localization\messages_vi.js" />
+    <Content Include="Templates\T9999\js\npm.js" />
+    <Content Include="Home.aspx" />
+    <Content Include="Uploads\C0\Languages\vi-VN.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Uploads\C2\Languages\en-US.xml" />
+    <Content Include="Uploads\C2\Languages\vi-VN.xml" />
+    <Content Include="Global.asax" />
+    <Content Include="Readme.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="Includes\chosen-1.8.7\composer.json" />
+    <Content Include="Includes\chosen-1.8.7\LICENSE.md" />
+    <None Include="Properties\PublishProfiles\FrontEnd.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Templates\T9999\T9999.Master" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Templates\T9999\css\bootstrap-theme.css.map" />
+    <Content Include="Templates\T9999\css\bootstrap-theme.min.css.map" />
+    <Content Include="Templates\T9999\css\bootstrap.css.map" />
+    <Content Include="Templates\T9999\css\bootstrap.min.css.map" />
+    <Content Include="Templates\T9999\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Templates\T9999\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Templates\T9999\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Templates\T9999\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Templates\T9999\font-awesome\.bower.json" />
+    <Content Include="Templates\T9999\font-awesome\.gitignore" />
+    <Content Include="Templates\T9999\font-awesome\.npmignore" />
+    <Content Include="Templates\T9999\font-awesome\bower.json" />
+    <Content Include="Templates\T9999\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\T9999\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\T9999\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\T9999\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Templates\T9999\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Templates\T9999\font-awesome\less\core.less" />
+    <Content Include="Templates\T9999\font-awesome\less\extras.less" />
+    <Content Include="Templates\T9999\font-awesome\less\fixed-width.less" />
+    <Content Include="Templates\T9999\font-awesome\less\font-awesome.less" />
+    <Content Include="Templates\T9999\font-awesome\less\icons.less" />
+    <Content Include="Templates\T9999\font-awesome\less\larger.less" />
+    <Content Include="Templates\T9999\font-awesome\less\list.less" />
+    <Content Include="Templates\T9999\font-awesome\less\mixins.less" />
+    <Content Include="Templates\T9999\font-awesome\less\path.less" />
+    <Content Include="Templates\T9999\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Templates\T9999\font-awesome\less\spinning.less" />
+    <Content Include="Templates\T9999\font-awesome\less\stacked.less" />
+    <Content Include="Templates\T9999\font-awesome\less\variables.less" />
+    <Content Include="Templates\T9999\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\_core.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\_extras.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\_icons.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\_larger.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\_list.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\_mixins.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\_path.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\_spinning.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\_stacked.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\_variables.scss" />
+    <Content Include="Templates\T9999\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Templates\T01\T01.Master" />
+    <Content Include="Templates\T02\css\bootstrap-theme.css.map" />
+    <Content Include="Templates\T02\css\bootstrap-theme.min.css.map" />
+    <Content Include="Templates\T02\css\bootstrap.css.map" />
+    <Content Include="Templates\T02\css\bootstrap.min.css.map" />
+    <Content Include="Templates\T02\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\T02\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\T02\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\T02\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\T02\fonts\FontAwesome.otf" />
+    <Content Include="Templates\T02\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Templates\T02\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Templates\T02\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Templates\T02\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Templates\T02\T02.Master" />
+    <Content Include="Templates\T03\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\T03\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\T03\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\T03\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\T03\fonts\FontAwesome.otf" />
+    <Content Include="Templates\T03\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Templates\T03\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Templates\T03\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Templates\T03\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Templates\T03\font\flexslider-icon.eot" />
+    <Content Include="Templates\T03\font\flexslider-icon.ttf" />
+    <Content Include="Templates\T03\font\flexslider-icon.woff" />
+    <Content Include="Templates\T03\font\fontello.eot" />
+    <Content Include="Templates\T03\font\fontello.ttf" />
+    <Content Include="Templates\T03\font\fontello.woff" />
+    <Content Include="Templates\T03\T03.Master" />
+    <Content Include="Templates\T04\T04.Master" />
+    <Content Include="Templates\T05\T05.Master" />
+    <Content Include="Templates\T05\css\bootstrap-theme.css.map" />
+    <Content Include="Templates\T05\css\bootstrap-theme.min.css.map" />
+    <Content Include="Templates\T05\css\bootstrap.css.map" />
+    <Content Include="Templates\T05\css\bootstrap.min.css.map" />
+    <Content Include="Templates\T05\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Templates\T05\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Templates\T05\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Templates\T05\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Templates\T06\T06.Master" />
+    <Content Include="Templates\T07\T07.Master" />
+    <Content Include="Templates\T08\T08.Master" />
+    <Content Include="Templates\T08\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\T08\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\T08\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\T08\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\T08\fonts\FontAwesome.otf" />
+    <Content Include="Templates\T06\webfonts\fa-brands-400.eot" />
+    <Content Include="Templates\T06\webfonts\fa-brands-400.ttf" />
+    <Content Include="Templates\T06\webfonts\fa-brands-400.woff" />
+    <Content Include="Templates\T06\webfonts\fa-brands-400.woff2" />
+    <Content Include="Templates\T06\webfonts\fa-regular-400.eot" />
+    <Content Include="Templates\T06\webfonts\fa-regular-400.ttf" />
+    <Content Include="Templates\T06\webfonts\fa-regular-400.woff" />
+    <Content Include="Templates\T06\webfonts\fa-regular-400.woff2" />
+    <Content Include="Templates\T06\webfonts\fa-solid-900.eot" />
+    <Content Include="Templates\T06\webfonts\fa-solid-900.ttf" />
+    <Content Include="Templates\T06\webfonts\fa-solid-900.woff" />
+    <Content Include="Templates\T06\webfonts\fa-solid-900.woff2" />
+    <Content Include="Templates\T06\font-awesome\.bower.json" />
+    <Content Include="Templates\T06\font-awesome\.gitignore" />
+    <Content Include="Templates\T06\font-awesome\.npmignore" />
+    <Content Include="Templates\T06\font-awesome\bower.json" />
+    <Content Include="Templates\T06\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\T06\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\T06\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\T06\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Templates\T06\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Templates\T06\font-awesome\less\core.less" />
+    <Content Include="Templates\T06\font-awesome\less\extras.less" />
+    <Content Include="Templates\T06\font-awesome\less\fixed-width.less" />
+    <Content Include="Templates\T06\font-awesome\less\font-awesome.less" />
+    <Content Include="Templates\T06\font-awesome\less\icons.less" />
+    <Content Include="Templates\T06\font-awesome\less\larger.less" />
+    <Content Include="Templates\T06\font-awesome\less\list.less" />
+    <Content Include="Templates\T06\font-awesome\less\mixins.less" />
+    <Content Include="Templates\T06\font-awesome\less\path.less" />
+    <Content Include="Templates\T06\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Templates\T06\font-awesome\less\spinning.less" />
+    <Content Include="Templates\T06\font-awesome\less\stacked.less" />
+    <Content Include="Templates\T06\font-awesome\less\variables.less" />
+    <Content Include="Templates\T06\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\_core.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\_extras.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\_icons.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\_larger.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\_list.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\_mixins.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\_path.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\_spinning.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\_stacked.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\_variables.scss" />
+    <Content Include="Templates\T06\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\assets\owl.carousel.min.css-2.3.4" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\LICENSE" />
+    <Content Include="Templates\T01\lib\owl-carousel-2\README.md" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\ionicons.eot" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\ionicons.ttf" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\ionicons.woff" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\Linearicons-Free.eot" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\Linearicons-Free.ttf" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\Linearicons-Free.woff" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\fonts\Linearicons-Free.woff2" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\Html.rar" />
+    <Content Include="Templates\T01\v1\backup\23-03-2019\img\icon-menu\Web-App.docx" />
+    <Content Include="Templates\T01\v1\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\T01\v1\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\T01\v1\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\T01\v1\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\T01\v1\fonts\icofont\fonts\icofont.eot" />
+    <Content Include="Templates\T01\v1\fonts\icofont\fonts\icofont.ttf" />
+    <Content Include="Templates\T01\v1\fonts\icofont\fonts\icofont.woff" />
+    <Content Include="Templates\T01\v1\fonts\icofont\fonts\icofont.woff2" />
+    <Content Include="Templates\T01\v1\fonts\IcoMoon.ttf" />
+    <Content Include="Templates\T01\v1\fonts\icomoon.woff" />
+    <Content Include="Templates\T01\v1\fonts\ionicons.eot" />
+    <Content Include="Templates\T01\v1\fonts\ionicons.ttf" />
+    <Content Include="Templates\T01\v1\fonts\ionicons.woff" />
+    <Content Include="Templates\T01\v1\fonts\Linearicons-Free.eot" />
+    <Content Include="Templates\T01\v1\fonts\Linearicons-Free.ttf" />
+    <Content Include="Templates\T01\v1\fonts\Linearicons-Free.woff" />
+    <Content Include="Templates\T01\v1\fonts\Linearicons-Free.woff2" />
+    <Content Include="Templates\T01\v1\img\icon-menu\Web-App.docx" />
+    <Content Include="Templates\T01\v1\js\bootstrap.min.js1" />
+    <Content Include="Templates\T01\fonts\avertas\avertastd-bold-webfont.woff" />
+    <Content Include="Templates\T01\fonts\avertas\avertastd-regular-webfont.woff" />
+    <Content Include="Templates\T01\fonts\avertas\avertastd-regularitalic-webfont.woff" />
+    <Content Include="Templates\T01\fonts\avertas\avertastd-semibold-webfont.woff" />
+    <Content Include="Templates\T01\fonts\ionicons.eot" />
+    <Content Include="Templates\T01\fonts\ionicons.ttf" />
+    <Content Include="Templates\T01\fonts\ionicons.woff" />
+    <Content Include="Templates\T01\fonts\simple-line-icon\Simple-Line-Icons.eot" />
+    <Content Include="Templates\T01\fonts\simple-line-icon\Simple-Line-Icons.ttf" />
+    <Content Include="Templates\T01\fonts\simple-line-icon\Simple-Line-Icons.woff" />
+    <Content Include="Templates\T01\fonts\simple-line-icon\Simple-Line-Icons.woff2" />
+    <Content Include="Templates\T09\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\T09\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\T09\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\T09\T09.Master" />
+    <Content Include="Templates\T01\lib\zInput\.gitmodules" />
+    <Content Include="Templates\T01\lib\zInput\LICENSE" />
+    <Content Include="Templates\T01\lib\zInput\README.md" />
+    <Content Include="Templates\T01\lib\fontawesome\less\fa-brands.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\fa-regular.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\fa-solid.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\fontawesome.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\_animated.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\_bordered-pulled.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\_core.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\_fixed-width.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\_icons.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\_larger.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\_list.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\_mixins.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\_rotated-flipped.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\_screen-reader.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\_stacked.less" />
+    <Content Include="Templates\T01\lib\fontawesome\less\_variables.less" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\fa-brands.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\fa-light.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\fa-regular.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\fa-solid.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\fontawesome.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\_animated.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\_bordered-pulled.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\_core.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\_fixed-width.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\_icons.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\_larger.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\_list.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\_mixins.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\_rotated-flipped.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\_screen-reader.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\_stacked.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\scss\_variables.scss" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-light-300.eot" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-light-300.ttf" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-light-300.woff" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-light-300.woff2" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Templates\T01\lib\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Templates\T01\lib\bootstrap-autocomplete\input-object.json" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\composer.json" />
+    <Content Include="Templates\T01\lib\chosen-1.8.7\LICENSE.md" />
+    <Content Include="Templates\T09\fonts\revicons.eot" />
+    <Content Include="Templates\T09\fonts\revicons.ttf" />
+    <Content Include="Templates\T09\fonts\revicons.woff" />
+    <Content Include="Templates\T10\T10.Master" />
+    <Content Include="Templates\T07\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\T07\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\T07\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\T07\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\T07\fonts\FontAwesome.otf" />
+    <Content Include="Templates\T07\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Templates\T07\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Templates\T07\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Templates\T07\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Templates\T07\font-awesome\.bower.json" />
+    <Content Include="Templates\T07\font-awesome\.gitignore" />
+    <Content Include="Templates\T07\font-awesome\.npmignore" />
+    <Content Include="Templates\T07\font-awesome\bower.json" />
+    <Content Include="Templates\T07\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\T07\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\T07\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\T07\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Templates\T07\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Templates\T07\font-awesome\less\core.less" />
+    <Content Include="Templates\T07\font-awesome\less\extras.less" />
+    <Content Include="Templates\T07\font-awesome\less\fixed-width.less" />
+    <Content Include="Templates\T07\font-awesome\less\font-awesome.less" />
+    <Content Include="Templates\T07\font-awesome\less\icons.less" />
+    <Content Include="Templates\T07\font-awesome\less\larger.less" />
+    <Content Include="Templates\T07\font-awesome\less\list.less" />
+    <Content Include="Templates\T07\font-awesome\less\mixins.less" />
+    <Content Include="Templates\T07\font-awesome\less\path.less" />
+    <Content Include="Templates\T07\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Templates\T07\font-awesome\less\spinning.less" />
+    <Content Include="Templates\T07\font-awesome\less\stacked.less" />
+    <Content Include="Templates\T07\font-awesome\less\variables.less" />
+    <Content Include="Templates\T07\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_core.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_extras.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_icons.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_larger.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_list.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_mixins.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_path.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_spinning.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_stacked.scss" />
+    <Content Include="Templates\T07\font-awesome\scss\_variables.scss" />
+    <Content Include="Templates\T11\T11.Master" />
+    <Content Include="Templates\T11\package-lock.json" />
+    <Content Include="Templates\T11\bootstrap\CHANGELOG.md" />
+    <Content Include="Templates\T11\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Templates\T11\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Templates\T11\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Templates\T11\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Templates\T11\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Templates\T11\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Templates\T11\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Templates\T11\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Templates\T11\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Templates\T11\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Templates\T11\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Templates\T11\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Templates\T11\bootstrap\grunt\.jshintrc" />
+    <Content Include="Templates\T11\bootstrap\grunt\.stylelintrc" />
+    <Content Include="Templates\T11\bootstrap\grunt\configBridge.json" />
+    <Content Include="Templates\T11\bootstrap\less\alerts.less" />
+    <Content Include="Templates\T11\bootstrap\less\badges.less" />
+    <Content Include="Templates\T11\bootstrap\less\bootstrap.less" />
+    <Content Include="Templates\T11\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Templates\T11\bootstrap\less\button-groups.less" />
+    <Content Include="Templates\T11\bootstrap\less\buttons.less" />
+    <Content Include="Templates\T11\bootstrap\less\carousel.less" />
+    <Content Include="Templates\T11\bootstrap\less\close.less" />
+    <Content Include="Templates\T11\bootstrap\less\code.less" />
+    <Content Include="Templates\T11\bootstrap\less\component-animations.less" />
+    <Content Include="Templates\T11\bootstrap\less\dropdowns.less" />
+    <Content Include="Templates\T11\bootstrap\less\forms.less" />
+    <Content Include="Templates\T11\bootstrap\less\glyphicons.less" />
+    <Content Include="Templates\T11\bootstrap\less\grid.less" />
+    <Content Include="Templates\T11\bootstrap\less\input-groups.less" />
+    <Content Include="Templates\T11\bootstrap\less\jumbotron.less" />
+    <Content Include="Templates\T11\bootstrap\less\labels.less" />
+    <Content Include="Templates\T11\bootstrap\less\list-group.less" />
+    <Content Include="Templates\T11\bootstrap\less\media.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\alerts.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\buttons.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\center-block.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\forms.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\gradients.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\grid.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\image.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\labels.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\list-group.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\opacity.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\pagination.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\panels.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\resize.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\size.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\table-row.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Templates\T11\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Templates\T11\bootstrap\less\modals.less" />
+    <Content Include="Templates\T11\bootstrap\less\navbar.less" />
+    <Content Include="Templates\T11\bootstrap\less\navs.less" />
+    <Content Include="Templates\T11\bootstrap\less\normalize.less" />
+    <Content Include="Templates\T11\bootstrap\less\pager.less" />
+    <Content Include="Templates\T11\bootstrap\less\pagination.less" />
+    <Content Include="Templates\T11\bootstrap\less\panels.less" />
+    <Content Include="Templates\T11\bootstrap\less\popovers.less" />
+    <Content Include="Templates\T11\bootstrap\less\print.less" />
+    <Content Include="Templates\T11\bootstrap\less\progress-bars.less" />
+    <Content Include="Templates\T11\bootstrap\less\responsive-embed.less" />
+    <Content Include="Templates\T11\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Templates\T11\bootstrap\less\scaffolding.less" />
+    <Content Include="Templates\T11\bootstrap\less\tables.less" />
+    <Content Include="Templates\T11\bootstrap\less\theme.less" />
+    <Content Include="Templates\T11\bootstrap\less\thumbnails.less" />
+    <Content Include="Templates\T11\bootstrap\less\tooltip.less" />
+    <Content Include="Templates\T11\bootstrap\less\type.less" />
+    <Content Include="Templates\T11\bootstrap\less\utilities.less" />
+    <Content Include="Templates\T11\bootstrap\less\variables.less" />
+    <Content Include="Templates\T11\bootstrap\less\wells.less" />
+    <Content Include="Templates\T11\bootstrap\LICENSE" />
+    <Content Include="Templates\T11\bootstrap\package.json" />
+    <Content Include="Templates\T11\bootstrap\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clear.aspx.cs">
+      <DependentUpon>Clear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clear.aspx.designer.cs">
+      <DependentUpon>Clear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSource.cs" />
+    <Compile Include="JsonPost.aspx.cs">
+      <DependentUpon>JsonPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JsonPost.aspx.designer.cs">
+      <DependentUpon>JsonPost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AccessTradeCampaign.ascx.cs">
+      <DependentUpon>AccessTradeCampaign.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\AccessTradeCampaign.ascx.designer.cs">
+      <DependentUpon>AccessTradeCampaign.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AccessTradeDataFeed.ascx.cs">
+      <DependentUpon>AccessTradeDataFeed.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\AccessTradeDataFeed.ascx.designer.cs">
+      <DependentUpon>AccessTradeDataFeed.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AccessTradeSaleOff.ascx.cs">
+      <DependentUpon>AccessTradeSaleOff.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\AccessTradeSaleOff.ascx.designer.cs">
+      <DependentUpon>AccessTradeSaleOff.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AccessTradeTopSale.ascx.cs">
+      <DependentUpon>AccessTradeTopSale.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\AccessTradeTopSale.ascx.designer.cs">
+      <DependentUpon>AccessTradeTopSale.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ArticleBilingual.ascx.cs">
+      <DependentUpon>ArticleBilingual.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ArticleBilingual.ascx.designer.cs">
+      <DependentUpon>ArticleBilingual.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ArticleBilinguals.ascx.cs">
+      <DependentUpon>ArticleBilinguals.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ArticleBilinguals.ascx.designer.cs">
+      <DependentUpon>ArticleBilinguals.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Document.ascx.cs">
+      <DependentUpon>Document.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Document.ascx.designer.cs">
+      <DependentUpon>Document.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ArticleCommentFacebook.ascx.cs">
+      <DependentUpon>ArticleCommentFacebook.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ArticleCommentFacebook.ascx.designer.cs">
+      <DependentUpon>ArticleCommentFacebook.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ArticleCommentItem.ascx.cs">
+      <DependentUpon>ArticleCommentItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ArticleCommentItem.ascx.designer.cs">
+      <DependentUpon>ArticleCommentItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ArticleOrther.ascx.cs">
+      <DependentUpon>ArticleOrther.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ArticleOrther.ascx.designer.cs">
+      <DependentUpon>ArticleOrther.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ArticlesByDomain.ascx.cs">
+      <DependentUpon>ArticlesByDomain.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ArticlesByDomain.ascx.designer.cs">
+      <DependentUpon>ArticlesByDomain.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CartsView.ascx.cs">
+      <DependentUpon>CartsView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\CartsView.ascx.designer.cs">
+      <DependentUpon>CartsView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CartsPayment.ascx.cs">
+      <DependentUpon>CartsPayment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\CartsPayment.ascx.designer.cs">
+      <DependentUpon>CartsPayment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CategoryBackLink.ascx.cs">
+      <DependentUpon>CategoryBackLink.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\CategoryBackLink.ascx.designer.cs">
+      <DependentUpon>CategoryBackLink.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ContactDynamic.ascx.cs">
+      <DependentUpon>ContactDynamic.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ContactDynamic.ascx.designer.cs">
+      <DependentUpon>ContactDynamic.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Articles.ascx.cs">
+      <DependentUpon>Articles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Articles.ascx.designer.cs">
+      <DependentUpon>Articles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AdpiaCoupon.ascx.cs">
+      <DependentUpon>AdpiaCoupon.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\AdpiaCoupon.ascx.designer.cs">
+      <DependentUpon>AdpiaCoupon.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\RSSReader.ascx.cs">
+      <DependentUpon>RSSReader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\RSSReader.ascx.designer.cs">
+      <DependentUpon>RSSReader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\RSS.ascx.cs">
+      <DependentUpon>RSS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\RSS.ascx.designer.cs">
+      <DependentUpon>RSS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ZaloChat.ascx.cs">
+      <DependentUpon>ZaloChat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ZaloChat.ascx.designer.cs">
+      <DependentUpon>ZaloChat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MemberProfile.ascx.cs">
+      <DependentUpon>MemberProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MemberProfile.ascx.designer.cs">
+      <DependentUpon>MemberProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductAttribute.ascx.cs">
+      <DependentUpon>ProductAttribute.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductAttribute.ascx.designer.cs">
+      <DependentUpon>ProductAttribute.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MemberOrders.ascx.cs">
+      <DependentUpon>MemberOrders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MemberOrders.ascx.designer.cs">
+      <DependentUpon>MemberOrders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Vouchers.ascx.cs">
+      <DependentUpon>Vouchers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Vouchers.ascx.designer.cs">
+      <DependentUpon>Vouchers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MemberPoint.ascx.cs">
+      <DependentUpon>MemberPoint.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MemberPoint.ascx.designer.cs">
+      <DependentUpon>MemberPoint.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MemberLogin.ascx.cs">
+      <DependentUpon>MemberLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MemberLogin.ascx.designer.cs">
+      <DependentUpon>MemberLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DataComplex.ascx.cs">
+      <DependentUpon>DataComplex.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DataComplex.ascx.designer.cs">
+      <DependentUpon>DataComplex.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DataSimple.ascx.cs">
+      <DependentUpon>DataSimple.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DataSimple.ascx.designer.cs">
+      <DependentUpon>DataSimple.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DataSingle.ascx.cs">
+      <DependentUpon>DataSingle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DataSingle.ascx.designer.cs">
+      <DependentUpon>DataSingle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FacebookChat.ascx.cs">
+      <DependentUpon>FacebookChat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\FacebookChat.ascx.designer.cs">
+      <DependentUpon>FacebookChat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FacebookComment.ascx.cs">
+      <DependentUpon>FacebookComment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\FacebookComment.ascx.designer.cs">
+      <DependentUpon>FacebookComment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FacebookLike.ascx.cs">
+      <DependentUpon>FacebookLike.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\FacebookLike.ascx.designer.cs">
+      <DependentUpon>FacebookLike.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GoogleMap.ascx.cs">
+      <DependentUpon>GoogleMap.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GoogleMap.ascx.designer.cs">
+      <DependentUpon>GoogleMap.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ItemComment.ascx.cs">
+      <DependentUpon>ItemComment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ItemComment.ascx.designer.cs">
+      <DependentUpon>ItemComment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OrderInfo.ascx.cs">
+      <DependentUpon>OrderInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\OrderInfo.ascx.designer.cs">
+      <DependentUpon>OrderInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OnePayPayment.ascx.cs">
+      <DependentUpon>OnePayPayment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\OnePayPayment.ascx.designer.cs">
+      <DependentUpon>OnePayPayment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Product.ascx.cs">
+      <DependentUpon>Product.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Product.ascx.designer.cs">
+      <DependentUpon>Product.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductGroupons.ascx.cs">
+      <DependentUpon>ProductGroupons.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductGroupons.ascx.designer.cs">
+      <DependentUpon>ProductGroupons.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Products.ascx.cs">
+      <DependentUpon>Products.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Products.ascx.designer.cs">
+      <DependentUpon>Products.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductSearch.ascx.cs">
+      <DependentUpon>ProductSearch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductSearch.ascx.designer.cs">
+      <DependentUpon>ProductSearch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductSimilars.ascx.cs">
+      <DependentUpon>ProductSimilars.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductSimilars.ascx.designer.cs">
+      <DependentUpon>ProductSimilars.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Templates.ascx.cs">
+      <DependentUpon>Templates.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Templates.ascx.designer.cs">
+      <DependentUpon>Templates.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\T9999\T9999.Master.cs">
+      <DependentUpon>T9999.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\T9999\T9999.Master.designer.cs">
+      <DependentUpon>T9999.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Templates\T01\IMG\banner\" />
+    <Folder Include="Templates\T01\lib\zInput\extlibs\fastclick\" />
+    <Folder Include="Templates\T02\styles\" />
+    <Folder Include="Templates\T03\Plugins\" />
+    <Folder Include="Templates\T07\Modules\" />
+    <Folder Include="Templates\T9999\Modules\" />
+    <Folder Include="Templates\T9999\Skins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library.Web\Library.Web.csproj">
+      <Project>{bbd1e9e6-4e38-404d-8a2b-6c3368d60c8d}</Project>
+      <Name>Library.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{a93d208e-eff7-435b-9114-cb78fb4adeaf}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Asp\Web.Asp.csproj">
+      <Project>{D73505E1-AF6E-48DE-AA86-B2C8BE2ED15A}</Project>
+      <Name>Web.Asp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Business\Web.Business.csproj">
+      <Project>{14d17d1e-27fd-4948-8356-1f13dd2fdafe}</Project>
+      <Name>Web.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Model\Web.Model.csproj">
+      <Project>{e761aaf0-1744-41e6-b489-0f291e829078}</Project>
+      <Name>Web.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9100</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

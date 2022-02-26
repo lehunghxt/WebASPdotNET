@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D73505E1-AF6E-48DE-AA86-B2C8BE2ED15A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web.Asp</RootNamespace>
+    <AssemblyName>Web.Asp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="Constant.cs" />
+    <Compile Include="Controls\Form.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\Pager.cs" />
+    <Compile Include="Controls\Position.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectData\BackgroundData.cs" />
+    <Compile Include="ObjectData\DataSource.cs" />
+    <Compile Include="ObjectData\ModuleData.cs" />
+    <Compile Include="ObjectData\ModuleParamData.cs" />
+    <Compile Include="ObjectData\SeoLinkData.cs" />
+    <Compile Include="Provider\Cache\CacheDictionary.cs" />
+    <Compile Include="Provider\Cache\CacheProvider.cs" />
+    <Compile Include="Provider\Delivery.cs" />
+    <Compile Include="Provider\LanguageHelper.cs" />
+    <Compile Include="Provider\MemberSecurityProvider.cs" />
+    <Compile Include="Provider\SiteMapProcess.cs" />
+    <Compile Include="Provider\URL.cs" />
+    <Compile Include="Security\FormTicketData.cs" />
+    <Compile Include="Security\HttpResponseBaseExtensions.cs" />
+    <Compile Include="Security\UserPrincipal.cs" />
+    <Compile Include="SettingsManager.cs" />
+    <Compile Include="UI\AbsVITPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\IWebUI.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\VITPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UrlRewrite\RewriteFormHtmlTextWriter.cs" />
+    <Compile Include="UrlRewrite\RewriterFormControlAdapter.cs" />
+    <Compile Include="UrlRewrite\RewriteUrl.cs" />
+    <Compile Include="UI\VITComponent.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\VITTemplate.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\VITModule.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library.Web\Library.Web.csproj">
+      <Project>{bbd1e9e6-4e38-404d-8a2b-6c3368d60c8d}</Project>
+      <Name>Library.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{a93d208e-eff7-435b-9114-cb78fb4adeaf}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Business\Web.Business.csproj">
+      <Project>{14d17d1e-27fd-4948-8356-1f13dd2fdafe}</Project>
+      <Name>Web.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Model\Web.Model.csproj">
+      <Project>{e761aaf0-1744-41e6-b489-0f291e829078}</Project>
+      <Name>Web.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <Language Key ="Language">Languages</Language>
+  <Language Key ="vi-VN">Tiếng Việt</Language>
+  <Language Key ="en-US">English</Language>
+
+  <Language Key ="Download">Download</Language>
+  <Language Key ="Upload">Upload</Language>
+  <Language Key ="Default">Default</Language>
+  <Language Key ="Code">Code</Language>
+  <Language Key ="Description">Describe</Language>
+
+  <Language Key ="Configure">Configure</Language>
+  
+  <Language Key ="Home">Home</Language>
+  <Language Key ="Contact">Contact</Language>
+  <Language Key ="ContactInfo">Contact Info</Language>
+  <Language Key ="Color">Color</Language>
+  <Language Key ="Phone">Phone</Language>
+  <Language Key ="RoomType">Room Type</Language>
+  <Language Key ="SelectRoom">Select Room</Language>
+  <Language Key ="CheckIn">Check In</Language>
+  <Language Key ="CheckOut">Check Out</Language>
+  <Language Key ="Guests">Guests</Language>
+  <Language Key ="Book">Book</Language>
+  <Language Key ="AboutUs">About Us</Language>
+  <Language Key ="ReadMore">Read More</Language>
+
+  <Language Key ="Order">Order</Language>
+  <Language Key ="Views">Views</Language>
+  
+  <Language Key ="Sample">Sample</Language>
+  <Language Key ="SampleDescripe">Sample Describe</Language>
+  <Language Key ="SuggestedPrice">Suggested Price</Language>
+  
+  <Language Key ="FullName">Full Name</Language>
+  <Language Key ="Address">Address</Language>
+  <Language Key ="Quantity">Quantity</Language>
+  
+  <Language Key ="AddToCart">Add To Cart</Language>
+  <Language Key ="BuyNow">Buy Now</Language>
+  <Language Key ="Rating">Rating</Language>
+  <Language Key ="Transaction">Transactions</Language>
+  <Language Key ="ViewCart">View Cart</Language>
+  <Language Key ="ContinueShopping">Continue Shopping</Language>
+</Languages>

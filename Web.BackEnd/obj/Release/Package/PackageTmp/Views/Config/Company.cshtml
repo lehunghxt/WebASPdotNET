@@ -1,0 +1,526 @@
+﻿@model Web.Backend.Models.CompanyViewModel
+@{
+    ViewBag.Title = "Thông tin Web";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Web.Asp.Provider;
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(e => e.Company.ID)
+    @Html.HiddenFor(e => e.Config.Id)
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Thông tin Web
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="submit">Lưu</button>
+                </div>
+            </h1>
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Ngôn ngữ</div>
+                <div class="panel-body">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th width="100px">Ngôn ngữ</th>
+                                <th width="100px">Mặc định</th>
+                                <th width="50px">Tải xuống</th>
+                                <th width="250px">Tải lên</th>
+                            </tr>
+                        </thead>
+                        @{var languagePath = (new URL()).PhysicalPath(SettingsManager.Constants.PathLanguageFile, Model.Company.ID);}
+                        @foreach (var lang in Model.Languages)
+                {
+                    <tr class="">
+                        <td>@lang.NAME</td>
+                        <td><input style="width: 30px" type="radio" @(lang.ISDEFAULT ? "checked='true'" : "") name='lstDefault' value='@lang.ID' /></td>
+                        <td align="center">
+                            @{ var path = languagePath + string.Format("{0}.xml", lang.ID); }
+                            @if (System.IO.File.Exists(path))
+                    {
+                        <a href="/@string.Format(SettingsManager.AppSettings.FolderUpload, Model.Company.ID)@SettingsManager.Constants.PathLanguageFile@string.Format("{0}.xml", lang.ID)">@string.Format("{0}.xml", lang.ID)</a>
+            }
+                        </td>
+                        <td style="padding-top: 7px !important">
+                            <input type="file" class="btn-chooseAttach" name="fup_@lang.ID" multiple="">
+                        </td>
+                    </tr>
+        }
+                    </table>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @Html.CheckBoxFor(model => model.Config.DefaultLanguageIfNotSet, new { htmlAttributes = new { @class = "form-control", placeholder = "Load nội dung với ngôn ngữ mặc định nếu chưa set" } }) Load nội dung với ngôn ngữ mặc định nếu chưa set
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">Header</div>
+                <div class="panel-body">
+                    <div class="from-group">
+                        <div class="row">
+                            <div class="col-md-3">Site Map:</div>
+                            <div class="col-md-5">
+                                @Html.CheckBoxFor(model => model.AutoUpdateSiteMap, new { htmlAttributes = new { @class = "form-control", placeholder = "Tự động tạo Sitemap" } }) Tự động
+                            </div>
+                            <div class="col-md-4">@Model.Company.ID-sitemap.xml</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-9">
+                                @Html.CheckBoxFor(model => model.Config.Hierarchy, new { htmlAttributes = new { @class = "form-control", placeholder = "hệ thống liên kết" } }) Phân cấp liên kết
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="from-group">
+                        <div class="row">
+                            <div class="col-md-3">Được phép:</div>
+                            <div class="col-md-5">
+                                @Html.CheckBoxFor(model => model.Config.IsRightClick, new { htmlAttributes = new { @class = "form-control", placeholder = "được phép Chuột phải" } }) click chuột phải
+                            </div>
+                            <div class="col-md-4">@Html.CheckBoxFor(model => model.Config.IsSelectCoppy, new { htmlAttributes = new { @class = "form-control", placeholder = "copy nội dung" } }) copy nội dung</div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3">Logo:</div>
+                            <div class="col-md-7">
+                                <div class="choose-attach-file">
+                                    <input type="file" class="btn-chooseAttach" name="logo" multiple="">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                @Html.HiddenFor(e => e.Company.IMAGE)
+                                <img ID="imgLogo" style="width:100%" src="@Model.PathLogo" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3">Favicon:</div>
+                            <div class="col-md-7">
+                                <div class="choose-attach-file">
+                                    <input type="file" class="btn-chooseAttach" name="favicon" multiple="">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                @Html.HiddenFor(e => e.Config.WebIcon)
+                                <img ID="imgFavicon" style="width:100%" src="@Model.PathFavicon" />
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3">Google Analytics:</div>
+                            <div class="col-md-9">@Html.TextAreaFor(model => model.Config.GoogleAnalytics, new { @class = "form-control", placeholder = "Google Analytics" })</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Thông tin công ty</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">Ngôn ngữ: </div>
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.Company.LANGUAGEID, Model.Languages.Select(e => new SelectListItem { Text = e.NAME, Value = e.ID }), new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">Tên đầy đủ: </div>
+                            <div class="col-md-10">@Html.EditorFor(model => model.Company.FULLNAME, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên đầy đủ" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">Tên hiển thị: </div>
+                            <div class="col-md-10">@Html.EditorFor(model => model.Company.DISPLAYNAME, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên hiển thị" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">Giấy phép: </div>
+                            <div class="col-md-10">@Html.EditorFor(model => model.Company.Certificate, new { htmlAttributes = new { @class = "form-control", placeholder = "Giấy phép" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">Slogan: </div>
+                            <div class="col-md-10">@Html.EditorFor(model => model.Company.SLOGAN, new { htmlAttributes = new { @class = "form-control", placeholder = "Phương châm" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">Địa chỉ: </div>
+                            <div class="col-md-10">@Html.EditorFor(model => model.Company.ADDRESS, new { htmlAttributes = new { @class = "form-control", placeholder = "Địa chỉ" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">Giới thiệu ngắn: </div>
+                            <div class="col-md-10">@Html.TextAreaFor(model => model.Company.DESCRIPTION, new { @class = "form-control", placeholder = "Giới thiệu ngắn" })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">Mô tả chi tiết: </div>
+                            <div class="col-md-10">@Html.TextAreaFor(model => model.Company.ABOUTUS, new { @class = "form-control", placeholder = "Mô tả chi tiết" })</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Thông tin liên hệ</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">Điện thoại: </div>
+                            <div class="col-md-10">@Html.EditorFor(model => model.Company.PHONE, new { htmlAttributes = new { @class = "form-control", placeholder = "Điện thoại" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">Fax: </div>
+                            <div class="col-md-10">@Html.EditorFor(model => model.Company.FAX, new { htmlAttributes = new { @class = "form-control", placeholder = "Fax" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">Email: </div>
+                            <div class="col-md-10">@Html.EditorFor(model => model.Company.EMAIL, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">Nền Website</div>
+                <div class="panel-body">
+                    <div class="from-group">
+                        <div class="row">
+                            <div class="col-md-3">Loại:</div>
+                            <div class="col-md-9">
+                                <select id="background" name="TypeBackground">
+                                    <option value="none">Không nền</option>
+                                    <option value="color">Màu</option>
+                                    <option value="image">Hình</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group" id="groupimage" style="display:none">
+                        <div class="row">
+                            <div class="col-md-3">Hình nền:</div>
+                            <div class="col-md-7">
+                                <div class="choose-attach-file">
+                                    <input type="file" class="btn-chooseAttach" name="background" multiple="">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                @Html.HiddenFor(e => e.Config.Background)
+                                <img ID="imgBackground" style="width:100%" src="@Model.PathBackground" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="groupcolor" style="display:none">
+                        <div class="row">
+                            <div class="col-md-3">Màu nền:</div>
+                            <div class="col-md-9">
+                                <div class="choose-attach-file">
+                                    <input type="color" name="backgroundcolor" value="@Model.Config.Background">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">Bản đồ</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Google API Key:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.GoogleApiKey, new { htmlAttributes = new { @class = "form-control", placeholder = "Google API Key" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Địa chỉ:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.GoogleMapAddress, new { htmlAttributes = new { @class = "form-control", placeholder = "Địa chỉ" } })</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-danger">
+                <div class="panel-heading">Gửi mail</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">EnableSSL:</div>
+                            <div class="col-md-8">@Html.CheckBoxFor(model => model.Config.MailEnableSSL, new { htmlAttributes = new { @class = "form-control", placeholder = "EnableSSL" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Mail Server:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.MailServer, new { htmlAttributes = new { @class = "form-control", placeholder = "Mail Server" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Port:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.MailPort, new { htmlAttributes = new { @class = "form-control", placeholder = "Mail Server", @type = "number" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Account:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.MailAccount, new { htmlAttributes = new { @class = "form-control", placeholder = "Mail Account" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Password:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.MailPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Password", @type = "Password" } })</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">Cộng đồng</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Facebook App Id:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.FacebookAppId, new { htmlAttributes = new { @class = "form-control", placeholder = "Facebook App Id" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Facebook Page:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.FacebookFanpage, new { htmlAttributes = new { @class = "form-control", placeholder = "Facebook Page" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Google+:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.GooglePlus, new { htmlAttributes = new { @class = "form-control", placeholder = "Google +" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Twitter:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.Twitter, new { htmlAttributes = new { @class = "form-control", placeholder = "Twitter" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Instagram:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.Instagram, new { htmlAttributes = new { @class = "form-control", placeholder = "Instagram" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">YouTube:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.Youtube, new { htmlAttributes = new { @class = "form-control", placeholder = "YouTube" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Zalo:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.Zalo, new { htmlAttributes = new { @class = "form-control", placeholder = "Zalo" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Whatsapp:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.Whatsapp, new { htmlAttributes = new { @class = "form-control", placeholder = "Whatsapp" } })</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-green">
+                <div class="panel-heading">Kết nối Giao Hàng Nhanh</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Token:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.GHNToken, new { htmlAttributes = new { @class = "form-control", placeholder = "Token" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">UserName:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.GHNUserName, new { htmlAttributes = new { @class = "form-control", placeholder = "UserName" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Password:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.GHNPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Password", @type = "Password" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">FromDistrict:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.GHNFromDistrict, new { htmlAttributes = new { @class = "form-control", placeholder = "FromDistrict", type = "number" } })</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-green">
+                <div class="panel-heading">Kết nối Giao Hàng Tiết Kiệm</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">AddressId:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.GHTKAddressId, new { htmlAttributes = new { @class = "form-control", placeholder = "AddressId" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Token:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.GHTKToken, new { htmlAttributes = new { @class = "form-control", placeholder = "Token" } })</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">Kết nối OnePay</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">AccessKey:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.OnePayAccessKey, new { htmlAttributes = new { @class = "form-control", placeholder = "Access Key" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Secret:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.OnePaySecret, new { htmlAttributes = new { @class = "form-control", placeholder = "Secret" } })</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-warning">
+                <div class="panel-heading">Kết nối AccessTrade</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">SourceId:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.AccessTradeSourceId, new { htmlAttributes = new { @class = "form-control", placeholder = "Source Id" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">AccessKey:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.AccessTradeAccessKey, new { htmlAttributes = new { @class = "form-control", placeholder = "Access Key" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">SecretKey:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.AccessTradeSecretKey, new { htmlAttributes = new { @class = "form-control", placeholder = "Secret Key" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Deep Link:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.AccessTradeDeepLink, new { htmlAttributes = new { @class = "form-control", placeholder = "Deep Link" } })</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Điểm thành viên</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Tích điểm đơn hàng:</div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.Config.OrderPercent, new { htmlAttributes = new { @class = "form-control text-right", placeholder = "% giá trị đơn hàng", type = "number" } })
+                                    <div class="input-group-addon">%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Trường điểm sản phẩm:</div>
+                            <div class="col-md-8">@Html.EditorFor(model => model.Config.ProductAttribute, new { htmlAttributes = new { @class = "form-control" } })</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">Quy đổi sang tiền:</div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <div class="input-group-addon">1 Point =</div>
+                                    @Html.EditorFor(model => model.Config.TranferPrice, new { htmlAttributes = new { @class = "form-control", type = "number" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#background').val('@Model.TypeBackground');
+        $('#group' + '@Model.TypeBackground').show();
+        $('#background').change(function () {
+            var value = $(this).val();
+            $('#groupcolor').hide();
+            $('#groupimage').hide();
+            if (value == 'color') {
+                $('#groupcolor').show();
+            }
+            else if (value == 'image') {
+                $('#groupimage').show();
+            }
+        });
+    </script>
+    <script>
+        $('#Company_LANGUAGEID').val('@Model.Company.LANGUAGEID');
+        $('#Company_LANGUAGEID').on('change', function () { // when the room_type changes
+            var language = $('#Company_LANGUAGEID').val();
+            window.location.href = "/Config/Company?language=" + language;
+        });
+    </script>
+    <script>
+        CKEDITOR.replace("Company_ABOUTUS");
+        CKFinder.setupCKEditor(null, '/Content/ckeditor/plugins/ckfinder');
+    </script>
+}
+
+

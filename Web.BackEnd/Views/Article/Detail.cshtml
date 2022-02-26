@@ -1,0 +1,253 @@
+﻿@model Web.Backend.Models.ArticleDetailViewModel
+@{
+    ViewBag.Title = "Chi tiết bài viết";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                @(Model.Article.ID > 0 ? "Sửa" : "Thêm") bài viết
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-hdd"></i> Lưu</button>
+                    <a href="/Article?catid=@Model.CatId" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại</a>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Chi tiết bài viết</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.DropDownListFor(model => model.Article.CATEGORYID, Model.Categories, new { @class = "form-control", placeholder = "Chọn danh mục", required = String.Empty })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-inline form-group">
+                                @Html.EditorFor(model => model.Article.DISPLAYDATE, new { htmlAttributes = new { @class = "form-control", placeholder = "Ngày hiển thị", @type = "date" } })
+                                <input type="checkbox" id="Article_PUBLISH" name="Article.PUBLISH" @(Model.Article.PUBLISH == true ? "checked='checked'" : "") value="true" /> Hiển thị
+                                <input type="checkbox" id="Article_HASCOMMENT" name="Article.HASCOMMENT" @(Model.Article.HASCOMMENT == true ? "checked='checked'" : "") value="true" /> Cho phép bình luận
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.Article.ORDERS, new { htmlAttributes = new { @class = "form-control", placeholder = "Thứ tự", @type = "number" } })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12 tag">
+                                        <label>Tags: </label>
+                                        @{var tags = Model.Article.TAG.Split(',');}
+                                        @foreach (var tag in tags)
+                                        {
+                                            <span>
+                                                @tag <img src="/Content/remove.png" onclick="RemoveTag(this, '@tag.Trim()')" />
+                                            </span>
+                                        }
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <input id="Article_TAG" name="Article.TAG" type="hidden" value="@Model.Article.TAG" />
+                                        <input id="tag" type="text" class="form-control" maxlength="100" placeholder="Thêm tag" />
+                                    </div>
+                                    <div class="col-lg-2"><input type="button" class="btn btn-default" onclick="AddTag()" value="Thêm"/></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.DropDownListFor(model => model.Article.LANGUAGEID, Model.Languages, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="choose-attach-file">
+                        <input type="file" class="btn-chooseAttach" name="articleimage" multiple="">
+                    </div>
+                    <img ID="img" style="max-width:100%; max-height:205px;" src="@Model.Article.PathImage" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.Article.TITLE, new { htmlAttributes = new { @class = "form-control ", placeholder = "Tiêu đề", required = "true", maxlength = "250" } })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.TextAreaFor(model => model.Article.BRIEF, new { @class = "form-control", placeholder = "Mô tả", rows = "7", required = "true" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Bài viết liên quan
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Mã</th>
+                                        <th>Tên</th>
+                                        <th>Hình</th>
+                                        <th><button class="btn btn-info" type="button" data-toggle="modal" data-target="#addArticle" role="button"><i class="glyphicon glyphicon-plus"></i></button></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="articles_wrap">
+                                    @foreach (var article in Model.RelatiedArticles)
+                                    {
+                                        <tr id="row_@article.ID">
+                                            <td>
+                                                @if (string.IsNullOrEmpty(article.URL))
+                                                {
+                                                    @article.ID}
+                                                else
+                                                {<a href="/Article/Detail?id=@article.ID&catid=@Model.Article.CATEGORYID">@article.ID</a>}
+                                                <input type="hidden" value="@article.ID" name="relatied_id" />
+                                            </td>
+                                            <td>@article.Title</td>
+                                            <td><img src="@article.ImagePath" style="width:30px; height:30px" /></td>
+                                            <td>
+                                                <button class="btn btn-danger" type="button" onclick="Remove('@article.ID');">Xóa</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <div id="addArticle" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 id="title" class="modal-title">Chọn bài viết</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table table-bordered table-hover" id="dataTables-example">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Mã</th>
+                                                        <th>Tên</th>
+                                                        <th>Hình</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var article in Model.Articles)
+                                                    {
+                                                        <tr id="articletrow_@article.ID">
+                                                            <td>@article.ID</td>
+                                                            <td>@article.Title</td>
+                                                            <td><img src="@article.ImagePath" style="width:30px; height:30px" /></td>
+                                                            <td><input type="button" value="Thêm" onclick="Add('@article.ID','@article.Title','@article.ImagePath')" /></td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                            <script>
+                                                $(document).ready(function () {
+                                                    $('#dataTables-example').dataTable({ "paging": true, "sort": false, "pageLength": 5 });
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        @Html.TextAreaFor(model => model.Article.CONTENT, new { @class = "form-control", placeholder = "Nội dung", rows = "20" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input id="CatId" name="CatId" type="hidden" value="@Model.CatId" />
+    <input id="Article_ID" name="Article.ID" type="hidden" value="@Model.Article.ID" />
+    <input id="Article_IMAGE" name="Article.IMAGE" type="hidden" value="@Model.Article.IMAGE" />
+
+    <script>
+        $('#Article_LANGUAGEID').on('change', function () { // when the room_type changes
+            var language = $('#Article_LANGUAGEID').val();
+            window.location.href = "/Article/Detail?id=@Model.Article.ID&catid=@Model.CatId&language=" + language;
+            });
+    </script>
+    <script>
+        CKEDITOR.replace("Article_CONTENT");
+        CKFinder.setupCKEditor(null, '/Content/ckeditor/plugins/ckfinder');
+    </script>
+    <script>
+        function Remove(id) {
+            $("#row_" + id).remove();
+        }
+        function Add(id, name, img) {
+            $("#articles_wrap").append('<tr id="row_' + id + '">'
+                + '<td>' + id + '<input type= "hidden" value= "' + id + '" name= "relatied_id" /></td>'
+                + '<td>' + name + '</td>'
+                + '<td><img src="' + img + '" style="width:30px; height:30px" /></td>'
+                + '<td><button class="btn btn-danger" type="button" onclick="Remove(' + id + ');">Xóa</button></td>'
+                + '</tr > ');
+            $("#articletrow_" + id).remove();
+        }
+    </script>
+
+    <script src="~/Content/autocomplete/jquery.autocomplete.min.js"></script>
+    <script>
+        var SearchData = [
+        @foreach (var tag in Model.Tags) {
+            <text>{ value: "@tag", data: "@tag" },</text>
+            }
+          ];
+        $('#tag').autocomplete({
+            lookup: SearchData
+        });
+
+        function AddTag() {
+            var temp = $("#tag").val();
+            if (temp) {
+                var currentValue = $("#Article_TAG").val();
+                if (currentValue) currentValue = currentValue + "," + temp;
+                else currentValue = temp;
+                $("#Article_TAG").val(currentValue);
+                $("#tag").val('');
+                $(".tag").append('<span>' + temp + ' <img src="/Content/remove.png" onclick="RemoveTag(this, \'' + temp + '\')" /></span>'); //add input box
+            }
+        }
+
+        function RemoveTag(e, value) {
+            var currentValue = $("#Article_TAG").val();
+            if (currentValue.startsWith(value + ",")) currentValue = currentValue.replace(value + ",", "");
+            if (currentValue.startsWith(" " + value + ",")) currentValue = currentValue.replace(" " + value + ",", "");
+            else if (currentValue.endsWith(", " + value)) currentValue = currentValue.replace(", " + value, "");
+            else if (currentValue.endsWith("," + value)) currentValue = currentValue.replace("," + value, "");
+            else if (currentValue.trim() == value.trim()) currentValue = "";
+            else {
+                currentValue = currentValue.replace(", " + value + ",", ",");
+                currentValue = currentValue.replace("," + value + ",", ",");
+            }
+            $("#Article_TAG").val(currentValue);
+            $(e).parent('span').remove();
+        }
+    </script>
+}
+
+

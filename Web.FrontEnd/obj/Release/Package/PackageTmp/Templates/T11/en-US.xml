@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <Language Key ="Language">Language</Language>
+  <Language Key ="vi-VN">Vietnamese</Language>
+  <Language Key ="en-US">English</Language>
+
+  <Language Key ="Download">Download</Language>
+  <Language Key ="Upload">Upload</Language>
+  <Language Key ="Default">Default</Language>
+  <Language Key ="Code">Code</Language>
+  <Language Key ="Description">Description</Language>
+  
+  <Language Key ="Home">Home</Language>
+  <Language Key ="LoadMore">Load more</Language>
+
+  <Language Key ="Translate">Dịch</Language>
+  <Language Key ="NoTranslationYet">Chưa có bản dịch</Language>
+  <Language Key ="FixTranslationYet">Sửa bản dịch</Language>
+  <Language Key ="SendTranslationYet">Đóng góp bản dịch</Language>
+  <Language Key ="Close">Đóng</Language>
+  <Language Key ="Send">Gửi</Language>
+  <Language Key ="YourName">Tên bạn:</Language>
+  <Language Key ="ErrorSend">Server is maintained, you can not send tranlation right now.</Language>
+  <Language Key ="ThankSent">Thanks for your tranlation!</Language>
+
+  <Language Key ="Recent">Recent</Language>
+  <Language Key ="Random">Random</Language>
+  <Language Key ="Mostviewed">Most viewed</Language>
+</Languages>

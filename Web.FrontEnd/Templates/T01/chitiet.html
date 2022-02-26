@@ -1,0 +1,686 @@
+﻿<!DOCTYPE html>
+<html>
+<title>BanMuaGi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="data/css.css">
+<link rel="stylesheet" href="data/w3.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+ table, td, th {    
+    border: 1px solid #ddd;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding:8px;
+}
+</style>
+<body>
+<div>
+<!-- Header -->
+<haeder>
+  <!-- banner -->
+<div class="topbar w3-hide-small">
+  <a href="#">
+    <div class="banner1">
+      <img src="IMG/banner.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </a>
+</div>
+<!--end banner -->
+<!--header1 -->
+<div style="background: #0057c3;">
+    <div class="w3-bar w3-card w3-text-white w3-hide-small">
+      <a style="padding:0 0 0 50px" class="w3-bar-item" href="#">
+          <div style="padding: 0 10px;line-height: 28px;text-align: center;background: #f3f3f338;"><i style="font-size:18px;padding:0 5px;" class="fa">&#xf10b;</i>Banmuagi App - Mua hảng rẻ hơn</div>
+        </a>
+      <div class="w3-right">
+          <ul style="font-size:12px;padding-right: 50px;" class="ulcontact">
+              <li><i class="fa fa-phone"></i>Hotline: 0899 34 32 49</li>
+              <li style="padding-left: 15px;"><i class="fa fa-phone"></i>Phiếu quà tặng </li>
+              <li style="padding-left: 15px;"><i class="fa fa-phone"></i>Khuyến mãi HOT</li>
+              <li style="padding-left: 15px;"><i class="fa fa-phone"></i>Chăm sóc khách hàng</li>
+              <li style="padding-left: 15px;"><i class="fa fa-phone"></i>Bán hàng cũng BMG</li>
+            </ul>
+      </div>
+    </div>
+    <div class="w3-hide-large w3-hide-medium w3-text-white mbhd">
+      <div class="mbhdd w3-center">HOTLINE : 0899343249</div>
+      <div class="w3-row" style="padding:25px 10px 0 10px;">
+          <div class="w3-col s4">
+              Thông báo
+          </div>
+          <div class="w3-col s4">
+              Khuyến mãi
+          </div>
+          <div class="w3-col s4">
+            Điểm tích lũy
+            </div>
+      </div>
+    </div>
+</div>
+<!--end header1 -->
+<!--header2 mobile ẩn-->
+<div style="min-height:80px;background:#1b81ff;" class="plr50 w3-hide-small">
+    <div style="min-height:75px;" class="w3-row">
+      <div class="w3-col rps100" style="width:60%;height:100%">
+        <div style="height:100%">
+          <div class="w3-row">
+            <div class="w3-col w3-hide-small" style="width:25%">
+                <img style="width:95%" src="IMG/Ban-Mua-Gi.png">
+            </div>
+            <div class="w3-col w3-hide-medium w3-hide-large " style="width:15%;padding: 26px 15px 10px 15px;color: white;"><a href="#" onclick="w3_open();"><i style="padding-right:10px;font-size: 25px;" class="fa fa-align-justify"></i></a></div>
+            <div class="w3-col" style="width:75%">
+                <form style="box-sizing: content-box;" action="/search.html" class="search-wrapper cf">
+                  <input type="text" placeholder="Bạn mua gì?" required="">
+                  <button type="submit"> <span class="fontawesome-search"><i class="fa fa-search"></i></span>
+                  </button>
+              </form>
+            </div>
+            <div class="w3-col w3-hide-large w3-hide-medium" style="width:10%;line-height: 75px;">
+                <a href="#"><img src="IMG/Homepage_09.png"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col rps100 w3-hide-small" style="width:40%;font-size: 12px; margin-top: 28px;">
+        <div class="w3-row w3-text-white">
+            <div class="w3-col" style="width:24%">
+              <div><a href="#"><img src="IMG/Homepage_03.png">Điểm tích lũy</a></div>
+            </div>
+            <div class="w3-col" style="width:28%">
+                <div><a href="#"><img src="IMG/Homepage_05.png">Kiểm tra đơn hàng</a></div>
+              </div>
+              <div class="w3-col" style="width:28%">
+                  <div><a href="#"><img src="IMG/Homepage_07.png">Thông báo của tôi</a></div>
+                </div>
+                <div class="w3-col" style="width:20%">
+                    <div><a href="#"><img src="IMG/Homepage_09.png">Giỏ hàng</a></div>
+                  </div>
+          </div>
+
+      </div>
+    </div>
+    <div class="w3-hide-small" style="min-height:50px">
+        <div style="height:100%;line-height:50px" class="dlit w3-cell-row w3-text-white">
+            <div class="w3-container w3-cell w3-hide-small">
+              <a href="#"><i style="padding-right:10px" class="fa fa-align-justify"></i>DANH MỤC SẢN PHẨM</a>
+            </div>
+            <div class="w3-cell">
+              <p style="font-size:13px"><i class="fa fa-map-marker iconhdt"></i>Bạn muốn giao hàng đến?</p>
+            </div>
+             <div class="w3-cell">
+              <p style="font-size:13px"><i class="fa fa-eye iconhdt"></i>Sản phẩm bạn đã xem</p>
+            </div>
+             <div class="w3-cell">
+              <p style="font-size:13px"><i class="fa fa-phone iconhdt"></i>Hỗ trợ 24/24</p>
+            </div>
+             <div class="w3-cell">
+              <p style="font-size:13px"><i class="fa fa-calendar iconhdt"></i>30 ngày đổi trả dễ dàng</p>
+            </div>
+            <div class="w3-cell">
+                <p style="font-size:13px"><i class="fa fa-handshake-o iconhdt"></i>Giao dịch an toàn</p>
+              </div>
+          </div>
+    </div>
+</div>
+<!--end header2 -->
+<!--header3 -->
+<div class="mbhd2 w3-row w3-text-white w3-hide-large w3-hide-medium">
+   <a href="#" class="w3-col cb">
+     <span><i style="font-size:24px;padding:0 5px" class="fa">&#xf100;</i></span>
+      <span>
+        Về trang cũVề trang cũVề trang cũVề trang cũVề trang cũVề trang cũVề trang cũVề trang cũVề trang cũVề trang cũ
+      </span>
+   </a>
+   <div class="w3-col tn" style="width:25%">
+     <div class="w3-cell-row">
+       <div class="w3-cell"><i style="font-size:24px" class="fa">&#xf002;</i></div>
+       <div class="w3-cell"><i style="font-size:24px" class="fa">&#xf07a;</i></div>
+       <div class="w3-cell"><i style="font-size:21px"   class="fa fa-align-justify"></i></div>
+     </div>
+   </div>
+</div>
+<!--end header3 -->
+</haeder>
+<!-- body1 -->
+<div class="plr20 mb70">
+    <div style="min-height:1000px;">
+        <section>
+            <div class="w3-row productTab">
+                <div class="w3-col l4 s12">
+                    <div class="w3-content" style="max-width:1200px">
+                        <img class="mySl" src="IMG/x1.jpg" style="width:100%">
+                        <img class="mySl" src="IMG/x2.jpg" style="width:100%">
+                        <img class="mySl" src="IMG/x3.jpg" style="width:100%">
+                      
+                        <div class="w3-row-padding w3-section">
+                          <div class="w3-col s4">
+                            <img class="mySl1 w3-opacity w3-hover-opacity-off" src="IMG/x1.jpg" style="width:100%" onclick="currentdiv(1)">
+                          </div>
+                          <div class="w3-col s4">
+                            <img class="mySl1 w3-opacity w3-hover-opacity-off" src="IMG/x2.jpg" style="width:100%" onclick="currentdiv(2)">
+                          </div>
+                          <div class="w3-col s4">
+                            <img class="mySl1 w3-opacity w3-hover-opacity-off" src="IMG/x3.jpg" style="width:100%" onclick="currentdiv(3)">
+                          </div>
+                        </div>
+                      </div>
+                      
+  
+                </div>
+                <div class="w3-col l8 s12 plr10">
+                    <Div>
+                        <div class="w3-hide-small"><!-- đường dẫn đến sản phẩm -->
+                          <ul class="breadcrumb">
+                            <li class="item_b">
+                              <a href="#">Sức khỏe & Làm đẹp</a>
+                            </li>
+                            <li class="item_b">
+                                <a href="#">> Chăm sóc răng miệng</a>
+                            </li>
+                            <li class="item_b">
+                                <a href="#">> Chăm sóc răng miệng</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <p style="font-size: 22px;">Dinh dưỡng đóng lọ Cá Tuyết và rau củ hầm Kewpie 9 tháng</p>
+                        
+                        <div class="w3-hide-small"><!--Thương hiệu -->
+                          <div class="item_th">
+                            <p><i style="margin:0 5px" class="fa fa-gg"></i><b>Thương hiệu:</b>Chưa rõ</p>
+                          </div>
+                          <div class="item_th">
+                              <p><i style="margin:0 5px" class="fa fa-tags"></i><b>Loại:</b>Chưa rõ</p>
+                          </div>
+                          <div class="item_th">
+                              <p><i style="margin:0 5px" class="fa fa-barcode"></i><b>SKU:</b>Chưa rõ</p>
+                          </div>
+                        </div>
+                    </Div>
+                    <div style="border-top: 1px solid #ddd;" class="w3-row">
+                      <div class="w3-col rps100" style="width:64%">
+                          <div style="border-bottom: 1px solid #ddd;padding:10px 0">
+                              <p>
+                                <span class="span_p">₫&nbsp5.600.000</span> <span class="span_p1">₫&nbsp5.600.000</span>
+                              </p>
+                              <div>
+                                <p>
+                                  Mua hàng trong app rẽ hơn<span class="span_p2">&nbsp₫&nbsp600.000</span>
+                                </p>
+                              </div>
+                              <div>
+                                  <p>
+                                    Mua hàng tích lũy<span>&nbsp3&nbsp</span><span class="span_p3">PKSV</span> Xu
+                                  </p>
+                                </div>
+                                <div>
+                                    <p>
+                                      Đánh giá: <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star"></span>
+                                      <span class="fa fa-star"></span>
+                                      <span style="border-left:1px solid #000">&nbsp&nbsp3000 Giao dịch</span>
+                                      <span style="border-left:1px solid #000">&nbsp&nbsp<span class="span_p3">17</span> Đánh giá</span>
+                                    </p>
+                                    
+                                  </div>
+                            </div>
+                            <div class="pvc">
+                              <p><i class="fa fa-truck"></i>&nbspVận chuyển đến: Huyện Ba Vì, Hà Nội</p>
+                              <p>Phí vận chuyển : ₫600.000</p>
+                            </div>
+                            <div class="w3-hide-small"><!-- nút mua hàng-->
+                              
+                              <p style="padding:10px 0">Phân loại hàng:</p>
+                              <p style="padding:10px 0">Số lượng&nbsp&nbsp&nbsp<span class="input-number-decrement">–</span><input class="input-number" type="text" value="1" min="0" max="1000"><span class="input-number-increment">+</span></p>
+                              <button class="w3-btn w3-blue w3-border">Chát ngay</button>
+                                    <button class="w3-btn w3-blue w3-border"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+                                    <button class="w3-btn w3-red w3-border">Mua ngay</button>
+                            </div>
+                      </div>
+                      <div class="w3-col w3-hide-small" style="width:36%;border-left:1px solid #ddd;padding:0 10px;min-height:350px;">
+                            <div style="border-bottom:1px dashed #ddd;padding:5px 0">
+                              <i class="fa fa-truck iconct" style="font-size:30px;"></i>
+                              <div >
+                                <b>Giao hàng tận nơi</b>
+                                <p style="color:rgb(116, 116, 116)">Cho đơn hàng từ 500000đ</p>
+                              </div>
+                            </div>
+                            <div style="border-bottom:1px dashed #ddd;padding:5px 0">
+                              <i class="fa fa-thumbs-o-up iconct" style="font-size:30px;"></i>
+                              <div >
+                                <b>Đảm bảo chất lượng</b>
+                                <p style="color:rgb(116, 116, 116)">Sẩn phẩm đảm bảo chất lượng</p>
+                              </div>
+                            </div>
+                            <div style="border-bottom:1px dashed #ddd;padding:5px 0">
+                              <i class="fa fa-credit-card iconct" style="font-size:30px;"></i>
+                              <div >
+                                <b>Dễ dàng thanh toán</b>
+                                <p style="color:rgb(116, 116, 116)">Sản phẩm với giá ưu đãi</p>
+                              </div>
+                            </div>
+                            <div style="border-bottom:1px dashed #ddd;padding:5px 0">
+                              <i class="material-icons iconct" style="font-size:30px;">supervisor_account</i>
+                              <div >
+                                <b>Hỗ trợ 24/7</b>
+                                <p style="color:rgb(116, 116, 116)">Hotline: 0899.34.32.49</p>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+        </section>
+        <section>
+            <div class="productTab">
+                <div class="panel">
+                  <h3>Thông tin chi tiết</h3>
+                </div>
+                <div class="w3-row" style="margin:10px">
+                  <table class="w3-half">
+                    <tr>
+                      <td style="width:30%;    background: #efefef;">Thương hiệu</td>
+                      <td style="width:70%">b</td>
+                    </tr>
+                    <tr>
+                        <td style="width:30%;    background: #efefef;">Xuất xứ</td>
+                        <td style="width:70%">b</td>
+                      </tr>
+                      <tr>
+                          <td style="width:30%;    background: #efefef;">Chất liệu</td>
+                          <td style="width:70%">b</td>
+                        </tr>
+                  </table>
+                  <div class="w3-half">
+                    <div style="padding:5px">Loa Treo Gunners GS-6828 (200W) sở hữu 2 chiếc loa rời cực kì hiện đại, kết hợp tông màu đen hợp thời. Dù trong một quán</div>
+                  </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="productTab">
+                <div class="panel">
+                  <h3>Sản phẩm nổi bật</h3 >
+                </div>
+                <div class="w3-row">
+                  <div class="w3-col w20 l2 s4" >
+                    <div class="item_product">
+                      <a href="#">
+                        <div class="image"><img src="IMG/e6b9f95670d8c4ba2bf560a28d5f3a40_tn.jpg"></div>
+                        <p class="product_title">Ốp lưng bóng in nổi 4dnổi 4dnổi 4d nổi 4d</p>
+                        <p class="sale_price">
+                            <span class="price_final">31.000&nbsp;₫</span>
+                                            <span class="regular_price">36.000&nbsp;₫</span>
+                                <span class="tag_sale">-14%</span>
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="w3-col w20 l2 s4" >
+                    <div class="item_product">
+                      <a href="#">
+                        <div class="image"><img src="IMG/e6b9f95670d8c4ba2bf560a28d5f3a40_tn.jpg"></div>
+                        <p class="product_title">Ốp lưng bóng in nổi 4dnổi 4dnổi 4d nổi 4d</p>
+                        <p class="sale_price">
+                            <span class="price_final">31.000&nbsp;₫</span>
+                                            <span class="regular_price">36.000&nbsp;₫</span>
+                                <span class="tag_sale">-14%</span>
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="w3-col w20 l2 s4" >
+                      <div class="item_product">
+                          <a href="#">
+                            <div class="image"><img src="IMG/e6b9f95670d8c4ba2bf560a28d5f3a40_tn.jpg"></div>
+                            <p class="product_title">Ốp lưng bóng in nổi 4dnổi 4dnổi 4d nổi 4d</p>
+                            <p class="sale_price">
+                                <span class="price_final">31.000&nbsp;₫</span>
+                                                <span class="regular_price">36.000&nbsp;₫</span>
+                                    <span class="tag_sale">-14%</span>
+                            </p>
+                          </a>
+                        </div>
+                  </div>
+                  <div class="w3-col w20 l2 s4" >
+                      <div class="item_product">
+                          <a href="#">
+                            <div class="image"><img src="IMG/e6b9f95670d8c4ba2bf560a28d5f3a40_tn.jpg"></div>
+                            <p class="product_title">Ốp lưng bóng in nổi 4dnổi 4dnổi 4d nổi 4d</p>
+                            <p class="sale_price">
+                                <span class="price_final">31.000&nbsp;₫</span>
+                                                <span class="regular_price">36.000&nbsp;₫</span>
+                                    <span class="tag_sale">-14%</span>
+                            </p>
+                          </a>
+                        </div>
+                  </div>
+                  <div class="w3-col w20 l2 s4" >
+                      <div class="item_product">
+                          <a href="#">
+                            <div class="image"><img src="IMG/e6b9f95670d8c4ba2bf560a28d5f3a40_tn.jpg"></div>
+                            <p class="product_title">Ốp lưng bóng in nổi 4dnổi 4dnổi 4d nổi 4d</p>
+                            <p class="sale_price">
+                                <span class="price_final">31.000&nbsp;₫</span>
+                                                <span class="regular_price">36.000&nbsp;₫</span>
+                                    <span class="tag_sale">-14%</span>
+                            </p>
+                          </a>
+                        </div>
+                  </div>
+                  <div class="w3-col w20 l2 s4" >
+                      <div class="item_product">
+                          <a href="#">
+                            <div class="image"><img src="IMG/e6b9f95670d8c4ba2bf560a28d5f3a40_tn.jpg"></div>
+                            <p class="product_title">Ốp lưng bóng in nổi 4dnổi 4dnổi 4d nổi 4d</p>
+                            <p class="sale_price">
+                                <span class="price_final">31.000&nbsp;₫</span>
+                                                <span class="regular_price">36.000&nbsp;₫</span>
+                                    <span class="tag_sale">-14%</span>
+                            </p>
+                          </a>
+                        </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        
+    </div>
+</div>
+<!-- end body1 -->
+
+
+<footer class="footer1 w3-hide-small ">
+    <div style="padding:50px 0px">
+      <div class="w3-row">
+        <div class="w3-container w3-col l3 m6">
+          <div class="w3-row">
+            <div class="w3-quarter"><img height="60px" src="IMG/gio hang.png"></div>
+            <div style="font-size:12px" class="w3-threequarter"><p style="font-size:14px"><b>SIÊU NHIỀU HÀNG TỐT</b></p>
+              <p>Cần gì cũng có trên 26 ngành hàng & 10 triệu sản phẩm</p></div>
+          </div>
+        </div>
+        <div class="w3-container w3-col l3 m6">
+            <div class="w3-row">
+                <div class="w3-quarter"><img height="60px" src="IMG/gio hang.png"></div>
+                <div style="font-size:12px" class="w3-threequarter"><p style="font-size:14px"><b>SIÊU NHIỀU HÀNG TỐT</b></p>
+                  <p>Cần gì cũng có trên 26 ngành hàng & 10 triệu sản phẩm</p></div>
+              </div>
+        </div>
+        <div class="w3-container w3-col l3 m6">
+            <div class="w3-row">
+                <div class="w3-quarter"><img height="60px" src="IMG/gio hang.png"></div>
+                <div style="font-size:12px" class="w3-threequarter"><p style="font-size:14px"><b>SIÊU NHIỀU HÀNG TỐT</b></p>
+                  <p>Cần gì cũng có trên 26 ngành hàng & 10 triệu sản phẩm</p></div>
+              </div>
+        </div>
+        <div class="w3-container w3-col l3 m6">
+            <div class="w3-row">
+                <div class="w3-quarter"><img height="60px" src="IMG/gio hang.png"></div>
+                <div style="font-size:12px" class="w3-threequarter"><p style="font-size:14px"><b>SIÊU NHIỀU HÀNG TỐT</b></p>
+                  <p>Cần gì cũng có trên 26 ngành hàng & 10 triệu sản phẩm</p></div>
+              </div>
+        </div>
+
+      </div>
+    </div>
+    <div style="margin-bottom:30px">
+      <div class="w3-row">
+        <div class="w3-col" style="width:20%">
+          <p style="margin-bottom:10px"><b>GIỚI THIỆU</b></p>
+          <p><a href="#">Về chúng tôi</a></p>
+          <p><a href="#">Quy chế hoạt động</a></p>
+          <p><a href="#">Chính sách bảo mật thông tin</a></p>
+          <p><a href="#">Cơ chế giải quyết tranh chấp</a></p>
+          <p><a href="#">Liên hệ</a></p>
+        </div>
+        <div class="w3-col" style="width:20%">
+            <p style="margin-bottom:10px"><b>DÀNH CHO NGƯỜI MUA</b></p>
+          <p><a href="#">Giải quyết khiếu nại</a></p>
+          <p><a href="#">Hướng dẫn mua hàng</a></p>
+          <p><a href="#">Chính sách đổi trả</a></p>
+          <p><a href="#">chăm sóc khách hàng</a></p>
+          <p><a href="#">Nạp tiền điện thoại</a></p>
+          </div>
+          <div class="w3-col" style="width:20%">
+              <p style="margin-bottom:10px"><b>DÀNH CHO NGƯỜI BÁN</b></p>
+          <p><a href="#">Mở shop trên Banmuagi</a></p>
+          <p><a href="#">Quy định đối với người bán</a></p>
+          <p><a href="#">Chính sách bán hàng</a></p>
+          <p><a href="#">Hệ thống tiêu chí kiểm duyệt</a></p>
+            </div>
+            <div class="w3-col" style="width:20%">
+                <p style="margin-bottom:10px"><b>ĐĂNG KÝ NHẬN BẢN TIN BANMUAGI</b></p>
+                <p>
+                    <input class="w3-radio" type="radio" name="gender" value="male" checked>
+                    <label>Nam</label>
+                    <input class="w3-radio" type="radio" name="gender" value="female">
+                    <label>Nữ</label></p>
+              </div>
+            <div class="w3-col" style="width:20%">
+                <center><a style="margin:50px 0" class="w3-btn w3-blue" href="#" target="_blank">Đăng ký</a></center>
+              </div>
+      </div>
+    </div>
+    <div>
+      <div class="w3-row">
+          <div class="w3-quarter">
+            <p style="margin-bottom:10px"><b>BANMUAGI APP</b></p>
+            <div>
+              <span><img style="height:30px" src="IMG/5a13d8cc6385a-icon-appstore.png"></span>
+              <span><img style="height:30px" src="IMG/5a13d8cc639d2-icon-googleplay.png"></span>
+            </div>
+          </div>
+          <div class="w3-quarter">
+              <p style="margin-bottom:10px"><b>PHƯƠNG THỨC THANH TOÁN</b></p>
+              <div class="w3-row">
+                  <div class="w3-col" style="width:25%"><img  src="IMG/5a0a64b85c007-card-master.png"></div>
+                  <div class="w3-col" style="width:25%"><img  src="IMG/5a0a64b85c20d-card-onepay.png"></div>
+                  <div class="w3-col" style="width:25%"><img  src="IMG/5a0a64b85c115-card-money.png"></div>
+                  <div class="w3-col" style="width:25%"><img  src="IMG/5a0a64b85c310-card-visa.png"></div>
+                </div>
+          </div>
+          <div class="w3-quarter">
+              <p style="margin-bottom:10px"><b>PHƯƠNG THỨC VẬN CHUYỂN</b></p>
+              <div class="w3-row w3-container">
+                  <div class="w3-col" style="width:33%"><img style="height: 30px;"  src="IMG/CT6J11.png"></div>
+                  <div class="w3-col" style="width:33%"><img style="height: 40px;"  src="IMG/p3g3X4.png"></div>
+                  <div class="w3-col" style="width:33%"><img style="height: 30px;"  src="IMG/bTsWdU.png"></div>
+                </div>
+          </div>
+          <div class="w3-quarter">
+              <p style="margin-bottom:10px"><b>FOLLOW US</b></p>
+              <div class="w3-row w3-container">
+                  <div class="w3-col" style="width:20%"><img style="height: 30px;"  src="IMG/640429_media_512x512.png"></div>
+                  <div class="w3-col" style="width:20%"><img style="height: 30px;"  src="IMG/md_5a9797d302f17.png"></div>
+                  <div class="w3-col" style="width:20%"><img style="height: 30px;"  src="IMG/google-plus-icon.png"></div>
+                  <div class="w3-col" style="width:20%"><img style="height: 30px;"  src="IMG/58e9197deb97430e819064f8.png"></div>
+                  <div class="w3-col" style="width:20%"><img style="height: 30px;"  src="IMG/in.png"></div>
+                </div>
+          </div>
+      </div>
+    </div>
+</footer>
+<footer class="w3-hide-small footer2">
+    <div style="padding:25px 50px;font-size:13px" class="w3-row w3-text-white">
+        <div class="w3-half">
+          <p>Công ty TNHH Thương Mại Công Nghệ Điện Tử Máy Tính Sinh Viên</p>
+          <p>GPDKKD số 0313762359 do Sở Kế hoạch và Đầu tư TP.HCM 19/02/2017</p>
+          <p>Điện thoại: (+84) 0936 123 920 - 0964 728 247</p>
+          <p>Địa chỉ: 331/19 Vườn lai, Phường Phú Thọ Hòa, Quận Tân Phú, Tp.HCM</p>
+          <p>Copyright 2018 banmuagi.vn</p>
+        </div>
+        <div class="w3-half w3-center">
+          <div>
+            <h5>Website đã được dăng ký với Bộ Công Thương</h5>
+            <img style="width:30%" src="IMG/logobocongthuong.png">
+          </div>
+        </div>
+    </div>
+</footer>
+<footer class="footer3 w3-hide-large w3-hide-medium w3-bottom w3-text-white">
+    <div class="w3-row">
+      <div class="w3-col ft_c" style="width:15%">
+        <!-- Chat mobile -->
+        <a href="#"></a>
+          <div>
+            <i style="font-size:35px" class="fa">&#xf27b;</i>
+          </div>
+        </a>
+      </div>
+      <div class="w3-col" style="width:85%">
+          <div class="w3-row">
+              <a href="#" class="w3-col ft_gh w3-center">
+                    <i style="font-size: 35px;" class="material-icons">&#xe854;</i>
+              </a>
+          
+              <a href="#" class="w3-col ft_b" style="width: 55%;">
+                <b>MUA NGAY</b>
+                <p>Giao hàng tận nới</p>
+              </a>
+          </div>
+      </div>
+      </div>
+    </div>
+</footer>
+</div>
+</div>
+<button onclick="topFunction()" id="btt" title="Go to top"><svg id="rocket-icon" viewBox="0 0 75 75"><polygon fill="#68D4F8" points="18 21 35 21 44 30 27 30"/><polygon fill="#68D4F8" points="27 45 44 45 35 54 18 54"/><path fill="#68D4F8" d="M30.94 47.7c-3.79-.93-6.98-2.35-9.25-4.07a14.88 14.88 0 0 0 0-12.26c2.27-1.72 5.46-3.14 9.25-4.08A14.72 14.72 0 0 1 35 37.5c0 3.98-1.55 7.59-4.06 10.2z"/><path fill="#8DDEF9" d="M30.94 27.3c-3.79.93-6.98 2.35-9.25 4.07.84 1.86 1.31 3.94 1.31 6.13h12c0-3.98-1.55-7.59-4.06-10.2z"/><path fill="#68D4F8" d="M57.06 30.13C62.5 33.1 66 36.73 66 37.5c0 .77-3.49 4.4-8.94 7.37A14.83 14.83 0 0 0 59 37.5c0-2.7-.7-5.21-1.94-7.37z"/><path fill="#8DDEF9" d="M57.06 30.13C62.5 33.1 66 36.73 66 37.5h-7c0-2.7-.7-5.21-1.94-7.37z"/><path fill="#ECFAFF" d="M57.06 44.87C52.94 47.12 47.7 49 42 49c-3.99 0-7.75-.47-11.06-1.3A14.72 14.72 0 0 0 35 37.5c0-3.98-1.55-7.59-4.06-10.2C34.25 26.46 38.01 26 42 26c5.7 0 10.94 1.88 15.06 4.13A14.83 14.83 0 0 1 59 37.5c0 2.7-.7 5.21-1.94 7.37z"/><path fill="#FCFEFF" d="M57.06 30.13C52.94 27.88 47.7 26 42 26c-3.99 0-7.75.47-11.06 1.3A14.72 14.72 0 0 1 35 37.5h24c0-2.7-.7-5.21-1.94-7.37z"/><circle cx="49.5" cy="37.5" r="3.5" fill="#68D4F8"/><path fill="#8DDEF9" d="M46 37.5h7a3.5 3.5 0 0 0-7 0z"/><path fill="#68D4F8" d="M21 37.5c0-10.04-11 0-12 0 1 0 12 10.04 12 0z" class="flame"/></svg>
+</button>
+<script>
+  window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("btt").style.display = "block";
+    } else {
+        document.getElementById("btt").style.display = "none";
+    }
+}
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+
+//IMG
+// var slideIndex = 1;
+// showDivs(slideIndex);
+
+// function plusDivs(n) {
+//   showDivs(slideIndex += n);
+// }
+
+// function currentDiv(n) {
+//   showDivs(slideIndex = n);
+// }
+
+// function showDivs(n) {
+//   var i;
+//   var x = document.getElementsByClassName("mySlides");
+//   var dots = document.getElementsByClassName("demo");
+//   if (n > x.length) {slideIndex = 1}    
+//   if (n < 1) {slideIndex = x.length}
+//   for (i = 0; i < x.length; i++) {
+//      x[i].style.display = "none";  
+//   }
+//   for (i = 0; i < dots.length; i++) {
+//      dots[i].className = dots[i].className.replace(" w3-white", "");
+//   }
+//   x[slideIndex-1].style.display = "block";  
+//   dots[slideIndex-1].className += " w3-white";
+// }
+//img
+var slideindex = 1;
+showdivs(slideindex);
+
+function plusdivs(n) {
+  showdivs(slideindex += n);
+}
+
+function currentdiv(n) {
+  showdivs(slideindex = n);
+}
+
+function showdivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySl");
+  var dots = document.getElementsByClassName("mySl1");
+  if (n > x.length) {slideindex = 1}
+  if (n < 1) {slideindex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideindex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
+
+</script>
+
+</body>
+</html>

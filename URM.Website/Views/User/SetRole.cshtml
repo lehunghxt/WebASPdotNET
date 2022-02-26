@@ -1,0 +1,97 @@
+﻿@model URM.Website.Models.SetRoleViewModel
+
+@{
+    ViewBag.Title = "Quản lý nhóm quyền";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-danger" style="margin-top:10px">
+                <div class="panel-heading">Cài đặt quyền hạn cho tài khoản</div>
+                <div class="panel-body">
+                    <fieldset>
+                        <p id="notvalid" class="text-error" style="color:red">
+                            @ViewBag.Error
+                        </p>
+                        <div class="form-group">
+                            <table width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td>Mã:</td>
+                                        <td><strong>@Model.User.ID</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tên:</td>
+                                        <td><strong>@Model.User.FullName</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tài khoản:</td>
+                                        <td><strong>@Model.User.UserName</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ngày sinh:</td>
+                                        <td><strong>@string.Format("{0:dd/MM/yyy}", Model.User.Birthday)</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email:</td>
+                                        <td><strong>@Model.User.Email</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Điện thoại:</td>
+                                        <td><strong>@Model.User.Phone</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Địachỉ:</td>
+                                        <td><strong>@Model.User.Address</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="button" class="btn btn-primary btn-block" value="Lưu" onclick="Update()" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-warning" style="margin-top:10px">
+                <div class="panel-heading" id="roleheader">
+                    Danh sách quyền
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+                        <div class="row">
+                            @foreach (var group in Model.Roles)
+                            {
+                                <div class="col-md-4">
+                                    <div class="panel panel-info" style="margin-top:10px;">
+                                        <div class="panel-heading">@group.Key</div>
+                                        <div class="panel-body">
+                                            @foreach (var role in group.Value)
+                                            {
+                                                <div class="form-group"><input name="grouprole" type="checkbox" value="@role.ID" @(Model.User.Roles.Split('|').Contains(role.ID) ? "checked='checked'" : "") /> @role.RoleName </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.HiddenFor(model => model.Action)
+    @Html.HiddenFor(model => model.User.ID)
+    <script language="javascript">
+        function Update() {
+            $('#Action').val('SETROLE');
+            $("#frm").submit();
+        }
+    </script>
+}

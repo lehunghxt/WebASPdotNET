@@ -1,0 +1,72 @@
+﻿@model URM.Website.Models.RoleGroupModel
+
+@{
+    ViewBag.Title = "Danh sách quyền hạn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-danger" style="margin-top:10px">
+            <div class="panel-heading">Thêm Quyền</div>
+            <div class="panel-body">
+                <fieldset>
+                    <p id="notvalid" class="text-error" style="color:red">
+                        @ViewBag.Error
+                    </p>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Role.ID, new { htmlAttributes = new { @class = "form-control", placeholder = "Mã quyền" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Role.RoleName, new { htmlAttributes = new { @class = "form-control", placeholder = "Mô tả" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Role.RoleGroup, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhóm quyền" } })
+                    </div>
+                    <!-- Change this to a button or input when using this as a form -->
+                    <input type="button" class="btn btn-success btn-block" value="Thêm" onclick="AddRole()"/>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+@foreach (var group in Model.Groups)
+{
+    <div class="col-md-4">
+        <div class="panel panel-info" style="margin-top:10px">
+            <div class="panel-heading">@group.Key</div>
+                <table class="table table-hover">
+                    <tbody>
+                        @foreach (var role in group.Value)
+                        {
+                            <tr>
+                                <td>
+                                    @role.ID - @role.RoleName
+                                </td>
+                                <td class="text-right">
+                                    <input type="button" value="X" class="btn btn-danger" onclick="Delete('@role.ID')"/>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+}
+</div>
+
+@Html.HiddenFor(model => model.Action)
+@Html.HiddenFor(model => model.RoleId)
+<script language="javascript">
+    function AddRole(value) {
+        $('#Action').val('ADDROLE');
+                $("#frm").submit();
+    }
+    function Delete(value) {
+        $('#Action').val('DELETEROLE');
+        $('#RoleId').val(value);
+        $("#frm").submit();
+    }
+</script>
+}

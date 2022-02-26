@@ -1,0 +1,132 @@
+body{
+    font-size: 1.25rem !important;
+    font-weight: 300 !important;
+	text-align:justify
+}
+
+hr{clear:both}
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	  
+	  .nav-fill .nav-item, .nav-fill>.nav-link {background-color: #e2e3e5; border-left: 1px #ccc;display: block;}
+      h1{margin:30px 0px}
+	  h2{margin:30px 0px}
+	  h2 a:hover{text-decoration:none}
+	  hr {margin: 30px 0px}
+	  .navbar img{height:20px;}
+      .articlecontent1{margin-bottom:20px}
+
+.sty_date {
+        padding: 10px;
+    font-size: 12px;
+    color: #666;
+    background: #e2e3e5;
+    margin:20px 0px
+}
+    .sty_date li {
+    display: inline-block;
+    color: #666;
+    margin: 0 10px 0 1px;
+}
+.svg-inline--fa.fa-w-14 {
+    width: .875em;
+}
+.svg-inline--fa.fa-w-18 {
+    width: 1.125em;
+}
+
+.clear{clear:both}
+
+#sendName{margin-top:20px 0px 10px 0px}
+
+.articles .alert{display:none}
+.gsc-control-cse{background:none !important; border:none !important}
+
+ul.social {
+	padding: 0;
+	list-style: none;
+	float:left;
+	margin-right: 2em;
+}
+ul.social li:first-child {
+	margin-left: 0;
+}
+ul.social li {
+	display: inline-block;
+}
+ul.social li a i {
+    margin-top: 10px;
+	width: 30px;
+	height: 30px;
+	display: block;
+	background: url(../images/img-sprite.png) no-repeat;
+}
+ul.social li a i:hover {
+	background: url(../images/img-sprite.png)no-repeat;
+}
+ul.social li a i.fb {
+	background-position:-2px -4px;
+}
+ul.social li a i.tw{
+	background-position:-28px -4px;
+}
+ul.social li a i.utube{
+	background-position:-56px -4px;
+}
+ul.social li a i.pin{
+	background-position:-83px -3px;
+}
+ul.social li a i.instagram {background-position: -110px -4px;}
+
+.footer-copyright{font-size: 16px;}
+
+.videos, .media{margin:20px 0px; display:block;}
+.videos .videoitem{float:left; margin:10px 10px 40px; width:300px; height:180px}
+.video{position: relative;min-height:500px}
+.video iframe {position: absolute;top:0;left: 0; width: 100%;height: 100%;}
+.slideright{margin:30px 0px; width:100%}
+
+.tags{
+	list-style:none;
+	background:#fff;
+	margin:1em 0em;
+    text-align:left;
+}
+h3.tag_head{
+	margin-bottom: 1em;
+    padding:5px
+}
+ul.tags_links{
+	padding:0;
+	list-style:none;
+}
+ul.tags_links li {
+	display: inline-grid;
+	margin-bottom: 5px;
+}
+ul.tags_links li a {
+  background: #e9e9e9;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+a:hov
+ul.tags_links li a:hover{
+	text-decoration:none;
+}
+ul.tags_links li a:hover{
+	background:#007bff;
+	color:#fff;
+}

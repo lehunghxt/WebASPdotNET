@@ -1,0 +1,198 @@
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\obj\Release\Web.FrontEnd.csprojResolveAssemblyReference.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\obj\Release\Web.FrontEnd.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.FrontEnd.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.FrontEnd.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.FrontEnd.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\EntityFramework.SqlServer.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Library.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Library.Web.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\log4net.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Newtonsoft.Json.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\System.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.Asp.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.Business.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\System.Web.Http.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\System.Net.Http.Formatting.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Microsoft.Web.Administration.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.Data.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Library.Web.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Library.Web.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Library.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.Asp.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.Asp.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.Business.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.Business.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\EntityFramework.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\EntityFramework.SqlServer.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\log4net.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Newtonsoft.Json.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\System.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\System.Web.Http.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\System.Net.Http.Formatting.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.Data.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\Web.Data.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\obj\Release\Web.FrontEnd.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\obj\Release\Web.FrontEnd.pdb
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.FrontEnd.dll.config
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.FrontEnd.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.FrontEnd.pdb
+D:\Work\v5 20180512\Web.FrontEnd\bin\EntityFramework.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\EntityFramework.SqlServer.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\Library.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\Library.Web.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\log4net.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\Newtonsoft.Json.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\System.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.Asp.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.Business.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.Model.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\System.Web.Http.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\System.Net.Http.Formatting.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\Microsoft.Web.Administration.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.Data.dll
+D:\Work\v5 20180512\Web.FrontEnd\bin\Library.Web.pdb
+D:\Work\v5 20180512\Web.FrontEnd\bin\Library.pdb
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.Asp.pdb
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.Business.pdb
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.Model.pdb
+D:\Work\v5 20180512\Web.FrontEnd\bin\EntityFramework.xml
+D:\Work\v5 20180512\Web.FrontEnd\bin\EntityFramework.SqlServer.xml
+D:\Work\v5 20180512\Web.FrontEnd\bin\log4net.xml
+D:\Work\v5 20180512\Web.FrontEnd\bin\Newtonsoft.Json.xml
+D:\Work\v5 20180512\Web.FrontEnd\bin\System.xml
+D:\Work\v5 20180512\Web.FrontEnd\bin\System.Web.Http.xml
+D:\Work\v5 20180512\Web.FrontEnd\bin\System.Net.Http.Formatting.xml
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.Data.pdb
+D:\Work\v5 20180512\Web.FrontEnd\obj\Release\Web.FrontEnd.csprojResolveAssemblyReference.cache
+D:\Work\v5 20180512\Web.FrontEnd\obj\Release\Web.FrontEnd.dll
+D:\Work\v5 20180512\Web.FrontEnd\obj\Release\Web.FrontEnd.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.FrontEnd\bin\CKFinder.pdb
+D:\Work\v5 20180512\Web.FrontEnd\bin\Library.Web.dll.config
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.Asp.dll.config
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.Business.dll.config
+D:\Work\v5 20180512\Web.FrontEnd\bin\Web.Data.dll.config
+D:\Work\v5 20180512\Web.FrontEnd\obj\Release\Web.FrontEnd.csproj.CoreCompileInputs.cache
+C:\EISv2\Web.FrontEnd\bin\Web.FrontEnd.dll.config
+C:\EISv2\Web.FrontEnd\bin\Web.FrontEnd.dll
+C:\EISv2\Web.FrontEnd\bin\Web.FrontEnd.pdb
+C:\EISv2\Web.FrontEnd\bin\EntityFramework.dll
+C:\EISv2\Web.FrontEnd\bin\EntityFramework.SqlServer.dll
+C:\EISv2\Web.FrontEnd\bin\Library.dll
+C:\EISv2\Web.FrontEnd\bin\Library.Web.dll
+C:\EISv2\Web.FrontEnd\bin\log4net.dll
+C:\EISv2\Web.FrontEnd\bin\Newtonsoft.Json.dll
+C:\EISv2\Web.FrontEnd\bin\System.dll
+C:\EISv2\Web.FrontEnd\bin\Web.Asp.dll
+C:\EISv2\Web.FrontEnd\bin\Web.Business.dll
+C:\EISv2\Web.FrontEnd\bin\Web.Model.dll
+C:\EISv2\Web.FrontEnd\bin\System.Net.Http.Formatting.dll
+C:\EISv2\Web.FrontEnd\bin\Web.Data.dll
+C:\EISv2\Web.FrontEnd\bin\Library.Web.pdb
+C:\EISv2\Web.FrontEnd\bin\Library.pdb
+C:\EISv2\Web.FrontEnd\bin\Web.Asp.pdb
+C:\EISv2\Web.FrontEnd\bin\Web.Business.pdb
+C:\EISv2\Web.FrontEnd\bin\Web.Model.pdb
+C:\EISv2\Web.FrontEnd\bin\EntityFramework.xml
+C:\EISv2\Web.FrontEnd\bin\EntityFramework.SqlServer.xml
+C:\EISv2\Web.FrontEnd\bin\log4net.xml
+C:\EISv2\Web.FrontEnd\bin\Newtonsoft.Json.xml
+C:\EISv2\Web.FrontEnd\bin\System.xml
+C:\EISv2\Web.FrontEnd\bin\System.Net.Http.Formatting.xml
+C:\EISv2\Web.FrontEnd\bin\Web.Data.pdb
+C:\EISv2\Web.FrontEnd\obj\Release\Web.FrontEnd.csprojResolveAssemblyReference.cache
+C:\EISv2\Web.FrontEnd\obj\Release\Web.FrontEnd.dll
+C:\EISv2\Web.FrontEnd\obj\Release\Web.FrontEnd.pdb
+C:\Webv6\Web.FrontEnd\bin\Web.FrontEnd.dll.config
+C:\Webv6\Web.FrontEnd\bin\Web.FrontEnd.dll
+C:\Webv6\Web.FrontEnd\bin\Web.FrontEnd.pdb
+C:\Webv6\Web.FrontEnd\bin\EntityFramework.dll
+C:\Webv6\Web.FrontEnd\bin\EntityFramework.SqlServer.dll
+C:\Webv6\Web.FrontEnd\bin\Library.dll
+C:\Webv6\Web.FrontEnd\bin\Library.Web.dll
+C:\Webv6\Web.FrontEnd\bin\log4net.dll
+C:\Webv6\Web.FrontEnd\bin\Newtonsoft.Json.dll
+C:\Webv6\Web.FrontEnd\bin\System.dll
+C:\Webv6\Web.FrontEnd\bin\Web.Asp.dll
+C:\Webv6\Web.FrontEnd\bin\Web.Business.dll
+C:\Webv6\Web.FrontEnd\bin\Web.Model.dll
+C:\Webv6\Web.FrontEnd\bin\System.Net.Http.Formatting.dll
+C:\Webv6\Web.FrontEnd\bin\Web.Data.dll
+C:\Webv6\Web.FrontEnd\bin\Library.Web.pdb
+C:\Webv6\Web.FrontEnd\bin\Library.pdb
+C:\Webv6\Web.FrontEnd\bin\Web.Asp.pdb
+C:\Webv6\Web.FrontEnd\bin\Web.Business.pdb
+C:\Webv6\Web.FrontEnd\bin\Web.Model.pdb
+C:\Webv6\Web.FrontEnd\bin\EntityFramework.xml
+C:\Webv6\Web.FrontEnd\bin\EntityFramework.SqlServer.xml
+C:\Webv6\Web.FrontEnd\bin\log4net.xml
+C:\Webv6\Web.FrontEnd\bin\Newtonsoft.Json.xml
+C:\Webv6\Web.FrontEnd\bin\System.xml
+C:\Webv6\Web.FrontEnd\bin\System.Net.Http.Formatting.xml
+C:\Webv6\Web.FrontEnd\bin\Web.Data.pdb
+C:\Webv6\Web.FrontEnd\obj\Release\Web.FrontEnd.csprojResolveAssemblyReference.cache
+C:\Webv6\Web.FrontEnd\obj\Release\Web.FrontEnd.dll
+C:\Webv6\Web.FrontEnd\obj\Release\Web.FrontEnd.pdb
+C:\work\Webv6\Web.FrontEnd\bin\Web.FrontEnd.dll.config
+C:\work\Webv6\Web.FrontEnd\bin\Web.FrontEnd.dll
+C:\work\Webv6\Web.FrontEnd\bin\Web.FrontEnd.pdb
+C:\work\Webv6\Web.FrontEnd\bin\EntityFramework.dll
+C:\work\Webv6\Web.FrontEnd\bin\EntityFramework.SqlServer.dll
+C:\work\Webv6\Web.FrontEnd\bin\Library.dll
+C:\work\Webv6\Web.FrontEnd\bin\Library.Web.dll
+C:\work\Webv6\Web.FrontEnd\bin\log4net.dll
+C:\work\Webv6\Web.FrontEnd\bin\Newtonsoft.Json.dll
+C:\work\Webv6\Web.FrontEnd\bin\System.dll
+C:\work\Webv6\Web.FrontEnd\bin\Web.Asp.dll
+C:\work\Webv6\Web.FrontEnd\bin\Web.Business.dll
+C:\work\Webv6\Web.FrontEnd\bin\Web.Model.dll
+C:\work\Webv6\Web.FrontEnd\bin\System.Net.Http.Formatting.dll
+C:\work\Webv6\Web.FrontEnd\bin\Microsoft.Web.Administration.dll
+C:\work\Webv6\Web.FrontEnd\bin\Web.Data.dll
+C:\work\Webv6\Web.FrontEnd\bin\Library.Web.pdb
+C:\work\Webv6\Web.FrontEnd\bin\Library.pdb
+C:\work\Webv6\Web.FrontEnd\bin\Web.Asp.pdb
+C:\work\Webv6\Web.FrontEnd\bin\Web.Business.pdb
+C:\work\Webv6\Web.FrontEnd\bin\Web.Model.pdb
+C:\work\Webv6\Web.FrontEnd\bin\EntityFramework.xml
+C:\work\Webv6\Web.FrontEnd\bin\EntityFramework.SqlServer.xml
+C:\work\Webv6\Web.FrontEnd\bin\log4net.xml
+C:\work\Webv6\Web.FrontEnd\bin\Newtonsoft.Json.xml
+C:\work\Webv6\Web.FrontEnd\bin\System.xml
+C:\work\Webv6\Web.FrontEnd\bin\System.Net.Http.Formatting.xml
+C:\work\Webv6\Web.FrontEnd\bin\Web.Data.pdb
+C:\work\Webv6\Web.FrontEnd\obj\Release\Web.FrontEnd.csprojResolveAssemblyReference.cache
+C:\work\Webv6\Web.FrontEnd\obj\Release\Web.FrontEnd.dll
+C:\work\Webv6\Web.FrontEnd\obj\Release\Web.FrontEnd.pdb
+D:\Webv6\Web.FrontEnd\bin\Web.FrontEnd.dll.config
+D:\Webv6\Web.FrontEnd\bin\Web.FrontEnd.dll
+D:\Webv6\Web.FrontEnd\bin\Web.FrontEnd.pdb
+D:\Webv6\Web.FrontEnd\bin\EntityFramework.dll
+D:\Webv6\Web.FrontEnd\bin\EntityFramework.SqlServer.dll
+D:\Webv6\Web.FrontEnd\bin\Library.dll
+D:\Webv6\Web.FrontEnd\bin\Library.Web.dll
+D:\Webv6\Web.FrontEnd\bin\log4net.dll
+D:\Webv6\Web.FrontEnd\bin\Newtonsoft.Json.dll
+D:\Webv6\Web.FrontEnd\bin\System.dll
+D:\Webv6\Web.FrontEnd\bin\Web.Asp.dll
+D:\Webv6\Web.FrontEnd\bin\Web.Business.dll
+D:\Webv6\Web.FrontEnd\bin\Web.Model.dll
+D:\Webv6\Web.FrontEnd\bin\System.Net.Http.Formatting.dll
+D:\Webv6\Web.FrontEnd\bin\Web.Data.dll
+D:\Webv6\Web.FrontEnd\bin\Library.Web.pdb
+D:\Webv6\Web.FrontEnd\bin\Library.pdb
+D:\Webv6\Web.FrontEnd\bin\Web.Asp.pdb
+D:\Webv6\Web.FrontEnd\bin\Web.Business.pdb
+D:\Webv6\Web.FrontEnd\bin\Web.Model.pdb
+D:\Webv6\Web.FrontEnd\bin\EntityFramework.xml
+D:\Webv6\Web.FrontEnd\bin\EntityFramework.SqlServer.xml
+D:\Webv6\Web.FrontEnd\bin\log4net.xml
+D:\Webv6\Web.FrontEnd\bin\Newtonsoft.Json.xml
+D:\Webv6\Web.FrontEnd\bin\System.xml
+D:\Webv6\Web.FrontEnd\bin\System.Net.Http.Formatting.xml
+D:\Webv6\Web.FrontEnd\bin\Web.Data.pdb
+D:\Webv6\Web.FrontEnd\obj\Release\Web.FrontEnd.csprojResolveAssemblyReference.cache
+D:\Webv6\Web.FrontEnd\obj\Release\Web.FrontEnd.dll
+D:\Webv6\Web.FrontEnd\obj\Release\Web.FrontEnd.pdb

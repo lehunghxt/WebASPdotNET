@@ -1,0 +1,57 @@
+D:\Work\bvtd\2018\Server\Website\Web.Model\bin\Debug\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\Web.Model\bin\Debug\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\Web.Model\obj\Debug\Web.Model.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\Web.Model\obj\Debug\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\Web.Model\obj\Debug\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\Web.Model\obj\Debug\Web.Model.csprojResolveAssemblyReference.cache
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Model\bin\Debug\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Model\bin\Debug\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Model\obj\Debug\Web.Model.csprojResolveAssemblyReference.cache
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Model\obj\Debug\Web.Model.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Model\obj\Debug\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Model\obj\Debug\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Model\bin\Debug\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Model\bin\Debug\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Model\obj\Debug\Web.Model.csprojResolveAssemblyReference.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Model\obj\Debug\Web.Model.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Model\obj\Debug\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Model\obj\Debug\Web.Model.pdb
+D:\Work\v5 20180512\Web.Model\bin\Debug\Web.Model.dll
+D:\Work\v5 20180512\Web.Model\bin\Debug\Web.Model.pdb
+D:\Work\v5 20180512\Web.Model\obj\Debug\Web.Model.dll
+D:\Work\v5 20180512\Web.Model\obj\Debug\Web.Model.pdb
+D:\Work\v5 20180512\Web.Model\obj\Debug\Web.Model.csprojResolveAssemblyReference.cache
+D:\Work\v5 20180512\Web.Model\obj\Debug\Web.Model.csproj.CoreCompileInputs.cache
+D:\Work\v5 20200105\Code\Web.Model\bin\Debug\Web.Model.dll
+D:\Work\v5 20200105\Code\Web.Model\bin\Debug\Web.Model.pdb
+D:\Work\v5 20200105\Code\Web.Model\obj\Debug\Web.Model.csprojResolveAssemblyReference.cache
+D:\Work\v5 20200105\Code\Web.Model\obj\Debug\Web.Model.dll
+D:\Work\v5 20200105\Code\Web.Model\obj\Debug\Web.Model.pdb
+D:\Work\EISv2\Web.Model\bin\Debug\Web.Model.dll
+D:\Work\EISv2\Web.Model\bin\Debug\Web.Model.pdb
+D:\Work\EISv2\Web.Model\obj\Debug\Web.Model.dll
+D:\Work\EISv2\Web.Model\obj\Debug\Web.Model.pdb
+G:\EISv2\Web.Model\bin\Debug\Web.Model.dll
+G:\EISv2\Web.Model\bin\Debug\Web.Model.pdb
+G:\EISv2\Web.Model\obj\Debug\Web.Model.dll
+G:\EISv2\Web.Model\obj\Debug\Web.Model.pdb
+C:\EISv2\Web.Model\bin\Debug\Web.Model.dll
+C:\EISv2\Web.Model\bin\Debug\Web.Model.pdb
+C:\EISv2\Web.Model\obj\Debug\Web.Model.dll
+C:\EISv2\Web.Model\obj\Debug\Web.Model.pdb
+C:\EISv2\Web.Model\obj\Debug\Web.Model.csprojResolveAssemblyReference.cache
+C:\Webv6\Web.Model\bin\Debug\Web.Model.dll
+C:\Webv6\Web.Model\bin\Debug\Web.Model.pdb
+C:\Webv6\Web.Model\obj\Debug\Web.Model.csprojResolveAssemblyReference.cache
+C:\Webv6\Web.Model\obj\Debug\Web.Model.dll
+C:\Webv6\Web.Model\obj\Debug\Web.Model.pdb
+C:\work\Webv6\Web.Model\bin\Debug\Web.Model.dll
+C:\work\Webv6\Web.Model\bin\Debug\Web.Model.pdb
+C:\work\Webv6\Web.Model\obj\Debug\Web.Model.dll
+C:\work\Webv6\Web.Model\obj\Debug\Web.Model.pdb
+D:\Webv6\Web.Model\bin\Debug\Web.Model.dll
+D:\Webv6\Web.Model\bin\Debug\Web.Model.pdb
+D:\Webv6\Web.Model\obj\Debug\Web.Model.dll
+D:\Webv6\Web.Model\obj\Debug\Web.Model.pdb
+D:\Webv6\Web.Model\obj\Debug\Web.Model.csprojResolveAssemblyReference.cache
+C:\work\Webv6\Web.Model\obj\Debug\Web.Model.csprojResolveAssemblyReference.cache

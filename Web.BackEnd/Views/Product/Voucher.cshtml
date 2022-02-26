@@ -1,0 +1,165 @@
+﻿@model Web.Backend.Models.VoucherViewModel
+@{
+    ViewBag.Title = "Quản lý Voucher";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Quản lý Voucher
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addAttribute" role="button" onclick="Add();"><i class="glyphicon glyphicon-plus"></i> Thêm</button>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Danh sách Voucher</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr role="row">
+                        <th>Mã</th>
+                        <th>Số lượng</th>
+                        <th>Giá trị</th>
+                        <th>Đơn vị</th>
+                        <th>Hoạt động</th>
+                        <th>Ngày hiệu lực</th>
+                        <th>Ngày hết hạn</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var voucher in Model.Vouchers)
+                    {
+                    <tr>
+                        <td align="center">@voucher.Code</td>
+                        <td align="right">@voucher.Quantity</td>
+                        <td align="right">@voucher.Value</td>
+                        <td align="center">@(voucher.IsPercent ? "%" : "đ")</td>
+                        <td align="center">
+                            <span onclick="Publish('@voucher.Id')" style="cursor:pointer"><i class="glyphicon glyphicon-@(voucher.Publish ? "ok" : "remove")"></i> </span>
+                        </td>
+                        <td align="center">@voucher.EffectDate</td>
+                        <td align="center">@voucher.ExpirDate</td>
+                        <td>
+                            <button class="btn btn-warning" type="button" onclick="Select('@voucher.Id', '@voucher.Code', '@voucher.Quantity', '@voucher.Value', '@voucher.IsPercent.ToString()', '@voucher.Publish.ToString()', '@voucher.EffectDate', '@voucher.ExpirDate');" data-toggle="modal" data-target="#addAttribute" role="button">Sửa</button>
+                            <button class="btn btn-danger" type="button" onclick="Remove('@voucher.Id');">Xóa</button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+            <div id="addAttribute" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 id="title" class="modal-title">Chi tiết Voucher</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table width="100%">
+                                <tr>
+                                    <td>Mã:</td>
+                                    <td>
+                                        @Html.EditorFor(model => model.Voucher.Code, new { htmlAttributes = new { @class = "form-control", placeholder = "Mã Voucher" } })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Số lượng:</td>
+                                    <td>
+                                        @Html.EditorFor(model => model.Voucher.Quantity, new { htmlAttributes = new { @class = "form-control", placeholder = "Số lượng", type = "number" } })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Giá trị:</td>
+                                    <td>
+                                        @Html.EditorFor(model => model.Voucher.Value, new { htmlAttributes = new { @class = "form-control", placeholder = "Giá trị", type = "number" } })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        Giá trị trên là % giá trị đơn hàng:
+                                        @Html.CheckBoxFor(e => Model.Voucher.IsPercent)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Ngày hiệu lực:</td>
+                                    <td>
+                                        @Html.EditorFor(model => model.Voucher.EffectDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Từ ngày", type = "date" } })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Ngày hết hạn:</td>
+                                    <td>
+                                        @Html.EditorFor(model => model.Voucher.ExpirDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Đến ngày", type = "date" } })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Hoạt động: @Html.CheckBoxFor(e => Model.Voucher.Publish)</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div id="btnAdd">
+                                            <input id="btnSubmit" type="button" class="btn btn-primary btn-block" value="Thêm" onclick="Post()" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input id="Voucher_Id" name="Voucher.Id" type="hidden" value="@Model.Voucher.Id" />
+    @Html.HiddenFor(e => Model.Action)
+    <script>
+        function Post() {
+            $("form").submit();
+        }
+        function Publish(id) {
+            $('#Action').val('PUBLISH');
+            $('#Voucher_Id').val(id);
+            $("form").submit();
+        }
+        function Remove(id) {
+            $('#Action').val('REMOVE');
+            $('#Voucher_Id').val(id);
+            $("form").submit();
+        }
+        function Add() {
+            $('#Action').val('ADD');
+            $('#title').text("Thêm Voucher");
+            $('#btnSubmit').val("Thêm");
+
+            $('#Voucher_Id').val('');
+            $('#Voucher_Code').val('');
+        }
+        function Select(id, code, quantity, value, per, pub, eff, exp) {
+            $('#Action').val('UPDATE');
+            $('#title').text("Sửa Voucher");
+            $('#btnSubmit').val("Lưu");
+
+            $('#Voucher_Id').val(id);
+            $('#Voucher_Code').val(code);
+            $('#Voucher_Quantity').val(quantity);
+            $('#Voucher_Value').val(value);
+            $('#Voucher_EffectDate').val(eff);
+            $('#Voucher_ExpirDate').val(exp);
+            if (per == "True") $('#Voucher_IsPercent').prop('checked', "checked");
+            else $('#Voucher_IsPercent').prop('checked', "");
+            if (pub == "True") $('#Voucher_Publish').prop('checked', "checked");
+            else $('#Voucher_Publish').prop('checked', "");
+        }
+    </script>
+}
+
+

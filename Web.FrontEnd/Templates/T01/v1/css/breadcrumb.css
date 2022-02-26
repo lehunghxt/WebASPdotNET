@@ -1,0 +1,146 @@
+.breadcrumb-area {
+  display: inline-block;
+  position: relative;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1em;
+  padding-right: 50px;
+  overflow: hidden;
+}
+.breadcrumb-area:before,
+.breadcrumb-area:after {
+  content: '';
+  position: absolute;
+  left: 15px;
+  width: calc(100% - 50px);
+  height: 1px;
+  background-color: #D3DBE5;
+  z-index: 1;
+}
+.breadcrumb-area:before {
+  top: 0;
+}
+.breadcrumb-area:after {
+  bottom: 0;
+}
+.breadcrumb-area ul {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb-area ul li {
+  margin: 0;
+  background-color: #F3F5FA;
+  border: 1px solid transparent;
+  border-right: none;
+  transition: 0.2s;
+}
+.breadcrumb-area ul li:first-child {
+  border-color: #D3DBE5;
+  border-radius: 4px 0 0 4px;
+}
+.breadcrumb-area ul li:first-child a {
+  margin-left: 0;
+}
+.breadcrumb-area ul li:hover {
+  background-color: #fff;
+}
+.breadcrumb-area ul li:hover a {
+  color: #357DFD;
+}
+.breadcrumb-area ul li:hover a:before {
+  background-color: #fff;
+}
+.breadcrumb-area ul li.active {
+  background-color: #357DFD;
+}
+.breadcrumb-area ul li.active a {
+  color: #fff;
+}
+.breadcrumb-area ul li.active a:before {
+  background-color: #357DFD;
+}
+.breadcrumb-area ul li a {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  min-height: 100%;
+  padding: 12px 0 12px 25px;
+  margin-left: 32px;
+  color: #8698AA;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+.breadcrumb-area ul li a:before {
+  content: '';
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #F3F5FA;
+  border-top: 1px solid #D3DBE5;
+  border-right: 1px solid #D3DBE5;
+  border-radius: 10px;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  -ms-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+  transition: 0.2s;
+}
+.breadcrumb-area ul li a span {
+  position: relative;
+  z-index: 1;
+}
+.breadcrumb-area ul li a i {
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4);
+}
+
+
+
+.light-breadcrumb {
+    width: 100%;
+    padding-left: 1em;
+    margin-bottom: 3.333em;
+    font-size: .938em;
+    color: #444;
+    font-weight: 300;
+    margin-top: .667em
+}
+
+.light-breadcrumb a {
+    color: #444
+}
+
+.light-breadcrumb .delimiter {
+    margin: 0 1.5em;
+    font-size: 10px
+}
+
+.light-breadcrumb span.delimiter+a {
+    background-color: #f5f5f5;
+    padding: .6em 1.067em;
+    border-radius: 4px
+}
+
+@media (max-width: 767px) {
+    .light-breadcrumb span.delimiter+a {
+        margin-bottom:5px;
+        display: inline-block
+    }
+}
+
+.light-breadcrumb span.delimiter+a:hover {
+    background-color: #e8e8e8
+}
+
+@media (max-width: 1199px) {
+    .light-breadcrumb {
+        display:none
+    }
+}

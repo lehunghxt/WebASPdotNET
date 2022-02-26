@@ -1,0 +1,165 @@
+﻿@model URM.Website.Models.GroupViewModel
+
+@{
+    ViewBag.Title = "Quản lý nhóm quyền";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-danger" style="margin-top:10px">
+                <div class="panel-heading">Nhóm tài khoản</div>
+                <div class="panel-body">
+                    <fieldset>
+                        <p id="notvalid" class="text-error" style="color:red">
+                            @ViewBag.Error
+                        </p>
+                        <div class="form-group">
+                            <table width="100%">
+                                <tbody>
+                                    @foreach (var group in Model.Groups)
+                                    {
+                                        <tr>
+                                            <td class="tdGroupName" onclick="LoadRole(@group.ID, '@group.Name', '@group.Roles')">
+                                                <div id="@group.ID" class="lblGroupName" style="cursor:pointer">[ID:@group.ID] @group.Name</div>
+                                                <input id="@string.Format("txt{0}",group.ID)" class="form-control hidden" value="@group.Name" />
+                                            </td>
+                                            <td style="text-align:center;padding:10px; border-top: 1px solid #808080">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input id="@string.Format("btnDelete{0}",group.ID)" type="button" class="btn btn-danger" value="Xóa" onclick="Delete(@group.ID)" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input id="@string.Format("btnUpdate{0}",group.ID)" type="button" class="btn btn-success hidden" value="Lưu" onclick="Update(@group.ID)" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input id="@string.Format("btnCancle{0}",group.ID)" type="button" class="btn btn-danger hidden" value="Hủy" onclick="Cancle(@group.ID)" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                    <tr>
+                                        <td style="padding-top:10px; border-top: 1px solid #808080">
+                                            @Html.EditorFor(model => model.Group.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên nhóm" } })
+                                        </td>
+                                        <td style="text-align:center;padding-top:10px;border-top: 1px solid #808080"><input type="button" class="btn btn-primary" value="Thêm" onclick="AddGroup()" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-warning" style="margin-top:10px">
+                <div class="panel-heading" id="roleheader">
+                    Danh sách quyền
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+                        <div class="row">
+                           @{ var i = 0;
+                            foreach (var group in Model.Roles)
+                            {
+                                <div class="col-md-4">
+                                    <div class="panel panel-info" style="margin-top:10px;">
+                                        <div class="panel-heading">
+                                            <input type="checkbox" onclick="checkAll(@i,this.checked)" /> @group.Key
+                                        </div>
+                                        <div class="panel-body" id="div_@(i++)">
+                                            @foreach (var role in group.Value)
+                                            {
+                                                <div class="form-group"><input name="grouprole" type="checkbox" value="@role.ID"/> @role.RoleName </div>
+                                            }
+                                        </div>
+                                        </div>
+                                </div>
+                            }
+                           }
+                        </div>
+                    </fieldset>
+                </div>
+                @*<div class="panel-footer text-right">
+                        <input type="button" class="btn btn-primary" value="Lưu" />
+                    </div>*@
+            </div>
+        </div>
+    </div>
+
+    @Html.HiddenFor(model => model.Action)
+    @Html.HiddenFor(model => model.GroupId)
+    @Html.HiddenFor(model => model.GroupName)
+    <script>
+        function checkAll(id, checked) {
+            $('#div_' + id + ' input:checkbox').prop('checked', checked);
+        }
+    </script>
+    <script language="javascript">
+        var isEdit = false;
+        function LoadRole(id, name, roles) {
+            if (isEdit == false) {
+                $('#roleheader').text('Danh sách quyền của nhóm "' + name + '"');
+                var arrrole = roles.split("|");
+                var checkboxs = $('[name=grouprole]');
+                $.each(checkboxs, function (key, ck) {
+                    var check = $.inArray(ck.value, arrrole);
+                    if (check != -1) ck.checked = true;
+                    else ck.checked = false;
+                })
+                checkboxs.attr("disabled", "disabled");
+            }
+        }
+        $('.lblGroupName').on("dblclick", function (e) {
+            if (isEdit == false) {
+                var id = $(e.target).attr('id');
+
+                $('#txt' + id).removeClass('hidden');
+                $('#btnUpdate' + id).removeClass('hidden');
+                $('#btnCancle' + id).removeClass('hidden');
+
+                $('#' + id).addClass('hidden');
+                $('#btnDelete' + id).addClass('hidden');
+
+                $('#GroupId').val(id);
+
+                var checkboxs = $('[name=grouprole]');
+                checkboxs.removeAttr("disabled");
+
+                isEdit = true;
+            }
+        });
+        function Cancle(value) {
+            $('#txt' + value).addClass('hidden');
+            $('#btnCancle' + value).addClass('hidden');
+            $('#btnUpdate' + value).addClass('hidden');
+
+            $('#' + value).removeClass('hidden');
+            $('#btnDelete' + value).removeClass('hidden');
+
+            isEdit = false;
+        }
+        function Update(value) {
+            $('#Action').val('UPDATEGROUP');
+            $('#GroupId').val(value);
+
+            var newName = $('#txt' + value).val();
+            $('#GroupName').val(newName);
+            $("#frm").submit();
+        }
+        function AddGroup(value) {
+            $('#Action').val('ADDGROUP');
+            $("#frm").submit();
+        }
+        function Delete(value) {
+            $('#Action').val('DELETEGROUP');
+            $('#GroupId').val(value);
+            $("#frm").submit();
+        }
+    </script>
+}

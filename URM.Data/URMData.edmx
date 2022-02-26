@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="crm.zicki.vnModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AppInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Roles" Type="nvarchar(max)" />
+          <Property Name="AppId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="AppId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="AppId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="RoleGroup" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Roles" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AppId" Type="int" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateBy" Type="int" />
+        </EntityType>
+        <Association Name="FK_Role_AppInfo">
+          <End Role="AppInfo" Type="Self.AppInfo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Role" Type="Self.Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Role">
+              <PropertyRef Name="AppId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAccount_UserInfo">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroup_AppInfo">
+          <End Role="AppInfo" Type="Self.AppInfo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Group" Type="Self.Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Group">
+              <PropertyRef Name="AppId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroup_Group">
+          <End Role="Group" Type="Self.Group" Multiplicity="1" />
+          <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroup_UserInfo">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserGroup">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserInfo_AppInfo">
+          <End Role="AppInfo" Type="Self.AppInfo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserInfo">
+              <PropertyRef Name="AppId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="crmzickivnModelStoreContainer">
+          <EntitySet Name="AppInfo" EntityType="Self.AppInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserGroup" EntityType="Self.UserGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Role_AppInfo" Association="Self.FK_Role_AppInfo">
+            <End Role="AppInfo" EntitySet="AppInfo" />
+            <End Role="Role" EntitySet="Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAccount_UserInfo" Association="Self.FK_UserAccount_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserAccount" EntitySet="UserAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroup_AppInfo" Association="Self.FK_UserGroup_AppInfo">
+            <End Role="AppInfo" EntitySet="AppInfo" />
+            <End Role="Group" EntitySet="Group" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroup_Group" Association="Self.FK_UserGroup_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="UserGroup" EntitySet="UserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroup_UserInfo" Association="Self.FK_UserGroup_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserGroup" EntitySet="UserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserInfo_AppInfo" Association="Self.FK_UserInfo_AppInfo">
+            <End Role="AppInfo" EntitySet="AppInfo" />
+            <End Role="UserInfo" EntitySet="UserInfo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="URM.Data" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="URMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AppInfo" EntityType="URM.Data.AppInfo" />
+          <EntitySet Name="Group" EntityType="URM.Data.Group" />
+          <EntitySet Name="Role" EntityType="URM.Data.Role" />
+          <EntitySet Name="UserAccount" EntityType="URM.Data.UserAccount" />
+          <EntitySet Name="UserInfo" EntityType="URM.Data.UserInfo" />
+          <AssociationSet Name="FK_Role_AppInfo" Association="URM.Data.FK_Role_AppInfo">
+            <End Role="AppInfo" EntitySet="AppInfo" />
+            <End Role="Role" EntitySet="Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroup_AppInfo" Association="URM.Data.FK_UserGroup_AppInfo">
+            <End Role="AppInfo" EntitySet="AppInfo" />
+            <End Role="Group" EntitySet="Group" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserInfo_AppInfo" Association="URM.Data.FK_UserInfo_AppInfo">
+            <End Role="AppInfo" EntitySet="AppInfo" />
+            <End Role="UserInfo" EntitySet="UserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAccount_UserInfo" Association="URM.Data.FK_UserAccount_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserAccount" EntitySet="UserAccount" />
+          </AssociationSet>
+          <AssociationSet Name="UserGroup" Association="URM.Data.UserGroup">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="UserInfo" EntitySet="UserInfo" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AppInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Role" Relationship="URM.Data.FK_Role_AppInfo" FromRole="AppInfo" ToRole="Role" />
+          <NavigationProperty Name="Group" Relationship="URM.Data.FK_UserGroup_AppInfo" FromRole="AppInfo" ToRole="Group" />
+          <NavigationProperty Name="UserInfo" Relationship="URM.Data.FK_UserInfo_AppInfo" FromRole="AppInfo" ToRole="UserInfo" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Roles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AppId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AppInfo" Relationship="URM.Data.FK_UserGroup_AppInfo" FromRole="Group" ToRole="AppInfo" />
+          <NavigationProperty Name="UserInfo" Relationship="URM.Data.UserGroup" FromRole="Group" ToRole="UserInfo" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="AppId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="AppId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RoleGroup" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AppInfo" Relationship="URM.Data.FK_Role_AppInfo" FromRole="Role" ToRole="AppInfo" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Roles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserInfo" Relationship="URM.Data.FK_UserAccount_UserInfo" FromRole="UserAccount" ToRole="UserInfo" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AppId" Type="Int32" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateBy" Type="Int32" />
+          <NavigationProperty Name="AppInfo" Relationship="URM.Data.FK_UserInfo_AppInfo" FromRole="UserInfo" ToRole="AppInfo" />
+          <NavigationProperty Name="UserAccount" Relationship="URM.Data.FK_UserAccount_UserInfo" FromRole="UserInfo" ToRole="UserAccount" />
+          <NavigationProperty Name="Group" Relationship="URM.Data.UserGroup" FromRole="UserInfo" ToRole="Group" />
+        </EntityType>
+        <Association Name="FK_Role_AppInfo">
+          <End Type="URM.Data.AppInfo" Role="AppInfo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="URM.Data.Role" Role="Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Role">
+              <PropertyRef Name="AppId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroup_AppInfo">
+          <End Type="URM.Data.AppInfo" Role="AppInfo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="URM.Data.Group" Role="Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Group">
+              <PropertyRef Name="AppId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserInfo_AppInfo">
+          <End Type="URM.Data.AppInfo" Role="AppInfo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="URM.Data.UserInfo" Role="UserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserInfo">
+              <PropertyRef Name="AppId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAccount_UserInfo">
+          <End Type="URM.Data.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="URM.Data.UserAccount" Role="UserAccount" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserGroup">
+          <End Type="URM.Data.Group" Role="Group" Multiplicity="0..1" />
+          <End Type="URM.Data.UserInfo" Role="UserInfo" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="crmzickivnModelStoreContainer" CdmEntityContainer="URMEntities">
+          <EntitySetMapping Name="AppInfo">
+            <EntityTypeMapping TypeName="URM.Data.AppInfo">
+              <MappingFragment StoreEntitySet="AppInfo">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Group">
+            <EntityTypeMapping TypeName="URM.Data.Group">
+              <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="AppId" ColumnName="AppId" />
+                <ScalarProperty Name="Roles" ColumnName="Roles" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="URM.Data.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RoleGroup" ColumnName="RoleGroup" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="AppId" ColumnName="AppId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccount">
+            <EntityTypeMapping TypeName="URM.Data.UserAccount">
+              <MappingFragment StoreEntitySet="UserAccount">
+                <ScalarProperty Name="Roles" ColumnName="Roles" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfo">
+            <EntityTypeMapping TypeName="URM.Data.UserInfo">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="AppId" ColumnName="AppId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UserGroup" TypeName="URM.Data.UserGroup" StoreEntitySet="UserGroup">
+            <EndProperty Name="UserInfo">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="Group">
+              <ScalarProperty Name="Id" ColumnName="GroupId" />
+            </EndProperty>
+            <Condition ColumnName="GroupId" IsNull="false" />
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="c291425104424c28bb914db2c7a7f401" Name="Diagram1">
+        <EntityTypeShape EntityType="URM.Data.AppInfo" Width="1.5" PointX="0.75" PointY="3.125" />
+        <EntityTypeShape EntityType="URM.Data.Group" Width="1.5" PointX="3" PointY="1.75" />
+        <EntityTypeShape EntityType="URM.Data.Role" Width="1.5" PointX="0.75" PointY="5.875" />
+        <EntityTypeShape EntityType="URM.Data.UserAccount" Width="1.5" PointX="5.5" PointY="4.5" />
+        <EntityTypeShape EntityType="URM.Data.UserInfo" Width="1.5" PointX="3" PointY="4.5" />
+        <AssociationConnector Association="URM.Data.FK_Role_AppInfo" />
+        <AssociationConnector Association="URM.Data.FK_UserGroup_AppInfo" />
+        <AssociationConnector Association="URM.Data.FK_UserInfo_AppInfo" />
+        <AssociationConnector Association="URM.Data.FK_UserAccount_UserInfo" />
+        <AssociationConnector Association="URM.Data.UserGroup" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

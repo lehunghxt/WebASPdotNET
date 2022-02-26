@@ -1,0 +1,37 @@
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Model\bin\Release\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Model\bin\Release\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Model\obj\Release\Web.Model.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Model\obj\Release\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Model\obj\Release\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Model\obj\Release\Web.Model.csprojResolveAssemblyReference.cache
+D:\Work\v5 20180512\Web.Model\bin\Release\Web.Model.dll
+D:\Work\v5 20180512\Web.Model\bin\Release\Web.Model.pdb
+D:\Work\v5 20180512\Web.Model\obj\Release\Web.Model.csprojResolveAssemblyReference.cache
+D:\Work\v5 20180512\Web.Model\obj\Release\Web.Model.csproj.CoreCompileInputs.cache
+D:\Work\v5 20180512\Web.Model\obj\Release\Web.Model.dll
+D:\Work\v5 20180512\Web.Model\obj\Release\Web.Model.pdb
+G:\EISv2\Web.Model\bin\Release\Web.Model.dll
+G:\EISv2\Web.Model\bin\Release\Web.Model.pdb
+G:\EISv2\Web.Model\obj\Release\Web.Model.csprojResolveAssemblyReference.cache
+G:\EISv2\Web.Model\obj\Release\Web.Model.dll
+G:\EISv2\Web.Model\obj\Release\Web.Model.pdb
+C:\EISv2\Web.Model\bin\Release\Web.Model.dll
+C:\EISv2\Web.Model\bin\Release\Web.Model.pdb
+C:\EISv2\Web.Model\obj\Release\Web.Model.csprojResolveAssemblyReference.cache
+C:\EISv2\Web.Model\obj\Release\Web.Model.dll
+C:\EISv2\Web.Model\obj\Release\Web.Model.pdb
+C:\Webv6\Web.Model\bin\Release\Web.Model.dll
+C:\Webv6\Web.Model\bin\Release\Web.Model.pdb
+C:\Webv6\Web.Model\obj\Release\Web.Model.csprojResolveAssemblyReference.cache
+C:\Webv6\Web.Model\obj\Release\Web.Model.dll
+C:\Webv6\Web.Model\obj\Release\Web.Model.pdb
+C:\work\Webv6\Web.Model\bin\Release\Web.Model.dll
+C:\work\Webv6\Web.Model\bin\Release\Web.Model.pdb
+C:\work\Webv6\Web.Model\obj\Release\Web.Model.csprojResolveAssemblyReference.cache
+C:\work\Webv6\Web.Model\obj\Release\Web.Model.dll
+C:\work\Webv6\Web.Model\obj\Release\Web.Model.pdb
+D:\Webv6\Web.Model\bin\Release\Web.Model.dll
+D:\Webv6\Web.Model\bin\Release\Web.Model.pdb
+D:\Webv6\Web.Model\obj\Release\Web.Model.csprojResolveAssemblyReference.cache
+D:\Webv6\Web.Model\obj\Release\Web.Model.dll
+D:\Webv6\Web.Model\obj\Release\Web.Model.pdb

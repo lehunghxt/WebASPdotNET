@@ -1,0 +1,262 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Web.Asp.UI.VITTemplate" %>
+<%@ Register Assembly="Web.Asp" Namespace="Web.Asp.Controls" TagPrefix="VIT" %>
+<%@ Import Namespace="Library" %>
+<%@ Import Namespace="Library.Web" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/Templates/T07/style/css.css" />
+    <link rel="stylesheet" type="text/css" href="/Templates/T07/css/css.css" />
+    <script type="text/javascript" async="" src="/Templates/T07/js/analytics.js"></script>
+    <script type="text/javascript" async="" src="/Templates/T07/js/js_003"></script>
+    <script src="/Templates/T07/js/sdk_002.js" async="" crossorigin="anonymous"></script>
+    <script id="facebook-jssdk" src="/Templates/T07/js/sdk.js"></script>
+    <script src="/Templates/T07/js/jquery.js"></script>
+    <!-- font-awesome icons -->
+    <link href="/Templates/T08/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"/>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body class="css_body" style="background:<%=Company.Background%>">
+    <VIT:Form ID="frmMain" runat="server">
+        <asp:ScriptManager runat="server" ID="SptManager"></asp:ScriptManager>
+        <div id="wrapper">
+            <header id="header">
+        <section class="top_hea">
+          <div class="min_wrap">
+            <i class="fas fa-phone-volume"></i>
+            Điện thoại: <a href="tel:<%=Company.PHONE %>" title="<%=Company.PHONE %>"><%=Company.PHONE %></a> -
+            Hotline:
+            <a href="tel:<%=Company.FAX %>" title="<%=Company.FAX %>"><%=Company.FAX %></a>
+          </div>
+        </section>
+        <!-- End .top_hea -->
+        <section class="banner min_wrap">
+          <div class="o_logo">
+            <a class="logo" href="/" title="#">
+              <img src="<%=HREF.DomainStore %><%=Company.PathImage %>" alt="<%=Company.FULLNAME %>" width="100%"/>
+            </a>
+          </div>
+          
+            <VIT:Position runat="server" ID="psMenu" SkinName="Empty"></VIT:Position>
+
+          <!-- End .nav_mn -->
+          <a class="click_s" href="javascript:void(0)" rel="nofollow">
+            <i class="fa fa-search"></i>
+          </a>
+
+          <a
+            class="icon_menu_mobile"
+            href="javascript:void(0)"
+            val="0"
+            rel="nofollow"
+          ></a>
+        </section>
+        <!-- End .banner -->
+      </header>
+      <!-- End #header -->
+             
+      <!-- Phần nội dung trang web -->
+            <main id="container">
+                <VIT:Position runat="server" ID="psTop" SkinName="Empty"></VIT:Position>
+      <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                </main>
+
+      <!-- End #container -->
+      <style>
+        .ul_foot_2 > li iframe {
+          width: 100% !important;
+          height: 215px !important;
+        }
+      </style>
+
+<footer id="footer">
+    <div id="footer1">
+          <table cellpadding="0" cellspacing="0">
+            <tbody>
+              <tr>
+                <td>
+                  <a class="blink_me" href="tel:<%=Company.PHONE %>"><img src="/Templates/T07/img/call.png" alt="CALL"> Gọi điện</a>
+                </td>
+                <td height="50">
+                  <a target="_blank" href="sms:<%=Company.PHONE %>"><img src="/Templates/T07/img/fa.png" alt="FA"> SMS</a>
+                </td>
+                <td>
+                  <a href="<%=HREF.LinkComponent("Contact")%>"><img src="/Templates/T07/img/chiduong.png" alt="FA">Chỉ Đường</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+    <section class="foot_1">
+
+        <%=Company.ABOUTUS %>
+
+    </section>
+
+        <VIT:Position runat="server" ID="psBottom"></VIT:Position>
+
+        <section class="foot_2">
+          <div class="min_wrap">
+            <ul class="ul_foot_2">
+              <li>
+                <div class="t_foot_2"><%=Company.DISPLAYNAME %></div>
+
+                <div class="m_foot_2">
+                  <ol class="ol1_foot_2">
+                    <li>
+                      Địa chỉ: <%=Company.ADDRESS %>
+                    </li>
+
+                    <li>
+                      Điện thoại:
+                      <a href="tel:<%=Company.PHONE %>" title="<%=Company.PHONE %>"><%=Company.PHONE %></a> -
+                      Hotline:
+                      <a href="tel:<%=Company.FAX %>" title="<%=Company.FAX %>"><%=Company.FAX %></a>
+                    </li>
+
+                    <li>
+                      Email:
+                      <a
+                        href="mailto:<%=Company.EMAIL %>"
+                        title="contact@baovethanhtaiphat.com"
+                        style="font-weight: 700;"
+                        ><%=Company.EMAIL %></a
+                      >
+                    </li>
+                  </ol>
+                </div>
+              </li>
+
+              <li>
+                <VIT:Position runat="server" ID="psMenuBottom"></VIT:Position>
+              </li>
+
+              <li>
+                <div id="gmap" class="contact-map">
+                        <iframe style="Width:100%" src="//www.google.com/maps/embed/v1/search?q=<%=Company.GoogleMapAddress%>
+                      &zoom=2
+                      &key=<%= Company.GoogleApiKey%>">
+                  </iframe> 
+            </div>  
+              </li>
+            </ul>
+            <!-- End .ul_foot_2 -->
+          </div>
+          <!-- End .min_wrap -->
+        </section>
+        <!-- End .foot_2 -->
+
+        <section class="foot_3">
+          <div class="min_wrap">
+            Copyright © <%=String.Format("{0:yyyy}", Company.CreateDate)%> <%=HREF.Domain %>. All Rights Reserved
+            <%=Company.FULLNAME %>
+          </div>
+          <!-- End .min_wrap -->
+        </section>
+        <!-- End .foot_3 -->
+</footer>
+            
+</div>
+       
+        <!-- End #wrapper -->
+    <div class="form_s">
+      <div>
+        <div class="d_form_s">
+          <input style="display: none;" type="text" value="2" name="kieu" />
+          <input id="search" type="text" placeholder="Tìm dịch vụ" name="txtSearch" class="ipt_form_s box-sizing-fix"/>
+            <script type="text/javascript">
+						    $("#search").keypress(function (event) {
+                                    var keycode = (event.keyCode ? event.keyCode : event.which);
+                                    if (keycode == '13') {
+                                        searchTitle();
+                                    }
+                                });
+						    function searchTitle() {
+                                var key = $("#search").val();
+                                if (key) {
+                                    window.location = 'http://<%=HREF.Domain%>/Products/vit/key/' + key;
+                                }
+                            }
+                        </script>
+          <button type="button" class="btn_form_s" onclick="searchTitle()">
+            <i class="fal fa-search"></i>
+          </button>
+        </div>
+      </div>
+      <i class="close_form_s"></i>
+    </div>
+
+        <script>
+      $(document).ready(function (e) {
+        $(".arrown_menu_accordion").click(function () {
+          var val = $(this).attr("val");
+          $("#" + val).toggle();
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        setTimeout(function () {
+          $.get("librarys/xuly_count.php?ko_dem=1");
+        }, 4000);
+      });
+    </script>
+    <script src="/Templates/T07/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Templates/T07/style/jquery.css" />
+    <script src="/Templates/T07/js/jquery_002.js"></script>
+    <script src="/Templates/T07/js/frame_script.js"></script>
+
+        <!-- Begin Sliders -->
+    <script  type="text/javascript" src="/Templates/T07/js/jquery.simplyscroll.min.js"></script>
+    <script   type="text/javascript"  src="/Templates/T07/js/owl.carousel.min.js" ></script>
+    <script   type="text/javascript"  src="/Templates/T07/js/jquery.fancybox.min.js" ></script>
+    <script   type="text/javascript"  src="/Templates/T07/js/wow.js" ></script>
+    <script   type="text/javascript"  src="/Templates/T07/js/jssor.js" ></script>
+    <script   type="text/javascript"  src="/Templates/T07/js/js_jssor_slider.js" ></script>
+    <script   type="text/javascript"  src="/Templates/T07/js/myscript.js" ></script>
+    
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+        function ScaleSlider() {
+          var paddingWidth = 0;
+
+          var minReserveWidth = 150;
+
+          var parentElement = jssor_slider1.$Elmt.parentNode;
+
+          var parentWidth = parentElement.clientWidth;
+
+          if (parentWidth) {
+            var sliderWidth = parentWidth;
+
+            sliderWidth = Math.min(sliderWidth, 10000);
+
+            sliderWidth = Math.max(sliderWidth, 200);
+
+            if (sliderWidth < minReserveWidth) {
+              sliderWidth = availableWidth;
+
+              sliderWidth = Math.max(sliderWidth, 200);
+            }
+            jssor_slider1.$ScaleWidth(sliderWidth);
+          } else window.setTimeout(ScaleSlider, 30);
+        }
+        ScaleSlider();
+
+        $(window).bind("load", ScaleSlider);
+        $(window).bind("resize", ScaleSlider);
+        $(window).bind("orientationchange", ScaleSlider);
+      });
+    </script>
+    <!-- End Sliders -->
+    </VIT:Form>
+</body>
+</html>

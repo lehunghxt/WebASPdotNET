@@ -1,0 +1,13 @@
+#topbar-center .simpletitle,#topbar-center .simpledes{display:none} 
+#logo img{max-height:80px}
+.widget .Product_Products div li a img{width:65px !important; height:65px !important}
+.simpletitle {font-weight: 400;padding-top:0px !important}
+.simpledes p{margin:0}
+#map_action{position: relative;overflow: hidden;height: 215px;border: 2px solid #ddd;margin: 10px 0px 10px 10px;}
+#sidebar #map_action{margin: 10px 0px}
+#map_canvas{position: initial !important;height: 100%;}
+
+#contact_content_bottom .span3, #contact_content_bottom .span6 {margin-left:15px}
+#contact_content_bottom .span3, #contact_content_bottom fieldset .span6 {margin-left:14px}
+.nomargin {margin-left:0px !important}
+.Album_Picture .grid{margin-bottom:15px; text-align:center;}

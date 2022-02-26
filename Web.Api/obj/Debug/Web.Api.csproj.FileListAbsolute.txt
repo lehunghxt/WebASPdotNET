@@ -1,0 +1,627 @@
+D:\Work\v5 20180512\Web.Api\bin\ApplicationInsights.config
+D:\Work\v5 20180512\Web.Api\bin\roslyn\csc.exe
+D:\Work\v5 20180512\Web.Api\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Work\v5 20180512\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Work\v5 20180512\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Work\v5 20180512\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Work\v5 20180512\Web.Api\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Work\v5 20180512\Web.Api\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Work\v5 20180512\Web.Api\bin\roslyn\System.Collections.Immutable.dll
+D:\Work\v5 20180512\Web.Api\bin\roslyn\System.Reflection.Metadata.dll
+D:\Work\v5 20180512\Web.Api\bin\roslyn\vbc.exe
+D:\Work\v5 20180512\Web.Api\bin\roslyn\VBCSCompiler.exe
+D:\Work\v5 20180512\Web.Api\bin\roslyn\VBCSCompiler.exe.config
+D:\Work\v5 20180512\Web.Api\bin\Web.Api.dll.config
+D:\Work\v5 20180512\Web.Api\bin\Web.Api.dll
+D:\Work\v5 20180512\Web.Api\bin\Web.Api.pdb
+D:\Work\v5 20180512\Web.Api\bin\Antlr3.Runtime.dll
+D:\Work\v5 20180512\Web.Api\bin\EntityFramework.dll
+D:\Work\v5 20180512\Web.Api\bin\EntityFramework.SqlServer.dll
+D:\Work\v5 20180512\Web.Api\bin\Library.dll
+D:\Work\v5 20180512\Web.Api\bin\Library.Web.dll
+D:\Work\v5 20180512\Web.Api\bin\log4net.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.AI.DependencyCollector.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.AI.Web.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.AI.WindowsServer.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.ApplicationInsights.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Data.Edm.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Data.OData.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Owin.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Owin.Security.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Web.Infrastructure.dll
+D:\Work\v5 20180512\Web.Api\bin\Newtonsoft.Json.dll
+D:\Work\v5 20180512\Web.Api\bin\Oracle.ManagedDataAccess.dll
+D:\Work\v5 20180512\Web.Api\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Work\v5 20180512\Web.Api\bin\Owin.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Net.Http.Formatting.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Spatial.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Cors.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Helpers.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Http.Cors.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Http.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Http.OData.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Http.Owin.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Http.WebHost.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Mvc.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Optimization.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Razor.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.WebPages.Deployment.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.WebPages.dll
+D:\Work\v5 20180512\Web.Api\bin\System.Web.WebPages.Razor.dll
+D:\Work\v5 20180512\Web.Api\bin\Web.Business.dll
+D:\Work\v5 20180512\Web.Api\bin\Web.Model.dll
+D:\Work\v5 20180512\Web.Api\bin\WebGrease.dll
+D:\Work\v5 20180512\Web.Api\bin\Web.Data.dll
+D:\Work\v5 20180512\Web.Api\bin\Web.Business.pdb
+D:\Work\v5 20180512\Web.Api\bin\Web.Model.pdb
+D:\Work\v5 20180512\Web.Api\bin\EntityFramework.xml
+D:\Work\v5 20180512\Web.Api\bin\EntityFramework.SqlServer.xml
+D:\Work\v5 20180512\Web.Api\bin\log4net.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.AI.DependencyCollector.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.AI.Web.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.AI.WindowsServer.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.ApplicationInsights.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Data.Edm.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Data.OData.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Owin.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Owin.Security.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Work\v5 20180512\Web.Api\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Work\v5 20180512\Web.Api\bin\Newtonsoft.Json.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Net.Http.Formatting.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Spatial.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Http.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Http.Cors.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Http.OData.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Http.Owin.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Http.WebHost.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Helpers.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Mvc.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Optimization.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Web.Razor.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Web.WebPages.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Web.WebPages.Deployment.xml
+D:\Work\v5 20180512\Web.Api\bin\System.Web.WebPages.Razor.xml
+D:\Work\v5 20180512\Web.Api\bin\Antlr3.Runtime.pdb
+D:\Work\v5 20180512\Web.Api\bin\Web.Data.pdb
+D:\Work\v5 20180512\Web.Api\bin\de\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\es\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\it\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\de\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\es\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\fr\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\it\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\ja\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\ko\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\ru\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\de\System.Spatial.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\es\System.Spatial.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\fr\System.Spatial.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\it\System.Spatial.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\ja\System.Spatial.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\ko\System.Spatial.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\ru\System.Spatial.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\zh-Hans\System.Spatial.resources.dll
+D:\Work\v5 20180512\Web.Api\bin\zh-Hant\System.Spatial.resources.dll
+D:\Work\v5 20180512\Web.Api\obj\Debug\Web.Api.csprojResolveAssemblyReference.cache
+D:\Work\v5 20180512\Web.Api\obj\Debug\Web.Api.dll
+D:\Work\v5 20180512\Web.Api\obj\Debug\Web.Api.pdb
+D:\Work\v5 20200105\Code\Web.Api\bin\ApplicationInsights.config
+D:\Work\v5 20200105\Code\Web.Api\bin\roslyn\csc.exe
+D:\Work\v5 20200105\Code\Web.Api\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Work\v5 20200105\Code\Web.Api\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Work\v5 20200105\Code\Web.Api\bin\roslyn\System.Collections.Immutable.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\roslyn\System.Reflection.Metadata.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\roslyn\vbc.exe
+D:\Work\v5 20200105\Code\Web.Api\bin\roslyn\VBCSCompiler.exe
+D:\Work\v5 20200105\Code\Web.Api\bin\roslyn\VBCSCompiler.exe.config
+D:\Work\v5 20200105\Code\Web.Api\bin\Web.Api.dll.config
+D:\Work\v5 20200105\Code\Web.Api\bin\Web.Api.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Web.Api.pdb
+D:\Work\v5 20200105\Code\Web.Api\bin\Antlr3.Runtime.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\EntityFramework.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\EntityFramework.SqlServer.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Library.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Library.Web.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\log4net.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.AI.DependencyCollector.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.AI.Web.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.AI.WindowsServer.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.ApplicationInsights.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Data.Edm.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Data.OData.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Owin.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Owin.Security.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Web.Infrastructure.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Newtonsoft.Json.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Oracle.ManagedDataAccess.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Owin.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Net.Http.Formatting.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Spatial.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Cors.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Helpers.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Http.Cors.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Http.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Http.OData.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Http.Owin.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Http.WebHost.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Mvc.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Optimization.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Razor.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.WebPages.Deployment.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.WebPages.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.WebPages.Razor.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Web.Business.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Web.Model.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\WebGrease.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Web.Data.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\Web.Business.pdb
+D:\Work\v5 20200105\Code\Web.Api\bin\Web.Model.pdb
+D:\Work\v5 20200105\Code\Web.Api\bin\EntityFramework.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\EntityFramework.SqlServer.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\log4net.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.AI.DependencyCollector.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.AI.Web.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.AI.WindowsServer.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.ApplicationInsights.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Data.Edm.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Data.OData.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Owin.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Owin.Security.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Newtonsoft.Json.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Net.Http.Formatting.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Spatial.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Http.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Http.Cors.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Http.OData.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Http.Owin.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Http.WebHost.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Helpers.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Mvc.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Optimization.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.Razor.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.WebPages.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.WebPages.Deployment.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\System.Web.WebPages.Razor.xml
+D:\Work\v5 20200105\Code\Web.Api\bin\Antlr3.Runtime.pdb
+D:\Work\v5 20200105\Code\Web.Api\bin\Web.Data.pdb
+D:\Work\v5 20200105\Code\Web.Api\bin\de\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\es\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\it\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\de\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\es\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\fr\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\it\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\ja\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\ko\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\ru\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\de\System.Spatial.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\es\System.Spatial.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\fr\System.Spatial.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\it\System.Spatial.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\ja\System.Spatial.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\ko\System.Spatial.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\ru\System.Spatial.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\zh-Hans\System.Spatial.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\bin\zh-Hant\System.Spatial.resources.dll
+D:\Work\v5 20200105\Code\Web.Api\obj\Debug\Web.Api.csprojResolveAssemblyReference.cache
+D:\Work\v5 20200105\Code\Web.Api\obj\Debug\Web.Api.dll
+D:\Work\v5 20200105\Code\Web.Api\obj\Debug\Web.Api.pdb
+D:\Work\EISv2\Web.Api\bin\ApplicationInsights.config
+D:\Work\EISv2\Web.Api\bin\roslyn\csc.exe
+D:\Work\EISv2\Web.Api\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Work\EISv2\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Work\EISv2\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Work\EISv2\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Work\EISv2\Web.Api\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Work\EISv2\Web.Api\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Work\EISv2\Web.Api\bin\roslyn\System.Collections.Immutable.dll
+D:\Work\EISv2\Web.Api\bin\roslyn\System.Reflection.Metadata.dll
+D:\Work\EISv2\Web.Api\bin\roslyn\vbc.exe
+D:\Work\EISv2\Web.Api\bin\roslyn\VBCSCompiler.exe
+D:\Work\EISv2\Web.Api\bin\roslyn\VBCSCompiler.exe.config
+D:\Work\EISv2\Web.Api\bin\Web.Api.dll.config
+D:\Work\EISv2\Web.Api\bin\Web.Api.dll
+D:\Work\EISv2\Web.Api\bin\Web.Api.pdb
+D:\Work\EISv2\Web.Api\bin\Antlr3.Runtime.dll
+D:\Work\EISv2\Web.Api\bin\EntityFramework.dll
+D:\Work\EISv2\Web.Api\bin\EntityFramework.SqlServer.dll
+D:\Work\EISv2\Web.Api\bin\log4net.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.AI.DependencyCollector.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.AI.Web.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.AI.WindowsServer.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.ApplicationInsights.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.Data.Edm.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.Data.OData.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.Owin.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.Owin.Security.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Work\EISv2\Web.Api\bin\Microsoft.Web.Infrastructure.dll
+D:\Work\EISv2\Web.Api\bin\Newtonsoft.Json.dll
+D:\Work\EISv2\Web.Api\bin\Oracle.ManagedDataAccess.dll
+D:\Work\EISv2\Web.Api\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Work\EISv2\Web.Api\bin\Owin.dll
+D:\Work\EISv2\Web.Api\bin\System.Net.Http.Formatting.dll
+D:\Work\EISv2\Web.Api\bin\System.Spatial.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.Cors.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.Helpers.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.Http.Cors.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.Http.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.Http.OData.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.Http.Owin.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.Http.WebHost.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.Mvc.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.Optimization.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.Razor.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.WebPages.Deployment.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.WebPages.dll
+D:\Work\EISv2\Web.Api\bin\System.Web.WebPages.Razor.dll
+D:\Work\EISv2\Web.Api\bin\Web.Business.dll
+D:\Work\EISv2\Web.Api\bin\Web.Model.dll
+D:\Work\EISv2\Web.Api\bin\WebGrease.dll
+D:\Work\EISv2\Web.Api\bin\Web.Data.dll
+D:\Work\EISv2\Web.Api\bin\Web.Business.pdb
+D:\Work\EISv2\Web.Api\bin\Web.Model.pdb
+D:\Work\EISv2\Web.Api\bin\EntityFramework.xml
+D:\Work\EISv2\Web.Api\bin\EntityFramework.SqlServer.xml
+D:\Work\EISv2\Web.Api\bin\log4net.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.AI.DependencyCollector.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.AI.Web.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.AI.WindowsServer.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.ApplicationInsights.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.Data.Edm.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.Data.OData.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.Owin.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.Owin.Security.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Work\EISv2\Web.Api\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Work\EISv2\Web.Api\bin\Newtonsoft.Json.xml
+D:\Work\EISv2\Web.Api\bin\System.Net.Http.Formatting.xml
+D:\Work\EISv2\Web.Api\bin\System.Spatial.xml
+D:\Work\EISv2\Web.Api\bin\System.Web.Http.xml
+D:\Work\EISv2\Web.Api\bin\System.Web.Http.Cors.xml
+D:\Work\EISv2\Web.Api\bin\System.Web.Http.OData.xml
+D:\Work\EISv2\Web.Api\bin\System.Web.Http.Owin.xml
+D:\Work\EISv2\Web.Api\bin\System.Web.Http.WebHost.xml
+D:\Work\EISv2\Web.Api\bin\System.Web.Helpers.xml
+D:\Work\EISv2\Web.Api\bin\System.Web.Mvc.xml
+D:\Work\EISv2\Web.Api\bin\System.Web.Optimization.xml
+D:\Work\EISv2\Web.Api\bin\System.Web.Razor.xml
+D:\Work\EISv2\Web.Api\bin\System.Web.WebPages.xml
+D:\Work\EISv2\Web.Api\bin\System.Web.WebPages.Deployment.xml
+D:\Work\EISv2\Web.Api\bin\System.Web.WebPages.Razor.xml
+D:\Work\EISv2\Web.Api\bin\Antlr3.Runtime.pdb
+D:\Work\EISv2\Web.Api\bin\Web.Data.pdb
+D:\Work\EISv2\Web.Api\bin\de\Microsoft.Data.Edm.resources.dll
+D:\Work\EISv2\Web.Api\bin\es\Microsoft.Data.Edm.resources.dll
+D:\Work\EISv2\Web.Api\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\Work\EISv2\Web.Api\bin\it\Microsoft.Data.Edm.resources.dll
+D:\Work\EISv2\Web.Api\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\Work\EISv2\Web.Api\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\Work\EISv2\Web.Api\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\Work\EISv2\Web.Api\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\Work\EISv2\Web.Api\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\Work\EISv2\Web.Api\bin\de\Microsoft.Data.OData.resources.dll
+D:\Work\EISv2\Web.Api\bin\es\Microsoft.Data.OData.resources.dll
+D:\Work\EISv2\Web.Api\bin\fr\Microsoft.Data.OData.resources.dll
+D:\Work\EISv2\Web.Api\bin\it\Microsoft.Data.OData.resources.dll
+D:\Work\EISv2\Web.Api\bin\ja\Microsoft.Data.OData.resources.dll
+D:\Work\EISv2\Web.Api\bin\ko\Microsoft.Data.OData.resources.dll
+D:\Work\EISv2\Web.Api\bin\ru\Microsoft.Data.OData.resources.dll
+D:\Work\EISv2\Web.Api\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\Work\EISv2\Web.Api\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\Work\EISv2\Web.Api\bin\de\System.Spatial.resources.dll
+D:\Work\EISv2\Web.Api\bin\es\System.Spatial.resources.dll
+D:\Work\EISv2\Web.Api\bin\fr\System.Spatial.resources.dll
+D:\Work\EISv2\Web.Api\bin\it\System.Spatial.resources.dll
+D:\Work\EISv2\Web.Api\bin\ja\System.Spatial.resources.dll
+D:\Work\EISv2\Web.Api\bin\ko\System.Spatial.resources.dll
+D:\Work\EISv2\Web.Api\bin\ru\System.Spatial.resources.dll
+D:\Work\EISv2\Web.Api\bin\zh-Hans\System.Spatial.resources.dll
+D:\Work\EISv2\Web.Api\bin\zh-Hant\System.Spatial.resources.dll
+D:\Work\EISv2\Web.Api\obj\Debug\Web.Api.csprojResolveAssemblyReference.cache
+D:\Work\EISv2\Web.Api\obj\Debug\Web.Api.dll
+D:\Work\EISv2\Web.Api\obj\Debug\Web.Api.pdb
+G:\EISv2\Web.Api\bin\ApplicationInsights.config
+G:\EISv2\Web.Api\bin\roslyn\csc.exe
+G:\EISv2\Web.Api\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\EISv2\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\EISv2\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\EISv2\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\EISv2\Web.Api\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\EISv2\Web.Api\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\EISv2\Web.Api\bin\roslyn\System.Collections.Immutable.dll
+G:\EISv2\Web.Api\bin\roslyn\System.Reflection.Metadata.dll
+G:\EISv2\Web.Api\bin\roslyn\vbc.exe
+G:\EISv2\Web.Api\bin\roslyn\VBCSCompiler.exe
+G:\EISv2\Web.Api\bin\roslyn\VBCSCompiler.exe.config
+G:\EISv2\Web.Api\bin\Web.Api.dll.config
+G:\EISv2\Web.Api\bin\Web.Api.dll
+G:\EISv2\Web.Api\bin\Web.Api.pdb
+G:\EISv2\Web.Api\bin\Antlr3.Runtime.dll
+G:\EISv2\Web.Api\bin\EntityFramework.dll
+G:\EISv2\Web.Api\bin\EntityFramework.SqlServer.dll
+G:\EISv2\Web.Api\bin\log4net.dll
+G:\EISv2\Web.Api\bin\Microsoft.AI.Agent.Intercept.dll
+G:\EISv2\Web.Api\bin\Microsoft.AI.DependencyCollector.dll
+G:\EISv2\Web.Api\bin\Microsoft.AI.PerfCounterCollector.dll
+G:\EISv2\Web.Api\bin\Microsoft.AI.ServerTelemetryChannel.dll
+G:\EISv2\Web.Api\bin\Microsoft.AI.Web.dll
+G:\EISv2\Web.Api\bin\Microsoft.AI.WindowsServer.dll
+G:\EISv2\Web.Api\bin\Microsoft.ApplicationInsights.dll
+G:\EISv2\Web.Api\bin\Microsoft.AspNet.Identity.Core.dll
+G:\EISv2\Web.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\EISv2\Web.Api\bin\Microsoft.Data.Edm.dll
+G:\EISv2\Web.Api\bin\Microsoft.Data.OData.dll
+G:\EISv2\Web.Api\bin\Microsoft.Owin.dll
+G:\EISv2\Web.Api\bin\Microsoft.Owin.Security.Cookies.dll
+G:\EISv2\Web.Api\bin\Microsoft.Owin.Security.dll
+G:\EISv2\Web.Api\bin\Microsoft.Owin.Security.OAuth.dll
+G:\EISv2\Web.Api\bin\Microsoft.Web.Infrastructure.dll
+G:\EISv2\Web.Api\bin\Newtonsoft.Json.dll
+G:\EISv2\Web.Api\bin\Oracle.ManagedDataAccess.dll
+G:\EISv2\Web.Api\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+G:\EISv2\Web.Api\bin\Owin.dll
+G:\EISv2\Web.Api\bin\System.Net.Http.Formatting.dll
+G:\EISv2\Web.Api\bin\System.Spatial.dll
+G:\EISv2\Web.Api\bin\System.Web.Cors.dll
+G:\EISv2\Web.Api\bin\System.Web.Helpers.dll
+G:\EISv2\Web.Api\bin\System.Web.Http.Cors.dll
+G:\EISv2\Web.Api\bin\System.Web.Http.dll
+G:\EISv2\Web.Api\bin\System.Web.Http.OData.dll
+G:\EISv2\Web.Api\bin\System.Web.Http.Owin.dll
+G:\EISv2\Web.Api\bin\System.Web.Http.WebHost.dll
+G:\EISv2\Web.Api\bin\System.Web.Mvc.dll
+G:\EISv2\Web.Api\bin\System.Web.Optimization.dll
+G:\EISv2\Web.Api\bin\System.Web.Razor.dll
+G:\EISv2\Web.Api\bin\System.Web.WebPages.Deployment.dll
+G:\EISv2\Web.Api\bin\System.Web.WebPages.dll
+G:\EISv2\Web.Api\bin\System.Web.WebPages.Razor.dll
+G:\EISv2\Web.Api\bin\Web.Business.dll
+G:\EISv2\Web.Api\bin\Web.Model.dll
+G:\EISv2\Web.Api\bin\WebGrease.dll
+G:\EISv2\Web.Api\bin\Web.Data.dll
+G:\EISv2\Web.Api\bin\Web.Business.pdb
+G:\EISv2\Web.Api\bin\Web.Model.pdb
+G:\EISv2\Web.Api\bin\EntityFramework.xml
+G:\EISv2\Web.Api\bin\EntityFramework.SqlServer.xml
+G:\EISv2\Web.Api\bin\log4net.xml
+G:\EISv2\Web.Api\bin\Microsoft.AI.DependencyCollector.xml
+G:\EISv2\Web.Api\bin\Microsoft.AI.ServerTelemetryChannel.xml
+G:\EISv2\Web.Api\bin\Microsoft.AI.Web.xml
+G:\EISv2\Web.Api\bin\Microsoft.AI.WindowsServer.xml
+G:\EISv2\Web.Api\bin\Microsoft.ApplicationInsights.xml
+G:\EISv2\Web.Api\bin\Microsoft.AspNet.Identity.Core.xml
+G:\EISv2\Web.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\EISv2\Web.Api\bin\Microsoft.Data.Edm.xml
+G:\EISv2\Web.Api\bin\Microsoft.Data.OData.xml
+G:\EISv2\Web.Api\bin\Microsoft.Owin.xml
+G:\EISv2\Web.Api\bin\Microsoft.Owin.Security.xml
+G:\EISv2\Web.Api\bin\Microsoft.Owin.Security.Cookies.xml
+G:\EISv2\Web.Api\bin\Microsoft.Owin.Security.OAuth.xml
+G:\EISv2\Web.Api\bin\Newtonsoft.Json.xml
+G:\EISv2\Web.Api\bin\System.Net.Http.Formatting.xml
+G:\EISv2\Web.Api\bin\System.Spatial.xml
+G:\EISv2\Web.Api\bin\System.Web.Http.xml
+G:\EISv2\Web.Api\bin\System.Web.Http.Cors.xml
+G:\EISv2\Web.Api\bin\System.Web.Http.OData.xml
+G:\EISv2\Web.Api\bin\System.Web.Http.Owin.xml
+G:\EISv2\Web.Api\bin\System.Web.Http.WebHost.xml
+G:\EISv2\Web.Api\bin\System.Web.Helpers.xml
+G:\EISv2\Web.Api\bin\System.Web.Mvc.xml
+G:\EISv2\Web.Api\bin\System.Web.Optimization.xml
+G:\EISv2\Web.Api\bin\System.Web.Razor.xml
+G:\EISv2\Web.Api\bin\System.Web.WebPages.xml
+G:\EISv2\Web.Api\bin\System.Web.WebPages.Deployment.xml
+G:\EISv2\Web.Api\bin\System.Web.WebPages.Razor.xml
+G:\EISv2\Web.Api\bin\Antlr3.Runtime.pdb
+G:\EISv2\Web.Api\bin\Web.Data.pdb
+G:\EISv2\Web.Api\bin\de\Microsoft.Data.Edm.resources.dll
+G:\EISv2\Web.Api\bin\es\Microsoft.Data.Edm.resources.dll
+G:\EISv2\Web.Api\bin\fr\Microsoft.Data.Edm.resources.dll
+G:\EISv2\Web.Api\bin\it\Microsoft.Data.Edm.resources.dll
+G:\EISv2\Web.Api\bin\ja\Microsoft.Data.Edm.resources.dll
+G:\EISv2\Web.Api\bin\ko\Microsoft.Data.Edm.resources.dll
+G:\EISv2\Web.Api\bin\ru\Microsoft.Data.Edm.resources.dll
+G:\EISv2\Web.Api\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+G:\EISv2\Web.Api\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+G:\EISv2\Web.Api\bin\de\Microsoft.Data.OData.resources.dll
+G:\EISv2\Web.Api\bin\es\Microsoft.Data.OData.resources.dll
+G:\EISv2\Web.Api\bin\fr\Microsoft.Data.OData.resources.dll
+G:\EISv2\Web.Api\bin\it\Microsoft.Data.OData.resources.dll
+G:\EISv2\Web.Api\bin\ja\Microsoft.Data.OData.resources.dll
+G:\EISv2\Web.Api\bin\ko\Microsoft.Data.OData.resources.dll
+G:\EISv2\Web.Api\bin\ru\Microsoft.Data.OData.resources.dll
+G:\EISv2\Web.Api\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+G:\EISv2\Web.Api\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+G:\EISv2\Web.Api\bin\de\System.Spatial.resources.dll
+G:\EISv2\Web.Api\bin\es\System.Spatial.resources.dll
+G:\EISv2\Web.Api\bin\fr\System.Spatial.resources.dll
+G:\EISv2\Web.Api\bin\it\System.Spatial.resources.dll
+G:\EISv2\Web.Api\bin\ja\System.Spatial.resources.dll
+G:\EISv2\Web.Api\bin\ko\System.Spatial.resources.dll
+G:\EISv2\Web.Api\bin\ru\System.Spatial.resources.dll
+G:\EISv2\Web.Api\bin\zh-Hans\System.Spatial.resources.dll
+G:\EISv2\Web.Api\bin\zh-Hant\System.Spatial.resources.dll
+G:\EISv2\Web.Api\obj\Debug\Web.Api.csprojResolveAssemblyReference.cache
+G:\EISv2\Web.Api\obj\Debug\Web.Api.dll
+G:\EISv2\Web.Api\obj\Debug\Web.Api.pdb
+C:\EISv2\Web.Api\bin\ApplicationInsights.config
+C:\EISv2\Web.Api\bin\roslyn\csc.exe
+C:\EISv2\Web.Api\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\EISv2\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\EISv2\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\EISv2\Web.Api\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\EISv2\Web.Api\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\EISv2\Web.Api\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\EISv2\Web.Api\bin\roslyn\System.Collections.Immutable.dll
+C:\EISv2\Web.Api\bin\roslyn\System.Reflection.Metadata.dll
+C:\EISv2\Web.Api\bin\roslyn\vbc.exe
+C:\EISv2\Web.Api\bin\roslyn\VBCSCompiler.exe
+C:\EISv2\Web.Api\bin\roslyn\VBCSCompiler.exe.config
+C:\EISv2\Web.Api\bin\Web.Api.dll.config
+C:\EISv2\Web.Api\bin\Web.Api.dll
+C:\EISv2\Web.Api\bin\Web.Api.pdb
+C:\EISv2\Web.Api\bin\Antlr3.Runtime.dll
+C:\EISv2\Web.Api\bin\EntityFramework.dll
+C:\EISv2\Web.Api\bin\EntityFramework.SqlServer.dll
+C:\EISv2\Web.Api\bin\log4net.dll
+C:\EISv2\Web.Api\bin\Microsoft.AI.Agent.Intercept.dll
+C:\EISv2\Web.Api\bin\Microsoft.AI.DependencyCollector.dll
+C:\EISv2\Web.Api\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\EISv2\Web.Api\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\EISv2\Web.Api\bin\Microsoft.AI.Web.dll
+C:\EISv2\Web.Api\bin\Microsoft.AI.WindowsServer.dll
+C:\EISv2\Web.Api\bin\Microsoft.ApplicationInsights.dll
+C:\EISv2\Web.Api\bin\Microsoft.AspNet.Identity.Core.dll
+C:\EISv2\Web.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\EISv2\Web.Api\bin\Microsoft.Data.Edm.dll
+C:\EISv2\Web.Api\bin\Microsoft.Data.OData.dll
+C:\EISv2\Web.Api\bin\Microsoft.Owin.dll
+C:\EISv2\Web.Api\bin\Microsoft.Owin.Security.Cookies.dll
+C:\EISv2\Web.Api\bin\Microsoft.Owin.Security.dll
+C:\EISv2\Web.Api\bin\Microsoft.Owin.Security.OAuth.dll
+C:\EISv2\Web.Api\bin\Microsoft.Web.Infrastructure.dll
+C:\EISv2\Web.Api\bin\Newtonsoft.Json.dll
+C:\EISv2\Web.Api\bin\Oracle.ManagedDataAccess.dll
+C:\EISv2\Web.Api\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\EISv2\Web.Api\bin\Owin.dll
+C:\EISv2\Web.Api\bin\System.Net.Http.Formatting.dll
+C:\EISv2\Web.Api\bin\System.Spatial.dll
+C:\EISv2\Web.Api\bin\System.Web.Cors.dll
+C:\EISv2\Web.Api\bin\System.Web.Helpers.dll
+C:\EISv2\Web.Api\bin\System.Web.Http.Cors.dll
+C:\EISv2\Web.Api\bin\System.Web.Http.dll
+C:\EISv2\Web.Api\bin\System.Web.Http.OData.dll
+C:\EISv2\Web.Api\bin\System.Web.Http.Owin.dll
+C:\EISv2\Web.Api\bin\System.Web.Http.WebHost.dll
+C:\EISv2\Web.Api\bin\System.Web.Mvc.dll
+C:\EISv2\Web.Api\bin\System.Web.Optimization.dll
+C:\EISv2\Web.Api\bin\System.Web.Razor.dll
+C:\EISv2\Web.Api\bin\System.Web.WebPages.Deployment.dll
+C:\EISv2\Web.Api\bin\System.Web.WebPages.dll
+C:\EISv2\Web.Api\bin\System.Web.WebPages.Razor.dll
+C:\EISv2\Web.Api\bin\Web.Business.dll
+C:\EISv2\Web.Api\bin\Web.Model.dll
+C:\EISv2\Web.Api\bin\WebGrease.dll
+C:\EISv2\Web.Api\bin\Web.Data.dll
+C:\EISv2\Web.Api\bin\Web.Business.pdb
+C:\EISv2\Web.Api\bin\Web.Model.pdb
+C:\EISv2\Web.Api\bin\EntityFramework.xml
+C:\EISv2\Web.Api\bin\EntityFramework.SqlServer.xml
+C:\EISv2\Web.Api\bin\log4net.xml
+C:\EISv2\Web.Api\bin\Microsoft.AI.DependencyCollector.xml
+C:\EISv2\Web.Api\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\EISv2\Web.Api\bin\Microsoft.AI.Web.xml
+C:\EISv2\Web.Api\bin\Microsoft.AI.WindowsServer.xml
+C:\EISv2\Web.Api\bin\Microsoft.ApplicationInsights.xml
+C:\EISv2\Web.Api\bin\Microsoft.AspNet.Identity.Core.xml
+C:\EISv2\Web.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\EISv2\Web.Api\bin\Microsoft.Data.Edm.xml
+C:\EISv2\Web.Api\bin\Microsoft.Data.OData.xml
+C:\EISv2\Web.Api\bin\Microsoft.Owin.xml
+C:\EISv2\Web.Api\bin\Microsoft.Owin.Security.xml
+C:\EISv2\Web.Api\bin\Microsoft.Owin.Security.Cookies.xml
+C:\EISv2\Web.Api\bin\Microsoft.Owin.Security.OAuth.xml
+C:\EISv2\Web.Api\bin\Newtonsoft.Json.xml
+C:\EISv2\Web.Api\bin\System.Net.Http.Formatting.xml
+C:\EISv2\Web.Api\bin\System.Spatial.xml
+C:\EISv2\Web.Api\bin\System.Web.Http.xml
+C:\EISv2\Web.Api\bin\System.Web.Http.Cors.xml
+C:\EISv2\Web.Api\bin\System.Web.Http.OData.xml
+C:\EISv2\Web.Api\bin\System.Web.Http.Owin.xml
+C:\EISv2\Web.Api\bin\System.Web.Http.WebHost.xml
+C:\EISv2\Web.Api\bin\System.Web.Helpers.xml
+C:\EISv2\Web.Api\bin\System.Web.Mvc.xml
+C:\EISv2\Web.Api\bin\System.Web.Optimization.xml
+C:\EISv2\Web.Api\bin\System.Web.Razor.xml
+C:\EISv2\Web.Api\bin\System.Web.WebPages.xml
+C:\EISv2\Web.Api\bin\System.Web.WebPages.Deployment.xml
+C:\EISv2\Web.Api\bin\System.Web.WebPages.Razor.xml
+C:\EISv2\Web.Api\bin\Antlr3.Runtime.pdb
+C:\EISv2\Web.Api\bin\Web.Data.pdb
+C:\EISv2\Web.Api\bin\de\Microsoft.Data.Edm.resources.dll
+C:\EISv2\Web.Api\bin\es\Microsoft.Data.Edm.resources.dll
+C:\EISv2\Web.Api\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\EISv2\Web.Api\bin\it\Microsoft.Data.Edm.resources.dll
+C:\EISv2\Web.Api\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\EISv2\Web.Api\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\EISv2\Web.Api\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\EISv2\Web.Api\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\EISv2\Web.Api\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\EISv2\Web.Api\bin\de\Microsoft.Data.OData.resources.dll
+C:\EISv2\Web.Api\bin\es\Microsoft.Data.OData.resources.dll
+C:\EISv2\Web.Api\bin\fr\Microsoft.Data.OData.resources.dll
+C:\EISv2\Web.Api\bin\it\Microsoft.Data.OData.resources.dll
+C:\EISv2\Web.Api\bin\ja\Microsoft.Data.OData.resources.dll
+C:\EISv2\Web.Api\bin\ko\Microsoft.Data.OData.resources.dll
+C:\EISv2\Web.Api\bin\ru\Microsoft.Data.OData.resources.dll
+C:\EISv2\Web.Api\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\EISv2\Web.Api\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\EISv2\Web.Api\bin\de\System.Spatial.resources.dll
+C:\EISv2\Web.Api\bin\es\System.Spatial.resources.dll
+C:\EISv2\Web.Api\bin\fr\System.Spatial.resources.dll
+C:\EISv2\Web.Api\bin\it\System.Spatial.resources.dll
+C:\EISv2\Web.Api\bin\ja\System.Spatial.resources.dll
+C:\EISv2\Web.Api\bin\ko\System.Spatial.resources.dll
+C:\EISv2\Web.Api\bin\ru\System.Spatial.resources.dll
+C:\EISv2\Web.Api\bin\zh-Hans\System.Spatial.resources.dll
+C:\EISv2\Web.Api\bin\zh-Hant\System.Spatial.resources.dll
+C:\EISv2\Web.Api\obj\Debug\Web.Api.csprojResolveAssemblyReference.cache
+C:\EISv2\Web.Api\obj\Debug\Web.Api.dll
+C:\EISv2\Web.Api\obj\Debug\Web.Api.pdb
+C:\Webv6\Web.Api\obj\Debug\Web.Api.csprojResolveAssemblyReference.cache
+C:\Webv6\Web.Api\obj\Debug\Web.Api.dll
+C:\Webv6\Web.Api\obj\Debug\Web.Api.pdb

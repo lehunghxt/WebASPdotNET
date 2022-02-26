@@ -1,0 +1,168 @@
+﻿@model Web.Backend.Models.WarehouseIODetailViewModel
+@{
+    ViewBag.Title = "Chi tiết xuất nhập kho";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                @(Model.Warehouse.Id > 0 ? "Sửa" : "Thêm") phiếu xuất / nhập kho
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-hdd"></i> Lưu</button>
+                    <a href="/Warehouse" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại</a>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Chi tiết xuất / nhập kho</div>
+                <div class="panel-body">
+                    <table width="100%">
+                        <tr>
+                            <td>Loại</td>
+                            <td>
+                                @Html.RadioButtonFor(model => model.Warehouse.Type, false) Xuất kho
+                                @Html.RadioButtonFor(model => model.Warehouse.Type, true) Nhập kho
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mã phiếu:</td>
+                            <td>
+                                <div class="form-inline">
+                                    @Model.Warehouse.Id-@Html.EditorFor(model => model.Warehouse.Code, new { htmlAttributes = new { @class = "form-control", placeholder = "Mã phiếu" } })
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ngày:</td>
+                            <td>@Html.EditorFor(model => model.Warehouse.Date, new { htmlAttributes = new { @class = "form-control", placeholder = "Ngày", @type = "date" } })</td>
+                        </tr>
+                        <tr>
+                            <td>Nhà cung cấp:</td>
+                            <td>@Html.DropDownListFor(model => model.Warehouse.SupplierId, Model.Suppliers, new { @class = "form-control", placeholder = "Nhà cung cấp" })</td>
+                        </tr>
+                        <tr>
+                            <td>Tổng tiền:</td>
+                            <td>@Html.EditorFor(model => model.Warehouse.TotalPrice, new { htmlAttributes = new { @class = "form-control", placeholder = "Tổng tiền" } })</td>
+                        </tr>
+                        <tr>
+                            <td>Ghi chú:</td>
+                            <td>@Html.TextAreaFor(model => model.Warehouse.Description, new { @class = "form-control", placeholder = "Ghi chú" })</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Sản phẩm
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Tên</th>
+                                <th>Hình</th>
+                                <th>Số lượng</th>
+                                <th>Giá nhập</th>
+                                <th><button class="btn btn-info" type="button" data-toggle="modal" data-target="#addProduct" role="button"><i class="glyphicon glyphicon-plus"></i></button></th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            @foreach (var product in Model.WarehouseProducts)
+            {
+                <tr id="row_@product.ProductId">
+                    <td>@product.ProductId-@product.ProductCode <input type="hidden" value="@product.ProductId" name="product_id"/></td>
+                    <td>@product.ProductName</td>
+                    <td><img src="@product.ProductImage" style="width:30px; height:30px" /></td>
+                    <td><input type="number" class="form-control" name="product_quantity" value="@product.Quantity" placeholder = "Số lượng"/></td>
+                    <td><input type="number" class="form-control" name="product_price" value="@product.Price" placeholder="Giá nhập" /></td>
+                    <td>
+                        <button class="btn btn-danger" type="button" onclick="Remove('@product.ProductId');">Xóa</button>
+                    </td>
+                </tr>
+}
+                            <tr id="products_wrap">
+                                <td colspan="3" style="text-align:right">Tổng: </td>
+                                <td>@String.Format("{0:0,0}", Model.WarehouseProducts.Sum(e => e.Quantity))</td>
+                                <td>@String.Format("{0:0,0}", Model.WarehouseProducts.Sum(e => e.Quantity * e.Price))</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="addProduct" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 id="title" class="modal-title">Chọn sản phẩm</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                            <tr>
+                                                <th>Mã</th>
+                                                <th>Tên</th>
+                                                <th>Hình</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var product in Model.Products)
+            {
+                                <tr id="productrow_@product.ID">
+                                    <td>@product.ID-@product.URL</td>
+                                    <td>@product.Title</td>
+                                    <td><img src="@product.ImagePath" style="width:30px; height:30px" /></td>
+                                    <td><input type="button" value="Thêm" onclick="Add('@product.ID','@product.URL','@product.Title','@product.ImagePath')"/></td>
+                                </tr>
+}
+                                        </tbody>
+                                    </table>
+                                    <script>
+                                        $(document).ready(function () {
+                                            $('#dataTables-example').dataTable({ "paging": true, "sort": false, "pageLength": 5 });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input id="Warehouse_Id" name="Warehouse.Id" type="hidden" value="@Model.Warehouse.Id" />
+
+    <script>
+        function Remove(id) {
+            $("#row_" + id).remove();
+        }
+        function Add(id, code, name, img) {
+            $("#products_wrap").before('<tr id="row_' + id + '">'
+                + '<td>' + id + ' - ' + code + ' <input type= "hidden" value= "'+id+'" name= "product_id" /></td>'
+                + '<td>' + name + '</td>'
+                + '<td><img src="'+img+'" style="width:30px; height:30px" /></td>'
+                + '<td><input type="number" class="form-control" name="product_quantity" placeholder = "Số lượng"/></td>'
+                + '<td><input type="number" class="form-control" name="product_price" placeholder="Giá nhập" /></td>'
+                + '<td><button class="btn btn-danger" type="button" onclick="Remove('+ id + ');">Xóa</button></td>'
+                + '</tr > '); 
+            $("#productrow_" + id).remove();
+        }
+    </script>
+}
+
+

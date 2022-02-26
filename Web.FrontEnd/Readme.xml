@@ -1,0 +1,688 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Website>
+  <Copyright>Copyright © VIT 2010</Copyright>
+  <Templates>
+    <Admin IsPublic="true">
+      <Positions>
+        <Position Name="TopRight">Vị trí phía trên bên phải</Position>
+        <Position Name="TopTray">Vi trí phía trên</Position>
+        <Position Name="Left">Menu bên trái</Position>
+        <Position Name="Footer">Footer</Position>
+      </Positions>
+      <Skins>
+        <Empty>Khung khong tieu de</Empty>
+      </Skins>
+      <Components>
+        <Home>
+          <Home>
+            <Position Name="Content">Trung tâm</Position>
+          </Home>
+        </Home>
+        <Product>
+          <ProductTrash>
+            <Position Name="Content">Trung tâm</Position>
+          </ProductTrash>
+          <ProductList>
+            <Position Name="Content">Trung tâm</Position>
+          </ProductList>
+          <ProductEdit>
+            <Position Name="Content">Trung tâm</Position>
+          </ProductEdit>
+
+          <Manufacturer>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </Manufacturer>
+          <Manufacturers>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </Manufacturers>
+          <ManufacturerTrash>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </ManufacturerTrash>
+
+          <Model>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </Model>
+          <Models>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </Models>
+          <ModelTrash>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </ModelTrash>
+        </Product>
+        <Template>
+          <Components>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </Components>
+          <TemplateComponent>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </TemplateComponent>
+          <TemplateTrash>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </TemplateTrash>
+          <Templates>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </Templates>
+          <Template>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </Template>
+          <TemplateModules>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </TemplateModules>
+          <TemplateModule>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </TemplateModule>
+          <TemplateModuleParams>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </TemplateModuleParams>
+          <ModuleParams>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </ModuleParams>
+
+          <TemplateModuleParam>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </TemplateModuleParam>
+          <SkinTrash>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </SkinTrash>
+          <Skins>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </Skins>
+          <Skin>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </Skin>
+          <ModuleList>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </ModuleList>
+          <ModuleParamList>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </ModuleParamList>
+          <TemplatePositions>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </TemplatePositions>
+          <TemplatePosition>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </TemplatePosition>
+
+        </Template>
+      </Components>
+      <Modules>
+        <ProductTrash Name="Quản lý danh sách những sản phẩm đã bị xóa"></ProductTrash>
+        <ProductList Name="Danh sách sản phẩm">
+          <Param key="CategoryId" value="0" type="number" summary="Mã danh mục - có thể lấy mặc định khi trường hợp cần hiển thị danh sách theo danh mục nào đó"></Param>
+          <param key="LanguageId" value="vi-VN" type="text" summary="Mã ngôn ngữ - lấy theo chuẩn quốc tế"></param>
+        </ProductList>
+        <ProductEdit Name="Chỉnh sửa hoặc thêm mới một sản phẩm">
+          <Param key="ProductId" value="0" type="number" summary="Mã sản phẩm - ưu tiên lấy từ Request trước"></Param>
+          <Param key="CategoryId" value="0" type="number" summary="Mã danh mục - có thể lấy mặc định khi trường hợp tạo mới sp"></Param>
+          <Param key="LanguageId" value="vi-VN" type="text" summary="Mã ngôn ngữ - lấy theo chuẩn quốc tế"></Param>
+        </ProductEdit>
+        <ManufacturerEdit Name="Chỉnh sửa hoặc thêm mới một nhà cung cấp"></ManufacturerEdit>
+        <ManufacturerList Name="Danh sách nhà cung cấp"></ManufacturerList>
+        <ManufacturerTrash Name="Quản lý nhà cung cấp đã bị xóa"></ManufacturerTrash>
+        <Model Name="Chỉnh sửa hoặc thêm mới một model"></Model>
+        <Models Name="Danh sách model"></Models>
+        <ModelTrash Name="Quản lý model đã bị xóa"></ModelTrash>
+
+        <Logon Name="Hiển thị user đăng nhập"></Logon>
+        <ItemImage Name="Ảnh chi tiết"></ItemImage>
+        <SideBar Name="Menu quản trị"></SideBar>
+        <CompanyEdit Name="Sửa thông tin công ty"></CompanyEdit>
+        <CompanyCopyright Name="Bản quyền công ty"></CompanyCopyright>
+        <CompanyImage Name="Hình ảnh công ty"></CompanyImage>
+        <CompanyName Name="Tên công ty"></CompanyName>
+
+
+        <TemplateTrash Name="Quản lý danh sách những template đã bị xóa"></TemplateTrash>
+        <Templates Name="Danh sách template"></Templates>
+        <Template Name="Chỉnh sửa hoặc thêm mới một template"></Template>
+
+        <TemplateModules Name="Danh sách templateModule"></TemplateModules>
+        <TemplateModule Name="Chỉnh sửa hoặc thêm mới một templateModule"></TemplateModule>
+        <TemplateComponent Name="Danh sách TemplateComponent"></TemplateComponent>
+        <Component Name="Danh sách component"></Component>
+        <TemplateModuleParams Name="Danh sách templateModule"></TemplateModuleParams>
+        <ModuleParams Name="Danh sách ModuleParams"></ModuleParams>
+        <TemplateModuleParam Name="Chỉnh sửa hoặc thêm mới một templateModule"></TemplateModuleParam>
+        <TemplatePositions Name="Danh sách Position"></TemplatePositions>
+        <TemplatePosition Name="Chỉnh sửa hoặc thêm mới một Position"></TemplatePosition>
+
+        <SkinTrash Name="Quản lý danh sách những skin đã bị xóa"></SkinTrash>
+        <Skins Name="Danh sach skin"></Skins>
+        <Skin Name="theem hoac sua 1 skin">
+          <Param key="SkinName" value="Empty" type="text" summary="Skin name - ưu tiên lấy từ Request trước"></Param>
+        </Skin>
+        <!--<TemplateTrash Name="Quản lý danh sách những sản phẩm đã bị xóa"></TemplateTrash>
+        <Templates Name="Danh sách sản phẩm">
+        </Templates>
+        <Template Name="Chỉnh sửa hoặc thêm mới một sản phẩm">
+        </Template>-->
+        <TemplateSkins Name="Danh sách sản phẩm">
+        </TemplateSkins>
+        <TemplateSkinAdd Name="Chỉnh sửa hoặc thêm mới một sản phẩm">
+        </TemplateSkinAdd>
+        <ModuleList Name="Danh sách ModuleReadme">
+        </ModuleList>
+        <ModuleParamList Name="Danh sách ModuleParamReadme">
+        </ModuleParamList>
+      </Modules>
+    </Admin>
+    <T0144 IsPublic="false">
+      <Positions>
+        <Position Name="TopPage" SkinName="Empty">Phia tren cung trang</Position>
+        <Position Name="TopBanner" SkinName="Empty">Banner phia tren - duoi menu</Position>
+        <Position Name="AfterBanner" SkinName="Empty">Vị trí dưới banner</Position>
+        <Position Name="FooterLeft" SkinName="Empty">Bên trái Footer</Position>
+        <Position Name="FooterCenter" SkinName="Empty">Ở giữa Footer</Position>
+        <Position Name="FooterRight" SkinName="BackgroundTransparentWithTitle">Bên phải Footer</Position>
+        <Position Name="BottomPage" SkinName="BackgroundBlue">Phía cuối cùng trang</Position>
+      </Positions>
+      <Skins>
+        <Empty>Khung trống không tiêu đề</Empty>
+        <New>New</New>
+        <OTo>OTo</OTo>
+        <MoTo>MoTo</MoTo>
+        <Car>Car</Car>
+        <Out>Thoát</Out>
+        <BackgroundBlue>Nền màu xanh không tiêu đề</BackgroundBlue>
+        <BackgroundTransparentWithTitle>Nền trong suốt có tiêu đề</BackgroundTransparentWithTitle>
+        <BackgroundOrageClose>Nền cam có nút close, không tiêu đề</BackgroundOrageClose>
+        <BackgroundWhiteWithTitleBlue>Nền trắng, tiêu đề xanh</BackgroundWhiteWithTitleBlue>
+        <Info>Icon hinh dau !</Info>
+      </Skins>
+      <Components>
+        <Page>
+          <Home>
+            <Position Name="ContentTop" SkinName="New">Phía trên</Position>
+            <Position Name="ContentLeft" SkinName="OTo">Bên trái</Position>
+            <Position Name="ContentMiddle" SkinName="MoTo">Bên phải</Position>
+            <Position Name="ContentBottom" SkinName="Empty">Phía dưới</Position>
+          </Home>
+          <Contact>
+            <Position Name="ContentTop" SkinName="Empty">Phía trên</Position>
+            <Position Name="ContentMiddle" SkinName="Empty">Ở giữa</Position>
+            <Position Name="ContentBottom" SkinName="Empty">Phía dưới</Position>
+          </Contact>
+        </Page>
+        <Product>
+          <Product>
+            <Position Name="ContentTop" SkinName="New">Phía trên</Position>
+            <Position Name="ContentLeft" SkinName="OTo">Bên trái</Position>
+            <Position Name="ContentMiddle" SkinName="MoTo">Ở giữa</Position>
+          </Product>
+          <Products>
+            <Position Name="ContentTop" SkinName="New">Phía trên</Position>
+            <Position Name="ContentLeft" SkinName="OTo">Bên trái</Position>
+            <Position Name="ContentMiddle" SkinName="MoTo">Ở giữa</Position>
+          </Products>
+        </Product>
+        <Article>
+          <Article>
+            <Position Name="ContentTop" SkinName="New">Phía trên</Position>
+            <Position Name="ContentLeft" SkinName="OTo">Bên trái</Position>
+            <Position Name="ContentMiddle" SkinName="MoTo">Ở giữa</Position>
+          </Article>
+          <Articles>
+            <Position Name="ContentTop" SkinName="New">Phía trên</Position>
+            <Position Name="ContentLeft" SkinName="OTo">Bên trái</Position>
+            <Position Name="ContentMiddle" SkinName="MoTo">Ở giữa</Position>
+          </Articles>
+        </Article>
+        <Member>
+          <Info>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </Info>
+          <Register>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </Register>
+          <ForgetPass>
+            <Position Name="ContentTop">Phía trên</Position>
+            <Position Name="ContentLeft">Bên trái</Position>
+            <Position Name="ContentMiddle">Ở giữ</Position>
+            <Position Name="ContentRight">Bên phải</Position>
+            <Position Name="ContentBottom">Phía dưới</Position>
+          </ForgetPass>
+        </Member>
+      </Components>
+      <Modules>
+        <Articles Name="Danh sách bài viết">
+          <Param key="Top" value="0" type="number" summary="Lấy bao nhiêu bài viết, 0: lấy hết"/>
+          <Param key="CategoryId" value="0" type="number" summary="Danh mục nào, 0: lấy hết"/>
+          <Param key="InChildCategory" value="false" type="bool" summary="Có lấy bài viết trong danh mục con không"/>
+          <Param key="OrtherId" value="0" type="number" summary="Không lấy bài viết này"/>
+          <Param key="HasPaging" value="false" type="bool" summary="Phân trang không"/>
+          <Param key="Types" value="" type="text" summary="Loại bài viết, cách nhau dấu ,"/>
+        </Articles>
+        <ArticleDetails Name="Danh sách bài viết - hiển thị nội dung tóm tắt">
+          <Param key="Top" value="0" type="number" summary="Lấy bao nhiêu bài viết, 0: lấy hết"/>
+          <Param key="CategoryId" value="0" type="number" summary="Danh mục nào, 0: lấy hết"/>
+          <Param key="InChildCategory" value="false" type="bool" summary="Có lấy bài viết trong danh mục con không"/>
+          <Param key="OrtherId" value="0" type="number" summary="Không lấy bài viết này"/>
+          <Param key="HasPaging" value="false" type="bool" summary="Phân trang không"/>
+          <Param key="Types" value="" type="text" summary="Loại bài viết, cách nhau dấu ,"/>
+        </ArticleDetails>
+        <Article Name="Chi tiết bài viết với số lượt xem, like và vote">
+          <Param key="ArticleId" value="0" type="number" summary="Mã bài viết - ưu tiên lấy từ request trước"/>
+        </Article>
+
+        <ProductCarSearchBox Name="Tim xe"></ProductCarSearchBox>
+        <ManufacturerCountProduct Name="Danh sach nha cung cap - đếm số sản phẩm">
+          <Param key="CategoryId" value="0" type="number" summary="Ma danh muc san pham"/>
+          <Param key="IsParent" value="true" type="bool" summary="Co lay hang san xuat cua danh muc cha khong"/>
+          <Param key="IsChild" value="false" type="bool" summary="Co lay hang san xuat cua danh muc con khong"/>
+        </ManufacturerCountProduct>
+
+        <ProductCarViewInfo Name="Chi tiet tin">
+          <Param key="ProductId" value="0" type="number" summary="Ma san pham"/>
+        </ProductCarViewInfo>
+        <ProductCarViewList Name="Danh sach tin">
+          <Param key="CategoryId" value="0" type="number" summary="Ma danh muc san pham"/>
+          <Param key="InChildCat" value="true" type="bool" summary="Co lay luon san pham cua danh muc con khong"/>
+          <Param key="ManufacturerId" value="0" type="number" summary="Hang san xuat"/>
+          <Param key="OrtherId" value="0" type="number" summary="Loai tru san pham"/>
+          <Param key="Column" value="1" type="number" summary="Hien thi bao nhieu cot"/>
+          <Param key="Top" value="0" type="number" summary="Lấy bao nhiêu san pham, 0: lấy hết"/>
+          <Param key="Width" value="0" type="number" summary="Do rong moi tin"/>
+        </ProductCarViewList>
+        <ProductCarViewListearch Name="Bộ lọc sản phẩm xe - đơn giản"></ProductCarViewListearch>
+
+        <BackLink Name="Link quay lại">
+          <Param key="BeginName" value="Trang chủ" type="text" summary="tên link dầu"/>
+          <Param key="EndName" value="" type="text" summary="tên link cuoi"/>
+          <Param key="Split" value=">>" type="text" summary="ký tự cách giữa các link"/>
+          <Param key="CategoryType" value="" type="text" summary="Loại danh mục: PRO|ART"/>
+          <Param key="CategoryId" value="0" type="int" summary="Mã danh mục con"/>
+        </BackLink>
+
+        <CompanyInfo Name="Thông tin công ty"></CompanyInfo>
+        <CompanyCopyright Name="Bản quyền"></CompanyCopyright>
+        <Hotline Name="Hotline"></Hotline>
+
+        <Logo Name="Ảnh banner - quảng cáo">
+          <Param key="Top" value="0" type="number" summary=""/>
+          <Param key="Category" value="0" type="number" summary=""/>
+          <Param key="Width" value="0" type="number" summary=""/>
+          <Param key="Height" value="0" type="number" summary=""/>
+        </Logo>
+
+        <Menu Name="Danh mục 1 cấp">
+          <Param key="ParentId" value="0" type="number" summary=""/>
+          <Param key="TypeId" value="" type="text" summary=""/>
+          <Param key="HasChild" value="false" type="bool" summary=""/>
+        </Menu>
+        <MenuFooter Name="Danh mục 1 cấp - Trang chu - lien he">
+          <Param key="ParentId" value="0" type="number" summary=""/>
+          <Param key="TypeId" value="" type="text" summary=""/>
+          <Param key="HasChild" value="false" type="bool" summary=""/>
+        </MenuFooter>
+
+        <Logon Name="Đăng nhập"></Logon>
+        <MemberInfo Name="Thông tin thành viên">
+          <Param key="EnterOldPassword" value="false" type="bool" summary="yêu càu nhập password cũ khi thay đổi pass"/>
+        </MemberInfo>
+        <MemberRegister Name="Đăng ký thành viên"></MemberRegister>
+        <QuenPass Name="Quên mật khẩu">
+          <Param key="MailServer" value="lethanhtinh5588@gmail.com" type="text" summary=""/>
+          <Param key="Port" value="587" type="text" summary=""/>
+          <Param key="MailAccount" value="lethanhtinh5588@gmail.com" type="text" summary=""/>
+          <Param key="PassWord" value="0932733062" type="text" summary=""/>
+        </QuenPass>
+        <Contact Name="Liên Hệ">
+          <Param key="MailServer" value="lethanhtinh5588@gmail.com" type="text" summary=""/>
+          <Param key="Port" value="587" type="text" summary=""/>
+          <Param key="MailAccount" value="lethanhtinh5588@gmail.com" type="text" summary=""/>
+          <Param key="PassWord" value="0932733062" type="text" summary=""/>
+        </Contact>
+
+      </Modules>
+    </T0144>
+  </Templates>
+  <Components>
+    <Page>
+      <Home>
+        <Position Name="ContentTop">Phía trên</Position>
+        <Position Name="ContentLeft">Bên trái</Position>
+        <Position Name="ContentMiddle">Ở giữ</Position>
+        <Position Name="ContentRight">Bên phải</Position>
+        <Position Name="ContentBottom">Phía dưới</Position>
+      </Home>
+      <Contact>
+        <Position Name="ContentTop">Phía trên</Position>
+        <Position Name="ContentLeft">Bên trái</Position>
+        <Position Name="ContentMiddle">Ở giữ</Position>
+        <Position Name="ContentRight">Bên phải</Position>
+        <Position Name="ContentBottom">Phía dưới</Position>
+      </Contact>
+    </Page>
+    <Product>
+      <Product>
+        <Position Name="ContentTop">Phía trên</Position>
+        <Position Name="ContentLeft">Bên trái</Position>
+        <Position Name="ContentMiddle">Ở giữ</Position>
+        <Position Name="ContentRight">Bên phải</Position>
+        <Position Name="ContentBottom">Phía dưới</Position>
+      </Product>
+      <Products>
+        <Position Name="ContentTop">Phía trên</Position>
+        <Position Name="ContentLeft">Bên trái</Position>
+        <Position Name="ContentMiddle">Ở giữ</Position>
+        <Position Name="ContentRight">Bên phải</Position>
+        <Position Name="ContentBottom">Phía dưới</Position>
+      </Products>
+    </Product>
+    <Article>
+      <Article>
+        <Position Name="ContentTop">Phía trên</Position>
+        <Position Name="ContentLeft">Bên trái</Position>
+        <Position Name="ContentMiddle">Ở giữ</Position>
+        <Position Name="ContentRight">Bên phải</Position>
+        <Position Name="ContentBottom">Phía dưới</Position>
+      </Article>
+      <Articles>
+        <Position Name="ContentTop">Phía trên</Position>
+        <Position Name="ContentLeft">Bên trái</Position>
+        <Position Name="ContentMiddle">Ở giữ</Position>
+        <Position Name="ContentRight">Bên phải</Position>
+        <Position Name="ContentBottom">Phía dưới</Position>
+      </Articles>
+    </Article>
+    <Member>
+      <Info>
+        <Position Name="ContentTop">Phía trên</Position>
+        <Position Name="ContentLeft">Bên trái</Position>
+        <Position Name="ContentCenter">Ở giữ</Position>
+        <Position Name="ContentRight">Bên phải</Position>
+        <Position Name="ContentBottom">Phía dưới</Position>
+      </Info>
+      <Register>
+        <Position Name="ContentTop">Phía trên</Position>
+        <Position Name="ContentLeft">Bên trái</Position>
+        <Position Name="ContentCenter">Ở giữ</Position>
+        <Position Name="ContentRight">Bên phải</Position>
+        <Position Name="ContentBottom">Phía dưới</Position>
+      </Register>
+      <ForgetPass>
+        <Position Name="ContentTop">Phía trên</Position>
+        <Position Name="ContentLeft">Bên trái</Position>
+        <Position Name="ContentMiddle">Ở giữ</Position>
+        <Position Name="ContentRight">Bên phải</Position>
+        <Position Name="ContentBottom">Phía dưới</Position>
+      </ForgetPass>
+    </Member>
+  </Components>
+  <Modules>
+    <ProductTrash Name="Quản lý danh sách những sản phẩm đã bị xóa"></ProductTrash>
+    <ProductList Name="Danh sách sản phẩm">
+      <Param key="CategoryId" value="0" type="number" summary="Mã danh mục - có thể lấy mặc định khi trường hợp cần hiển thị danh sách theo danh mục nào đó"></Param>
+      <param key="LanguageId" value="vi-VN" type="text" summary="Mã ngôn ngữ - lấy theo chuẩn quốc tế"></param>
+    </ProductList>
+    <ProductEdit Name="Chỉnh sửa hoặc thêm mới một sản phẩm">
+      <Param key="ProductId" value="0" type="number" summary="Mã sản phẩm - ưu tiên lấy từ Request trước"></Param>
+      <Param key="CategoryId" value="0" type="number" summary="Mã danh mục - có thể lấy mặc định khi trường hợp tạo mới sp"></Param>
+      <param key="LanguageId" value="vi-VN" type="text" summary="Mã ngôn ngữ - lấy theo chuẩn quốc tế"></param>
+    </ProductEdit>
+    <ProductCardSimple Name="Danh sách tin đăng">
+      <Param key="CategoryId" value="0" type="number" summary="Mã danh mục - có thể lấy mặc định khi trường hợp cần hiển thị danh sách theo danh mục nào đó"></Param>
+      <Param key="ManufacturerId" value="0" type="number" summary="Mã hãng sản xuất - có thể lấy mặc định khi trường hợp cần hiển thị danh sách theo danh mục nào đó"></Param>
+      <param key="LanguageId" value="vi-VN" type="text" summary="Mã ngôn ngữ - lấy theo chuẩn quốc tế"></param>
+    </ProductCardSimple>
+
+    <Logon Name="Hiển thị user đăng nhập"></Logon>
+
+    <ItemImage Name="Ảnh chi tiết"></ItemImage>
+    <SideBar Name="Menu quản trị"></SideBar>
+    <CompanyEdit Name="Sửa thông tin công ty"></CompanyEdit>
+    <CompanyInfo Name="Thông tin công ty"></CompanyInfo>
+
+    <CategorySimpleLevel_1 Name="Danh mục 1 cấp">
+      <Param key="ParentId" value="0" type="number" summary=""/>
+      <Param key="TypeId" value="" type="text" summary=""/>
+      <Param key="HasChild" value="false" type="bool" summary=""/>
+    </CategorySimpleLevel_1>
+    <CategoryCountProductLevel_1 Name="Danh mục 1 cấp - đếm số sản phẩm">
+      <Param key="ParentId" value="null" type="number" summary=""/>
+      <Param key="HasChild" value="false" type="bool" summary=""/>
+    </CategoryCountProductLevel_1>
+    <CategoryBackLink Name="Link quay lại">
+      <Param key="BeginName" value="Trang chủ" type="text" summary="tên link đầu"/>
+      <Param key="EndName" value="Trang chủ" type="text" summary="tên kết thúc"/>
+      <Param key="Split" value=">>" type="text" summary="ký tự cách giữa các link"/>
+      <Param key="CategoryType" value=">>" type="text" summary="Loại danh mục: PRO|ART"/>
+      <Param key="Mã danh mục con" value=">>" type="int" summary="CategoryId"/>
+    </CategoryBackLink>
+
+    <ManufacturerCountProduct Name="Danh sach nha cung cap - đếm số sản phẩm">
+      <Param key="CategoryId" value="0" type="number" summary="Ma danh muc san pham"/>
+      <Param key="IsParent" value="true" type="bool" summary="Co lay hang san xuat cua danh muc cha khong"/>
+      <Param key="IsChild" value="false" type="bool" summary="Co lay hang san xuat cua danh muc con khong"/>
+    </ManufacturerCountProduct>
+
+    <LinkImage Name="Logo">
+      <Param key="Top" value="0" type="number" summary=""/>
+      <Param key="Category" value="0" type="number" summary=""/>
+      <Param key="Width" value="0" type="number" summary=""/>
+      <Param key="Height" value="0" type="number" summary=""/>
+    </LinkImage>
+
+    <ArticleOrther Name="Bài viết khác">
+      <Param key="TopLast" value="5" type="number" summary=""/>
+      <Param key="TopFrist" value="5" type="number" summary=""/>
+    </ArticleOrther>
+    <ArticlesWithImage Name="Danh sách bài viết có tiêu đề có mô tả và hình ảnh">
+      <Param key="Top" value="0" type="number" summary="Lấy bao nhiêu bài viết, 0: lấy hết"/>
+      <Param key="CategoryId" value="0" type="number" summary="Danh mục nào, 0: lấy hết"/>
+      <Param key="InChildCategory" value="false" type="bool" summary="Có lấy bài viết trong danh mục con không"/>
+      <Param key="HasFavourite" value="false" type="bool" summary="Sắp xếp theo lượt xem"/>
+      <Param key="OrtherId" value="0" type="number" summary="Không lấy bài viết này"/>
+      <Param key="HasPaging" value="false" type="bool" summary="Phân trang không"/>
+      <Param key="Types" value="" type="text" summary="Loại bài viết, cách nhau dấu ,"/>
+      <Param key="Tag" value="" type="text" summary="lọc theo Tag bài viết"/>
+    </ArticlesWithImage>
+    <ArticlesWithTitle Name="Danh sách bài viết chỉ có tiêu đề và mô tả">
+      <Param key="Top" value="0" type="number" summary="Lấy bao nhiêu bài viết, 0: lấy hết"/>
+      <Param key="CategoryId" value="0" type="number" summary="Danh mục nào, 0: lấy hết"/>
+      <Param key="InChildCategory" value="false" type="bool" summary="Có lấy bài viết trong danh mục con không"/>
+      <Param key="HasFavourite" value="false" type="bool" summary="Sắp xếp theo lượt xem"/>
+      <Param key="OrtherId" value="0" type="number" summary="Không lấy bài viết này"/>
+      <Param key="HasPaging" value="false" type="bool" summary="Phân trang không"/>
+      <Param key="Types" value="" type="text" summary="Loại bài viết, cách nhau dấu ,"/>
+      <Param key="Tag" value="" type="text" summary="lọc theo Tag bài viết"/>
+    </ArticlesWithTitle>
+    <ArticlesWithViews Name="Danh sách bài viết với tiêu đề, mô tả và số người xem, vote">
+      <Param key="Top" value="0" type="number" summary="Lấy bao nhiêu bài viết, 0: lấy hết"/>
+      <Param key="CategoryId" value="0" type="number" summary="Danh mục nào, 0: lấy hết"/>
+      <Param key="InChildCategory" value="false" type="bool" summary="Có lấy bài viết trong danh mục con không"/>
+      <Param key="HasFavourite" value="false" type="bool" summary="Sắp xếp theo lượt xem"/>
+      <Param key="OrtherId" value="0" type="number" summary="Không lấy bài viết này"/>
+      <Param key="HasPaging" value="false" type="bool" summary="Phân trang không"/>
+      <Param key="Types" value="" type="text" summary="Loại bài viết, cách nhau dấu ,"/>
+      <Param key="Tag" value="" type="text" summary="lọc theo Tag bài viết"/>
+    </ArticlesWithViews>
+    <ArticlesWithImageViews Name="Danh sách bài viết với tiêu đề, mô tả, hình ảnh và số người xem, vote">
+      <Param key="Top" value="0" type="number" summary="Lấy bao nhiêu bài viết, 0: lấy hết"/>
+      <Param key="CategoryId" value="0" type="number" summary="Danh mục nào, 0: lấy hết"/>
+      <Param key="InChildCategory" value="false" type="bool" summary="Có lấy bài viết trong danh mục con không"/>
+      <Param key="HasFavourite" value="false" type="bool" summary="Sắp xếp theo lượt xem"/>
+      <Param key="OrtherId" value="0" type="number" summary="Không lấy bài viết này"/>
+      <Param key="HasPaging" value="false" type="bool" summary="Phân trang không"/>
+      <Param key="Types" value="" type="text" summary="Loại bài viết, cách nhau dấu ,"/>
+      <Param key="Tag" value="" type="text" summary="lọc theo Tag bài viết"/>
+    </ArticlesWithImageViews>
+    <ArticleDetail Name="Chi tiết bài viết">
+      <Param key="ArticleId" value="0" type="number" summary="Mã bài viết - ưu tiên lấy từ request trước"/>
+    </ArticleDetail>
+    <ArticleDetailWithView Name="Chi tiết bài viết với số lượt xem, like và vote">
+      <Param key="ArticleId" value="0" type="number" summary="Mã bài viết - ưu tiên lấy từ request trước"/>
+    </ArticleDetailWithView>
+
+    <ProductCarViewListearch Name="Bộ lọc sản phẩm xe - đơn giản"></ProductCarViewListearch>
+
+    <ItemLike Name="Like bài viết | file | sản phẩm">
+      <Param key="Display" value="true" type="bool" summary=""/>
+    </ItemLike>
+
+    <MemberInfo Name="Thông tin thành viên">
+      <Param key="EnterOldPassword" value="false" type="bool" summary="yêu càu nhập password cũ khi thay đổi pass"/>
+    </MemberInfo>
+    <MemberForgetPass Name="Quên mật khẩu">
+      <Param key="MailServer" value="lethanhtinh5588@gmail.com" type="text" summary=""/>
+      <Param key="Port" value="587" type="text" summary=""/>
+      <Param key="MailAccount" value="lethanhtinh5588@gmail.com" type="text" summary=""/>
+      <Param key="PassWord" value="stR0ngPassW0rd" type="text" summary=""/>
+    </MemberForgetPass>
+    <MemberRegister Name="Đăng ký thành viên">
+      <Param key="MailServer" value="lethanhtinh5588@gmail.com" type="text" summary=""/>
+      <Param key="Port" value="587" type="text" summary=""/>
+      <Param key="MailAccount" value="lethanhtinh5588@gmail.com" type="text" summary=""/>
+      <Param key="PassWord" value="0932733062" type="text" summary=""/>
+    </MemberRegister>
+    <Contact Name="Liên Hệ">
+      <Param key="MailServer" value="lethanhtinh5588@gmail.com" type="text" summary=""/>
+      <Param key="Port" value="587" type="text" summary=""/>
+      <Param key="MailAccount" value="lethanhtinh5588@gmail.com" type="text" summary=""/>
+      <Param key="PassWord" value="0932733062" type="text" summary=""/>
+    </Contact>
+
+    <GoogleMap Name="Ban do Google">
+      <Param key="Address" value="AIzaSyCwWt6vpGeneCMn8eYEtOl33-1fCsNI2wI" type="text" summary="Dia chi"/>
+      <Param key="GoogleAPIkey" value="32A/1c Tháp mười, phường 2, Quận 6, tp.Hồ Chí Minh" type="text" summary="Key dang ky tu https://code.google.com/apis/console/?api=translate"/>
+      <Param key="Zoom" value="1" type="number" summary="phong to"/>
+    </GoogleMap>
+    <TemplateComponent Name="Danh sách TemplateComponent"></TemplateComponent>
+    <TemplateTrash Name="Quản lý danh sách những template đã bị xóa"></TemplateTrash>
+    <Templates Name="Danh sách template"></Templates>
+    <Template Name="Chỉnh sửa hoặc thêm mới một template"></Template>
+    <SkinTrash Name="Quản lý danh sách những skin đã bị xóa"></SkinTrash>
+    <Skins Name="Danh sach skin"></Skins>
+    <Skin Name="theem hoac sua 1 skin">
+      <Param key="SkinName" value="Empty" type="text" summary="Skin name - ưu tiên lấy từ Request trước"></Param>
+    </Skin>
+    <TemplateTrash Name="Quản lý danh sách những sản phẩm đã bị xóa"></TemplateTrash>
+    <Templates Name="Danh sách sản phẩm">
+    </Templates>
+    <Template Name="Chỉnh sửa hoặc thêm mới một sản phẩm">
+    </Template>
+    <ModelTrash Name="Quản lý danh sách những sản phẩm đã bị xóa">
+    </ModelTrash>
+    <Models Name="Danh sách sản phẩm">
+    </Models>
+    <Model Name="Chỉnh sửa hoặc thêm mới một sản phẩm">
+    </Model>
+    <TemplateSkins Name="Danh sách sản phẩm">
+    </TemplateSkins>
+    <TemplateSkinAdd Name="Chỉnh sửa hoặc thêm mới một sản phẩm">
+    </TemplateSkinAdd>
+
+    <Component Name="Chỉnh sửa hoặc thêm mới một sản phẩm">
+    </Component>
+    <ModuleList Name="Danh sách ModuleReadme">
+    </ModuleList>
+    <ModuleParamList Name="Danh sách ModuleParamReadme">
+    </ModuleParamList>
+    <ModuleParams Name="Danh sách ModuleParams">
+    </ModuleParams>
+    <TemplatePositions Name="Danh sách Position"></TemplatePositions>
+    <TemplatePosition Name="Chỉnh sửa hoặc thêm mới một Position"></TemplatePosition>
+
+    
+  </Modules>
+</Website>

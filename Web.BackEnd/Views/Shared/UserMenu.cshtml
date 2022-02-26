@@ -1,0 +1,104 @@
+﻿@model List<Web.Model.MenuShortcutModel>
+<ul class="nav navbar-nav">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Câu hình <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="\">Trang chủ</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+                <a href="/Config/Company">Thông tin web</a>
+            </li>
+        </ul>
+    </li>
+    @foreach (var menu in Model)
+    {
+        if (menu.Shortcuts.Count == 0)
+        {
+            <li>
+                @if (menu.IsCategories)
+                {
+                    <a href="/Category?Type=@menu.CategoryType&catid=@menu.CategoryId">@menu.Name</a>
+                }
+                else
+                {
+                    var view = menu.CategoryType == "ART" ? "Article"
+                                            : menu.CategoryType == "LIN" ? "Article/Link"
+                                            : menu.CategoryType == "DOC" ? "Article/Documents"
+                                            : menu.CategoryType == "MID" ? "File"
+                                            : menu.CategoryType == "PRO" ? "Product" : "";
+                    <a href="/@view?catid=@menu.CategoryId">@menu.Name</a>
+                }
+            </li>
+        }
+        else
+        {
+            if (menu.CategoryId == 0)
+            {
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@menu.Name <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                @foreach (var child in menu.Shortcuts)
+                {
+                    <li>
+                        @if (child.IsCategories)
+                        {
+                            <a href="/Category?Type=@child.CategoryType&catid=@child.CategoryId">@child.Name</a>
+                        }
+                        else
+                        {
+                            var view = child.CategoryType == "ART" ? "Article"
+                                        : child.CategoryType == "LIN" ? "Article/Link"
+                                        : child.CategoryType == "DOC" ? "Article/Documents"
+                                        : child.CategoryType == "MID" ? "File"
+                                        : child.CategoryType == "PRO" ? "Product" : "";
+                            <a href="/@view?catid=@child.CategoryId">@child.Name</a>
+                        }
+                    </li>
+                }
+            </ul>
+        </li>
+            }
+            else
+            {
+            <li class="dropdown">
+                @if (menu.IsCategories)
+                {
+                    <a href="/Category?Type=@menu.CategoryType&catid=@menu.CategoryId" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@menu.Name <span class="caret"></span></a>
+                }
+                else
+                {
+                    var view = menu.CategoryType == "ART" ? "Article"
+                                            : menu.CategoryType == "LIN" ? "Article/Link"
+                                            : menu.CategoryType == "DOC" ? "Article/Documents"
+                                            : menu.CategoryType == "MID" ? "File"
+                                            : menu.CategoryType == "PRO" ? "Product" : "";
+                    <a href="/@view?catid=@menu.CategoryId" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@menu.Name <span class="caret"></span></a>
+                }
+
+                <ul class="dropdown-menu">
+                    @foreach (var child in menu.Shortcuts)
+                    {
+                        <li>
+                            @if (child.IsCategories)
+                            {
+                                <a href="/Category?Type=@child.CategoryType&catid=@child.CategoryId">@child.Name</a>
+                            }
+                            else
+                            {
+                                var view = child.CategoryType == "ART" ? "Article"
+                                            : child.CategoryType == "LIN" ? "Article/Link"
+                                            : child.CategoryType == "DOC" ? "Article/Documents"
+                                            : child.CategoryType == "MID" ? "File"
+                                            : child.CategoryType == "PRO" ? "Product" : "";
+                                <a href="/@view?catid=@child.CategoryId">@child.Name</a>
+                            }
+                        </li>
+                    }
+                </ul>
+            </li>
+            }
+        }
+    }
+</ul>

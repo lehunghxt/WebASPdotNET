@@ -1,0 +1,183 @@
+﻿@model URM.Website.Models.UserGroupViewModel
+
+@{
+    ViewBag.Title = "Quản lý nhóm quyền";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-danger" style="margin-top:10px">
+                <div class="panel-body">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="text-align:right">Nhóm: </td>
+                            <td style="text-align:left">@Html.DropDownListFor(model => model.GroupId, Model.Groups, "--- Chọn nhóm ---", new { @class = "form-control" })</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-warning" style="margin-top:10px">
+                <div class="panel-heading" id="roleheader">
+                    Danh sách tài khoản
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+                                <table class="table table-hover table-bordered table-striped" id="userGroupTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã</th>
+                                            <th>Tên</th>
+                                            <th>Tài khoản</th>
+                                            <th>Ngày sinh</th>
+                                            <th>Email</th>
+                                            <th>Điện thoại</th>
+                                            <th>Địa chỉ</th>
+                                            <th><button class="btn btn-info" type="button" data-toggle="modal" data-target="#addUser" role="button"><i class="glyphicon glyphicon-plus"></i></button></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="userGroup_wrap">
+                                        @foreach (var user in Model.UserGroups)
+                                        {
+                                            <tr id="userGrouprow_@user.ID">
+                                                <td>@user.ID <input type="hidden" value="@user.ID" name="userGroup_id" /></td>
+                                                <td>@user.FullName</td>
+                                                <td>@user.UserName</td>
+                                                <td>@string.Format("{0:dd/MM/yyyy}", user.Birthday)</td>
+                                                <td>@user.Email</td>
+                                                <td>@user.Phone</td>
+                                                <td>@user.Address</td>
+                                                <td><button class="btn btn-danger" type="button" onclick="RemoveUserGroup('@user.ID');">Xóa</button></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                    </fieldset>
+                </div>
+                <div class="panel-footer text-right">
+                        <input type="submit" class="btn btn-primary" value="Lưu" />
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addUser" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 id="title" class="modal-title">Chọn tài khoản</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Tên</th>
+                                <th>Tài khoản</th>
+                                <th>Ngày sinh</th>
+                                <th>Email</th>
+                                <th>Điện thoại</th>
+                                <th>Địa chỉ</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                @foreach (var user in Model.Users)
+                                {
+                                <tr id="userrow_@user.ID">
+                                    <td>@user.ID</td>
+                                    <td>@user.FullName</td>
+                                    <td>@user.UserName</td>
+                                    <td>@string.Format("{0:dd/MM/yyyy}", user.Birthday)</td>
+                                    <td>@user.Email</td>
+                                    <td>@user.Phone</td>
+                                    <td>@user.Address</td>
+                                    <td><input type="button" value="Thêm" onclick="AddUser('@user.ID','@user.FullName','@user.UserName','@string.Format("{0:dd/MM/yyyy}", user.Birthday)','@user.Email','@user.Phone','@user.Address')" /></td>
+                                </tr>
+                                }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.HiddenFor(model => model.Action)
+    @Html.HiddenFor(model => model.GroupId)
+
+}
+    <script>
+        $('#GroupId').on('change', function () { // when the room_type changes
+            var groupId = $('#GroupId').val();
+            window.location.href = "/User/UserGroup?groupId=" + groupId;
+        });
+    </script>
+    <script language="javascript">
+        function RemoveUserGroup(id) {
+            $("#userGrouprow_" + id).remove();
+        }
+        function AddUser(id, name, account, birthday, email, phone, address) {
+            $("#userGroup_wrap").append('<tr id="userGrouprow_' + id + '">'
+                + '<td>' + id + '<input type= "hidden" value= "' + id + '" name= "userGroup_id" /></td>'
+                + '<td>' + name + '</td>'
+                + '<td>' + account + '</td>'
+                + '<td>' + birthday + '</td>'
+                + '<td>' + email + '</td>'
+                + '<td>' + phone + '</td>'
+                + '<td>' + address + '</td>'
+                + '<td><button class="btn btn-danger" type="button" onclick="RemoveUserGroup(' + id + ');">Xóa</button></td>'
+                + '</tr > ');
+            $("#userrow_" + id).remove();
+        }
+    </script>
+
+    <script type="text/javascript">
+        $('#userGroupTable').DataTable({
+    "columnDefs": [{ "targets": [0,7], "searchable": false, "orderable": false, "visible": true }],
+    "oLanguage": {
+        "sProcessing": "Đang xử lý...",
+        "sLengthMenu": "Xem _MENU_ mục",
+        "sZeroRecords": "Không tìm thấy dòng nào phù hợp",
+        "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
+        "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
+        "sInfoFiltered": "(được lọc từ _MAX_ mục)",
+        "sInfoPostFix": "",
+        "sSearch": "Tìm:",
+        "sUrl": "",
+        "oPaginate": {
+            "sFirst": "Đầu",
+            "sPrevious": "Trước",
+            "sNext": "Tiếp",
+            "sLast": "Cuối"
+        }
+    }
+        });
+
+        $('#dataTables-example').DataTable({
+            "columnDefs": [{ "targets": [0, 7], "searchable": false, "orderable": false, "visible": true }],
+            "oLanguage": {
+                "sProcessing": "Đang xử lý...",
+                "sLengthMenu": "Xem _MENU_ mục",
+                "sZeroRecords": "Không tìm thấy dòng nào phù hợp",
+                "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
+                "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
+                "sInfoFiltered": "(được lọc từ _MAX_ mục)",
+                "sInfoPostFix": "",
+                "sSearch": "Tìm:",
+                "sUrl": "",
+                "oPaginate": {
+                    "sFirst": "Đầu",
+                    "sPrevious": "Trước",
+                    "sNext": "Tiếp",
+                    "sLast": "Cuối"
+                }
+            }
+        });
+    </script>

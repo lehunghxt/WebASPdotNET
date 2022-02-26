@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Web.Asp.UI.VITTemplate" %>
+
+<%@ Import Namespace="VIT.Library" %>
+<%@ Import Namespace="Library.Web" %>
+<%@ Import Namespace="Web.Asp.Provider" %>
+<%@ Register Assembly="Web.Asp" Namespace="Web.Asp.Controls" TagPrefix="VIT" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/navbar-bottom/" />
+
+    <link href="/Templates/T10/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Templates/T10/css/style.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body class="subpage">
+    <VIT:Form ID="frmMain" runat="server">
+        <asp:ScriptManager runat="server" ID="SptManager"></asp:ScriptManager>
+
+        <div class="container">
+            <VIT:Position runat="server" ID="psTop"></VIT:Position>
+            <nav class="nav nav-pills nav-fill">
+	  <a class="nav-link <%=((Request["sort"] != null && Request["sort"] == "recent")) ? "active" : ""%>" href="/?sort=recent"><%=Language["Recent"] %></a>
+	  <a class="nav-link <%=(Request["sort"] == null || Request["sort"] != null && Request["sort"] == "random") ? "active" : ""%>" href="/?sort=random"><%=Language["Random"] %></a>
+	  <a class="nav-link <%=(Request["sort"] != null && Request["sort"] == "mostviewed") ? "active" : ""%>" href="/?sort=mostviewed"><%=Language["Mostviewed"] %></a>
+	</nav>
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+
+            <VIT:Position runat="server" ID="psBottom"></VIT:Position>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<a class="navbar-brand" href="#" title="English" onclick="changelang('en-US')"><img alt="English" src="/Templates/T10/images/usa-flag.jpg"/></a>
+		<a class="navbar-brand" href="#" title="VietNamies" onclick="changelang('vi-VN')"><img alt="VietNamies" src="/Templates/T10/images/vn-flag.png"/></a>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto social">
+      <li class="nav-item">
+        <a class="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">|</a>
+      </li>
+      <li class="nav-item dropup">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categories</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown10">
+		<a class="dropdown-item" href="/truyen-cuoi-hay-moi-nhat-vit-aboutus">Về chúng tôi</a>
+          <a class="dropdown-item" href="#">Funny Pictures</a>
+          <a class="dropdown-item" href="<%=HREF.LinkComponent("Videos") %>">Funny Videos</a>
+          <a class="dropdown-item" href="/Tai-lieu-tieng-Anh">Tài liệu tiếng Anh</a>
+            <a class="dropdown-item" href="/san-hang-khuyen-mai-vit-contact">Săn hàng khuyến mãi</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">|</a>
+      </li>
+        <%if (!string.IsNullOrEmpty(Company.FacebookFanpage))
+                     {%>
+                        <li class="nav-item"><a href="<%=Company.FacebookFanpage %>" target="_blank"><i class="fb"></i></a></li>
+                     <%} %>
+                     <%if (!string.IsNullOrEmpty(Company.Twitter))
+                     {%>
+                        <li class="nav-item"><a href="<%=Company.Twitter %>" target="_blank"><i class="tw"></i></a></li>
+                     <%} %>
+                     <%if (!string.IsNullOrEmpty(Company.GooglePlus))
+                     {%>
+                        <li class="nav-item"><a href="<%=Company.GooglePlus %>" target="_blank"><i class="utube"></i></a></li>
+                     <%} %>
+                    <%if (!string.IsNullOrEmpty(Company.Youtube))
+                     {%>
+                        <li class="nav-item"><a href="<%=Company.Youtube %>" target="_blank"><i class="utube"></i></a></li>
+                     <%} %>
+                     <%if (!string.IsNullOrEmpty(Company.Linkedin))
+                     {%>
+                        <li class="nav-item"><a href="<%=Company.Linkedin %>" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                     <%} %>
+                     <%if (!string.IsNullOrEmpty(Company.Instagram))
+                     {%>
+                        <li class="nav-item"><a href="<%=Company.Instagram %>" target="_blank"><i class="instagram"></i></a></li>
+                     <%} %>
+                     <%if (!string.IsNullOrEmpty(Company.Pinterest))
+                     {%>
+                        <li class="nav-item"><a href="<%=Company.Pinterest %>" target="_blank"><i class="pin"></i></a></li>
+                     <%} %>
+        <li class="nav-item"><a href="/vit-rss" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="margin: 17px 0px 0px 10px;" fill="currentColor" class="bi bi-rss" viewBox="0 0 16 16">
+      <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+      <path d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1z"/>
+    </svg></a></li>
+    </ul>
+  </div>
+  <div class="form-inline">
+      <div class="gcse-searchbox-only" enableAutoComplete="true" data-resultsUrl="/ket-qua-tim-kiem-vit-search" data-queryParameterName="<%=SettingsManager.Constants.SendGcseSearch.ToLower() %>"></div>
+        <%--<input id="searchkey" class="form-control mr-sm-2" placeholder="Search" aria-label="Search" />
+        <button class="btn btn-outline-info my-2 my-sm-0" onclick="search();">Search</button>--%>
+      <script async src="https://cse.google.com/cse.js?cx=9263f7de3323cdf20"></script>
+  </div>
+</nav>
+            <div class="footer-copyright">
+                © <%=Company.CreateDate.Year %> <%=Company.FULLNAME %>
+            </div>
+
+        <script src="/Templates/T10/js/bootstrap.bundle.min.js"></script>
+        <script>
+            function changelang(lang) {
+                var url = window.location.href;
+                window.location = url.split('?')[0] + "?<%=SettingsManager.Constants.SendLanguage%>=" + lang;
+                }
+
+                $("#searchkey").keypress(function (event) {
+                    var keycode = (event.keyCode ? event.keyCode : event.which);
+                    if (keycode == '13') {
+                        search();
+                    }
+                });
+
+                function search() {
+                    var key = $("#searchkey").val();
+                    if (key) {
+                        link = ' https://www.google.com.vn/search?q=' + encodeURI(key.trim()) + '%20site:<%=HREF.Domain%>';
+                                    var win = window.open(link, '_blank');
+                                    win.focus();
+                                }
+                            }
+        </script>
+    </VIT:Form>
+</body>
+</html>

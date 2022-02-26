@@ -1,0 +1,96 @@
+﻿@model Web.Backend.Models.AlbumViewModel
+@{
+    ViewBag.Title = "Album";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Thêm Album
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-hdd"></i> Lưu</button>
+                    <a href="/File?catid=@Model.CatId" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại</a>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+if (!string.IsNullOrEmpty(ViewBag.Danger))
+{
+    <div class="panel panel-danger">@ViewBag.Danger</div>
+}
+    <div class="panel panel-default">
+        <div class="panel-heading">Thông tin Album</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.DropDownListFor(model => model.Category.PARENTID, Model.Categories, "-- Chọn Danh mục cha --", new { @class = "form-control", placeholder = "Danh mục cha" })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-inline form-group">
+                                Hiển thị: <input type="checkbox" id="Category_PUBLISH" name="Category.PUBLISH" @(Model.Category.PUBLISH == true ? "checked='checked'" : "") value="true" /> 
+                                Thứ tự: @Html.EditorFor(model => model.Category.ORDERS, new { htmlAttributes = new { @class = "form-control", placeholder = "Thứ tự", @type = "number" } })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.DropDownListFor(e => Model.Category.LANGUAGEID, Model.Languages, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="choose-attach-file">
+                        Hình đại diện: <input type="file" class="btn-chooseAttach" name="categoryimage" multiple="" style="display:inline">
+                    </div>
+                    <hr />
+                    <div class="choose-attach-file">
+                        Ảnh/Vieo/Audio: <input type="file" class="btn-chooseAttach" name="mediafile" multiple="" style="display:inline">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Category.NAME, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên danh mục" } })
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        @Html.TextAreaFor(model => model.Category.DESCRIPTION, new { @class = "form-control", placeholder = "Mô tả", rows = "3" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@Html.HiddenFor(e => Model.CatId)
+
+    <script>
+        $('#Category_LANGUAGEID').on('change', function () { // when the room_type changes
+
+            var language = $('#Category_LANGUAGEID').val();
+            var id = $('#Category_ID').val();
+        $.ajax({
+            url: "/odata/Category?Language=" + language + "&Type=@Model.Category.TYPEID&CategoryId=@Model.CatId&$filter=ID eq " + id,
+            method: "GET",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Token @ViewBag.Token");
+            },
+            success: function (data) {
+                $('#Category_NAME').val(data.value[0].NAME);
+                $('#Category_DESCRIPTION').val(data.value[0].DESCRIPTION);
+            }
+        });
+    });
+    </script>
+}
+
+

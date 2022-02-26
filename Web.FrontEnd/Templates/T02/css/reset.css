@@ -1,0 +1,210 @@
+/* <reset.css> */
+    
+    /* ######################## Reset ######################## */
+    html, body {min-height: 100%}
+    body {
+        background: #f0f0f0;
+        color: #333;
+        font: 400 14px/20px 'Roboto', Arial, sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        line-height: 20px
+    }
+    *, :before, :after {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    :before, :after {font-weight: normal;}
+    ul, ol {
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    form input[type=text]::-webkit-input-placeholder, 
+    form textarea::-webkit-input-placeholder {
+        color: #666;
+        font-size: 14px;
+    }
+    form input[type=text]::-moz-placeholder, 
+    form textarea::-moz-placeholder {
+        color: #666;
+        font-size: 14px;
+    }
+    form input[type=text]:-ms-input-placeholder, 
+    form textarea:-ms-input-placeholder {
+        color: #666;
+        font-size: 14px;
+    }
+    form input[type=text]:-moz-placeholder, 
+    form textarea:-moz-placeholder {
+        color: #666;
+        font-size: 14px;
+    }
+    form input[type=checkbox]:not(:disabled),
+    form input[type=radio]:not(:disabled) {
+        cursor: pointer;
+        vertical-align: middle;
+        margin: 0 5px 0 0;
+    }
+    label {
+        display: inline-block;
+        cursor: pointer;
+    }
+    @media (min-width: 1220px) {
+        .uk-container {
+            max-width: 1200px;
+            padding: 0;
+        }
+    }
+    @media (max-width: 1220px) {
+        .uk-container {padding: 0 10px}
+    }
+
+    /* ######################## General ######################## */
+    .logo {
+        margin: 0;
+        padding: 0;
+    }
+    .logo a {
+        /*display: block;*/
+        margin: 0;
+        padding: 0;
+    }
+    .banner {display: block;}
+    .banner p, .banner a  {margin: 0;}
+    .banner img,.banner a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .uk-modal-close.uk-close {
+        position: absolute;
+        width: 26px;
+        height: 26px; 
+        top: 0px;
+        right: 0px; 
+        opacity: 1;
+        border: 2px solid #1ab794; 
+        background: #fff url(../../img/icon_close.png) 50% no-repeat;
+        -webkit-border-radius: 50%; 
+        -moz-border-radius: 50%; 
+        -ms-border-radius: 50%; 
+        -o-border-radius: 50%; 
+        border-radius: 50%; 
+        z-index: 1020;
+    }
+    .uk-modal-close.uk-close:after {display: none;}
+    .uk-modal-dialog-lightbox .uk-slidenav {
+        height: 100%;
+        width: 35%;
+        top: 0;
+        z-index: 1;
+        -webkit-transform: translate(0, 0%);
+        -moz-transform: translate(0, 0%);
+        -ms-transform: translate(0, 0%);
+        -o-transform: translate(0, 0%);
+        transform: translate(0, 0%);
+    }
+    .uk-modal-dialog-lightbox .uk-slidenav:before {
+        display: inline-block;
+        width: 30px;height: 30px;
+        border-radius: 50%;
+        line-height: 30px;text-align: center;
+        font-size: 24px;
+        background: rgba(0, 0, 0, .7);
+        margin: 0;
+        position: absolute;
+        top: 50%;left: 10px;
+        -webkit-transform: translate(0%, -50%);
+        -ms-transform: translate(0%, -50%);
+        -o-transform: translate(0%, -50%);
+        transform: translate(0%, -50%);
+    }
+    .uk-modal-dialog-lightbox .uk-slidenav-previous  {left: 0px;}
+    .uk-modal-dialog-lightbox .uk-slidenav-next {right: 0px;}
+    .uk-modal-dialog-lightbox .uk-slidenav-next:before {left: initial;right: 10px;}
+    #goTop {
+        position: fixed;
+        right: 30px;
+        clip: rect(auto, auto, auto, auto);
+        text-indent: -9999px;
+        display: block;
+        width: 45px;
+        height: 45px;
+        background-image: url(../../img/toTop.png);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        -webkit-background-size: 45px;
+        -moz-background-size: 45px;
+        -o-background-size: 45px;
+        -ms-background-size: 45px;
+        background-size: 45px;
+        z-index: 9999; 
+    }
+    @media (max-width: 1220px) {
+        #goTop {right: 5px;}
+    }
+    /* ######################## Breadcrumb ######################## */
+    .breadcrumb {
+        position: relative;
+        margin: 10px 0 15px 0;
+        color: #565b70;
+        z-index: 5;
+        font-family: 'Roboto-Medium', sans-serif;
+    }
+    .breadcrumb ul {
+        height: 18px;
+        overflow: hidden; 
+        -ms-text-overflow: ellipsis; 
+        text-overflow: ellipsis;
+    }
+    .breadcrumb ul a {
+        font-size: 13px;
+        line-height: 18px;
+        color: #565b70;
+    }
+    .breadcrumb ul li:not(:first-child) a:hover {color: #1ab794;}
+    .uk-breadcrumb>li+li:before {
+        content: "\f105";
+        font-family: FontAwesome;
+        display: block;
+        position: absolute;
+        color: inherit;
+        left: -5px;
+        top: 50%;
+        -webkit-transform: translate(0, -50%);
+        -moz-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        -o-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+    }
+
+    /* ######################## Pagination ######################## */
+    .pagination .uk-pagination>li:nth-child(n+2) {margin-left: 10px;}
+    .pagination ul>li>a {
+        display: block;
+        padding: 0;
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        font-size: 13px;
+        background: #1ab794;
+        border: 1px solid #1ab794;
+        color: #fff;
+        font-family: 'Roboto-Medium', sans-serif;
+        border-radius: 0;
+    }
+    .pagination ul>li:hover>a, 
+    .pagination ul>li.uk-active>a {
+        background: #565b70;
+        border-color: #565b70;
+        color: #fff;
+    }
+/* </reset.css> */

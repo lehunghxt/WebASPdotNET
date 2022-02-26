@@ -1,0 +1,212 @@
+.custom-title {
+    color: #333333;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.well {
+    background-color: #fff;
+    border: 1px solid #ededed;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.log-in p strong {
+    color: #444444;
+    font-weight: 500;
+}
+
+.customer-btn,
+.return-customer-btn {
+    background: #189eff none repeat scroll 0 0;
+    border: medium none;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 20px;
+    padding: 10px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all 300ms ease-in 0s;
+    transition: all 300ms ease-in 0s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.return-customer-btn {
+    background: #222222;
+}
+
+.return-customer-btn:hover {
+    background: #E62E04;
+    color: #fff;
+}
+
+.customer-btn:hover {
+    background: #E62E04;
+    color: #fff;
+}
+
+.return-customer label {
+    font-weight: 500;
+    color: #444;
+    font-size: 14px;
+}
+
+.return-customer input {
+    font-size: 14px;
+}
+
+.lost-password a {
+    color: #555;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.lost-password a:hover {
+    color: #222222;
+}
+input {
+  background: #eceff8;
+  border: 2px solid #eceff8;
+  height: 45px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #333;
+  width: 100%; }
+.login-register-wrapper .login-register-tab-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.login-register-wrapper .login-register-tab-list a {
+    position: relative;
+}
+
+.login-register-wrapper .login-register-tab-list a::before {
+    background-color: #454545;
+    bottom: 5px;
+    content: "";
+    height: 18px;
+    margin: 0 auto;
+    position: absolute;
+    right: -2px;
+    transition: all 0.4s ease 0s;
+    width: 1px;
+}
+
+.login-register-wrapper .login-register-tab-list a h4 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 20px;
+    text-transform: capitalize;
+    transition: all 0.3s ease 0s;
+}
+
+.login-register-wrapper .login-register-tab-list a:last-child::before {
+    display: none;
+}
+
+.login-register-wrapper .login-register-tab-list a.active h4 {
+    color: #0063d1;
+}
+
+.login-register-wrapper .login-form-container {
+    background: transparent none repeat scroll 0 0;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    padding: 80px;
+    text-align: left;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .login-register-wrapper .login-form-container {
+        padding: 80px 50px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .login-register-wrapper .login-form-container {
+        padding: 40px 15px;
+    }
+}
+
+.login-register-wrapper .login-form-container .login-register-form form input {
+    background-color: transparent;
+    border: 1px solid #ebebeb;
+    font-size: 14px;
+    height: 50px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.login-register-wrapper .login-form-container .login-register-form form input[type=checkbox] {
+    height: 15px;
+    margin: 0;
+    position: relative;
+    top: 2px;
+    width: 17px;
+}
+.login-register-wrapper .login-form-container .login-register-form form input[type=radio] {
+    width: auto;
+    height: auto;
+    position: static;
+    margin: 0;
+}
+.login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn {
+    padding: 10px 0 19px;
+}
+
+.login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn label {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 767px) {
+    .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn label {
+        font-size: 14px;
+    }
+}
+
+.login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn a {
+    float: right;
+    font-size: 15px;
+    transition: all 0.3s ease 0s;
+}
+
+@media only screen and (max-width: 767px) {
+    .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn a {
+        font-size: 14px;
+    }
+}
+
+.login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn a:hover {
+    color: #0063d1;
+}
+
+.login-register-wrapper .login-form-container .login-register-form form .button-box button {
+    background-color: #f2f2f2;
+    border: medium none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 13px 30px 14px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+
+.login-register-wrapper .login-form-container .login-register-form form .button-box button:hover {
+    background-color: #0063d1;
+    color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+    .login-register-area.pb-100 {
+        padding-bottom: 60px;
+    }
+}

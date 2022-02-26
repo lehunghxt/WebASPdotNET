@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <Language Key ="Language">Language</Language>
+  <Language Key ="vi-VN">Vietnamese</Language>
+  <Language Key ="en-US">English</Language>
+
+  <Language Key ="Download">Download</Language>
+  <Language Key ="Upload">Upload</Language>
+  <Language Key ="Default">Default</Language>
+  <Language Key ="Code">Code</Language>
+  <Language Key ="Description">Description</Language>
+  
+  <Language Key ="Home">Home</Language>
+  
+  <!--Exception-->
+  <Language Key ="DeleteTemplateUsing">Template is using [CompanyTemplate]</Language>
+  
+  <!--Module-->
+  <Language Key ="FullName">Full name</Language>
+  <Language Key ="Address">Address</Language>
+  <Language Key ="Phone">Phone</Language>
+  <Language Key ="Title">Title</Language>
+  <Language Key ="Content">Content</Language>
+  <Language Key ="Note">Note</Language>
+  <Language Key ="ConfirmCode">Confirmation Code</Language>
+  <Language Key ="ChangeCode">Change Code</Language>
+  <Language Key ="Send">Send</Language>
+
+  <Language Key ="Name">Name</Language>
+  <Language Key ="Image">Image</Language>
+  <Language Key ="Quality">Quality</Language>
+  <Language Key ="Fee">Fee</Language>
+  <Language Key ="Total">Total</Language>
+  <Language Key ="TotalDue">Total due</Language>
+  <Language Key ="OrderDetail">Order detail</Language>
+  <Language Key ="PaymentMethod">Payment method</Language>
+  <Language Key ="Cash">Cash</Language>
+  <Language Key ="Transfer">Transfer</Language>
+  <Language Key ="Delivery">Delivery</Language>
+  <Language Key ="FromShop">Go to Shop</Language>
+  <Language Key ="ToHome">Send to Home</Language>
+  <Language Key ="Finish">Finish</Language>
+  
+  <Language Key ="Style">Style</Language>
+  <Language Key ="Color">Color</Language>
+</Languages>

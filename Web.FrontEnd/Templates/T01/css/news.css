@@ -1,0 +1,32 @@
+#news-section .news-area .links-area div.link-header {
+    position: relative;
+}
+
+#news-section .news-area .links-area div.link-header p.header-title {
+    text-transform: uppercase;
+    font-size: 22px;
+    width: fit-content;
+    background: white;
+}
+
+#news-section .news-area .links-area div.link-header:before {
+    border-top: 1px #d8d2d2 dashed;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 90%;
+    z-index: -1;
+}
+
+#news-section .news-area .links-area p.header-title span.highline {
+    color: #189eff
+}
+
+#news-section .news-area .links-area ul li {
+    padding: 5px 0;
+    border-bottom: 1px #d8d2d2 dashed;
+}

@@ -1,0 +1,171 @@
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\obj\Release\Web.Asp.csprojResolveAssemblyReference.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\obj\Release\Web.Asp.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Web.Asp.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Web.Asp.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Web.Asp.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\EntityFramework.SqlServer.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Library.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Library.Web.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\log4net.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Web.Business.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\System.Web.Http.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\System.Net.Http.Formatting.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Microsoft.Web.Administration.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Newtonsoft.Json.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Web.Data.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Library.Web.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Library.Web.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Library.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Web.Business.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Web.Business.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\EntityFramework.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\EntityFramework.SqlServer.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\log4net.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\System.Web.Http.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\System.Net.Http.Formatting.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Newtonsoft.Json.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Web.Data.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\bin\Release\Web.Data.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\obj\Release\Web.Asp.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Asp\obj\Release\Web.Asp.pdb
+D:\Work\v5 20180512\Web.Asp\bin\Release\Web.Asp.dll.config
+D:\Work\v5 20180512\Web.Asp\bin\Release\Web.Asp.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\Web.Asp.pdb
+D:\Work\v5 20180512\Web.Asp\bin\Release\EntityFramework.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\EntityFramework.SqlServer.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\Library.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\Library.Web.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\log4net.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\Web.Business.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\Web.Model.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\System.Web.Http.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\System.Net.Http.Formatting.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\Microsoft.Web.Administration.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\Newtonsoft.Json.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\Web.Data.dll
+D:\Work\v5 20180512\Web.Asp\bin\Release\Library.Web.pdb
+D:\Work\v5 20180512\Web.Asp\bin\Release\Library.Web.dll.config
+D:\Work\v5 20180512\Web.Asp\bin\Release\Library.pdb
+D:\Work\v5 20180512\Web.Asp\bin\Release\Web.Business.pdb
+D:\Work\v5 20180512\Web.Asp\bin\Release\Web.Business.dll.config
+D:\Work\v5 20180512\Web.Asp\bin\Release\Web.Model.pdb
+D:\Work\v5 20180512\Web.Asp\bin\Release\EntityFramework.xml
+D:\Work\v5 20180512\Web.Asp\bin\Release\EntityFramework.SqlServer.xml
+D:\Work\v5 20180512\Web.Asp\bin\Release\log4net.xml
+D:\Work\v5 20180512\Web.Asp\bin\Release\System.Web.Http.xml
+D:\Work\v5 20180512\Web.Asp\bin\Release\System.Net.Http.Formatting.xml
+D:\Work\v5 20180512\Web.Asp\bin\Release\Newtonsoft.Json.xml
+D:\Work\v5 20180512\Web.Asp\bin\Release\Web.Data.pdb
+D:\Work\v5 20180512\Web.Asp\bin\Release\Web.Data.dll.config
+D:\Work\v5 20180512\Web.Asp\obj\Release\Web.Asp.csprojResolveAssemblyReference.cache
+D:\Work\v5 20180512\Web.Asp\obj\Release\Web.Asp.csproj.CoreCompileInputs.cache
+D:\Work\v5 20180512\Web.Asp\obj\Release\Web.Asp.dll
+D:\Work\v5 20180512\Web.Asp\obj\Release\Web.Asp.pdb
+C:\EISv2\Web.Asp\bin\Release\Web.Asp.dll.config
+C:\EISv2\Web.Asp\bin\Release\Web.Asp.dll
+C:\EISv2\Web.Asp\bin\Release\Web.Asp.pdb
+C:\EISv2\Web.Asp\bin\Release\EntityFramework.dll
+C:\EISv2\Web.Asp\bin\Release\EntityFramework.SqlServer.dll
+C:\EISv2\Web.Asp\bin\Release\Library.dll
+C:\EISv2\Web.Asp\bin\Release\Library.Web.dll
+C:\EISv2\Web.Asp\bin\Release\log4net.dll
+C:\EISv2\Web.Asp\bin\Release\Web.Business.dll
+C:\EISv2\Web.Asp\bin\Release\Web.Model.dll
+C:\EISv2\Web.Asp\bin\Release\System.Net.Http.Formatting.dll
+C:\EISv2\Web.Asp\bin\Release\Newtonsoft.Json.dll
+C:\EISv2\Web.Asp\bin\Release\Web.Data.dll
+C:\EISv2\Web.Asp\bin\Release\Library.Web.pdb
+C:\EISv2\Web.Asp\bin\Release\Library.pdb
+C:\EISv2\Web.Asp\bin\Release\Web.Business.pdb
+C:\EISv2\Web.Asp\bin\Release\Web.Model.pdb
+C:\EISv2\Web.Asp\bin\Release\EntityFramework.xml
+C:\EISv2\Web.Asp\bin\Release\EntityFramework.SqlServer.xml
+C:\EISv2\Web.Asp\bin\Release\log4net.xml
+C:\EISv2\Web.Asp\bin\Release\System.Net.Http.Formatting.xml
+C:\EISv2\Web.Asp\bin\Release\Newtonsoft.Json.xml
+C:\EISv2\Web.Asp\bin\Release\Web.Data.pdb
+C:\EISv2\Web.Asp\obj\Release\Web.Asp.csprojResolveAssemblyReference.cache
+C:\EISv2\Web.Asp\obj\Release\Web.Asp.dll
+C:\EISv2\Web.Asp\obj\Release\Web.Asp.pdb
+C:\Webv6\Web.Asp\bin\Release\Web.Asp.dll.config
+C:\Webv6\Web.Asp\bin\Release\Web.Asp.dll
+C:\Webv6\Web.Asp\bin\Release\Web.Asp.pdb
+C:\Webv6\Web.Asp\bin\Release\EntityFramework.dll
+C:\Webv6\Web.Asp\bin\Release\EntityFramework.SqlServer.dll
+C:\Webv6\Web.Asp\bin\Release\Library.dll
+C:\Webv6\Web.Asp\bin\Release\Library.Web.dll
+C:\Webv6\Web.Asp\bin\Release\log4net.dll
+C:\Webv6\Web.Asp\bin\Release\Web.Business.dll
+C:\Webv6\Web.Asp\bin\Release\Web.Model.dll
+C:\Webv6\Web.Asp\bin\Release\System.Net.Http.Formatting.dll
+C:\Webv6\Web.Asp\bin\Release\Newtonsoft.Json.dll
+C:\Webv6\Web.Asp\bin\Release\Web.Data.dll
+C:\Webv6\Web.Asp\bin\Release\Library.Web.pdb
+C:\Webv6\Web.Asp\bin\Release\Library.pdb
+C:\Webv6\Web.Asp\bin\Release\Web.Business.pdb
+C:\Webv6\Web.Asp\bin\Release\Web.Model.pdb
+C:\Webv6\Web.Asp\bin\Release\EntityFramework.xml
+C:\Webv6\Web.Asp\bin\Release\EntityFramework.SqlServer.xml
+C:\Webv6\Web.Asp\bin\Release\log4net.xml
+C:\Webv6\Web.Asp\bin\Release\System.Net.Http.Formatting.xml
+C:\Webv6\Web.Asp\bin\Release\Newtonsoft.Json.xml
+C:\Webv6\Web.Asp\bin\Release\Web.Data.pdb
+C:\Webv6\Web.Asp\obj\Release\Web.Asp.csprojResolveAssemblyReference.cache
+C:\Webv6\Web.Asp\obj\Release\Web.Asp.dll
+C:\Webv6\Web.Asp\obj\Release\Web.Asp.pdb
+D:\Webv6\Web.Asp\bin\Release\Web.Asp.dll.config
+D:\Webv6\Web.Asp\bin\Release\Web.Asp.dll
+D:\Webv6\Web.Asp\bin\Release\Web.Asp.pdb
+D:\Webv6\Web.Asp\bin\Release\EntityFramework.dll
+D:\Webv6\Web.Asp\bin\Release\EntityFramework.SqlServer.dll
+D:\Webv6\Web.Asp\bin\Release\Library.dll
+D:\Webv6\Web.Asp\bin\Release\Library.Web.dll
+D:\Webv6\Web.Asp\bin\Release\log4net.dll
+D:\Webv6\Web.Asp\bin\Release\Web.Business.dll
+D:\Webv6\Web.Asp\bin\Release\Web.Model.dll
+D:\Webv6\Web.Asp\bin\Release\System.Net.Http.Formatting.dll
+D:\Webv6\Web.Asp\bin\Release\Newtonsoft.Json.dll
+D:\Webv6\Web.Asp\bin\Release\Web.Data.dll
+D:\Webv6\Web.Asp\bin\Release\Library.Web.pdb
+D:\Webv6\Web.Asp\bin\Release\Library.pdb
+D:\Webv6\Web.Asp\bin\Release\Web.Business.pdb
+D:\Webv6\Web.Asp\bin\Release\Web.Model.pdb
+D:\Webv6\Web.Asp\bin\Release\EntityFramework.xml
+D:\Webv6\Web.Asp\bin\Release\EntityFramework.SqlServer.xml
+D:\Webv6\Web.Asp\bin\Release\log4net.xml
+D:\Webv6\Web.Asp\bin\Release\System.Net.Http.Formatting.xml
+D:\Webv6\Web.Asp\bin\Release\Newtonsoft.Json.xml
+D:\Webv6\Web.Asp\bin\Release\Web.Data.pdb
+D:\Webv6\Web.Asp\obj\Release\Web.Asp.csprojResolveAssemblyReference.cache
+D:\Webv6\Web.Asp\obj\Release\Web.Asp.dll
+D:\Webv6\Web.Asp\obj\Release\Web.Asp.pdb
+C:\work\Webv6\Web.Asp\bin\Release\Web.Asp.dll.config
+C:\work\Webv6\Web.Asp\bin\Release\Web.Asp.dll
+C:\work\Webv6\Web.Asp\bin\Release\Web.Asp.pdb
+C:\work\Webv6\Web.Asp\bin\Release\EntityFramework.dll
+C:\work\Webv6\Web.Asp\bin\Release\EntityFramework.SqlServer.dll
+C:\work\Webv6\Web.Asp\bin\Release\Library.dll
+C:\work\Webv6\Web.Asp\bin\Release\Library.Web.dll
+C:\work\Webv6\Web.Asp\bin\Release\log4net.dll
+C:\work\Webv6\Web.Asp\bin\Release\Web.Business.dll
+C:\work\Webv6\Web.Asp\bin\Release\Web.Model.dll
+C:\work\Webv6\Web.Asp\bin\Release\System.Net.Http.Formatting.dll
+C:\work\Webv6\Web.Asp\bin\Release\Microsoft.Web.Administration.dll
+C:\work\Webv6\Web.Asp\bin\Release\Newtonsoft.Json.dll
+C:\work\Webv6\Web.Asp\bin\Release\Web.Data.dll
+C:\work\Webv6\Web.Asp\bin\Release\Library.Web.pdb
+C:\work\Webv6\Web.Asp\bin\Release\Library.pdb
+C:\work\Webv6\Web.Asp\bin\Release\Web.Business.pdb
+C:\work\Webv6\Web.Asp\bin\Release\Web.Model.pdb
+C:\work\Webv6\Web.Asp\bin\Release\EntityFramework.xml
+C:\work\Webv6\Web.Asp\bin\Release\EntityFramework.SqlServer.xml
+C:\work\Webv6\Web.Asp\bin\Release\log4net.xml
+C:\work\Webv6\Web.Asp\bin\Release\System.Net.Http.Formatting.xml
+C:\work\Webv6\Web.Asp\bin\Release\Newtonsoft.Json.xml
+C:\work\Webv6\Web.Asp\bin\Release\Web.Data.pdb
+C:\work\Webv6\Web.Asp\obj\Release\Web.Asp.csprojResolveAssemblyReference.cache
+C:\work\Webv6\Web.Asp\obj\Release\Web.Asp.dll
+C:\work\Webv6\Web.Asp\obj\Release\Web.Asp.pdb

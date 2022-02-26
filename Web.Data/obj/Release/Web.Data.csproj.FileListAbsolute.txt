@@ -1,0 +1,123 @@
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\Web.Data.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\Web.Data.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\Web.Data.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\EntityFramework.SqlServer.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\EntityFramework.SqlServerCompact.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\log4net.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\Oracle.ManagedDataAccess.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\System.Data.SqlServerCe.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\EntityFramework.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\EntityFramework.SqlServer.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\EntityFramework.SqlServerCompact.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\log4net.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\obj\Release\Web.Data.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\obj\Release\Web.Data.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\obj\Release\Web.Data.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\obj\Release\Web.Data.csprojResolveAssemblyReference.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\Release\Library.dll
+D:\Work\v5 20180512\Web.Data\bin\Release\Web.Data.dll.config
+D:\Work\v5 20180512\Web.Data\bin\Release\Web.Data.dll
+D:\Work\v5 20180512\Web.Data\bin\Release\Web.Data.pdb
+D:\Work\v5 20180512\Web.Data\bin\Release\EntityFramework.dll
+D:\Work\v5 20180512\Web.Data\bin\Release\EntityFramework.SqlServer.dll
+D:\Work\v5 20180512\Web.Data\bin\Release\EntityFramework.SqlServerCompact.dll
+D:\Work\v5 20180512\Web.Data\bin\Release\Library.dll
+D:\Work\v5 20180512\Web.Data\bin\Release\log4net.dll
+D:\Work\v5 20180512\Web.Data\bin\Release\Oracle.ManagedDataAccess.dll
+D:\Work\v5 20180512\Web.Data\bin\Release\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Work\v5 20180512\Web.Data\bin\Release\System.Data.SqlServerCe.dll
+D:\Work\v5 20180512\Web.Data\bin\Release\EntityFramework.xml
+D:\Work\v5 20180512\Web.Data\bin\Release\EntityFramework.SqlServer.xml
+D:\Work\v5 20180512\Web.Data\bin\Release\EntityFramework.SqlServerCompact.xml
+D:\Work\v5 20180512\Web.Data\bin\Release\log4net.xml
+D:\Work\v5 20180512\Web.Data\obj\Release\Web.Data.csproj.CoreCompileInputs.cache
+D:\Work\v5 20180512\Web.Data\obj\Release\Web.Data.dll
+D:\Work\v5 20180512\Web.Data\obj\Release\Web.Data.pdb
+D:\Work\v5 20180512\Web.Data\obj\Release\Web.Data.csprojResolveAssemblyReference.cache
+G:\EISv2\Web.Data\bin\Release\Web.Data.dll.config
+G:\EISv2\Web.Data\bin\Release\Web.Data.dll
+G:\EISv2\Web.Data\bin\Release\Web.Data.pdb
+G:\EISv2\Web.Data\bin\Release\EntityFramework.dll
+G:\EISv2\Web.Data\bin\Release\EntityFramework.SqlServer.dll
+G:\EISv2\Web.Data\bin\Release\EntityFramework.SqlServerCompact.dll
+G:\EISv2\Web.Data\bin\Release\log4net.dll
+G:\EISv2\Web.Data\bin\Release\Oracle.ManagedDataAccess.dll
+G:\EISv2\Web.Data\bin\Release\Oracle.ManagedDataAccess.EntityFramework.dll
+G:\EISv2\Web.Data\bin\Release\System.Data.SqlServerCe.dll
+G:\EISv2\Web.Data\bin\Release\EntityFramework.xml
+G:\EISv2\Web.Data\bin\Release\EntityFramework.SqlServer.xml
+G:\EISv2\Web.Data\bin\Release\EntityFramework.SqlServerCompact.xml
+G:\EISv2\Web.Data\bin\Release\log4net.xml
+G:\EISv2\Web.Data\obj\Release\Web.Data.csprojResolveAssemblyReference.cache
+G:\EISv2\Web.Data\obj\Release\Web.Data.dll
+G:\EISv2\Web.Data\obj\Release\Web.Data.pdb
+C:\EISv2\Web.Data\bin\Release\Web.Data.dll.config
+C:\EISv2\Web.Data\bin\Release\Web.Data.dll
+C:\EISv2\Web.Data\bin\Release\Web.Data.pdb
+C:\EISv2\Web.Data\bin\Release\EntityFramework.dll
+C:\EISv2\Web.Data\bin\Release\EntityFramework.SqlServer.dll
+C:\EISv2\Web.Data\bin\Release\EntityFramework.SqlServerCompact.dll
+C:\EISv2\Web.Data\bin\Release\log4net.dll
+C:\EISv2\Web.Data\bin\Release\Oracle.ManagedDataAccess.dll
+C:\EISv2\Web.Data\bin\Release\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\EISv2\Web.Data\bin\Release\System.Data.SqlServerCe.dll
+C:\EISv2\Web.Data\bin\Release\EntityFramework.xml
+C:\EISv2\Web.Data\bin\Release\EntityFramework.SqlServer.xml
+C:\EISv2\Web.Data\bin\Release\EntityFramework.SqlServerCompact.xml
+C:\EISv2\Web.Data\bin\Release\log4net.xml
+C:\EISv2\Web.Data\obj\Release\Web.Data.csprojResolveAssemblyReference.cache
+C:\EISv2\Web.Data\obj\Release\Web.Data.dll
+C:\EISv2\Web.Data\obj\Release\Web.Data.pdb
+C:\Webv6\Web.Data\bin\Release\Web.Data.dll.config
+C:\Webv6\Web.Data\bin\Release\Web.Data.dll
+C:\Webv6\Web.Data\bin\Release\Web.Data.pdb
+C:\Webv6\Web.Data\bin\Release\EntityFramework.dll
+C:\Webv6\Web.Data\bin\Release\EntityFramework.SqlServer.dll
+C:\Webv6\Web.Data\bin\Release\EntityFramework.SqlServerCompact.dll
+C:\Webv6\Web.Data\bin\Release\log4net.dll
+C:\Webv6\Web.Data\bin\Release\Oracle.ManagedDataAccess.dll
+C:\Webv6\Web.Data\bin\Release\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Webv6\Web.Data\bin\Release\System.Data.SqlServerCe.dll
+C:\Webv6\Web.Data\bin\Release\EntityFramework.xml
+C:\Webv6\Web.Data\bin\Release\EntityFramework.SqlServer.xml
+C:\Webv6\Web.Data\bin\Release\EntityFramework.SqlServerCompact.xml
+C:\Webv6\Web.Data\bin\Release\log4net.xml
+C:\Webv6\Web.Data\obj\Release\Web.Data.csprojResolveAssemblyReference.cache
+C:\Webv6\Web.Data\obj\Release\Web.Data.dll
+C:\Webv6\Web.Data\obj\Release\Web.Data.pdb
+C:\work\Webv6\Web.Data\bin\Release\Web.Data.dll.config
+C:\work\Webv6\Web.Data\bin\Release\Web.Data.dll
+C:\work\Webv6\Web.Data\bin\Release\Web.Data.pdb
+C:\work\Webv6\Web.Data\bin\Release\EntityFramework.dll
+C:\work\Webv6\Web.Data\bin\Release\EntityFramework.SqlServer.dll
+C:\work\Webv6\Web.Data\bin\Release\EntityFramework.SqlServerCompact.dll
+C:\work\Webv6\Web.Data\bin\Release\log4net.dll
+C:\work\Webv6\Web.Data\bin\Release\Oracle.ManagedDataAccess.dll
+C:\work\Webv6\Web.Data\bin\Release\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\work\Webv6\Web.Data\bin\Release\System.Data.SqlServerCe.dll
+C:\work\Webv6\Web.Data\bin\Release\EntityFramework.xml
+C:\work\Webv6\Web.Data\bin\Release\EntityFramework.SqlServer.xml
+C:\work\Webv6\Web.Data\bin\Release\EntityFramework.SqlServerCompact.xml
+C:\work\Webv6\Web.Data\bin\Release\log4net.xml
+C:\work\Webv6\Web.Data\obj\Release\Web.Data.csprojResolveAssemblyReference.cache
+C:\work\Webv6\Web.Data\obj\Release\Web.Data.dll
+C:\work\Webv6\Web.Data\obj\Release\Web.Data.pdb
+D:\Webv6\Web.Data\bin\Release\Web.Data.dll.config
+D:\Webv6\Web.Data\bin\Release\Web.Data.dll
+D:\Webv6\Web.Data\bin\Release\Web.Data.pdb
+D:\Webv6\Web.Data\bin\Release\EntityFramework.dll
+D:\Webv6\Web.Data\bin\Release\EntityFramework.SqlServer.dll
+D:\Webv6\Web.Data\bin\Release\EntityFramework.SqlServerCompact.dll
+D:\Webv6\Web.Data\bin\Release\log4net.dll
+D:\Webv6\Web.Data\bin\Release\Oracle.ManagedDataAccess.dll
+D:\Webv6\Web.Data\bin\Release\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Webv6\Web.Data\bin\Release\System.Data.SqlServerCe.dll
+D:\Webv6\Web.Data\bin\Release\EntityFramework.xml
+D:\Webv6\Web.Data\bin\Release\EntityFramework.SqlServer.xml
+D:\Webv6\Web.Data\bin\Release\EntityFramework.SqlServerCompact.xml
+D:\Webv6\Web.Data\bin\Release\log4net.xml
+D:\Webv6\Web.Data\obj\Release\Web.Data.csprojResolveAssemblyReference.cache
+D:\Webv6\Web.Data\obj\Release\Web.Data.dll
+D:\Webv6\Web.Data\obj\Release\Web.Data.pdb

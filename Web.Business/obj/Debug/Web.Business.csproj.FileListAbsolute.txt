@@ -1,0 +1,248 @@
+D:\Work\bvtd\2018\Server\Website\Web.Business\obj\Debug\Web.Business.csprojResolveAssemblyReference.cache
+D:\Work\bvtd\2018\Server\Website\Web.Business\obj\Debug\Web.Business.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\Web.Business.dll.config
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\Web.Business.dll
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\Web.Business.pdb
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\Library.dll
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\Library.Web.dll
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\log4net.dll
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\Web.Data.dll
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\Web.Data.pdb
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\Web.Data.dll.config
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\EntityFramework.xml
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\bvtd\2018\Server\Website\Web.Business\bin\Debug\log4net.xml
+D:\Work\bvtd\2018\Server\Website\Web.Business\obj\Debug\Web.Business.dll
+D:\Work\bvtd\2018\Server\Website\Web.Business\obj\Debug\Web.Business.pdb
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\obj\Debug\Web.Business.csprojResolveAssemblyReference.cache
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\obj\Debug\Web.Business.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\obj\Debug\Web.Business.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\obj\Debug\Web.Business.pdb
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\Web.Business.dll.config
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\Web.Business.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\Web.Business.pdb
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\Library.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\Library.Web.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\log4net.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\Web.Data.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\Web.Data.pdb
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\Web.Data.dll.config
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\EntityFramework.xml
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Business\bin\Debug\log4net.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\Web.Business.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\Web.Business.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\Web.Business.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\Library.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\Library.Web.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\log4net.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\Web.Data.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\Web.Data.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\Web.Data.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\EntityFramework.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Debug\log4net.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\obj\Debug\Web.Business.csprojResolveAssemblyReference.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\obj\Debug\Web.Business.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\obj\Debug\Web.Business.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\obj\Debug\Web.Business.pdb
+D:\Work\v5 20180512\Web.Business\bin\Debug\Web.Business.dll.config
+D:\Work\v5 20180512\Web.Business\bin\Debug\Web.Business.dll
+D:\Work\v5 20180512\Web.Business\bin\Debug\Web.Business.pdb
+D:\Work\v5 20180512\Web.Business\bin\Debug\EntityFramework.dll
+D:\Work\v5 20180512\Web.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\v5 20180512\Web.Business\bin\Debug\Library.dll
+D:\Work\v5 20180512\Web.Business\bin\Debug\Library.Web.dll
+D:\Work\v5 20180512\Web.Business\bin\Debug\log4net.dll
+D:\Work\v5 20180512\Web.Business\bin\Debug\Web.Data.dll
+D:\Work\v5 20180512\Web.Business\bin\Debug\Web.Model.dll
+D:\Work\v5 20180512\Web.Business\bin\Debug\Newtonsoft.Json.dll
+D:\Work\v5 20180512\Web.Business\bin\Debug\Library.pdb
+D:\Work\v5 20180512\Web.Business\bin\Debug\Web.Data.pdb
+D:\Work\v5 20180512\Web.Business\bin\Debug\Web.Model.pdb
+D:\Work\v5 20180512\Web.Business\bin\Debug\EntityFramework.xml
+D:\Work\v5 20180512\Web.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\v5 20180512\Web.Business\bin\Debug\log4net.xml
+D:\Work\v5 20180512\Web.Business\bin\Debug\Newtonsoft.Json.xml
+D:\Work\v5 20180512\Web.Business\obj\Debug\Web.Business.csprojResolveAssemblyReference.cache
+D:\Work\v5 20180512\Web.Business\obj\Debug\Web.Business.dll
+D:\Work\v5 20180512\Web.Business\obj\Debug\Web.Business.pdb
+D:\Work\v5 20180512\Web.Business\bin\Debug\Web.Data.dll.config
+D:\Work\v5 20180512\Web.Business\obj\Debug\Web.Business.csproj.CoreCompileInputs.cache
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\Web.Business.dll.config
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\Web.Business.dll
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\Web.Business.pdb
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\EntityFramework.dll
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\Library.dll
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\Library.Web.dll
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\log4net.dll
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\Web.Data.dll
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\Web.Model.dll
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\Newtonsoft.Json.dll
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\Library.pdb
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\Web.Data.pdb
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\Web.Model.pdb
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\EntityFramework.xml
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\log4net.xml
+D:\Work\v5 20200105\Code\Web.Business\bin\Debug\Newtonsoft.Json.xml
+D:\Work\v5 20200105\Code\Web.Business\obj\Debug\Web.Business.csprojResolveAssemblyReference.cache
+D:\Work\v5 20200105\Code\Web.Business\obj\Debug\Web.Business.dll
+D:\Work\v5 20200105\Code\Web.Business\obj\Debug\Web.Business.pdb
+D:\Work\EISv2\Web.Business\bin\Debug\Web.Business.dll.config
+D:\Work\EISv2\Web.Business\bin\Debug\Web.Business.dll
+D:\Work\EISv2\Web.Business\bin\Debug\Web.Business.pdb
+D:\Work\EISv2\Web.Business\bin\Debug\EntityFramework.dll
+D:\Work\EISv2\Web.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\EISv2\Web.Business\bin\Debug\Library.dll
+D:\Work\EISv2\Web.Business\bin\Debug\log4net.dll
+D:\Work\EISv2\Web.Business\bin\Debug\Web.Data.dll
+D:\Work\EISv2\Web.Business\bin\Debug\Web.Model.dll
+D:\Work\EISv2\Web.Business\bin\Debug\Newtonsoft.Json.dll
+D:\Work\EISv2\Web.Business\bin\Debug\Library.pdb
+D:\Work\EISv2\Web.Business\bin\Debug\Web.Data.pdb
+D:\Work\EISv2\Web.Business\bin\Debug\Web.Model.pdb
+D:\Work\EISv2\Web.Business\bin\Debug\EntityFramework.xml
+D:\Work\EISv2\Web.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\EISv2\Web.Business\bin\Debug\log4net.xml
+D:\Work\EISv2\Web.Business\bin\Debug\Newtonsoft.Json.xml
+D:\Work\EISv2\Web.Business\obj\Debug\Web.Business.csprojResolveAssemblyReference.cache
+D:\Work\EISv2\Web.Business\obj\Debug\Web.Business.dll
+D:\Work\EISv2\Web.Business\obj\Debug\Web.Business.pdb
+C:\work\EISv2\Web.Business\bin\Debug\Web.Business.dll.config
+C:\work\EISv2\Web.Business\bin\Debug\Web.Business.dll
+C:\work\EISv2\Web.Business\bin\Debug\Web.Business.pdb
+C:\work\EISv2\Web.Business\bin\Debug\EntityFramework.dll
+C:\work\EISv2\Web.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\work\EISv2\Web.Business\bin\Debug\Library.dll
+C:\work\EISv2\Web.Business\bin\Debug\log4net.dll
+C:\work\EISv2\Web.Business\bin\Debug\Web.Data.dll
+C:\work\EISv2\Web.Business\bin\Debug\Web.Model.dll
+C:\work\EISv2\Web.Business\bin\Debug\Newtonsoft.Json.dll
+C:\work\EISv2\Web.Business\bin\Debug\Library.pdb
+C:\work\EISv2\Web.Business\bin\Debug\Web.Data.pdb
+C:\work\EISv2\Web.Business\bin\Debug\Web.Model.pdb
+C:\work\EISv2\Web.Business\bin\Debug\EntityFramework.xml
+C:\work\EISv2\Web.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\work\EISv2\Web.Business\bin\Debug\log4net.xml
+C:\work\EISv2\Web.Business\bin\Debug\Newtonsoft.Json.xml
+C:\work\EISv2\Web.Business\obj\Debug\Web.Business.csprojResolveAssemblyReference.cache
+C:\work\EISv2\Web.Business\obj\Debug\Web.Business.dll
+C:\work\EISv2\Web.Business\obj\Debug\Web.Business.pdb
+G:\EISv2\Web.Business\bin\Debug\Web.Business.dll.config
+G:\EISv2\Web.Business\bin\Debug\Web.Business.dll
+G:\EISv2\Web.Business\bin\Debug\Web.Business.pdb
+G:\EISv2\Web.Business\bin\Debug\EntityFramework.dll
+G:\EISv2\Web.Business\bin\Debug\EntityFramework.SqlServer.dll
+G:\EISv2\Web.Business\bin\Debug\Library.dll
+G:\EISv2\Web.Business\bin\Debug\log4net.dll
+G:\EISv2\Web.Business\bin\Debug\Web.Data.dll
+G:\EISv2\Web.Business\bin\Debug\Web.Model.dll
+G:\EISv2\Web.Business\bin\Debug\Newtonsoft.Json.dll
+G:\EISv2\Web.Business\bin\Debug\Library.pdb
+G:\EISv2\Web.Business\bin\Debug\Web.Data.pdb
+G:\EISv2\Web.Business\bin\Debug\Web.Model.pdb
+G:\EISv2\Web.Business\bin\Debug\EntityFramework.xml
+G:\EISv2\Web.Business\bin\Debug\EntityFramework.SqlServer.xml
+G:\EISv2\Web.Business\bin\Debug\log4net.xml
+G:\EISv2\Web.Business\bin\Debug\Newtonsoft.Json.xml
+G:\EISv2\Web.Business\obj\Debug\Web.Business.csprojResolveAssemblyReference.cache
+G:\EISv2\Web.Business\obj\Debug\Web.Business.dll
+G:\EISv2\Web.Business\obj\Debug\Web.Business.pdb
+C:\EISv2\Web.Business\bin\Debug\Web.Business.dll.config
+C:\EISv2\Web.Business\bin\Debug\Web.Business.dll
+C:\EISv2\Web.Business\bin\Debug\Web.Business.pdb
+C:\EISv2\Web.Business\bin\Debug\EntityFramework.dll
+C:\EISv2\Web.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\EISv2\Web.Business\bin\Debug\Library.dll
+C:\EISv2\Web.Business\bin\Debug\log4net.dll
+C:\EISv2\Web.Business\bin\Debug\Web.Data.dll
+C:\EISv2\Web.Business\bin\Debug\Web.Model.dll
+C:\EISv2\Web.Business\bin\Debug\Newtonsoft.Json.dll
+C:\EISv2\Web.Business\bin\Debug\Library.pdb
+C:\EISv2\Web.Business\bin\Debug\Web.Data.pdb
+C:\EISv2\Web.Business\bin\Debug\Web.Model.pdb
+C:\EISv2\Web.Business\bin\Debug\EntityFramework.xml
+C:\EISv2\Web.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\EISv2\Web.Business\bin\Debug\log4net.xml
+C:\EISv2\Web.Business\bin\Debug\Newtonsoft.Json.xml
+C:\EISv2\Web.Business\obj\Debug\Web.Business.csprojResolveAssemblyReference.cache
+C:\EISv2\Web.Business\obj\Debug\Web.Business.dll
+C:\EISv2\Web.Business\obj\Debug\Web.Business.pdb
+C:\Webv6\Web.Business\bin\Debug\Web.Business.dll.config
+C:\Webv6\Web.Business\bin\Debug\Web.Business.dll
+C:\Webv6\Web.Business\bin\Debug\Web.Business.pdb
+C:\Webv6\Web.Business\bin\Debug\EntityFramework.dll
+C:\Webv6\Web.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Webv6\Web.Business\bin\Debug\Library.dll
+C:\Webv6\Web.Business\bin\Debug\log4net.dll
+C:\Webv6\Web.Business\bin\Debug\Web.Data.dll
+C:\Webv6\Web.Business\bin\Debug\Web.Model.dll
+C:\Webv6\Web.Business\bin\Debug\Newtonsoft.Json.dll
+C:\Webv6\Web.Business\bin\Debug\Library.pdb
+C:\Webv6\Web.Business\bin\Debug\Web.Data.pdb
+C:\Webv6\Web.Business\bin\Debug\Web.Model.pdb
+C:\Webv6\Web.Business\bin\Debug\EntityFramework.xml
+C:\Webv6\Web.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Webv6\Web.Business\bin\Debug\log4net.xml
+C:\Webv6\Web.Business\bin\Debug\Newtonsoft.Json.xml
+C:\Webv6\Web.Business\obj\Debug\Web.Business.csprojResolveAssemblyReference.cache
+C:\Webv6\Web.Business\obj\Debug\Web.Business.dll
+C:\Webv6\Web.Business\obj\Debug\Web.Business.pdb
+C:\work\Webv6\Web.Business\bin\Debug\Web.Business.dll.config
+C:\work\Webv6\Web.Business\bin\Debug\Web.Business.dll
+C:\work\Webv6\Web.Business\bin\Debug\Web.Business.pdb
+C:\work\Webv6\Web.Business\bin\Debug\EntityFramework.dll
+C:\work\Webv6\Web.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\work\Webv6\Web.Business\bin\Debug\Library.dll
+C:\work\Webv6\Web.Business\bin\Debug\log4net.dll
+C:\work\Webv6\Web.Business\bin\Debug\Web.Data.dll
+C:\work\Webv6\Web.Business\bin\Debug\Web.Model.dll
+C:\work\Webv6\Web.Business\bin\Debug\Newtonsoft.Json.dll
+C:\work\Webv6\Web.Business\bin\Debug\Library.pdb
+C:\work\Webv6\Web.Business\bin\Debug\Web.Data.pdb
+C:\work\Webv6\Web.Business\bin\Debug\Web.Model.pdb
+C:\work\Webv6\Web.Business\bin\Debug\EntityFramework.xml
+C:\work\Webv6\Web.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\work\Webv6\Web.Business\bin\Debug\log4net.xml
+C:\work\Webv6\Web.Business\bin\Debug\Newtonsoft.Json.xml
+C:\work\Webv6\Web.Business\obj\Debug\Web.Business.csprojResolveAssemblyReference.cache
+C:\work\Webv6\Web.Business\obj\Debug\Web.Business.dll
+C:\work\Webv6\Web.Business\obj\Debug\Web.Business.pdb
+D:\Webv6\Web.Business\bin\Debug\Web.Business.dll.config
+D:\Webv6\Web.Business\bin\Debug\Web.Business.dll
+D:\Webv6\Web.Business\bin\Debug\Web.Business.pdb
+D:\Webv6\Web.Business\bin\Debug\EntityFramework.dll
+D:\Webv6\Web.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Webv6\Web.Business\bin\Debug\Library.dll
+D:\Webv6\Web.Business\bin\Debug\log4net.dll
+D:\Webv6\Web.Business\bin\Debug\Web.Data.dll
+D:\Webv6\Web.Business\bin\Debug\Web.Model.dll
+D:\Webv6\Web.Business\bin\Debug\Newtonsoft.Json.dll
+D:\Webv6\Web.Business\bin\Debug\Library.pdb
+D:\Webv6\Web.Business\bin\Debug\Web.Data.pdb
+D:\Webv6\Web.Business\bin\Debug\Web.Model.pdb
+D:\Webv6\Web.Business\bin\Debug\EntityFramework.xml
+D:\Webv6\Web.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Webv6\Web.Business\bin\Debug\log4net.xml
+D:\Webv6\Web.Business\bin\Debug\Newtonsoft.Json.xml
+D:\Webv6\Web.Business\obj\Debug\Web.Business.csprojResolveAssemblyReference.cache
+D:\Webv6\Web.Business\obj\Debug\Web.Business.dll
+D:\Webv6\Web.Business\obj\Debug\Web.Business.pdb

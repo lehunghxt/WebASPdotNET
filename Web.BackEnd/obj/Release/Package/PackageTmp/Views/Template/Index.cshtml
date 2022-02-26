@@ -1,0 +1,312 @@
+﻿@model Web.Backend.Models.TemplateViewModel
+@{
+    ViewBag.Title = "Quản lý Template";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Quản lý Template
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addTemplate" role="button" onclick="Add();"><i class="glyphicon glyphicon-plus"></i> Thêm</button>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Danh sách Template</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr role="row">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Skin</th>
+                        <th>Component</th>
+                        <th>Companies</th>
+                        <th>Hiển thị</th>
+                        <th>Miễn phí</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var template in Model.Templates)
+                    {
+                        <tr>
+                            <td align="center">@template.TemplateName</td>
+                            <td align="left">
+                                <a href="#" data-toggle="modal" data-target="#Positions_@template.TemplateName" role="button">@template.Positions</a>
+                                <div id="Positions_@template.TemplateName" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Danh sách Position</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                @{
+                                                    var posotions = Model.Positions.Where(e => e.TemplateName == template.TemplateName).ToList();
+                                                }
+                                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th>Tên</th>
+                                                            <th>Mô tả</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var position in posotions)
+                                                        {
+                                                            <tr>
+                                                                <td>@position.ID</td>
+                                                                <td>@position.Summary</td>
+                                                                <td>
+                                                                    <button class="btn btn-danger" type="button" onclick="RemovePosition('@position.TemplateName','@position.ID');">Xóa</button>
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                        <tr>
+                                                            <td><input type="text" class="form-control" placeholder="Tên vị trí" id="PositionName_@template.TemplateName" /></td>
+                                                            <td><input type="text" class="form-control" placeholder="Mo tả" id="PositionSummary_@template.TemplateName" /></td>
+                                                            <td> <button class="btn btn-info" type="button" onclick="AddPosition('@template.TemplateName');">Thêm</button></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td align="left">
+                                <a href="#" data-toggle="modal" data-target="#Skins_@template.TemplateName" role="button">@template.Skins</a>
+                                <div id="Skins_@template.TemplateName" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Danh sách Skin</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                @{
+                                                    var skins = Model.Skins.Where(e => e.TemplateName == template.TemplateName).ToList();
+                                                }
+                                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th>Tên</th>
+                                                            <th>Mô tả</th>
+                                                            <th>Chức năng</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var skin in skins)
+                                                        {
+                                                            <tr>
+                                                                <td>@skin.ID</td>
+                                                                <td>@skin.Summary</td>
+                                                                <td>@skin.ModuleName</td>
+                                                                <td>
+                                                                    <button class="btn btn-danger" type="button" onclick="RemoveSkin('@skin.TemplateName','@skin.ID');">Xóa</button>
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                        <tr>
+                                                            <td><input type="text" class="form-control" placeholder="Skin" id="SkinName_@template.TemplateName" /></td>
+                                                            <td><input type="text" class="form-control" placeholder="Mô tả" id="SkinSummary_@template.TemplateName" /></td>
+                                                            <td>
+                                                                <select id="SkinModule_@template.TemplateName" class="form-control">
+                                                                    @foreach (var module in Model.Modules)
+                                                                    {
+                                                                        <option value="@module.ModuleName">@module.ModuleName</option>
+                                                                    }
+                                                                </select>
+                                                            </td>
+                                                            <td> <button class="btn btn-info" type="button" onclick="AddSkin('@template.TemplateName');">Thêm</button></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
+                            <td align="center">
+                                <a href="/Template/Components?template=@template.TemplateName">@template.Components</a>
+                            </td>
+                            <td align="center">@template.Usings</td>
+                            <td align="center">@template.IsPublished</td>
+                            <td align="center">@template.IsPublic</td>
+                            <td>
+                                <button class="btn btn-warning" type="button" onclick="Select('@template.TemplateName', '@template.ImageName', '@template.PathImage', '@template.IsPublic.ToString()', '@template.IsPublished.ToString()');" data-toggle="modal" data-target="#addTemplate" role="button">Sửa</button>
+                                <button class="btn btn-danger" type="button" onclick="Remove('@template.TemplateName','@template.ImageName');">Xóa</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div id="addTemplate" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" onclick="Add();">&times;</button>
+                            <h4 id="title" class="modal-title">Chi tiết Template</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                Template: @Html.EditorFor(model => model.Template.TemplateName, new
+                                                {
+                                                    htmlAttributes = new
+                                                    {
+                                                        @class = "form-control",
+                                                        placeholder = "Mã giao diện",@*onfocus = "this.removeAttribute('readonly');",*@@readonly = "readonly"
+                                                    }
+                                                })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                Hiển thị: @Html.CheckBoxFor(model => model.Template.IsPublished, new { htmlAttributes = new { @class = "form-control", placeholder = "Hiển thị" } })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                Miễn phí: @Html.CheckBoxFor(model => model.Template.IsPublic, new { htmlAttributes = new { @class = "form-control", placeholder = "Miễn phí" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="choose-attach-file">
+                                        <input type="file" class="btn-chooseAttach" name="templateimage" multiple="">
+                                    </div>
+                                    <img ID="img" style="max-width:100%; max-height:105px;" />
+                                </div>
+                            </div>
+                            <div class="form-group" id="btnAdd">
+                                <input id="btnSubmit" type="button" class="btn btn-primary btn-block" value="Thêm" onclick="Post()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.HiddenFor(e => Model.Template.ImageName)
+    @Html.HiddenFor(e => Model.Action)
+    @Html.HiddenFor(e => Model.Position.ID)
+    @Html.HiddenFor(e => Model.Position.Summary)
+    @Html.HiddenFor(e => Model.Skin.ID)
+    @Html.HiddenFor(e => Model.Skin.Summary)
+    @Html.HiddenFor(e => Model.Skin.ModuleName)
+    <script>
+        function Post() {
+            $("form").submit();
+        }
+        function Remove(id, img) {
+            $('#Action').val('REMOVETEMP');
+            $('#Template_TemplateName').val(id);
+            $('#Template_ImageName').val(img);
+            $("form").submit();
+        }
+        function RemovePosition(temp, pos) {
+            $('#Action').val('REMOVEPOS');
+            $('#Template_TemplateName').val(temp);
+            $('#Position_ID').val(pos);
+            $("form").submit();
+        }
+        function RemoveSkin(temp, kin) {
+            $('#Action').val('REMOVETSKIN');
+            $('#Template_TemplateName').val(temp);
+            $('#Skin_ID').val(kin);
+            $("form").submit();
+        }
+        function Add() {
+            $('#Action').val('ADDTEMP');
+            $('#title').text("Thêm template");
+            $('#btnSubmit').val("Thêm");
+
+            $('#Template_TemplateName').val('');
+            $('#img').attr("src", '');
+
+            //$('#Template_TemplateName').removeAttr("disabled")
+            $("#Template_TemplateName").prop("readonly", false);
+        }
+        function Select(id, img, imgPath, pub, pul) {
+            $('#Action').val('UPDATETEMP');
+            $('#title').text("Sửa template");
+            $('#btnSubmit').val("Lưu");
+            $('#img').attr("src", imgPath);
+            $('#Template_ImageName').val(img);
+
+            $('#Template_TemplateName').val(id);
+            if (pub == "True") $('#Template_IsPublic').prop('checked', "checked");
+            else $('#Template_IsPublic').prop('checked', "");
+            if (pul == "True") $('#Template_IsPublished').prop('checked', "checked");
+            else $('#Template_IsPublished').prop('checked', "");
+
+
+            //$('#Template_TemplateName').attr("disabled", "disabled")
+            $("#Template_TemplateName").prop("readonly", true);
+        }
+        function AddPosition(temp) {
+            $('#Action').val('ADDPOS');
+            $('#Template_TemplateName').val(temp);
+            var name = $('#PositionName_' + temp).val();
+            $('#Position_ID').val(name);
+            var summary = $('#PositionSummary_' + temp).val();
+            $('#Position_Summary').val(summary);
+            $("form").submit();
+        }
+        function AddSkin(temp) {
+            $('#Action').val('ADDSKIN');
+            $('#Template_TemplateName').val(temp);
+            var name = $('#SkinName_' + temp).val();
+            $('#Skin_ID').val(name);
+            var summary = $('#SkinSummary_' + temp).val();
+            $('#Skin_Summary').val(summary);
+            var module = $('#SkinModule_' + temp).val();
+            $('#Skin_ModuleName').val(module);
+            $("form").submit();
+        }
+
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable({
+                "paging": true, "sort": false, "oLanguage": {
+                    "sProcessing": "Đang xử lý...",
+                    "sLengthMenu": "Xem _MENU_ mục",
+                    "sZeroRecords": "Không tìm thấy dòng nào phù hợp",
+                    "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
+                    "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
+                    "sInfoFiltered": "(được lọc từ _MAX_ mục)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Tìm:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "Đầu",
+                        "sPrevious": "Trước",
+                        "sNext": "Tiếp",
+                        "sLast": "Cuối"
+                    }
+                }
+            });
+        });
+    </script>
+}
+
+

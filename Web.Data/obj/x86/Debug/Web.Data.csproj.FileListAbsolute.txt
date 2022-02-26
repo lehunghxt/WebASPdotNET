@@ -1,0 +1,56 @@
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\Web.Data.dll.config
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\Web.Data.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\Web.Data.pdb
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\EntityFramework.SqlServer.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\Library.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\log4net.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\Oracle.ManagedDataAccess.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\EntityFramework.xml
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\EntityFramework.SqlServer.xml
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\log4net.xml
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\obj\x86\Debug\Web.Data.csprojResolveAssemblyReference.cache
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\obj\x86\Debug\Web.Data.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\obj\x86\Debug\Web.Data.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\obj\x86\Debug\Web.Data.pdb
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\EntityFramework.SqlServerCompact.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\System.Data.SqlServerCe.dll
+D:\Work\bvtd\2018\Server\Website\SQL\Web.Data\bin\x86\Debug\EntityFramework.SqlServerCompact.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\Web.Data.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\Web.Data.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\Web.Data.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\EntityFramework.SqlServer.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\EntityFramework.SqlServerCompact.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\Library.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\log4net.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\Oracle.ManagedDataAccess.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\System.Data.SqlServerCe.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\EntityFramework.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\EntityFramework.SqlServer.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\EntityFramework.SqlServerCompact.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\bin\x86\Debug\log4net.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\obj\x86\Debug\Web.Data.csprojResolveAssemblyReference.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\obj\x86\Debug\Web.Data.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\obj\x86\Debug\Web.Data.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Data\obj\x86\Debug\Web.Data.pdb
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\Web.Data.dll.config
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\Web.Data.dll
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\Web.Data.pdb
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\EntityFramework.dll
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\EntityFramework.SqlServer.dll
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\EntityFramework.SqlServerCompact.dll
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\Library.dll
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\log4net.dll
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\Oracle.ManagedDataAccess.dll
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\System.Data.SqlServerCe.dll
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\EntityFramework.xml
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\EntityFramework.SqlServer.xml
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\EntityFramework.SqlServerCompact.xml
+D:\Work\v5 20180512\Web.Data\bin\x86\Debug\log4net.xml
+D:\Work\v5 20180512\Web.Data\obj\x86\Debug\Web.Data.csprojResolveAssemblyReference.cache
+D:\Work\v5 20180512\Web.Data\obj\x86\Debug\Web.Data.dll
+D:\Work\v5 20180512\Web.Data\obj\x86\Debug\Web.Data.pdb

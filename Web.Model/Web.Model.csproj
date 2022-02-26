@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E761AAF0-1744-41E6-B489-0F291E829078}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web.Model</RootNamespace>
+    <AssemblyName>Web.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessTradeCampaignModel.cs" />
+    <Compile Include="ArticleBilingualModel.cs" />
+    <Compile Include="ATMCommitModel.cs" />
+    <Compile Include="ATMChargingModel.cs" />
+    <Compile Include="ATMCommitResponseModel.cs" />
+    <Compile Include="AttributeValueModel.cs" />
+    <Compile Include="AttributeCategoryModel.cs" />
+    <Compile Include="ConfigAccessTradeModel.cs" />
+    <Compile Include="OrderPointModel.cs" />
+    <Compile Include="MenuShortcutModel.cs" />
+    <Compile Include="CustomerProductModel.cs" />
+    <Compile Include="CustomerOrderModel.cs" />
+    <Compile Include="CustomerModel.cs" />
+    <Compile Include="ConfigGHTKModel.cs" />
+    <Compile Include="AccessTradeDataFeedModel.cs" />
+    <Compile Include="GHTKOrderModel.cs" />
+    <Compile Include="GHTKCreateOrderModel.cs" />
+    <Compile Include="GHNCreateOrderModel.cs" />
+    <Compile Include="GHTKOrderInfoModel.cs" />
+    <Compile Include="GHNOrderModel.cs" />
+    <Compile Include="GHPostOrderModel.cs" />
+    <Compile Include="GHNFeeModel.cs" />
+    <Compile Include="GioHangModel.cs" />
+    <Compile Include="GHNOrderInfoModel.cs" />
+    <Compile Include="AccessTradeSaleOffModel.cs" />
+    <Compile Include="AccessTradeTopSaleModel.cs" />
+    <Compile Include="ProductAddOnModel.cs" />
+    <Compile Include="GrouponModel.cs" />
+    <Compile Include="ProductGrouponModel.cs" />
+    <Compile Include="URM\URMAppCreateModel.cs" />
+    <Compile Include="URM\URMChangePasswordModel.cs" />
+    <Compile Include="URM\URMForgetPasswordModel.cs" />
+    <Compile Include="URM\URMGroupModel.cs" />
+    <Compile Include="URM\URMGroupUsersModel.cs" />
+    <Compile Include="URM\URMRoleModel.cs" />
+    <Compile Include="URM\URMUserAccountModel.cs" />
+    <Compile Include="URM\URMUserInfoModel.cs" />
+    <Compile Include="URM\URMUserLoginModel.cs" />
+    <Compile Include="URM\URMUserModel.cs" />
+    <Compile Include="UserCompanyModel.cs" />
+    <Compile Include="VoucherModel.cs" />
+    <Compile Include="ConfigMemberPointModel.cs" />
+    <Compile Include="ConfigOnePayModel.cs" />
+    <Compile Include="ConfigGHNModel.cs" />
+    <Compile Include="ContactModel.cs" />
+    <Compile Include="DistrictModel.cs" />
+    <Compile Include="ItemVoteModel.cs" />
+    <Compile Include="OrderTransactionModel.cs" />
+    <Compile Include="ProductWebModel.cs" />
+    <Compile Include="RssModel.cs" />
+    <Compile Include="ThirdPartyModel.cs" />
+    <Compile Include="CompanyInfoModel.cs" />
+    <Compile Include="GoogleMapModel.cs" />
+    <Compile Include="SEOLinkModel.cs" />
+    <Compile Include="SupplierModel.cs" />
+    <Compile Include="OrderProductModel.cs" />
+    <Compile Include="ThongKeModel.cs" />
+    <Compile Include="GHTKFeeModel.cs" />
+    <Compile Include="VisaChargingModel.cs" />
+    <Compile Include="VisaChargingResponseModel.cs" />
+    <Compile Include="WarehouseModel.cs" />
+    <Compile Include="ThongKeLoiNhuanModel.cs" />
+    <Compile Include="OrderModel.cs" />
+    <Compile Include="ProductColorModel.cs" />
+    <Compile Include="ProductPriceModel.cs" />
+    <Compile Include="ProductAttributeModel.cs" />
+    <Compile Include="ProductModel.cs" />
+    <Compile Include="AttributeModel.cs" />
+    <Compile Include="MediaModel.cs" />
+    <Compile Include="DocumentModel.cs" />
+    <Compile Include="ARTICLEURLModel.cs" />
+    <Compile Include="ArticleModel.cs" />
+    <Compile Include="ARTICLELANGUAGEModel.cs" />
+    <Compile Include="CATEGORYModel.cs" />
+    <Compile Include="CATEGORYLANGUAGEModel.cs" />
+    <Compile Include="CompanyConfigModel.cs" />
+    <Compile Include="COMPANYModel.cs" />
+    <Compile Include="COMPANYDOMAINModel.cs" />
+    <Compile Include="COMPANYLANGUAGEModel.cs" />
+    <Compile Include="DataComplexModel.cs" />
+    <Compile Include="DataSimpleModel.cs" />
+    <Compile Include="ForgetPasswordModel.cs" />
+    <Compile Include="ITEMModel.cs" />
+    <Compile Include="ITEMCOMMENTModel.cs" />
+    <Compile Include="ITEMIMAGEModel.cs" />
+    <Compile Include="ITEMLIKEModel.cs" />
+    <Compile Include="ITEMVIEWModel.cs" />
+    <Compile Include="LANGUAGEModel.cs" />
+    <Compile Include="ModuleModel.cs" />
+    <Compile Include="ModuleConfigModel.cs" />
+    <Compile Include="ModuleConfigParamModel.cs" />
+    <Compile Include="ModuleParamModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleModel.cs" />
+    <Compile Include="TemplateModel.cs" />
+    <Compile Include="TemplateComponentModel.cs" />
+    <Compile Include="TemplateComponentPositionModel.cs" />
+    <Compile Include="TemplateConfigModel.cs" />
+    <Compile Include="TemplateDemoModel.cs" />
+    <Compile Include="TemplatePositionModel.cs" />
+    <Compile Include="TemplateSkinModel.cs" />
+    <Compile Include="UserAccountModel.cs" />
+    <Compile Include="UserGroupModel.cs" />
+    <Compile Include="UserInfoModel.cs" />
+    <Compile Include="UserLoginModel.cs" />
+    <Compile Include="UserModel.cs" />
+    <Compile Include="WEBCONFIGModel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

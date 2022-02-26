@@ -1,0 +1,2646 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Web.Data" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="WebEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Companies" EntityType="Web.Data.Company" />
+    <EntitySet Name="CompanyAddresses" EntityType="Web.Data.CompanyAddress" />
+    <EntitySet Name="CompanyDomains" EntityType="Web.Data.CompanyDomain" />
+    <EntitySet Name="CompanyLanguages" EntityType="Web.Data.CompanyLanguage" />
+    <EntitySet Name="CompanyTemplates" EntityType="Web.Data.CompanyTemplate" />
+    <EntitySet Name="CompanyUsers" EntityType="Web.Data.CompanyUser" />
+    <EntitySet Name="ConfigAccessTrades" EntityType="Web.Data.ConfigAccessTrade" />
+    <EntitySet Name="ConfigGHNs" EntityType="Web.Data.ConfigGHN" />
+    <EntitySet Name="ConfigGHTKs" EntityType="Web.Data.ConfigGHTK" />
+    <EntitySet Name="ConfigMemberPoints" EntityType="Web.Data.ConfigMemberPoint" />
+    <EntitySet Name="ConfigOnePays" EntityType="Web.Data.ConfigOnePay" />
+    <EntitySet Name="ThirdParties" EntityType="Web.Data.ThirdParty" />
+    <EntitySet Name="WebConfigs" EntityType="Web.Data.WebConfig" />
+    <EntitySet Name="Customers" EntityType="Web.Data.Customer" />
+    <EntitySet Name="CustomerAddresses" EntityType="Web.Data.CustomerAddress" />
+    <EntitySet Name="CustomerPoints" EntityType="Web.Data.CustomerPoint" />
+    <EntitySet Name="Articles" EntityType="Web.Data.Article" />
+    <EntitySet Name="ArticleLanguages" EntityType="Web.Data.ArticleLanguage" />
+    <EntitySet Name="ArticleLinks" EntityType="Web.Data.ArticleLink" />
+    <EntitySet Name="ArticleRelatieds" EntityType="Web.Data.ArticleRelatied" />
+    <EntitySet Name="BanIPs" EntityType="Web.Data.BanIP" />
+    <EntitySet Name="Categories" EntityType="Web.Data.Category" />
+    <EntitySet Name="CategoryLanguages" EntityType="Web.Data.CategoryLanguage" />
+    <EntitySet Name="CategoryTypes" EntityType="Web.Data.CategoryType" />
+    <EntitySet Name="Items" EntityType="Web.Data.Item" />
+    <EntitySet Name="ItemComments" EntityType="Web.Data.ItemComment" />
+    <EntitySet Name="ItemImages" EntityType="Web.Data.ItemImage" />
+    <EntitySet Name="ItemLikes" EntityType="Web.Data.ItemLike" />
+    <EntitySet Name="ItemViews" EntityType="Web.Data.ItemView" />
+    <EntitySet Name="ItemVotes" EntityType="Web.Data.ItemVote" />
+    <EntitySet Name="Languages" EntityType="Web.Data.Language" />
+    <EntitySet Name="Menus" EntityType="Web.Data.Menu" />
+    <EntitySet Name="MenuShortcuts" EntityType="Web.Data.MenuShortcut" />
+    <EntitySet Name="SEOs" EntityType="Web.Data.SEO" />
+    <EntitySet Name="SupportOnlines" EntityType="Web.Data.SupportOnline" />
+    <EntitySet Name="SupportOnlineTypes" EntityType="Web.Data.SupportOnlineType" />
+    <EntitySet Name="TB_ThongKe" EntityType="Web.Data.TB_ThongKe" />
+    <EntitySet Name="Files" EntityType="Web.Data.File" />
+    <EntitySet Name="FileDocuments" EntityType="Web.Data.FileDocument" />
+    <EntitySet Name="CategoryFixes" EntityType="Web.Data.CategoryFix" />
+    <EntitySet Name="CategoryMaps" EntityType="Web.Data.CategoryMap" />
+    <EntitySet Name="Districts" EntityType="Web.Data.District" />
+    <EntitySet Name="Provinces" EntityType="Web.Data.Province" />
+    <EntitySet Name="Wards" EntityType="Web.Data.Ward" />
+    <EntitySet Name="Attributes" EntityType="Web.Data.Attribute" />
+    <EntitySet Name="AttributeCategories" EntityType="Web.Data.AttributeCategory" />
+    <EntitySet Name="AttributeValues" EntityType="Web.Data.AttributeValue" />
+    <EntitySet Name="Products" EntityType="Web.Data.Product" />
+    <EntitySet Name="ProductAddOns" EntityType="Web.Data.ProductAddOn" />
+    <EntitySet Name="ProductAttributes" EntityType="Web.Data.ProductAttribute" />
+    <EntitySet Name="ProductColors" EntityType="Web.Data.ProductColor" />
+    <EntitySet Name="ProductGroupons" EntityType="Web.Data.ProductGroupon" />
+    <EntitySet Name="ProductPrices" EntityType="Web.Data.ProductPrice" />
+    <EntitySet Name="Modules" EntityType="Web.Data.Module" />
+    <EntitySet Name="ModuleConfigs" EntityType="Web.Data.ModuleConfig" />
+    <EntitySet Name="ModuleConfigLanguages" EntityType="Web.Data.ModuleConfigLanguage" />
+    <EntitySet Name="ModuleConfigParams" EntityType="Web.Data.ModuleConfigParam" />
+    <EntitySet Name="ModuleParams" EntityType="Web.Data.ModuleParam" />
+    <EntitySet Name="Templates" EntityType="Web.Data.Template" />
+    <EntitySet Name="TemplateComponents" EntityType="Web.Data.TemplateComponent" />
+    <EntitySet Name="TemplateComponentPositions" EntityType="Web.Data.TemplateComponentPosition" />
+    <EntitySet Name="TemplateConfigs" EntityType="Web.Data.TemplateConfig" />
+    <EntitySet Name="TemplateDemoes" EntityType="Web.Data.TemplateDemo" />
+    <EntitySet Name="TemplatePositions" EntityType="Web.Data.TemplatePosition" />
+    <EntitySet Name="TemplateSkins" EntityType="Web.Data.TemplateSkin" />
+    <EntitySet Name="AppInfoes" EntityType="Web.Data.AppInfo" />
+    <EntitySet Name="Groups" EntityType="Web.Data.Group" />
+    <EntitySet Name="Roles" EntityType="Web.Data.Role" />
+    <EntitySet Name="UserAccounts" EntityType="Web.Data.UserAccount" />
+    <EntitySet Name="UserInfoes" EntityType="Web.Data.UserInfo" />
+    <EntitySet Name="Orders" EntityType="Web.Data.Order" />
+    <EntitySet Name="OrderProducts" EntityType="Web.Data.OrderProduct" />
+    <EntitySet Name="OrderTransactions" EntityType="Web.Data.OrderTransaction" />
+    <EntitySet Name="Suppliers" EntityType="Web.Data.Supplier" />
+    <EntitySet Name="Vouchers" EntityType="Web.Data.Voucher" />
+    <EntitySet Name="WarehouseIOs" EntityType="Web.Data.WarehouseIO" />
+    <EntitySet Name="WarehouseIOColections" EntityType="Web.Data.WarehouseIOColection" />
+    <AssociationSet Name="FK_Attribute_Company" Association="Web.Data.FK_Attribute_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Attribute" EntitySet="Attributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BanIP_Company" Association="Web.Data.FK_BanIP_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="BanIP" EntitySet="BanIPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_District" Association="Web.Data.FK_Company_District">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="Company" EntitySet="Companies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Item" Association="Web.Data.FK_Company_Item">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyAddress_Company" Association="Web.Data.FK_CompanyAddress_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="CompanyAddress" EntitySet="CompanyAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyDomain_Company" Association="Web.Data.FK_CompanyDomain_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="CompanyDomain" EntitySet="CompanyDomains" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyLanguage_Company" Association="Web.Data.FK_CompanyLanguage_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="CompanyLanguage" EntitySet="CompanyLanguages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyTemplate_Company" Association="Web.Data.FK_CompanyTemplate_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="CompanyTemplate" EntitySet="CompanyTemplates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyUser_Company" Association="Web.Data.FK_CompanyUser_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="CompanyUser" EntitySet="CompanyUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_Company" Association="Web.Data.FK_Item_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Item" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuShortcuts_Company" Association="Web.Data.FK_MenuShortcuts_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="MenuShortcut" EntitySet="MenuShortcuts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Company" Association="Web.Data.FK_Order_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supplier_Company" Association="Web.Data.FK_Supplier_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Supplier" EntitySet="Suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_ThongKe_Company" Association="Web.Data.FK_TB_ThongKe_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="TB_ThongKe" EntitySet="TB_ThongKe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateConfig_Company" Association="Web.Data.FK_TemplateConfig_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="TemplateConfig" EntitySet="TemplateConfigs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WarehouseIO_Company" Association="Web.Data.FK_WarehouseIO_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="WarehouseIO" EntitySet="WarehouseIOs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WebConfig_Company1" Association="Web.Data.FK_WebConfig_Company1">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="WebConfig" EntitySet="WebConfigs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfigAccessTrade_WebConfig" Association="Web.Data.FK_ConfigAccessTrade_WebConfig">
+      <End Role="WebConfig" EntitySet="WebConfigs" />
+      <End Role="ConfigAccessTrade" EntitySet="ConfigAccessTrades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfigGHN_WebConfig" Association="Web.Data.FK_ConfigGHN_WebConfig">
+      <End Role="WebConfig" EntitySet="WebConfigs" />
+      <End Role="ConfigGHN" EntitySet="ConfigGHNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfigGHTK_WebConfig" Association="Web.Data.FK_ConfigGHTK_WebConfig">
+      <End Role="WebConfig" EntitySet="WebConfigs" />
+      <End Role="ConfigGHTK" EntitySet="ConfigGHTKs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfigMemberPoint_WebConfig" Association="Web.Data.FK_ConfigMemberPoint_WebConfig">
+      <End Role="WebConfig" EntitySet="WebConfigs" />
+      <End Role="ConfigMemberPoint" EntitySet="ConfigMemberPoints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfigOnePay_WebConfig" Association="Web.Data.FK_ConfigOnePay_WebConfig">
+      <End Role="WebConfig" EntitySet="WebConfigs" />
+      <End Role="ConfigOnePay" EntitySet="ConfigOnePays" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThirdParty_Item1" Association="Web.Data.FK_ThirdParty_Item1">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="ThirdParty" EntitySet="ThirdParties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThirdParty_TemplatePosition" Association="Web.Data.FK_ThirdParty_TemplatePosition">
+      <End Role="TemplatePosition" EntitySet="TemplatePositions" />
+      <End Role="ThirdParty" EntitySet="ThirdParties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WebConfig_Language" Association="Web.Data.FK_WebConfig_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="WebConfig" EntitySet="WebConfigs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WebConfig_Template" Association="Web.Data.FK_WebConfig_Template">
+      <End Role="Template" EntitySet="Templates" />
+      <End Role="WebConfig" EntitySet="WebConfigs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerAddress_Customer" Association="Web.Data.FK_CustomerAddress_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerAddress" EntitySet="CustomerAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerPoint_Customer" Association="Web.Data.FK_CustomerPoint_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerPoint" EntitySet="CustomerPoints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerPoint_Order" Association="Web.Data.FK_CustomerPoint_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="CustomerPoint" EntitySet="CustomerPoints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Article_Category" Association="Web.Data.FK_Article_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Article" EntitySet="Articles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Article_Item" Association="Web.Data.FK_Article_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="Article" EntitySet="Articles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ArticleLanguage_Article" Association="Web.Data.FK_ArticleLanguage_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="ArticleLanguage" EntitySet="ArticleLanguages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Files_Item" Association="Web.Data.FK_Files_Item">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="File" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemRelatied_Item" Association="Web.Data.FK_ItemRelatied_Item">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="ArticleRelatied" EntitySet="ArticleRelatieds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Links_Article" Association="Web.Data.FK_Links_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="ArticleLink" EntitySet="ArticleLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Article" Association="Web.Data.FK_Product_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_CategoryType" Association="Web.Data.FK_Category_CategoryType">
+      <End Role="CategoryType" EntitySet="CategoryTypes" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_Item" Association="Web.Data.FK_Category_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryLanguage_Category" Association="Web.Data.FK_CategoryLanguage_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="CategoryLanguage" EntitySet="CategoryLanguages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryMap_Category" Association="Web.Data.FK_CategoryMap_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="CategoryMap" EntitySet="CategoryMaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SupportOnline_Category" Association="Web.Data.FK_SupportOnline_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="SupportOnline" EntitySet="SupportOnlines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeCategory_Item" Association="Web.Data.FK_AttributeCategory_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="AttributeCategory" EntitySet="AttributeCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeValue_Item" Association="Web.Data.FK_AttributeValue_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="AttributeValue" EntitySet="AttributeValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemComment_Item" Association="Web.Data.FK_ItemComment_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="ItemComment" EntitySet="ItemComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemComment_Item1" Association="Web.Data.FK_ItemComment_Item1">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="ItemComment" EntitySet="ItemComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemImage_Item" Association="Web.Data.FK_ItemImage_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="ItemImage" EntitySet="ItemImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemLike_Item" Association="Web.Data.FK_ItemLike_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="ItemLike" EntitySet="ItemLikes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemView_Item" Association="Web.Data.FK_ItemView_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="ItemView" EntitySet="ItemViews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemVote_Item" Association="Web.Data.FK_ItemVote_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="ItemVote" EntitySet="ItemVotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Module_Item" Association="Web.Data.FK_Module_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="ModuleConfig" EntitySet="ModuleConfigs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SupportOnline_Item" Association="Web.Data.FK_SupportOnline_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="SupportOnline" EntitySet="SupportOnlines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Voucher_Item" Association="Web.Data.FK_Voucher_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="Voucher" EntitySet="Vouchers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SupportOnline_SupportOnlineType" Association="Web.Data.FK_SupportOnline_SupportOnlineType">
+      <End Role="SupportOnlineType" EntitySet="SupportOnlineTypes" />
+      <End Role="SupportOnline" EntitySet="SupportOnlines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FileDocument_File" Association="Web.Data.FK_FileDocument_File">
+      <End Role="File" EntitySet="Files" />
+      <End Role="FileDocument" EntitySet="FileDocuments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryMap_CategoryFix" Association="Web.Data.FK_CategoryMap_CategoryFix">
+      <End Role="CategoryFix" EntitySet="CategoryFixes" />
+      <End Role="CategoryMap" EntitySet="CategoryMaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_District_Province" Association="Web.Data.FK_District_Province">
+      <End Role="Province" EntitySet="Provinces" />
+      <End Role="District" EntitySet="Districts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ward_District" Association="Web.Data.FK_Ward_District">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="Ward" EntitySet="Wards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductAttribute_Attribute" Association="Web.Data.FK_ProductAttribute_Attribute">
+      <End Role="Attribute" EntitySet="Attributes" />
+      <End Role="ProductAttribute" EntitySet="ProductAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeValue_AttributeCategory" Association="Web.Data.FK_AttributeValue_AttributeCategory">
+      <End Role="AttributeCategory" EntitySet="AttributeCategories" />
+      <End Role="AttributeValue" EntitySet="AttributeValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Color_Product" Association="Web.Data.FK_Color_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductColor" EntitySet="ProductColors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderProduct_Product" Association="Web.Data.FK_OrderProduct_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="OrderProduct" EntitySet="OrderProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductAddOn_Product" Association="Web.Data.FK_ProductAddOn_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductAddOn" EntitySet="ProductAddOns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductAddOn_Product1" Association="Web.Data.FK_ProductAddOn_Product1">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductAddOn" EntitySet="ProductAddOns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductAttribute_Product" Association="Web.Data.FK_ProductAttribute_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductAttribute" EntitySet="ProductAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductGroupon_Product" Association="Web.Data.FK_ProductGroupon_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductGroupon" EntitySet="ProductGroupons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductPrice_Product" Association="Web.Data.FK_ProductPrice_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductPrice" EntitySet="ProductPrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WarehouseIOColection_Product" Association="Web.Data.FK_WarehouseIOColection_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="WarehouseIOColection" EntitySet="WarehouseIOColections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleConfig_Module" Association="Web.Data.FK_ModuleConfig_Module">
+      <End Role="Module" EntitySet="Modules" />
+      <End Role="ModuleConfig" EntitySet="ModuleConfigs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleParam_Module" Association="Web.Data.FK_ModuleParam_Module">
+      <End Role="Module" EntitySet="Modules" />
+      <End Role="ModuleParam" EntitySet="ModuleParams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateSkin_Module" Association="Web.Data.FK_TemplateSkin_Module">
+      <End Role="Module" EntitySet="Modules" />
+      <End Role="TemplateSkin" EntitySet="TemplateSkins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Module_Language_Module" Association="Web.Data.FK_Module_Language_Module">
+      <End Role="ModuleConfig" EntitySet="ModuleConfigs" />
+      <End Role="ModuleConfigLanguage" EntitySet="ModuleConfigLanguages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleConfig_Template" Association="Web.Data.FK_ModuleConfig_Template">
+      <End Role="Template" EntitySet="Templates" />
+      <End Role="ModuleConfig" EntitySet="ModuleConfigs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleConfigParam_ModuleConfig" Association="Web.Data.FK_ModuleConfigParam_ModuleConfig">
+      <End Role="ModuleConfig" EntitySet="ModuleConfigs" />
+      <End Role="ModuleConfigParam" EntitySet="ModuleConfigParams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TempateDemo_TempateDemo" Association="Web.Data.FK_TempateDemo_TempateDemo">
+      <End Role="Template" EntitySet="Templates" />
+      <End Role="TemplateDemo" EntitySet="TemplateDemoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateComponent_Template" Association="Web.Data.FK_TemplateComponent_Template">
+      <End Role="Template" EntitySet="Templates" />
+      <End Role="TemplateComponent" EntitySet="TemplateComponents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplatePosition_Template" Association="Web.Data.FK_TemplatePosition_Template">
+      <End Role="Template" EntitySet="Templates" />
+      <End Role="TemplatePosition" EntitySet="TemplatePositions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateSkin_Template" Association="Web.Data.FK_TemplateSkin_Template">
+      <End Role="Template" EntitySet="Templates" />
+      <End Role="TemplateSkin" EntitySet="TemplateSkins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateComponentPosition_TemplateComponent" Association="Web.Data.FK_TemplateComponentPosition_TemplateComponent">
+      <End Role="TemplateComponent" EntitySet="TemplateComponents" />
+      <End Role="TemplateComponentPosition" EntitySet="TemplateComponentPositions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Role_AppInfo" Association="Web.Data.FK_Role_AppInfo">
+      <End Role="AppInfo" EntitySet="AppInfoes" />
+      <End Role="Role" EntitySet="Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGroup_AppInfo" Association="Web.Data.FK_UserGroup_AppInfo">
+      <End Role="AppInfo" EntitySet="AppInfoes" />
+      <End Role="Group" EntitySet="Groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_AppInfo" Association="Web.Data.FK_UserInfo_AppInfo">
+      <End Role="AppInfo" EntitySet="AppInfoes" />
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAccount_UserInfo" Association="Web.Data.FK_UserAccount_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+      <End Role="UserAccount" EntitySet="UserAccounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderProduct_Order" Association="Web.Data.FK_OrderProduct_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderProduct" EntitySet="OrderProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transaction_Order" Association="Web.Data.FK_Transaction_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderTransaction" EntitySet="OrderTransactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WarehouseIO_Supplier" Association="Web.Data.FK_WarehouseIO_Supplier">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="WarehouseIO" EntitySet="WarehouseIOs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WarehouseIOColection_WarehouseIO" Association="Web.Data.FK_WarehouseIOColection_WarehouseIO">
+      <End Role="WarehouseIO" EntitySet="WarehouseIOs" />
+      <End Role="WarehouseIOColection" EntitySet="WarehouseIOColections" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerFavourite" Association="Web.Data.CustomerFavourite">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Item" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="UserGroup" Association="Web.Data.UserGroup">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RefId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WardId" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DistrictId" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Orders" Type="Int32" Nullable="false" />
+    <Property Name="IsDemo" Type="Boolean" Nullable="false" />
+    <Property Name="IsWholesale" Type="Boolean" Nullable="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyByUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateByUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsConfirm" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Attributes" Relationship="Web.Data.FK_Attribute_Company" FromRole="Company" ToRole="Attribute" />
+    <NavigationProperty Name="BanIPs" Relationship="Web.Data.FK_BanIP_Company" FromRole="Company" ToRole="BanIP" />
+    <NavigationProperty Name="District" Relationship="Web.Data.FK_Company_District" FromRole="Company" ToRole="District" />
+    <NavigationProperty Name="Customers" Relationship="Web.Data.FK_Company_Item" FromRole="Company" ToRole="Customer" />
+    <NavigationProperty Name="CompanyAddresses" Relationship="Web.Data.FK_CompanyAddress_Company" FromRole="Company" ToRole="CompanyAddress" />
+    <NavigationProperty Name="CompanyDomains" Relationship="Web.Data.FK_CompanyDomain_Company" FromRole="Company" ToRole="CompanyDomain" />
+    <NavigationProperty Name="CompanyLanguages" Relationship="Web.Data.FK_CompanyLanguage_Company" FromRole="Company" ToRole="CompanyLanguage" />
+    <NavigationProperty Name="CompanyTemplates" Relationship="Web.Data.FK_CompanyTemplate_Company" FromRole="Company" ToRole="CompanyTemplate" />
+    <NavigationProperty Name="CompanyUsers" Relationship="Web.Data.FK_CompanyUser_Company" FromRole="Company" ToRole="CompanyUser" />
+    <NavigationProperty Name="Items" Relationship="Web.Data.FK_Item_Company" FromRole="Company" ToRole="Item" />
+    <NavigationProperty Name="MenuShortcuts" Relationship="Web.Data.FK_MenuShortcuts_Company" FromRole="Company" ToRole="MenuShortcut" />
+    <NavigationProperty Name="Orders1" Relationship="Web.Data.FK_Order_Company" FromRole="Company" ToRole="Order" />
+    <NavigationProperty Name="Suppliers" Relationship="Web.Data.FK_Supplier_Company" FromRole="Company" ToRole="Supplier" />
+    <NavigationProperty Name="TB_ThongKe" Relationship="Web.Data.FK_TB_ThongKe_Company" FromRole="Company" ToRole="TB_ThongKe" />
+    <NavigationProperty Name="TemplateConfigs" Relationship="Web.Data.FK_TemplateConfig_Company" FromRole="Company" ToRole="TemplateConfig" />
+    <NavigationProperty Name="WarehouseIOs" Relationship="Web.Data.FK_WarehouseIO_Company" FromRole="Company" ToRole="WarehouseIO" />
+    <NavigationProperty Name="WebConfig" Relationship="Web.Data.FK_WebConfig_Company1" FromRole="Company" ToRole="WebConfig" />
+  </EntityType>
+  <EntityType Name="CompanyAddress">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="WardId" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DistrictId" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_CompanyAddress_Company" FromRole="CompanyAddress" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="CompanyDomain">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+      <PropertyRef Name="Domain" />
+    </Key>
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="Domain" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LanguageId" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_CompanyDomain_Company" FromRole="CompanyDomain" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="CompanyLanguage">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="LanguageId" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Slogan" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AboutUs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Certificate" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_CompanyLanguage_Company" FromRole="CompanyLanguage" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="CompanyTemplate">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+      <PropertyRef Name="TemplateName" />
+    </Key>
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="TemplateName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_CompanyTemplate_Company" FromRole="CompanyTemplate" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="CompanyUser">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Balance" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_CompanyUser_Company" FromRole="CompanyUser" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="ConfigAccessTrade">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="AccessKey" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SecretKey" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SourceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeepLink" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WebConfig" Relationship="Web.Data.FK_ConfigAccessTrade_WebConfig" FromRole="ConfigAccessTrade" ToRole="WebConfig" />
+  </EntityType>
+  <EntityType Name="ConfigGHN">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="GHNUserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GHNPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GHNFromDistrict" Type="Int32" />
+    <Property Name="GHNToken" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="WebConfig" Relationship="Web.Data.FK_ConfigGHN_WebConfig" FromRole="ConfigGHN" ToRole="WebConfig" />
+  </EntityType>
+  <EntityType Name="ConfigGHTK">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="GHTKToken" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="GHTKAddressId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="WebConfig" Relationship="Web.Data.FK_ConfigGHTK_WebConfig" FromRole="ConfigGHTK" ToRole="WebConfig" />
+  </EntityType>
+  <EntityType Name="ConfigMemberPoint">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="OrderPercent" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ProductAttribute" Type="Int32" />
+    <Property Name="TranferPrice" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="WebConfig" Relationship="Web.Data.FK_ConfigMemberPoint_WebConfig" FromRole="ConfigMemberPoint" ToRole="WebConfig" />
+  </EntityType>
+  <EntityType Name="ConfigOnePay">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Secret" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccessKey" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="WebConfig" Relationship="Web.Data.FK_ConfigOnePay_WebConfig" FromRole="ConfigOnePay" ToRole="WebConfig" />
+  </EntityType>
+  <EntityType Name="ThirdParty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ThirdPartyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContentHTML" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PositionName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TemplateName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_ThirdParty_Item1" FromRole="ThirdParty" ToRole="Item" />
+    <NavigationProperty Name="TemplatePosition" Relationship="Web.Data.FK_ThirdParty_TemplatePosition" FromRole="ThirdParty" ToRole="TemplatePosition" />
+  </EntityType>
+  <EntityType Name="WebConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="DefaultLanguage" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="WebIcon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GoogleAnalytics" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="VerifyOutside" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Background" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BackgroundRepeat" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BackgroundPosition" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="HeaderBackground" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="HeaderFontColor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HeaderFontSize" Type="Int32" Nullable="false" />
+    <Property Name="FooterBackground" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FooterFontColor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="FooterFontSize" Type="Int32" Nullable="false" />
+    <Property Name="IsRightClick" Type="Boolean" Nullable="false" />
+    <Property Name="IsSelectCoppy" Type="Boolean" Nullable="false" />
+    <Property Name="Template" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TemplateConfigBy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyByUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Keys" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RegisDate" Type="DateTime" Precision="3" />
+    <Property Name="ExperDate" Type="DateTime" Precision="3" />
+    <Property Name="LinkGoPublic" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Hierarchy" Type="Boolean" Nullable="false" />
+    <Property Name="GoogleApiKey" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GoogleMapAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="GooglePlus" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="FacebookPersonalId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FacebookAppId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FacebookFanpage" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="MailEnableSSL" Type="Boolean" />
+    <Property Name="MailServer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MailPort" Type="Int32" />
+    <Property Name="MailAccount" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MailPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Twitter" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Pinterest" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Instagram" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Linkedin" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Youtube" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Zalo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Whatsapp" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultLanguageIfNotSet" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_WebConfig_Company1" FromRole="WebConfig" ToRole="Company" />
+    <NavigationProperty Name="ConfigAccessTrade" Relationship="Web.Data.FK_ConfigAccessTrade_WebConfig" FromRole="WebConfig" ToRole="ConfigAccessTrade" />
+    <NavigationProperty Name="ConfigGHN" Relationship="Web.Data.FK_ConfigGHN_WebConfig" FromRole="WebConfig" ToRole="ConfigGHN" />
+    <NavigationProperty Name="ConfigGHTK" Relationship="Web.Data.FK_ConfigGHTK_WebConfig" FromRole="WebConfig" ToRole="ConfigGHTK" />
+    <NavigationProperty Name="ConfigMemberPoint" Relationship="Web.Data.FK_ConfigMemberPoint_WebConfig" FromRole="WebConfig" ToRole="ConfigMemberPoint" />
+    <NavigationProperty Name="ConfigOnePay" Relationship="Web.Data.FK_ConfigOnePay_WebConfig" FromRole="WebConfig" ToRole="ConfigOnePay" />
+    <NavigationProperty Name="Language" Relationship="Web.Data.FK_WebConfig_Language" FromRole="WebConfig" ToRole="Language" />
+    <NavigationProperty Name="Template1" Relationship="Web.Data.FK_WebConfig_Template" FromRole="WebConfig" ToRole="Template" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Point" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Birthday" Type="DateTime" Precision="3" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_Company_Item" FromRole="Customer" ToRole="Company" />
+    <NavigationProperty Name="CustomerAddresses" Relationship="Web.Data.FK_CustomerAddress_Customer" FromRole="Customer" ToRole="CustomerAddress" />
+    <NavigationProperty Name="CustomerPoints" Relationship="Web.Data.FK_CustomerPoint_Customer" FromRole="Customer" ToRole="CustomerPoint" />
+    <NavigationProperty Name="Items" Relationship="Web.Data.CustomerFavourite" FromRole="Customer" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="CustomerAddress">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+    <Property Name="AreaId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Addresss" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customer" Relationship="Web.Data.FK_CustomerAddress_Customer" FromRole="CustomerAddress" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="CustomerPoint">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="Subtraction" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Addition" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="Customer" Relationship="Web.Data.FK_CustomerPoint_Customer" FromRole="CustomerPoint" ToRole="Customer" />
+    <NavigationProperty Name="Order" Relationship="Web.Data.FK_CustomerPoint_Order" FromRole="CustomerPoint" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Tag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayDate" Type="DateTime" Precision="3" />
+    <Property Name="HasComment" Type="Boolean" />
+    <NavigationProperty Name="Category" Relationship="Web.Data.FK_Article_Category" FromRole="Article" ToRole="Category" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_Article_Item" FromRole="Article" ToRole="Item" />
+    <NavigationProperty Name="ArticleLanguages" Relationship="Web.Data.FK_ArticleLanguage_Article" FromRole="Article" ToRole="ArticleLanguage" />
+    <NavigationProperty Name="File" Relationship="Web.Data.FK_Files_Item" FromRole="Article" ToRole="File" />
+    <NavigationProperty Name="ArticleRelatieds" Relationship="Web.Data.FK_ItemRelatied_Item" FromRole="Article" ToRole="ArticleRelatied" />
+    <NavigationProperty Name="ArticleLink" Relationship="Web.Data.FK_Links_Article" FromRole="Article" ToRole="ArticleLink" />
+    <NavigationProperty Name="Product" Relationship="Web.Data.FK_Product_Article" FromRole="Article" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ArticleLanguage">
+    <Key>
+      <PropertyRef Name="ArticleId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="ArticleId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Brief" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Article" Relationship="Web.Data.FK_ArticleLanguage_Article" FromRole="ArticleLanguage" ToRole="Article" />
+  </EntityType>
+  <EntityType Name="ArticleLink">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="URL" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Target" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Article" Relationship="Web.Data.FK_Links_Article" FromRole="ArticleLink" ToRole="Article" />
+  </EntityType>
+  <EntityType Name="ArticleRelatied">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ArticleId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ArticleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Article" Relationship="Web.Data.FK_ItemRelatied_Item" FromRole="ArticleRelatied" ToRole="Article" />
+  </EntityType>
+  <EntityType Name="BanIP">
+    <Key>
+      <PropertyRef Name="IP" />
+    </Key>
+    <Property Name="IP" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_BanIP_Company" FromRole="BanIP" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="TypeId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Image" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Articles" Relationship="Web.Data.FK_Article_Category" FromRole="Category" ToRole="Article" />
+    <NavigationProperty Name="CategoryType" Relationship="Web.Data.FK_Category_CategoryType" FromRole="Category" ToRole="CategoryType" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_Category_Item" FromRole="Category" ToRole="Item" />
+    <NavigationProperty Name="CategoryLanguages" Relationship="Web.Data.FK_CategoryLanguage_Category" FromRole="Category" ToRole="CategoryLanguage" />
+    <NavigationProperty Name="CategoryMaps" Relationship="Web.Data.FK_CategoryMap_Category" FromRole="Category" ToRole="CategoryMap" />
+    <NavigationProperty Name="SupportOnlines" Relationship="Web.Data.FK_SupportOnline_Category" FromRole="Category" ToRole="SupportOnline" />
+  </EntityType>
+  <EntityType Name="CategoryLanguage">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="Web.Data.FK_CategoryLanguage_Category" FromRole="CategoryLanguage" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="CategoryType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Categories" Relationship="Web.Data.FK_Category_CategoryType" FromRole="CategoryType" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="Orders" Type="Int32" Nullable="false" />
+    <Property Name="IsPublished" Type="Boolean" Nullable="false" />
+    <Property Name="ModifyDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifyByUser" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_Item_Company" FromRole="Item" ToRole="Company" />
+    <NavigationProperty Name="ThirdParty" Relationship="Web.Data.FK_ThirdParty_Item1" FromRole="Item" ToRole="ThirdParty" />
+    <NavigationProperty Name="Article" Relationship="Web.Data.FK_Article_Item" FromRole="Item" ToRole="Article" />
+    <NavigationProperty Name="Category" Relationship="Web.Data.FK_Category_Item" FromRole="Item" ToRole="Category" />
+    <NavigationProperty Name="AttributeCategory" Relationship="Web.Data.FK_AttributeCategory_Item" FromRole="Item" ToRole="AttributeCategory" />
+    <NavigationProperty Name="AttributeValue" Relationship="Web.Data.FK_AttributeValue_Item" FromRole="Item" ToRole="AttributeValue" />
+    <NavigationProperty Name="ItemComment" Relationship="Web.Data.FK_ItemComment_Item" FromRole="Item" ToRole="ItemComment" />
+    <NavigationProperty Name="ItemComments" Relationship="Web.Data.FK_ItemComment_Item1" FromRole="Item" ToRole="ItemComment" />
+    <NavigationProperty Name="ItemImages" Relationship="Web.Data.FK_ItemImage_Item" FromRole="Item" ToRole="ItemImage" />
+    <NavigationProperty Name="ItemLike" Relationship="Web.Data.FK_ItemLike_Item" FromRole="Item" ToRole="ItemLike" />
+    <NavigationProperty Name="ItemView" Relationship="Web.Data.FK_ItemView_Item" FromRole="Item" ToRole="ItemView" />
+    <NavigationProperty Name="ItemVote" Relationship="Web.Data.FK_ItemVote_Item" FromRole="Item" ToRole="ItemVote" />
+    <NavigationProperty Name="ModuleConfig" Relationship="Web.Data.FK_Module_Item" FromRole="Item" ToRole="ModuleConfig" />
+    <NavigationProperty Name="SupportOnline" Relationship="Web.Data.FK_SupportOnline_Item" FromRole="Item" ToRole="SupportOnline" />
+    <NavigationProperty Name="Voucher" Relationship="Web.Data.FK_Voucher_Item" FromRole="Item" ToRole="Voucher" />
+    <NavigationProperty Name="Customers" Relationship="Web.Data.CustomerFavourite" FromRole="Item" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="ItemComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ItemId" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClientId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_ItemComment_Item" FromRole="ItemComment" ToRole="Item" />
+    <NavigationProperty Name="Item1" Relationship="Web.Data.FK_ItemComment_Item1" FromRole="ItemComment" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="ItemImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemId" Type="Int32" Nullable="false" />
+    <Property Name="ImageName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_ItemImage_Item" FromRole="ItemImage" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="ItemLike">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="Int32" Nullable="false" />
+    <Property Name="Likes" Type="Int32" Nullable="false" />
+    <Property Name="UnLikes" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_ItemLike_Item" FromRole="ItemLike" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="ItemView">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="Int32" Nullable="false" />
+    <Property Name="Views" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_ItemView_Item" FromRole="ItemView" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="ItemVote">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="Int32" Nullable="false" />
+    <Property Name="VoteNumber" Type="Int32" Nullable="false" />
+    <Property Name="VoteRate" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_ItemVote_Item" FromRole="ItemVote" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="WebConfigs" Relationship="Web.Data.FK_WebConfig_Language" FromRole="Language" ToRole="WebConfig" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ParentId" Type="Int32" Nullable="false" />
+    <Property Name="Text" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ComponentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ViewName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Params" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Orders" Type="Int32" />
+    <Property Name="Publish" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="MenuShortcut">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="No" Type="Int32" Nullable="false" />
+    <Property Name="IsCategories" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_MenuShortcuts_Company" FromRole="MenuShortcut" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="SEO">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SEOURL" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="RefItem" Type="Int32" />
+    <Property Name="URL" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="MetaKeyWork" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SupportOnline">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+    <Property Name="NickName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Category" Relationship="Web.Data.FK_SupportOnline_Category" FromRole="SupportOnline" ToRole="Category" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_SupportOnline_Item" FromRole="SupportOnline" ToRole="Item" />
+    <NavigationProperty Name="SupportOnlineType" Relationship="Web.Data.FK_SupportOnline_SupportOnlineType" FromRole="SupportOnline" ToRole="SupportOnlineType" />
+  </EntityType>
+  <EntityType Name="SupportOnlineType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateByUser" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyByUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SupportOnlines" Relationship="Web.Data.FK_SupportOnline_SupportOnlineType" FromRole="SupportOnlineType" ToRole="SupportOnline" />
+  </EntityType>
+  <EntityType Name="TB_ThongKe">
+    <Key>
+      <PropertyRef Name="MaTB" />
+    </Key>
+    <Property Name="MaTB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ThoiGian" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SoTruyCap" Type="Int64" Nullable="false" />
+    <Property Name="CompanyId" Type="Int32" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_TB_ThongKe_Company" FromRole="TB_ThongKe" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="FileName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="FileUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Size" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Embed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Article" Relationship="Web.Data.FK_Files_Item" FromRole="File" ToRole="Article" />
+    <NavigationProperty Name="FileDocument" Relationship="Web.Data.FK_FileDocument_File" FromRole="File" ToRole="FileDocument" />
+  </EntityType>
+  <EntityType Name="FileDocument">
+    <Key>
+      <PropertyRef Name="FileId" />
+    </Key>
+    <Property Name="FileId" Type="Int32" Nullable="false" />
+    <Property Name="Author" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Pages" Type="Int32" />
+    <NavigationProperty Name="File" Relationship="Web.Data.FK_FileDocument_File" FromRole="FileDocument" ToRole="File" />
+  </EntityType>
+  <EntityType Name="CategoryFix">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CategoryMaps" Relationship="Web.Data.FK_CategoryMap_CategoryFix" FromRole="CategoryFix" ToRole="CategoryMap" />
+  </EntityType>
+  <EntityType Name="CategoryMap">
+    <Key>
+      <PropertyRef Name="CMId" />
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CMId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="IsAccept" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="Web.Data.FK_CategoryMap_Category" FromRole="CategoryMap" ToRole="Category" />
+    <NavigationProperty Name="CategoryFix" Relationship="Web.Data.FK_CategoryMap_CategoryFix" FromRole="CategoryMap" ToRole="CategoryFix" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="DistrictId" />
+    </Key>
+    <Property Name="DistrictId" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ProvinceId" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Companies" Relationship="Web.Data.FK_Company_District" FromRole="District" ToRole="Company" />
+    <NavigationProperty Name="Province" Relationship="Web.Data.FK_District_Province" FromRole="District" ToRole="Province" />
+    <NavigationProperty Name="Wards" Relationship="Web.Data.FK_Ward_District" FromRole="District" ToRole="Ward" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceId" />
+    </Key>
+    <Property Name="ProvinceId" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Districts" Relationship="Web.Data.FK_District_Province" FromRole="Province" ToRole="District" />
+  </EntityType>
+  <EntityType Name="Ward">
+    <Key>
+      <PropertyRef Name="WardId" />
+    </Key>
+    <Property Name="WardId" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DistrictId" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="District" Relationship="Web.Data.FK_Ward_District" FromRole="Ward" ToRole="District" />
+  </EntityType>
+  <EntityType Name="Attribute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Orders" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_Attribute_Company" FromRole="Attribute" ToRole="Company" />
+    <NavigationProperty Name="ProductAttributes" Relationship="Web.Data.FK_ProductAttribute_Attribute" FromRole="Attribute" ToRole="ProductAttribute" />
+  </EntityType>
+  <EntityType Name="AttributeCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_AttributeCategory_Item" FromRole="AttributeCategory" ToRole="Item" />
+    <NavigationProperty Name="AttributeValues" Relationship="Web.Data.FK_AttributeValue_AttributeCategory" FromRole="AttributeCategory" ToRole="AttributeValue" />
+  </EntityType>
+  <EntityType Name="AttributeValue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_AttributeValue_Item" FromRole="AttributeValue" ToRole="Item" />
+    <NavigationProperty Name="AttributeCategory" Relationship="Web.Data.FK_AttributeValue_AttributeCategory" FromRole="AttributeValue" ToRole="AttributeCategory" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Sale" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="SaleMin" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Article" Relationship="Web.Data.FK_Product_Article" FromRole="Product" ToRole="Article" />
+    <NavigationProperty Name="ProductColors" Relationship="Web.Data.FK_Color_Product" FromRole="Product" ToRole="ProductColor" />
+    <NavigationProperty Name="OrderProducts" Relationship="Web.Data.FK_OrderProduct_Product" FromRole="Product" ToRole="OrderProduct" />
+    <NavigationProperty Name="ProductAddOns" Relationship="Web.Data.FK_ProductAddOn_Product" FromRole="Product" ToRole="ProductAddOn" />
+    <NavigationProperty Name="ProductAddOns1" Relationship="Web.Data.FK_ProductAddOn_Product1" FromRole="Product" ToRole="ProductAddOn" />
+    <NavigationProperty Name="ProductAttributes" Relationship="Web.Data.FK_ProductAttribute_Product" FromRole="Product" ToRole="ProductAttribute" />
+    <NavigationProperty Name="ProductGroupon" Relationship="Web.Data.FK_ProductGroupon_Product" FromRole="Product" ToRole="ProductGroupon" />
+    <NavigationProperty Name="ProductPrices" Relationship="Web.Data.FK_ProductPrice_Product" FromRole="Product" ToRole="ProductPrice" />
+    <NavigationProperty Name="WarehouseIOColections" Relationship="Web.Data.FK_WarehouseIOColection_Product" FromRole="Product" ToRole="WarehouseIOColection" />
+  </EntityType>
+  <EntityType Name="ProductAddOn">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Web.Data.FK_ProductAddOn_Product" FromRole="ProductAddOn" ToRole="Product" />
+    <NavigationProperty Name="Product1" Relationship="Web.Data.FK_ProductAddOn_Product1" FromRole="ProductAddOn" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductAttribute">
+    <Key>
+      <PropertyRef Name="AttributeId" />
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="AttributeId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Attribute" Relationship="Web.Data.FK_ProductAttribute_Attribute" FromRole="ProductAttribute" ToRole="Attribute" />
+    <NavigationProperty Name="Product" Relationship="Web.Data.FK_ProductAttribute_Product" FromRole="ProductAttribute" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductColor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ImageName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Product" Relationship="Web.Data.FK_Color_Product" FromRole="ProductColor" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductGroupon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="Product" Relationship="Web.Data.FK_ProductGroupon_Product" FromRole="ProductGroupon" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductPrice">
+    <Key>
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="Quantity" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="Product" Relationship="Web.Data.FK_ProductPrice_Product" FromRole="ProductPrice" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="ModuleName" />
+    </Key>
+    <Property Name="ModuleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Summary" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ModuleConfigs" Relationship="Web.Data.FK_ModuleConfig_Module" FromRole="Module" ToRole="ModuleConfig" />
+    <NavigationProperty Name="ModuleParams" Relationship="Web.Data.FK_ModuleParam_Module" FromRole="Module" ToRole="ModuleParam" />
+    <NavigationProperty Name="TemplateSkins" Relationship="Web.Data.FK_TemplateSkin_Module" FromRole="Module" ToRole="TemplateSkin" />
+  </EntityType>
+  <EntityType Name="ModuleConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ModuleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TemplateName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ComponentName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SkinName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Position" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="InTemplate" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_Module_Item" FromRole="ModuleConfig" ToRole="Item" />
+    <NavigationProperty Name="Module" Relationship="Web.Data.FK_ModuleConfig_Module" FromRole="ModuleConfig" ToRole="Module" />
+    <NavigationProperty Name="ModuleConfigLanguages" Relationship="Web.Data.FK_Module_Language_Module" FromRole="ModuleConfig" ToRole="ModuleConfigLanguage" />
+    <NavigationProperty Name="Template" Relationship="Web.Data.FK_ModuleConfig_Template" FromRole="ModuleConfig" ToRole="Template" />
+    <NavigationProperty Name="ModuleConfigParams" Relationship="Web.Data.FK_ModuleConfigParam_ModuleConfig" FromRole="ModuleConfig" ToRole="ModuleConfigParam" />
+  </EntityType>
+  <EntityType Name="ModuleConfigLanguage">
+    <Key>
+      <PropertyRef Name="ModuleId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="ModuleId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ModuleConfig" Relationship="Web.Data.FK_Module_Language_Module" FromRole="ModuleConfigLanguage" ToRole="ModuleConfig" />
+  </EntityType>
+  <EntityType Name="ModuleConfigParam">
+    <Key>
+      <PropertyRef Name="ModuleId" />
+      <PropertyRef Name="ParamName" />
+    </Key>
+    <Property Name="ModuleId" Type="Int32" Nullable="false" />
+    <Property Name="ParamName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ModuleConfig" Relationship="Web.Data.FK_ModuleConfigParam_ModuleConfig" FromRole="ModuleConfigParam" ToRole="ModuleConfig" />
+  </EntityType>
+  <EntityType Name="ModuleParam">
+    <Key>
+      <PropertyRef Name="ParamName" />
+      <PropertyRef Name="ModuleName" />
+    </Key>
+    <Property Name="ParamName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModuleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Summary" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultValue" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UIProperty" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Module" Relationship="Web.Data.FK_ModuleParam_Module" FromRole="ModuleParam" ToRole="Module" />
+  </EntityType>
+  <EntityType Name="Template">
+    <Key>
+      <PropertyRef Name="TemplateName" />
+    </Key>
+    <Property Name="TemplateName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsPublic" Type="Boolean" Nullable="false" />
+    <Property Name="IsPublished" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="WebConfigs" Relationship="Web.Data.FK_WebConfig_Template" FromRole="Template" ToRole="WebConfig" />
+    <NavigationProperty Name="ModuleConfigs" Relationship="Web.Data.FK_ModuleConfig_Template" FromRole="Template" ToRole="ModuleConfig" />
+    <NavigationProperty Name="TemplateDemoes" Relationship="Web.Data.FK_TempateDemo_TempateDemo" FromRole="Template" ToRole="TemplateDemo" />
+    <NavigationProperty Name="TemplateComponents" Relationship="Web.Data.FK_TemplateComponent_Template" FromRole="Template" ToRole="TemplateComponent" />
+    <NavigationProperty Name="TemplatePositions" Relationship="Web.Data.FK_TemplatePosition_Template" FromRole="Template" ToRole="TemplatePosition" />
+    <NavigationProperty Name="TemplateSkins" Relationship="Web.Data.FK_TemplateSkin_Template" FromRole="Template" ToRole="TemplateSkin" />
+  </EntityType>
+  <EntityType Name="TemplateComponent">
+    <Key>
+      <PropertyRef Name="TemplateName" />
+      <PropertyRef Name="ComponentName" />
+    </Key>
+    <Property Name="TemplateName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ComponentName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Summary" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Template" Relationship="Web.Data.FK_TemplateComponent_Template" FromRole="TemplateComponent" ToRole="Template" />
+    <NavigationProperty Name="TemplateComponentPositions" Relationship="Web.Data.FK_TemplateComponentPosition_TemplateComponent" FromRole="TemplateComponent" ToRole="TemplateComponentPosition" />
+  </EntityType>
+  <EntityType Name="TemplateComponentPosition">
+    <Key>
+      <PropertyRef Name="TemplateName" />
+      <PropertyRef Name="ComponentName" />
+      <PropertyRef Name="PositionName" />
+    </Key>
+    <Property Name="TemplateName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ComponentName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PositionName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Summary" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TemplateComponent" Relationship="Web.Data.FK_TemplateComponentPosition_TemplateComponent" FromRole="TemplateComponentPosition" ToRole="TemplateComponent" />
+  </EntityType>
+  <EntityType Name="TemplateConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageId" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="DomainName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TemplateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ComponentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViewName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsMobile" Type="Boolean" Nullable="false" />
+    <Property Name="FromDate" Type="Int32" />
+    <Property Name="ToDate" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreateByUser" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyByUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Background" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BackgroundRepeat" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BackgroundPosition" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_TemplateConfig_Company" FromRole="TemplateConfig" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="TemplateDemo">
+    <Key>
+      <PropertyRef Name="Domain" />
+    </Key>
+    <Property Name="TemplateName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Domain" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsPublished" Type="Boolean" Nullable="false" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateByUser" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DemoName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Template" Relationship="Web.Data.FK_TempateDemo_TempateDemo" FromRole="TemplateDemo" ToRole="Template" />
+  </EntityType>
+  <EntityType Name="TemplatePosition">
+    <Key>
+      <PropertyRef Name="PositionName" />
+      <PropertyRef Name="TemplateName" />
+    </Key>
+    <Property Name="PositionName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TemplateName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Summary" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ThirdParties" Relationship="Web.Data.FK_ThirdParty_TemplatePosition" FromRole="TemplatePosition" ToRole="ThirdParty" />
+    <NavigationProperty Name="Template" Relationship="Web.Data.FK_TemplatePosition_Template" FromRole="TemplatePosition" ToRole="Template" />
+  </EntityType>
+  <EntityType Name="TemplateSkin">
+    <Key>
+      <PropertyRef Name="SkinName" />
+      <PropertyRef Name="TemplateName" />
+    </Key>
+    <Property Name="SkinName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TemplateName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Summary" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Module" Relationship="Web.Data.FK_TemplateSkin_Module" FromRole="TemplateSkin" ToRole="Module" />
+    <NavigationProperty Name="Template" Relationship="Web.Data.FK_TemplateSkin_Template" FromRole="TemplateSkin" ToRole="Template" />
+  </EntityType>
+  <EntityType Name="AppInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Roles" Relationship="Web.Data.FK_Role_AppInfo" FromRole="AppInfo" ToRole="Role" />
+    <NavigationProperty Name="Groups" Relationship="Web.Data.FK_UserGroup_AppInfo" FromRole="AppInfo" ToRole="Group" />
+    <NavigationProperty Name="UserInfoes" Relationship="Web.Data.FK_UserInfo_AppInfo" FromRole="AppInfo" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Roles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AppId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AppInfo" Relationship="Web.Data.FK_UserGroup_AppInfo" FromRole="Group" ToRole="AppInfo" />
+    <NavigationProperty Name="UserInfoes" Relationship="Web.Data.UserGroup" FromRole="Group" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="AppId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="AppId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RoleGroup" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AppInfo" Relationship="Web.Data.FK_Role_AppInfo" FromRole="Role" ToRole="AppInfo" />
+  </EntityType>
+  <EntityType Name="UserAccount">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Roles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserInfo" Relationship="Web.Data.FK_UserAccount_UserInfo" FromRole="UserAccount" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppId" Type="Int32" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreateBy" Type="Int32" />
+    <NavigationProperty Name="AppInfo" Relationship="Web.Data.FK_UserInfo_AppInfo" FromRole="UserInfo" ToRole="AppInfo" />
+    <NavigationProperty Name="UserAccount" Relationship="Web.Data.FK_UserAccount_UserInfo" FromRole="UserInfo" ToRole="UserAccount" />
+    <NavigationProperty Name="Group" Relationship="Web.Data.UserGroup" FromRole="UserInfo" ToRole="Group" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="ShippingId" Type="Int32" Nullable="false" />
+    <Property Name="ShippingCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerNote" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerPayDelivery" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Due" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="DeliveryFee" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="LastUpdate" Type="DateTime" Precision="3" />
+    <Property Name="ConfirmDate" Type="DateTime" Precision="3" />
+    <Property Name="SendDate" Type="DateTime" Precision="3" />
+    <Property Name="IsPaid" Type="Boolean" Nullable="false" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="Voucher" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Point" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_Order_Company" FromRole="Order" ToRole="Company" />
+    <NavigationProperty Name="CustomerPoints" Relationship="Web.Data.FK_CustomerPoint_Order" FromRole="Order" ToRole="CustomerPoint" />
+    <NavigationProperty Name="OrderProducts" Relationship="Web.Data.FK_OrderProduct_Order" FromRole="Order" ToRole="OrderProduct" />
+    <NavigationProperty Name="OrderTransactions" Relationship="Web.Data.FK_Transaction_Order" FromRole="Order" ToRole="OrderTransaction" />
+  </EntityType>
+  <EntityType Name="OrderProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Properties" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="PriceUnit" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="Product" Relationship="Web.Data.FK_OrderProduct_Product" FromRole="OrderProduct" ToRole="Product" />
+    <NavigationProperty Name="Order" Relationship="Web.Data.FK_OrderProduct_Order" FromRole="OrderProduct" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="OrderTransaction">
+    <Key>
+      <PropertyRef Name="Trans_Ref" />
+    </Key>
+    <Property Name="Trans_Ref" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Trans_Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RequestTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ResponseTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ResponseCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ResponseMessage" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="OrderType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OrderInfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Order" Relationship="Web.Data.FK_Transaction_Order" FromRole="OrderTransaction" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_Supplier_Company" FromRole="Supplier" ToRole="Company" />
+    <NavigationProperty Name="WarehouseIOs" Relationship="Web.Data.FK_WarehouseIO_Supplier" FromRole="Supplier" ToRole="WarehouseIO" />
+  </EntityType>
+  <EntityType Name="Voucher">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Value" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="IsPercent" Type="Boolean" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="EffectDate" Type="DateTime" Precision="3" />
+    <Property Name="ExpirDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Item" Relationship="Web.Data.FK_Voucher_Item" FromRole="Voucher" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="WarehouseIO">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SupplierId" Type="Int32" Nullable="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="TotalPrice" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Type" Type="Boolean" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateBy" Type="Int32" Nullable="false" />
+    <Property Name="LastUpdate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Company" Relationship="Web.Data.FK_WarehouseIO_Company" FromRole="WarehouseIO" ToRole="Company" />
+    <NavigationProperty Name="Supplier" Relationship="Web.Data.FK_WarehouseIO_Supplier" FromRole="WarehouseIO" ToRole="Supplier" />
+    <NavigationProperty Name="WarehouseIOColections" Relationship="Web.Data.FK_WarehouseIOColection_WarehouseIO" FromRole="WarehouseIO" ToRole="WarehouseIOColection" />
+  </EntityType>
+  <EntityType Name="WarehouseIOColection">
+    <Key>
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="IOId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="IOId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="Product" Relationship="Web.Data.FK_WarehouseIOColection_Product" FromRole="WarehouseIOColection" ToRole="Product" />
+    <NavigationProperty Name="WarehouseIO" Relationship="Web.Data.FK_WarehouseIOColection_WarehouseIO" FromRole="WarehouseIOColection" ToRole="WarehouseIO" />
+  </EntityType>
+  <Association Name="FK_Attribute_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1" />
+    <End Type="Web.Data.Attribute" Role="Attribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attribute">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BanIP_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.BanIP" Role="BanIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BanIP">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_District">
+    <End Type="Web.Data.District" Role="District" Multiplicity="0..1" />
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="DistrictId" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Item">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.Customer" Role="Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyAddress_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.CompanyAddress" Role="CompanyAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompanyAddress">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyDomain_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.CompanyDomain" Role="CompanyDomain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompanyDomain">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyLanguage_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.CompanyLanguage" Role="CompanyLanguage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompanyLanguage">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyTemplate_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.CompanyTemplate" Role="CompanyTemplate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompanyTemplate">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyUser_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.CompanyUser" Role="CompanyUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompanyUser">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuShortcuts_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1" />
+    <End Type="Web.Data.MenuShortcut" Role="MenuShortcut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuShortcut">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supplier_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.Supplier" Role="Supplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_ThongKe_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.TB_ThongKe" Role="TB_ThongKe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TB_ThongKe">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateConfig_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.TemplateConfig" Role="TemplateConfig" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TemplateConfig">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WarehouseIO_Company">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.WarehouseIO" Role="WarehouseIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WarehouseIO">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WebConfig_Company1">
+    <End Type="Web.Data.Company" Role="Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.WebConfig" Role="WebConfig" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WebConfig">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfigAccessTrade_WebConfig">
+    <End Type="Web.Data.WebConfig" Role="WebConfig" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ConfigAccessTrade" Role="ConfigAccessTrade" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="WebConfig">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ConfigAccessTrade">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfigGHN_WebConfig">
+    <End Type="Web.Data.WebConfig" Role="WebConfig" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ConfigGHN" Role="ConfigGHN" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="WebConfig">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ConfigGHN">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfigGHTK_WebConfig">
+    <End Type="Web.Data.WebConfig" Role="WebConfig" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ConfigGHTK" Role="ConfigGHTK" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="WebConfig">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ConfigGHTK">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfigMemberPoint_WebConfig">
+    <End Type="Web.Data.WebConfig" Role="WebConfig" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ConfigMemberPoint" Role="ConfigMemberPoint" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="WebConfig">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ConfigMemberPoint">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfigOnePay_WebConfig">
+    <End Type="Web.Data.WebConfig" Role="WebConfig" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ConfigOnePay" Role="ConfigOnePay" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="WebConfig">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ConfigOnePay">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThirdParty_Item1">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1" />
+    <End Type="Web.Data.ThirdParty" Role="ThirdParty" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ThirdParty">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThirdParty_TemplatePosition">
+    <End Type="Web.Data.TemplatePosition" Role="TemplatePosition" Multiplicity="1" />
+    <End Type="Web.Data.ThirdParty" Role="ThirdParty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TemplatePosition">
+        <PropertyRef Name="PositionName" />
+        <PropertyRef Name="TemplateName" />
+      </Principal>
+      <Dependent Role="ThirdParty">
+        <PropertyRef Name="PositionName" />
+        <PropertyRef Name="TemplateName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WebConfig_Language">
+    <End Type="Web.Data.Language" Role="Language" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.WebConfig" Role="WebConfig" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WebConfig">
+        <PropertyRef Name="DefaultLanguage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WebConfig_Template">
+    <End Type="Web.Data.Template" Role="Template" Multiplicity="0..1" />
+    <End Type="Web.Data.WebConfig" Role="WebConfig" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Template">
+        <PropertyRef Name="TemplateName" />
+      </Principal>
+      <Dependent Role="WebConfig">
+        <PropertyRef Name="Template" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerAddress_Customer">
+    <End Type="Web.Data.Customer" Role="Customer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.CustomerAddress" Role="CustomerAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerAddress">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerPoint_Customer">
+    <End Type="Web.Data.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="Web.Data.CustomerPoint" Role="CustomerPoint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerPoint">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerPoint_Order">
+    <End Type="Web.Data.Order" Role="Order" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.CustomerPoint" Role="CustomerPoint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerPoint">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Article_Category">
+    <End Type="Web.Data.Category" Role="Category" Multiplicity="1" />
+    <End Type="Web.Data.Article" Role="Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Article_Item">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.Article" Role="Article" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ArticleLanguage_Article">
+    <End Type="Web.Data.Article" Role="Article" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ArticleLanguage" Role="ArticleLanguage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArticleLanguage">
+        <PropertyRef Name="ArticleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Files_Item">
+    <End Type="Web.Data.Article" Role="Article" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.File" Role="File" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="File">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemRelatied_Item">
+    <End Type="Web.Data.Article" Role="Article" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ArticleRelatied" Role="ArticleRelatied" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArticleRelatied">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Links_Article">
+    <End Type="Web.Data.Article" Role="Article" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ArticleLink" Role="ArticleLink" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArticleLink">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Article">
+    <End Type="Web.Data.Article" Role="Article" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.Product" Role="Product" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_CategoryType">
+    <End Type="Web.Data.CategoryType" Role="CategoryType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.Category" Role="Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_Item">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.Category" Role="Category" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryLanguage_Category">
+    <End Type="Web.Data.Category" Role="Category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.CategoryLanguage" Role="CategoryLanguage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CategoryLanguage">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryMap_Category">
+    <End Type="Web.Data.Category" Role="Category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.CategoryMap" Role="CategoryMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CategoryMap">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SupportOnline_Category">
+    <End Type="Web.Data.Category" Role="Category" Multiplicity="1" />
+    <End Type="Web.Data.SupportOnline" Role="SupportOnline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupportOnline">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeCategory_Item">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.AttributeCategory" Role="AttributeCategory" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttributeCategory">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeValue_Item">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.AttributeValue" Role="AttributeValue" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttributeValue">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemComment_Item">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ItemComment" Role="ItemComment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemComment">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemComment_Item1">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1" />
+    <End Type="Web.Data.ItemComment" Role="ItemComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemComment">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemImage_Item">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ItemImage" Role="ItemImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemImage">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemLike_Item">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ItemLike" Role="ItemLike" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemLike">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemView_Item">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ItemView" Role="ItemView" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemView">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemVote_Item">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ItemVote" Role="ItemVote" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemVote">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Module_Item">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ModuleConfig" Role="ModuleConfig" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ModuleConfig">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SupportOnline_Item">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.SupportOnline" Role="SupportOnline" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupportOnline">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Voucher_Item">
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.Voucher" Role="Voucher" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Voucher">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SupportOnline_SupportOnlineType">
+    <End Type="Web.Data.SupportOnlineType" Role="SupportOnlineType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.SupportOnline" Role="SupportOnline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SupportOnlineType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupportOnline">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FileDocument_File">
+    <End Type="Web.Data.File" Role="File" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.FileDocument" Role="FileDocument" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="File">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FileDocument">
+        <PropertyRef Name="FileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryMap_CategoryFix">
+    <End Type="Web.Data.CategoryFix" Role="CategoryFix" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.CategoryMap" Role="CategoryMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryFix">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CategoryMap">
+        <PropertyRef Name="CMId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_District_Province">
+    <End Type="Web.Data.Province" Role="Province" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.District" Role="District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="ProvinceId" />
+      </Principal>
+      <Dependent Role="District">
+        <PropertyRef Name="ProvinceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ward_District">
+    <End Type="Web.Data.District" Role="District" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.Ward" Role="Ward" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="DistrictId" />
+      </Principal>
+      <Dependent Role="Ward">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductAttribute_Attribute">
+    <End Type="Web.Data.Attribute" Role="Attribute" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ProductAttribute" Role="ProductAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductAttribute">
+        <PropertyRef Name="AttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeValue_AttributeCategory">
+    <End Type="Web.Data.AttributeCategory" Role="AttributeCategory" Multiplicity="1" />
+    <End Type="Web.Data.AttributeValue" Role="AttributeValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttributeValue">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Color_Product">
+    <End Type="Web.Data.Product" Role="Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ProductColor" Role="ProductColor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductColor">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderProduct_Product">
+    <End Type="Web.Data.Product" Role="Product" Multiplicity="1" />
+    <End Type="Web.Data.OrderProduct" Role="OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductAddOn_Product">
+    <End Type="Web.Data.Product" Role="Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ProductAddOn" Role="ProductAddOn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductAddOn">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductAddOn_Product1">
+    <End Type="Web.Data.Product" Role="Product" Multiplicity="1" />
+    <End Type="Web.Data.ProductAddOn" Role="ProductAddOn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductAddOn">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductAttribute_Product">
+    <End Type="Web.Data.Product" Role="Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ProductAttribute" Role="ProductAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductAttribute">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductGroupon_Product">
+    <End Type="Web.Data.Product" Role="Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ProductGroupon" Role="ProductGroupon" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductGroupon">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductPrice_Product">
+    <End Type="Web.Data.Product" Role="Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ProductPrice" Role="ProductPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductPrice">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WarehouseIOColection_Product">
+    <End Type="Web.Data.Product" Role="Product" Multiplicity="1" />
+    <End Type="Web.Data.WarehouseIOColection" Role="WarehouseIOColection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WarehouseIOColection">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleConfig_Module">
+    <End Type="Web.Data.Module" Role="Module" Multiplicity="1" />
+    <End Type="Web.Data.ModuleConfig" Role="ModuleConfig" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="ModuleName" />
+      </Principal>
+      <Dependent Role="ModuleConfig">
+        <PropertyRef Name="ModuleName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleParam_Module">
+    <End Type="Web.Data.Module" Role="Module" Multiplicity="1" />
+    <End Type="Web.Data.ModuleParam" Role="ModuleParam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="ModuleName" />
+      </Principal>
+      <Dependent Role="ModuleParam">
+        <PropertyRef Name="ModuleName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateSkin_Module">
+    <End Type="Web.Data.Module" Role="Module" Multiplicity="0..1" />
+    <End Type="Web.Data.TemplateSkin" Role="TemplateSkin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="ModuleName" />
+      </Principal>
+      <Dependent Role="TemplateSkin">
+        <PropertyRef Name="ModuleName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Module_Language_Module">
+    <End Type="Web.Data.ModuleConfig" Role="ModuleConfig" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ModuleConfigLanguage" Role="ModuleConfigLanguage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModuleConfig">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ModuleConfigLanguage">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleConfig_Template">
+    <End Type="Web.Data.Template" Role="Template" Multiplicity="1" />
+    <End Type="Web.Data.ModuleConfig" Role="ModuleConfig" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Template">
+        <PropertyRef Name="TemplateName" />
+      </Principal>
+      <Dependent Role="ModuleConfig">
+        <PropertyRef Name="TemplateName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleConfigParam_ModuleConfig">
+    <End Type="Web.Data.ModuleConfig" Role="ModuleConfig" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.ModuleConfigParam" Role="ModuleConfigParam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModuleConfig">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ModuleConfigParam">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TempateDemo_TempateDemo">
+    <End Type="Web.Data.Template" Role="Template" Multiplicity="1" />
+    <End Type="Web.Data.TemplateDemo" Role="TemplateDemo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Template">
+        <PropertyRef Name="TemplateName" />
+      </Principal>
+      <Dependent Role="TemplateDemo">
+        <PropertyRef Name="TemplateName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateComponent_Template">
+    <End Type="Web.Data.Template" Role="Template" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.TemplateComponent" Role="TemplateComponent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Template">
+        <PropertyRef Name="TemplateName" />
+      </Principal>
+      <Dependent Role="TemplateComponent">
+        <PropertyRef Name="TemplateName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplatePosition_Template">
+    <End Type="Web.Data.Template" Role="Template" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.TemplatePosition" Role="TemplatePosition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Template">
+        <PropertyRef Name="TemplateName" />
+      </Principal>
+      <Dependent Role="TemplatePosition">
+        <PropertyRef Name="TemplateName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateSkin_Template">
+    <End Type="Web.Data.Template" Role="Template" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.TemplateSkin" Role="TemplateSkin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Template">
+        <PropertyRef Name="TemplateName" />
+      </Principal>
+      <Dependent Role="TemplateSkin">
+        <PropertyRef Name="TemplateName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateComponentPosition_TemplateComponent">
+    <End Type="Web.Data.TemplateComponent" Role="TemplateComponent" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.TemplateComponentPosition" Role="TemplateComponentPosition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TemplateComponent">
+        <PropertyRef Name="TemplateName" />
+        <PropertyRef Name="ComponentName" />
+      </Principal>
+      <Dependent Role="TemplateComponentPosition">
+        <PropertyRef Name="TemplateName" />
+        <PropertyRef Name="ComponentName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Role_AppInfo">
+    <End Type="Web.Data.AppInfo" Role="AppInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.Role" Role="Role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Role">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGroup_AppInfo">
+    <End Type="Web.Data.AppInfo" Role="AppInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.Group" Role="Group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Group">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_AppInfo">
+    <End Type="Web.Data.AppInfo" Role="AppInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.UserInfo" Role="UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAccount_UserInfo">
+    <End Type="Web.Data.UserInfo" Role="UserInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.UserAccount" Role="UserAccount" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderProduct_Order">
+    <End Type="Web.Data.Order" Role="Order" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.OrderProduct" Role="OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderProduct">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transaction_Order">
+    <End Type="Web.Data.Order" Role="Order" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.OrderTransaction" Role="OrderTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderTransaction">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WarehouseIO_Supplier">
+    <End Type="Web.Data.Supplier" Role="Supplier" Multiplicity="1" />
+    <End Type="Web.Data.WarehouseIO" Role="WarehouseIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WarehouseIO">
+        <PropertyRef Name="SupplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WarehouseIOColection_WarehouseIO">
+    <End Type="Web.Data.WarehouseIO" Role="WarehouseIO" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Web.Data.WarehouseIOColection" Role="WarehouseIOColection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WarehouseIO">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WarehouseIOColection">
+        <PropertyRef Name="IOId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerFavourite">
+    <End Type="Web.Data.Customer" Role="Customer" Multiplicity="*" />
+    <End Type="Web.Data.Item" Role="Item" Multiplicity="*" />
+  </Association>
+  <Association Name="UserGroup">
+    <End Type="Web.Data.Group" Role="Group" Multiplicity="0..1" />
+    <End Type="Web.Data.UserInfo" Role="UserInfo" Multiplicity="*" />
+  </Association>
+</Schema>

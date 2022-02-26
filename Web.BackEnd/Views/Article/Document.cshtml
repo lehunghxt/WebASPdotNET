@@ -1,0 +1,107 @@
+﻿@model Web.Backend.Models.DocumentDetailViewModel
+@{
+    ViewBag.Title = "Chi tiết tài liệu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                @(Model.Document.ID > 0 ? "Sửa" : "Thêm") tài liệu
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-hdd"></i> Lưu</button>
+                    <a href="/Article/Documents?catid=@Model.CatId" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại</a>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Chi tiết Tài liệu</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.DropDownListFor(model => model.Document.CATEGORYID, Model.Categories, new { @class = "form-control", placeholder = "Chọn danh mục" })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-inline form-group">
+                                Hiển thị: <input type="checkbox" id="Document_PUBLISH" name="Document.PUBLISH" @(Model.Document.PUBLISH == true ? "checked='checked'" : "") value="true" />
+                                Thứ tự: @Html.EditorFor(model => model.Document.ORDERS, new { htmlAttributes = new { @class = "form-control", placeholder = "Thứ tự", @type = "number" } })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.Document.Author, new { htmlAttributes = new { @class = "form-control", placeholder = "Tác giả" } })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.Document.Pages, new { htmlAttributes = new { @class = "form-control", placeholder = "Số trang", @type = "number" } })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.DropDownListFor(model => model.Document.LANGUAGEID, Model.Languages, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="choose-attach-file">
+                        Tài liệu: <input type="file" class="btn-chooseAttach" name="documentfile" multiple="" style="display:inline">
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.Document.FileUrl))
+    {
+                <div>
+                    File: <a href="@Model.Document.FileUrl" target="_blank">@(Model.Document.FileName == "" ? @Model.Document.FileUrl : @Model.Document.FileName)</a>
+                </div>
+}
+                    <hr />
+                    <div class="choose-attach-file">
+                        Hình đại diện: <input type="file" class="btn-chooseAttach" name="articleimage" multiple="" style="display:inline">
+                    </div>
+                    <img ID="img" style="max-width:100%; max-height:205px;" src="@Model.Document.PathImage" />
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Document.TITLE, new { htmlAttributes = new { @class = "form-control", placeholder = "Tiêu đề", maxlength = "300" } })
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        @Html.TextAreaFor(model => model.Document.BRIEF, new { @class = "form-control", placeholder = "Mô tả", rows = "3" })
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        @Html.TextAreaFor(model => model.Document.CONTENT, new { @class = "form-control", placeholder = "Nội dung", rows = "20" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="CatId" name="CatId" type="hidden" value="@Model.CatId" />
+    <input id="Document_ID" name="Document.ID" type="hidden" value="@Model.Document.ID" />
+    @Html.HiddenFor(m => m.Document.IMAGE)
+    @Html.HiddenFor(m => m.Document.FileName)
+
+    <script>
+        $('#Document_LANGUAGEID').on('change', function () { // when the room_type changes
+            var language = $('#Document_LANGUAGEID').val();
+            window.location.href = "/Article/Document?id=@Model.Document.ID&catid=@Model.CatId&language=" + language;
+            });
+    </script>
+    <script>
+        CKEDITOR.replace("Document_CONTENT");
+        CKFinder.setupCKEditor(null, '/Content/ckeditor/plugins/ckfinder');
+    </script>
+}
+
+

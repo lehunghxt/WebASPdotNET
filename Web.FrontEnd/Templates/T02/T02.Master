@@ -1,0 +1,253 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Web.Asp.UI.VITTemplate"%>
+<%@ Register Assembly="Web.Asp" Namespace="Web.Asp.Controls" TagPrefix="VIT" %>
+<%@ Import Namespace="Library.Web" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" media="screen" type="text/css" href="/templates/t02/css/bootstrap.css">
+    <link rel="stylesheet" media="screen" type="text/css" href="/templates/t02/css/reset.css">
+    <link rel="stylesheet" media="screen" type="text/css" href="/templates/t02/css/uikit.modify.css">
+    <link rel="stylesheet" media="screen" type="text/css" href="/Includes/Rating/Rating.css">
+    <link rel="stylesheet" media="screen" type="text/css" href="/templates/t02/css/style.css">
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <VIT:Form ID="frmMain" runat="server">
+        <asp:ScriptManager runat="server" ID="SptManager"></asp:ScriptManager>
+        <script src="/Templates/t02/js/jquery-3.2.1.min.js"></script>
+        <header class="header uk-visible-large">
+	<section class="topbar">
+		<div class="uk-container-center">
+			<div class="uk-flex-middle uk-flex-space-between container">
+				<div class="contact">
+					Điện thoại: <a href="tel:0243.987.8622" title="Điện thoại"><%=this.Company.PHONE %></a> - Địa chỉ: <%=this.Company.ADDRESS %>
+				</div>
+			</div>
+		</div>
+	</section><!-- .topbar -->
+	<section class="upper">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 logo" style="text-align:center"><a href="/" title="<%=this.Company.FULLNAME %>"><img src="<%=HREF.DomainStore + this.Company.PathImage %>" alt="<%=this.Company.FULLNAME %>"></a></div>				
+					<div class="col-md-4 header-search">
+						<div class="uk-form form">
+							<input id="search" type="text" name="" class="uk-width-1-1 input-text keyword" placeholder="Tìm kiếm sản phẩm...">
+							<button type="button" name="" class="btn-submit" onclick="searchTitle();">Tìm kiếm</button>
+						</div>
+						<script type="text/javascript">
+						    $("#search").keypress(function (event) {
+                                    var keycode = (event.keyCode ? event.keyCode : event.which);
+                                    if (keycode == '13') {
+                                        searchTitle();
+                                    }
+                                });
+						    function searchTitle() {
+                                var key = $("#search").val();
+                                if (key) {
+                                    window.location = 'http://<%=HREF.Domain%>/Products/vit/key/' + key;
+                                }
+                            }
+                        </script>
+					</div><!-- .header-search -->
+				<div class="col-md-4" style="text-align:center" id="carts">
+										<a class="header-cart" href="<%=HREF.LinkComponent("Carts") %>" title="Giỏ hàng">
+						<img src="/templates/t02/img/icon_cart.png"><span id="hanggio" class="quantity">(<%=GioHang.Select(o => o.Quantity).Sum() %>) sản phẩm</span>
+					</a>
+                    </div>
+				</div>
+		</div>
+	</section><!-- .upper -->
+</header>
+        <div id="widget">
+            <a href="/" title="Về trang chủ" class="home"><i class="glyphicon glyphicon-home"></i></a>
+            <a href="<%=HREF.LinkComponent("Carts") %>" title="Giỏ hàng" class="popup">
+                <img src="/templates/t02/img/boton-carrito-compras.gif"/></a>
+            <a href="<%=HREF.LinkComponent("OrderInfo") %>" title="Tra cứu đơn hàng" class="popup">
+                <img src="/templates/t02/img/find.png"/></a>
+            <a href="<%=HREF.LinkComponent("Payment") %>" title="Thanh toán online" class="popup">
+                <img src="/templates/t02/img/card-in-use.png"/></a>
+            <a href="<%=HREF.LinkComponent("Articles") %>" title="Tin tức" class="popup">
+                <img src="/templates/t02/img/news.png"/></a>
+        </div>
+        <section id="body">
+            <div class="container">
+                <div class="row" id="psTop"> 
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+			        <section class="main-categories">
+				        <header class="panel-head">
+					        <div class="heading"><a href="" title="Danh mục sản phẩm" onclick="return false;">Danh mục sản phẩm</a></div>
+				        </header>
+				        <section class="panel-body">
+					        <div class="mega-menu special">
+                                <VIT:Position runat="server" ID="psTopLeft"></VIT:Position>
+                            </div><!-- .mega-menu -->
+				        </section><!-- .panel-body -->
+			        </section><!-- .main-categories --></div>
+                    <div class="col-md-9 col-sm-12 col-xs-12" style="background:#fff">
+                    <VIT:Position runat="server" ID="psTopRight"></VIT:Position>
+									<!-- .main-nav --></div></div> 
+
+                <VIT:Position runat="server" ID="psCenter" SkinName="Empty"></VIT:Position>
+
+                <div class="uk-container-center">
+			<div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-lg-push-3 col-md-push-3 col-sm-push-3">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3  col-lg-pull-9 col-md-pull-9 col-sm-pull-9">
+                        <VIT:Position runat="server" ID="psCenterLeft"></VIT:Position>
+                    </div>
+                </div>
+                    <div class="row">
+                    <div class="col-md-12">
+                        <VIT:Position runat="server" ID="psBottom"></VIT:Position>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer"><!-- FOOTER -->
+	<div class="container">
+                <div class="row">                
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <h3><%=this.Company.DISPLAYNAME %></h3>
+					<p><%=this.Company.ABOUTUS %></p>
+				</div>
+				<VIT:Position runat="server" ID="psFooter" SkinName="Empty"></VIT:Position>
+                    <div class="col-lg-3 col-md-3 col-sm-6 contact-footer-info">
+								<h3>Thông tin liên hệ</h3>
+								<ul class="menu" style="color:#000">
+                                    <li><i class="glyphicon glyphicon-globe"></i> <%=this.Company.DISPLAYNAME %></li>
+									<li><i class="glyphicon glyphicon-screenshot"></i> <%=this.Company.ADDRESS %></li>
+                                    <li><i class="glyphicon glyphicon-earphone"></i> <a href="tel:<%=this.Company.PHONE %>"><%=this.Company.PHONE %></a></li>
+									<li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:<%=this.Company.EMAIL %>"> <%=this.Company.EMAIL %></a></li>
+								</ul>
+							</div>
+                </div>
+		    </div>
+</footer>
+
+        <input type="hidden" id="ProdicyId" value="" />
+<div id="buyModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" >Thêm vào giỏ hàng</h4>
+      </div>
+      <div class="modal-body">
+          <div style="padding:20px">
+          <div class="row">
+              <div class="col-md-5">
+                  <img id="muaImage" style="width:100%"/>
+              </div>
+              <div class="col-md-7">
+                  <div id="muaTitle"></div>
+                  <hr />
+                  <div id="muaPrice"></div>
+                  <br />
+                  <div id="muaBrief"></div>
+                  <br />
+                  <label>Số lượng muốn mua:</label> <input type="number" value="1" id="txtQuantity" placeholder="Nhập số lượng" class="form-control" style="display:unset"/>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" onclick="AddToCart(false);" data-dismiss="modal">Tiếp tục mua hàng</button>
+        <button type="button" class="btn btn-warning" onclick="AddToCart(true);">Vào giỏ hàng</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+        <script src="/Templates/t02/js/bootstrap.js"></script>
+
+         <script type="text/javascript">
+
+                            // Send the rating information somewhere using Ajax or something like that.
+                            function sendRate(sel) {
+                                var rid = sel.id.split('_');
+                                var id = rid[0].replace("rate", '');
+
+                                $.ajax({
+                                    type: "POST",
+                                    url: "<%=HREF.BaseUrl %>/JsonPost.aspx/UpdateVote",
+                     data: JSON.stringify({ Id: id, Rate: rid[1] }),
+                     contentType: "application/json; charset=utf-8",
+                     dataType: "json",
+                     success: function (data) {
+                         if (data != "") {
+                             current(rid[0], data.d.VoteRate, 5);
+                         }
+                     }
+
+                 })
+                            }
+</script>
+
+<script type="text/javascript">
+             function SelectProduct(id, title, image, salemin, brief, price) {
+                 $("#ProdicyId").val(id);
+                 $("#muaTitle").html(title);
+                 $("#muaImage").attr("src", image);
+                 $("#muaBrief").html(brief);
+                 $("#muaPrice").html("Giá: " + price + " đ");
+                 $("#txtQuantity").attr({ "min": salemin });
+                 $("#txtQuantity").val(salemin);
+             }
+
+             // Send the rating information somewhere using Ajax or something like that.
+             function AddToCart(go) {
+                 var productQuantity = $("#txtQuantity").val();
+                 var proId = $("#ProdicyId").val();
+                 var productMin = $('#txtQuantity').attr('min');
+                 if (parseInt(productQuantity, 10) < parseInt(productMin, 10))
+                 {
+                     alert('Số lượng mua ít nhất là ' + productMin + ', bạn không thể mua ' + productQuantity + ' sản phẩm');
+                 }
+                 else { 
+                     $.ajax({
+                         type: "POST",
+                         url: "<%=HREF.BaseUrl %>JsonPost.aspx/AddProductsToCarts",
+                         data: JSON.stringify({ productId: proId, quantity: productQuantity, properties: '' }),
+                         contentType: "application/json; charset=utf-8",
+                         dataType: "json",
+                         success: function (data) {
+                             if (data != "") {
+                                 if (go == true) {
+                                     location.href = '<%=HREF.BaseUrl %>vit-carts';
+                                 } else {
+                                     $.ajax({
+                                         type: "POST",
+                                         url: "<%=HREF.BaseUrl %>JsonPost.aspx/GetCarts",
+                                         contentType: "application/json; charset=utf-8",
+                                         dataType: "json",
+                                         success: function (data) {
+                                             var total = 0;
+                                             for (var i = 0; i < data.d.length; i++) {
+                                                 total += data.d[i].Quantity;
+                                             }
+                                             $("#hanggio").html("(" + total + ") sản phẩm");
+                                         }
+                                     });
+                                 }
+                             }
+                         }
+                     });
+                 }
+    }
+</script>
+    </VIT:Form>
+</body>
+</html>

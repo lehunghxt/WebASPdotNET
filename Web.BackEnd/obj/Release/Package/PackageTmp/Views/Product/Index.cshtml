@@ -1,0 +1,202 @@
+﻿@model Web.Backend.Models.ProductViewModel
+@{
+    ViewBag.Title = "Quản lý sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Quản lý sản phẩm
+                <div class="box-tools pull-right">
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="@(Request["avtive"] == "" ? "active" : "")"><a href="#product" aria-controls="product" role="tab" data-toggle="tab">Sản phẩm chính</a></li>
+            <li role="presentation" class="@(Request["avtive"] == "" ? "" : "active")"><a href="#groupon" aria-controls="groupon" role="tab" data-toggle="tab">Sản phẩm thời vụ</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active panel panel-default panel-body" id="product">
+                <table class="table table-bordered table-hover" id="dataTables-example">
+                    <thead>
+                        <tr role="row">
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Danh mục</th>
+                            <th>Hình</th>
+                            <th>Giá KM/Giá gốc</th>
+                            <th>Tồn kho</th>
+                            <th>Thứ tự</th>
+                            <th>Hiển thị</th>
+                            <th>Ngôn ngữ</th>
+                            <th><a href="/Product/Detail?catid=@Model.CatId" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Thêm </a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.Products)
+            {
+                <tr role="row">
+                    <td>@product.ID</td>
+                    <td>@product.Title</td>
+                    <td>@product.CategoryName</td>
+                    <td><img src="@product.PathImage" style="width:50px;height:50px" /></td>
+                    <td>@product.Sale / @product.Price</td>
+                    <td>@product.Quantity</td>
+                    <td><span onclick="Orsers('@product.ID','@product.Orders')" data-toggle="modal" data-target="#ProductOrders" role="button">@product.Orders</span></td>
+                    <td><span onclick="Publish('@product.ID')" style="cursor:pointer"><i class="glyphicon glyphicon-@(product.Publish ? "ok" : "remove")"></i> </span></td>
+                    <td>@product.Languages</td>
+                    <td>
+                        <div>
+                            <a class="col-lg-6 btn btn-warning" href="/Product/Detail?id=@product.ID">Sửa</a>
+                            <button class="col-lg-6 btn btn-danger" type="button" onclick="RemoveProduct('@product.ID','@product.Image');">Xóa</button>
+                            <a class="col-lg-12 btn btn-info" href="/Product/Groupon?id=@product.ID&catid=@Model.CatId">Bán thời vụ</a>
+                        </div>                        
+                    </td>
+                </tr>
+}
+                    </tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane panel panel-default panel-body" id="groupon">
+                <table class="table table-bordered table-hover" id="dataTables-groupon">
+                    <thead>
+                        <tr role="row">
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Danh mục</th>
+                            <th>Hình</th>
+                            <th>Giá KM/Giá gốc</th>
+                            <th>Bán</th>
+                            <th>Ngày</th>
+                            <th>Ngôn ngữ</th>
+                            <th><a href="/Product/Groupon?catid=@Model.CatId" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Thêm </a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.Groupons)
+            {
+                        <tr role="row">
+                            <td>@product.ID</td>
+                            <td>@product.Title</td>
+                            <td>@product.CategoryName</td>
+                            <td><img src="@product.PathImage" style="width:50px;height:50px" /></td>
+                            <td>@product.Sale / @product.Price</td>
+                            <td>@product.PayNumber / @product.Quantity</td>
+                            <td>@string.Format("{0:dd/MM/yyyy}", product.StartDate) / @string.Format("{0:dd/MM/yyyy}", product.EndDate)</td>
+                            <td>@product.Languages</td>
+                            <td>
+                                <a class="btn btn-warning" href="/Product/Groupon?id=@product.ID&catid=@Model.CatId">Sửa</a>
+                                <button class="btn btn-danger" type="button" onclick="RemoveGroupon('@product.ID');">Xóa</button>
+                            </td>
+                        </tr>
+}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="ProductOrders" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    @Html.EditorFor(model => model.ProductOrders, new { htmlAttributes = new { @class = "form-control", placeholder = "Thứ tự hiển thị", @type = "number" } })
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" onclick="Post()">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.HiddenFor(e => Model.CatId)
+    @Html.HiddenFor(e => Model.ProductId)
+    @Html.HiddenFor(e => Model.Image)
+    @Html.HiddenFor(e => Model.Action)
+    <script>
+        function Post() {
+            $("form").submit();
+        }
+        function RemoveProduct(id, img) {
+            var r = confirm("Bạn chắn chắn muốn xóa sản phẩm?");
+            if (r == true) {
+            $('#Action').val('REMOVEPRO');
+            $('#ProductId').val(id);
+            $('#Image').val(img);
+            $("form").submit();
+                }
+        }
+        function RemoveGroupon(id) {
+            var r = confirm("Bạn chắn chắn muốn xóa sản phẩm?");
+            if (r == true) {
+                $('#Action').val('REMOVEPON');
+                $('#ProductId').val(id);
+                $("form").submit();
+            }
+        }
+        function Publish(id) {
+            $('#Action').val('PUBLISH');
+            $('#ProductId').val(id);
+            $("form").submit();
+        }
+        function Orsers(id, orders) {
+            $('#Action').val('ORDER');
+            $('#ProductId').val(id);
+            $('#ProductOrders').val(orders);
+        }
+
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable({
+                "paging": true, "sort": false, "oLanguage": {
+                    "sProcessing": "Đang xử lý...",
+                    "sLengthMenu": "Xem _MENU_ mục",
+                    "sZeroRecords": "Không tìm thấy dòng nào phù hợp",
+                    "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
+                    "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
+                    "sInfoFiltered": "(được lọc từ _MAX_ mục)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Tìm:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "Đầu",
+                        "sPrevious": "Trước",
+                        "sNext": "Tiếp",
+                        "sLast": "Cuối"
+                    }
+                }  });
+            $('#dataTables-groupon').dataTable({
+                "paging": true, "sort": false, "oLanguage": {
+                    "sProcessing": "Đang xử lý...",
+                    "sLengthMenu": "Xem _MENU_ mục",
+                    "sZeroRecords": "Không tìm thấy dòng nào phù hợp",
+                    "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
+                    "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
+                    "sInfoFiltered": "(được lọc từ _MAX_ mục)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Tìm:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "Đầu",
+                        "sPrevious": "Trước",
+                        "sNext": "Tiếp",
+                        "sLast": "Cuối"
+                    }
+                }  });
+        });
+    </script>
+}
+
+

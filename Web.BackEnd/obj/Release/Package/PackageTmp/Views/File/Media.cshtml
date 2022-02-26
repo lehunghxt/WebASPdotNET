@@ -1,0 +1,215 @@
+﻿@model Web.Backend.Models.MediaViewModel
+@{
+    ViewBag.Title = "Media";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Quản lý Media
+                <div class="box-tools pull-right">
+                    <a href="/File?catid=@Model.CatId" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại</a>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Danh sách File Media</div>
+        <div class="panel-body">
+            <div class="form-inline form-group">
+                Album: @Html.DropDownListFor(e => Model.Media.CategoryId, Model.Categories, new { @class = "form-control" })
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-2" style="border:dotted 1px #ccc">
+                    <div style="height:100px;text-align: center;   white-space: nowrap;">
+                        <span style="display:inline-block;height:100%;vertical-align: middle;"></span>
+                        <a href="#" data-toggle="modal" data-target="#addMedia" role="button" onclick="Add();"><img src="~/Content/add-button-hi.png" style="max-height:100%;max-width:100%" /></a>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center" style="height:24px;margin:4px 0px">Thêm File</div>
+                    </div>
+                </div>
+                @foreach (var file in Model.Medias)
+                {
+                    <div class="col-md-2">
+                        <div style="height:100px;text-align: center; white-space: nowrap;">
+                            <div style="display:none" id="r_brief_@file.ID">@file.BRIEF</div>
+                            <div style="display:none" id="r_embed_@file.ID">@file.Embed</div>
+                            @if (!string.IsNullOrEmpty(file.Embed))
+                            {
+                                @Html.Raw(file.Embed)
+                            } else if (!string.IsNullOrEmpty(file.FileUrl))
+                            {
+                                <a href="@file.FileUrl" target="_blank">@file.FileUrl</a>
+                            }
+                            else
+                            {
+                                if (file.Type == "image")
+                                {
+                                    <img src="@file.FilePath    " style="max-height:100%;max-width:100%" />
+                                }
+                                else if (file.Type == "video")
+                                {
+                                    <video src="@file.FilePath" poster="@file.PosterPath" style="max-height:100%;max-width:100%" controls></video>
+                                }
+                                else if (file.Type == "audio")
+                                {
+                                    <audio src="@file.FilePath" poster="@file.PosterPath" style="max-height:100%;max-width:100%" controls/>
+                                }
+                            }
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 text-center"><button class="btn btn-info" type="button" style="width:100%" data-toggle="modal" data-target="#addMedia" role="button" onclick="Select('@file.ID','@file.Poster','@file.PosterPath','@file.FileName','@file.FilePath','@file.LANGUAGEID','@file.TITLE','@file.FileUrl','@file.Type');">Sửa</button></div>
+                            <div class="col-md-6 text-center"><button class="btn btn-danger" type="button" style="width:100%" onclick="Remove('@file.ID','@file.FileName','@file.Poster')">Xóa</button></div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div id="addMedia" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 id="title" class="modal-title">Chi tiết Media</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-inline form-group">
+                                <div class="choose-attach-file">
+                                    Poster: <input type="file" class="btn-chooseAttach" name="poster" multiple="">
+                                </div>
+                            </div>
+                            <div class="form-inline form-group">
+                                <div class="choose-attach-file">
+                                    Files: <input type="file" class="btn-chooseAttach" name="file" multiple="">
+                                </div>
+                            </div>
+                            <div id="filecontent"></div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        @Html.DropDownListFor(e => Model.Media.LANGUAGEID, Model.Languages, new { @class = "form-control" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.Media.TITLE, new { htmlAttributes = new { @class = "form-control", placeholder = "Tiêu đề" } })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.TextAreaFor(model => model.Media.BRIEF, new { @class = "form-control", placeholder = "Mô tả", rows = "3" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.Media.FileUrl, new { htmlAttributes = new { @class = "form-control", placeholder = "URL" } })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.TextAreaFor(model => model.Media.Embed, new { @class = "form-control", placeholder = "Embed", rows = "3" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="btnAdd">
+                        <input id="btnSubmit" type="button" class="btn btn-primary btn-block" value="Thêm" onclick="Post()" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input id="Media_ID" name="Media.ID" type="hidden" value="@Model.Media.ID" />
+    @Html.HiddenFor(e => Model.Media.CategoryId)
+    @Html.HiddenFor(e => Model.Media.FileName)
+    @Html.HiddenFor(e => Model.Media.Poster)
+    @Html.HiddenFor(e => Model.Media.FileUrl)
+    @Html.HiddenFor(e => Model.Action)
+    <script>
+        function Post() {
+            $("form").submit();
+        }
+        function Remove(id, file, poster) {
+            var r = confirm("Bạn chắn chắn muốn xóa file?");
+            if (r == true) {
+                $('#Action').val('REMOVE');
+                $('#Media_ID').val(id);
+                $('#Media_FileName').val(file);
+                $('#Media_Poster').val(poster);
+                $("form").submit();
+            }
+        }
+        function Add() {
+            $('#Action').val('ADD');
+            $('#title').text("Thêm Media");
+            $('#btnSubmit').val("Thêm");
+
+            $('#Media_TITLE').val('');
+            $('#Media_BRIEF').val('');
+            $('#Media_Embed').val('');
+            $('#Media_FileUrl').val('');
+            $("#filecontent").html("");
+        }
+        function Select(id, img, imgPath, file, filePath, lang, title, url, type) {
+            $('#Action').val('UPDATE');
+            $('#title').text("Sửa Media [" + id + "]");
+            $('#btnSubmit').val("Lưu");
+
+            $('#Media_LANGUAGEID').val(lang);
+            $('#Media_TITLE').val(title);
+
+            var brief = $('#r_brief_' + id).text();
+            $('#Media_BRIEF').val(brief)
+            $('#Media_FileUrl').val(url);
+
+            var embed = $('#r_embed_' + id).text();
+            $('#Media_Embed').val(embed);
+            $('#Media_FileName').val(file);
+            $('#Media_Poster').val(img);
+
+            if (type == "image") {
+                $("#filecontent").html("<img src='" + filePath + "' style='max-width:100%; max-hight:100%'/>");
+            } else if (type == "video") {
+                $("#filecontent").html("<video src='" + filePath + "' poster='" + imgPath + "' style='max-width:100%; max-hight:100%' controls></video");
+            } else if (type == "audio") {
+                $("#filecontent").html("<audio src='" + filePath + "' poster='" + imgPath + "' style='max-width:100%; max-hight:100%' controls></audio");
+            } else {
+                $("#filecontent").html(embed);
+            }
+            $('#Media_ID').val(id)
+        }
+    </script>
+
+    <script>
+        $('#Media_LANGUAGEID').on('change', function () { // when the room_type changes
+
+            var language = $('#Media_LANGUAGEID').val();
+            var id = $('#Media_ID').val();
+        $.ajax({
+            url: "/odata/Article?Language=" + language + "&$filter=ID eq " + id,
+            method: "GET",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Token @ViewBag.Token");
+            },
+            success: function (data) {
+                $('#Media_Title').val(data.value[0].NAME);
+                $('#Media_BRIEF').val(data.value[0].DESCRIPTION);
+            }
+        });
+    });
+    </script>
+}
+
+

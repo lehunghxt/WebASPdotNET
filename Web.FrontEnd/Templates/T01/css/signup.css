@@ -1,0 +1,65 @@
+.customer-btn,
+.return-customer-btn {
+    background: #189eff none repeat scroll 0 0;
+    border: medium none;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 20px;
+    padding: 10px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all 300ms ease-in 0s;
+    transition: all 300ms ease-in 0s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.return-customer-btn {
+    background: #222222;
+}
+
+.return-customer-btn:hover {
+    background: #E62E04;
+    color: #fff;
+}
+
+.register-title {
+    margin-bottom: 30px;
+}
+
+.register-title h3 {
+    font-size: 25px;
+    line-height: 25px;
+}
+
+.form-register label {
+    font-size: 14px;
+    text-align: right;
+}
+
+.form-register .form-group {
+    margin-bottom: 20px;
+}
+
+.form-register .form-group input {
+    font-size: 14px;
+}
+
+.form-register legend {
+    border-bottom: 1px solid #ededed;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 7px 0;
+}
+
+.agree {
+    color: #222222;
+    font-size: 13px;
+}
+
+.terms input[type=checkbox] {
+    vertical-align: middle;
+}

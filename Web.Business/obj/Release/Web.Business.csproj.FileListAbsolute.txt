@@ -1,0 +1,123 @@
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\Web.Business.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\Web.Business.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\Web.Business.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\EntityFramework.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\EntityFramework.SqlServer.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\log4net.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\Web.Data.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\Web.Model.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\Web.Data.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\Web.Data.dll.config
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\Web.Model.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\EntityFramework.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\EntityFramework.SqlServer.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\log4net.xml
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\obj\Release\Web.Business.csprojResolveAssemblyReference.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\obj\Release\Web.Business.csproj.CoreCompileInputs.cache
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\obj\Release\Web.Business.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\obj\Release\Web.Business.pdb
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\Library.dll
+D:\Work\bvtd\2018\Server\Website\v5 20180512\Web.Business\bin\Release\Library.Web.dll
+D:\Work\v5 20180512\Web.Business\bin\Release\Web.Business.dll.config
+D:\Work\v5 20180512\Web.Business\bin\Release\Web.Business.dll
+D:\Work\v5 20180512\Web.Business\bin\Release\Web.Business.pdb
+D:\Work\v5 20180512\Web.Business\bin\Release\EntityFramework.dll
+D:\Work\v5 20180512\Web.Business\bin\Release\EntityFramework.SqlServer.dll
+D:\Work\v5 20180512\Web.Business\bin\Release\Library.dll
+D:\Work\v5 20180512\Web.Business\bin\Release\Library.Web.dll
+D:\Work\v5 20180512\Web.Business\bin\Release\log4net.dll
+D:\Work\v5 20180512\Web.Business\bin\Release\Web.Data.dll
+D:\Work\v5 20180512\Web.Business\bin\Release\Web.Model.dll
+D:\Work\v5 20180512\Web.Business\bin\Release\Newtonsoft.Json.dll
+D:\Work\v5 20180512\Web.Business\bin\Release\Library.pdb
+D:\Work\v5 20180512\Web.Business\bin\Release\Web.Data.pdb
+D:\Work\v5 20180512\Web.Business\bin\Release\Web.Data.dll.config
+D:\Work\v5 20180512\Web.Business\bin\Release\Web.Model.pdb
+D:\Work\v5 20180512\Web.Business\bin\Release\EntityFramework.xml
+D:\Work\v5 20180512\Web.Business\bin\Release\EntityFramework.SqlServer.xml
+D:\Work\v5 20180512\Web.Business\bin\Release\log4net.xml
+D:\Work\v5 20180512\Web.Business\bin\Release\Newtonsoft.Json.xml
+D:\Work\v5 20180512\Web.Business\obj\Release\Web.Business.csprojResolveAssemblyReference.cache
+D:\Work\v5 20180512\Web.Business\obj\Release\Web.Business.csproj.CoreCompileInputs.cache
+D:\Work\v5 20180512\Web.Business\obj\Release\Web.Business.dll
+D:\Work\v5 20180512\Web.Business\obj\Release\Web.Business.pdb
+C:\EISv2\Web.Business\bin\Release\Web.Business.dll.config
+C:\EISv2\Web.Business\bin\Release\Web.Business.dll
+C:\EISv2\Web.Business\bin\Release\Web.Business.pdb
+C:\EISv2\Web.Business\bin\Release\EntityFramework.dll
+C:\EISv2\Web.Business\bin\Release\EntityFramework.SqlServer.dll
+C:\EISv2\Web.Business\bin\Release\Library.dll
+C:\EISv2\Web.Business\bin\Release\log4net.dll
+C:\EISv2\Web.Business\bin\Release\Web.Data.dll
+C:\EISv2\Web.Business\bin\Release\Web.Model.dll
+C:\EISv2\Web.Business\bin\Release\Newtonsoft.Json.dll
+C:\EISv2\Web.Business\bin\Release\Library.pdb
+C:\EISv2\Web.Business\bin\Release\Web.Data.pdb
+C:\EISv2\Web.Business\bin\Release\Web.Model.pdb
+C:\EISv2\Web.Business\bin\Release\EntityFramework.xml
+C:\EISv2\Web.Business\bin\Release\EntityFramework.SqlServer.xml
+C:\EISv2\Web.Business\bin\Release\log4net.xml
+C:\EISv2\Web.Business\bin\Release\Newtonsoft.Json.xml
+C:\EISv2\Web.Business\obj\Release\Web.Business.csprojResolveAssemblyReference.cache
+C:\EISv2\Web.Business\obj\Release\Web.Business.dll
+C:\EISv2\Web.Business\obj\Release\Web.Business.pdb
+C:\Webv6\Web.Business\bin\Release\Web.Business.dll.config
+C:\Webv6\Web.Business\bin\Release\Web.Business.dll
+C:\Webv6\Web.Business\bin\Release\Web.Business.pdb
+C:\Webv6\Web.Business\bin\Release\EntityFramework.dll
+C:\Webv6\Web.Business\bin\Release\EntityFramework.SqlServer.dll
+C:\Webv6\Web.Business\bin\Release\Library.dll
+C:\Webv6\Web.Business\bin\Release\log4net.dll
+C:\Webv6\Web.Business\bin\Release\Web.Data.dll
+C:\Webv6\Web.Business\bin\Release\Web.Model.dll
+C:\Webv6\Web.Business\bin\Release\Newtonsoft.Json.dll
+C:\Webv6\Web.Business\bin\Release\Library.pdb
+C:\Webv6\Web.Business\bin\Release\Web.Data.pdb
+C:\Webv6\Web.Business\bin\Release\Web.Model.pdb
+C:\Webv6\Web.Business\bin\Release\EntityFramework.xml
+C:\Webv6\Web.Business\bin\Release\EntityFramework.SqlServer.xml
+C:\Webv6\Web.Business\bin\Release\log4net.xml
+C:\Webv6\Web.Business\bin\Release\Newtonsoft.Json.xml
+C:\Webv6\Web.Business\obj\Release\Web.Business.csprojResolveAssemblyReference.cache
+C:\Webv6\Web.Business\obj\Release\Web.Business.dll
+C:\Webv6\Web.Business\obj\Release\Web.Business.pdb
+C:\work\Webv6\Web.Business\bin\Release\Web.Business.dll.config
+C:\work\Webv6\Web.Business\bin\Release\Web.Business.dll
+C:\work\Webv6\Web.Business\bin\Release\Web.Business.pdb
+C:\work\Webv6\Web.Business\bin\Release\EntityFramework.dll
+C:\work\Webv6\Web.Business\bin\Release\EntityFramework.SqlServer.dll
+C:\work\Webv6\Web.Business\bin\Release\Library.dll
+C:\work\Webv6\Web.Business\bin\Release\log4net.dll
+C:\work\Webv6\Web.Business\bin\Release\Web.Data.dll
+C:\work\Webv6\Web.Business\bin\Release\Web.Model.dll
+C:\work\Webv6\Web.Business\bin\Release\Newtonsoft.Json.dll
+C:\work\Webv6\Web.Business\bin\Release\Library.pdb
+C:\work\Webv6\Web.Business\bin\Release\Web.Data.pdb
+C:\work\Webv6\Web.Business\bin\Release\Web.Model.pdb
+C:\work\Webv6\Web.Business\bin\Release\EntityFramework.xml
+C:\work\Webv6\Web.Business\bin\Release\EntityFramework.SqlServer.xml
+C:\work\Webv6\Web.Business\bin\Release\log4net.xml
+C:\work\Webv6\Web.Business\bin\Release\Newtonsoft.Json.xml
+C:\work\Webv6\Web.Business\obj\Release\Web.Business.csprojResolveAssemblyReference.cache
+C:\work\Webv6\Web.Business\obj\Release\Web.Business.dll
+C:\work\Webv6\Web.Business\obj\Release\Web.Business.pdb
+D:\Webv6\Web.Business\bin\Release\Web.Business.dll.config
+D:\Webv6\Web.Business\bin\Release\Web.Business.dll
+D:\Webv6\Web.Business\bin\Release\Web.Business.pdb
+D:\Webv6\Web.Business\bin\Release\EntityFramework.dll
+D:\Webv6\Web.Business\bin\Release\EntityFramework.SqlServer.dll
+D:\Webv6\Web.Business\bin\Release\Library.dll
+D:\Webv6\Web.Business\bin\Release\log4net.dll
+D:\Webv6\Web.Business\bin\Release\Web.Data.dll
+D:\Webv6\Web.Business\bin\Release\Web.Model.dll
+D:\Webv6\Web.Business\bin\Release\Newtonsoft.Json.dll
+D:\Webv6\Web.Business\bin\Release\Library.pdb
+D:\Webv6\Web.Business\bin\Release\Web.Data.pdb
+D:\Webv6\Web.Business\bin\Release\Web.Model.pdb
+D:\Webv6\Web.Business\bin\Release\EntityFramework.xml
+D:\Webv6\Web.Business\bin\Release\EntityFramework.SqlServer.xml
+D:\Webv6\Web.Business\bin\Release\log4net.xml
+D:\Webv6\Web.Business\bin\Release\Newtonsoft.Json.xml
+D:\Webv6\Web.Business\obj\Release\Web.Business.csprojResolveAssemblyReference.cache
+D:\Webv6\Web.Business\obj\Release\Web.Business.dll
+D:\Webv6\Web.Business\obj\Release\Web.Business.pdb

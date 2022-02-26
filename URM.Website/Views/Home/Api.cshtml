@@ -1,0 +1,754 @@
+﻿@model URM.Website.Models.ProfileModel
+
+@{
+    ViewBag.Title = "Hướng dẫn kết nối API";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var endPoint = "https://urm.vdoni.com";
+}
+
+<h1 id="base-endpoint" class="">Base Endpoint</h1>
+<p><code class="prettyprint">@endPoint</code></p>
+
+<hr class="divider" />
+
+<h1 id="authentication">Authentication</h1>
+<p class="">Ngoại trừ API Login. Tất cả các request đến API đều yêu cầu token trong header (bao gồm tất cả các methods: GET, POST, PUT...)</p>
+<p><code class="prettyprint">Authorization: Token &lt;access_key&gt;</code></p>
+<p><code class="prettyprint">Content-Type: application/json</code></p>
+<aside class="notice">
+    Lưu ý: cần truyền chính xác value cho key “Authorization” là : Token 'access_key của bạn'. (Token + `dấu cách` + `access_token`) <br />
+    Access key = [User.Token]|[User.UserName]|[User.AppId] (Thông tin về User có được sau khi login thành công)
+</aside>
+
+<hr class="divider" />
+
+<h1 id="authentication">Login</h1>
+<h3 id="http-request">HTTP Request</h3>
+<p><code class="prettyprint">POST @string.Format("{0}/api/Authenticate/Post", endPoint)</code></p>
+<p><code class="prettyprint">DataType: json</code></p>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>UserName</td>
+                    <td>(string)</td>
+                    <td>Tên đăng nhập</td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>(string)</td>
+                    <td>Mật khẩu</td>
+                </tr>
+                <tr>
+                    <td>CreatePersistentCookie</td>
+                    <td>(bool: True/False)</td>
+                    <td>Giữ chế độ đăng nhập</td>
+                </tr>
+                <tr>
+                    <td>ApplicationId</td>
+                    <td>(int)</td>
+                    <td>Mã ứng dụng</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+<h3 id="m-t-k-t-qu">Mô tả kết quả</h3>
+<table>
+    <tbody>
+        <tr>
+            <td>UserName</td>
+            <td>(string)</td>
+            <td>Tên đăng nhập</td>
+        </tr>
+        <tr>
+            <td>FullName</td>
+            <td>(string)</td>
+            <td>Họ tên người dùng</td>
+        </tr>
+        <tr>
+            <td>Roles</td>
+            <td>(string)</td>
+            <td>Quyền hạn sử dụng</td>
+        </tr>
+        <tr>
+            <td>UserId</td>
+            <td>(int)</td>
+            <td>Mã người dùng</td>
+        </tr>
+        <tr>
+            <td>AppId</td>
+            <td>(int)</td>
+            <td>Mã ứng dụng</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr class="divider" />
+
+<h1 id="authentication">Verify Token</h1>
+<h3 id="http-request">HTTP Request</h3>
+<p><code class="prettyprint">Get @string.Format("{0}/api/VerifyToken", endPoint)</code></p>
+<p><code class="prettyprint">DataType: json</code></p>
+<table>
+    <thead>
+        <tr>
+            <th>Biến&nbsp;params</th>
+            <th>Required</th>
+            <th>Mô tả</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>token</td>
+            <td>Bắt&nbsp;buộc</td>
+            <td>Token cần xác thực</td>
+        </tr>
+        <tr>
+            <td>appId</td>
+            <td>Bắt&nbsp;buộc</td>
+            <td>Mã ứng dụng</td>
+        </tr>
+    </tbody>
+</table>
+<aside class="notice">
+    Các biến params được truyền vào HTTP Request theo các cặp Key-Value, mở đầu chuỗi params bằng dấu “?” và giữa các biến phân tách nhau bằng dấu “&amp;”.
+</aside>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>(int)</td>
+                    <td>Mã nhân viên</td>
+                </tr>
+                <tr>
+                    <td>GroupId</td>
+                    <td>(int)</td>
+                    <td>Mã nhóm quyền</td>
+                </tr>
+                <tr>
+                    <td>GroupName</td>
+                    <td>(string)</td>
+                    <td>Tên nhóm quyền</td>
+                </tr>
+                <tr>
+                    <td>UserName</td>
+                    <td>(string)</td>
+                    <td>Tên đăng nhập</td>
+                </tr>
+                <tr>
+                    <td>FullName</td>
+                    <td>(string)</td>
+                    <td>Tên người dùng</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>(string)</td>
+                    <td>Địa chỉ</td>
+                </tr>
+                <tr>
+                    <td>Birthday</td>
+                    <td>(datetime)</td>
+                    <td>Ngày sinh</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>(string)</td>
+                    <td>Email</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>(string)</td>
+                    <td>Số điện thoại</td>
+                </tr>
+                <tr>
+                    <td>Rolls</td>
+                    <td>(string)</td>
+                    <td>Danh sách quyền hạn</td>
+                </tr>
+                <tr>
+                    <td>AppId</td>
+                    <td>(string)</td>
+                    <td>Mã ứng dụng</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+
+<hr class="divider" />
+<h1 id="authentication">Thông tin Quyền hạn</h1>
+<h3 id="http-request">Danh sách quyền hạn</h3>
+<p><code class="prettyprint">GET @string.Format("{0}/odata/Role", endPoint)</code></p>
+<p><code class="prettyprint">DataType: json</code></p>
+<table>
+    <thead>
+        <tr>
+            <th>Biến&nbsp;params</th>
+            <th>Required</th>
+            <th>Mô tả</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>UserName</td>
+            <td>Không Bắt&nbsp;buộc</td>
+            <td>UserName của User cần get thông tin cá nhân</td>
+        </tr>
+        <tr>
+            <td>UserId</td>
+            <td>Không Bắt&nbsp;buộc</td>
+            <td>Id của User cần get thông tin cá nhân</td>
+        </tr>
+    </tbody>
+</table>
+<aside class="notice">
+    Các biến params được truyền vào HTTP Request theo các cặp Key-Value, mở đầu chuỗi params bằng dấu “?” và giữa các biến phân tách nhau bằng dấu “&amp;”.
+</aside>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>(string)</td>
+                    <td>Mã Quyền</td>
+                </tr>
+                <tr>
+                    <td>RoleName</td>
+                    <td>(string)</td>
+                    <td>Tên quyền</td>
+                </tr>
+                <tr>
+                    <td>RoleGroup</td>
+                    <td>(string)</td>
+                    <td>Nhóm quyền</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+
+<hr class="divider" />
+
+<h1 id="authentication">Thông tin User (Thông tin cá nhân và thông tin tài khoản)</h1>
+<aside class="notice">
+    Thông tin cá nhân gồm: Họ tên, ngày sinh, địa chỉ, số điện thoại, email <br />
+    Thông tin tài khoản gồm: tên đăng nhập, mật khẩu, nhóm tài khoản
+</aside>
+<h3 id="http-request">Danh sách User</h3>
+<p><code class="prettyprint">GET @string.Format("{0}/odata/User", endPoint)</code></p>
+<p><code class="prettyprint">DataType: json</code></p>
+<table>
+    <thead>
+        <tr>
+            <th>Biến&nbsp;params</th>
+            <th>Required</th>
+            <th>Mô tả</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>AppId</td>
+            <td>Không bắt&nbsp;buộc</td>
+            <td>Mã ứng dụng cần get thông tin, không truyền thì lấy theo mã ứng dụng của User đăng nhập</td>
+        </tr>
+        <tr>
+            <td>UserIds</td>
+            <td>Không bắt&nbsp;buộc</td>
+            <td>Danh sách Mã tài khoản cần get thông tin, cách nhau dấu ','. Không có thì lấy hết</td>
+        </tr>
+        <tr>
+            <td>ParentId</td>
+            <td>Không bắt&nbsp;buộc</td>
+            <td>Lấy danh sách Tài khoản con của Id này</td>
+        </tr>
+    </tbody>
+</table>
+<aside class="notice">
+    Các biến params được truyền vào HTTP Request theo các cặp Key-Value, mở đầu chuỗi params bằng dấu “?” và giữa các biến phân tách nhau bằng dấu “&amp;”.
+</aside>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>UserName</td>
+                    <td>(string)</td>
+                    <td>Tên đăng nhập</td>
+                </tr>
+                <tr>
+                    <td>FullName</td>
+                    <td>(string)</td>
+                    <td>Họ và tên người dùng</td>
+                </tr>
+                <tr>
+                    <td>Birthday</td>
+                    <td>(DateTime)</td>
+                    <td>Ngày sinh</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>(string)</td>
+                    <td>Địa chỉ</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>(string)</td>
+                    <td>Số điện thoại</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>(string)</td>
+                    <td>Email</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+<h3 id="http-request">Thêm User</h3>
+<p><code class="prettyprint">Post @string.Format("{0}/odata/User", endPoint)</code></p>
+<p><code class="prettyprint">DataType: json</code></p>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>UserName</td>
+                    <td>(string)</td>
+                    <td>Tên đăng nhập</td>
+                </tr>
+                <tr>
+                    <td>FullName</td>
+                    <td>(string)</td>
+                    <td>Họ và tên người dùng</td>
+                </tr>
+                <tr>
+                    <td>Birthday</td>
+                    <td>(DateTime)</td>
+                    <td>Ngày sinh</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>(string)</td>
+                    <td>Địa chỉ</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>(string)</td>
+                    <td>Số điện thoại</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>(string)</td>
+                    <td>Email</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+<h3 id="http-request">Sửa User</h3>
+<p><code class="prettyprint">PATCH @string.Format("{0}/odata/User([key])", endPoint)</code></p>
+<p>[key] : Mã user cần sửa</p>
+<p><code class="prettyprint">DataType: json</code></p>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>UserName</td>
+                    <td>(string)</td>
+                    <td>Tên đăng nhập</td>
+                </tr>
+                <tr>
+                    <td>FullName</td>
+                    <td>(string)</td>
+                    <td>Họ và tên người dùng</td>
+                </tr>
+                <tr>
+                    <td>Birthday</td>
+                    <td>(DateTime)</td>
+                    <td>Ngày sinh</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>(string)</td>
+                    <td>Địa chỉ</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>(string)</td>
+                    <td>Số điện thoại</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>(string)</td>
+                    <td>Email</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+<h3 id="http-request">Xóa User</h3>
+<p><code class="prettyprint">Delete @string.Format("{0}/odata/User([key])", endPoint)</code></p>
+<p>[key] : Mã user cần xóa</p>
+
+<hr class="divider" />
+
+<h1 id="authentication">Thông tin cá nhân của User (Không chứa thông tin tài khoản)</h1>
+<h3 id="http-request">Get thông tin cá nhân thông qua UserName</h3>
+<p><code class="prettyprint">GET @string.Format("{0}/odata/UserInfo", endPoint)</code></p>
+<p><code class="prettyprint">DataType: json</code></p>
+<table>
+    <thead>
+        <tr>
+            <th>Biến&nbsp;params</th>
+            <th>Required</th>
+            <th>Mô tả</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>UserName</td>
+            <td>Bắt&nbsp;buộc</td>
+            <td>UserName của User cần get thông tin cá nhân</td>
+        </tr>
+    </tbody>
+</table>
+<aside class="notice">
+    Các biến params được truyền vào HTTP Request theo các cặp Key-Value, mở đầu chuỗi params bằng dấu “?” và giữa các biến phân tách nhau bằng dấu “&amp;”.
+</aside>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>(int)</td>
+                    <td>Mã tài khoản</td>
+                </tr>
+                <tr>
+                    <td>FullName</td>
+                    <td>(string)</td>
+                    <td>Họ và tên người dùng</td>
+                </tr>
+                <tr>
+                    <td>Birthday</td>
+                    <td>(DateTime)</td>
+                    <td>Ngày sinh</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>(string)</td>
+                    <td>Địa chỉ</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>(string)</td>
+                    <td>Số điện thoại</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>(string)</td>
+                    <td>Email</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+
+<h3 id="http-request">Get thông tin tài khoản thông qua UserId</h3>
+<p><code class="prettyprint">Get @string.Format("{0}/odata/UserInfo([key])", endPoint)</code></p>
+<p>[key] : Mã user cần sửa</p>
+<p><code class="prettyprint">DataType: json</code></p>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>(int)</td>
+                    <td>Mã tài khoản</td>
+                </tr>
+                <tr>
+                    <td>FullName</td>
+                    <td>(string)</td>
+                    <td>Họ và tên người dùng</td>
+                </tr>
+                <tr>
+                    <td>Birthday</td>
+                    <td>(DateTime)</td>
+                    <td>Ngày sinh</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>(string)</td>
+                    <td>Địa chỉ</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>(string)</td>
+                    <td>Số điện thoại</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>(string)</td>
+                    <td>Email</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+
+<h3 id="http-request">Sửa thông tin cá nhân</h3>
+<p><code class="prettyprint">PATCH @string.Format("{0}/odata/UserInfo([key])", endPoint)</code></p>
+<p>[key] : Mã user cần sửa</p>
+<p><code class="prettyprint">DataType: json</code></p>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>(string)</td>
+                    <td>Mã người dùng</td>
+                </tr>
+                <tr>
+                    <td>FullName</td>
+                    <td>(string)</td>
+                    <td>Họ và tên người dùng</td>
+                </tr>
+                <tr>
+                    <td>Birthday</td>
+                    <td>(DateTime)</td>
+                    <td>Ngày sinh</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>(string)</td>
+                    <td>Địa chỉ</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>(string)</td>
+                    <td>Số điện thoại</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>(string)</td>
+                    <td>Email</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+
+<hr class="divider" />
+
+<h1 id="authentication">Cập nhật tài khoản</h1>
+<h3 id="http-request">Reset mật khẩu</h3>
+<p><code class="prettyprint">GET @string.Format("{0}/odata/UserAccount[key]", endPoint)</code></p>
+<p>[key] : Mã user cần reset mật khẩu</p>
+<p><code class="prettyprint">DataType: json</code></p>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>(string)</td>
+                    <td>Mã người dùng</td>
+                </tr>
+                <tr>
+                    <td>UserName</td>
+                    <td>(string)</td>
+                    <td>Tên đăng nhập</td>
+                </tr>
+                <tr>
+                    <td>NewPassword</td>
+                    <td>(string)</td>
+                    <td>Mật khẩu mới</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+
+<h3 id="http-request">Đổi mật khẩu</h3>
+<p><code class="prettyprint">PATCH @string.Format("{0}/odata/UserAccount[key]", endPoint)</code></p>
+<p>[key] : Mã user cần reset mật khẩu</p>
+<p><code class="prettyprint">DataType: json</code></p>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>(string)</td>
+                    <td>Mã người dùng</td>
+                </tr>
+                <tr>
+                    <td>UserName</td>
+                    <td>(string)</td>
+                    <td>Tên đăng nhập</td>
+                </tr>
+                <tr>
+                    <td>NewPassword</td>
+                    <td>(string)</td>
+                    <td>Mật khẩu mới</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+
+<h3 id="http-request">Cập nhật quyền hạn</h3>
+<p><code class="prettyprint">POST @string.Format("{0}/odata/UserAccount", endPoint)</code></p>
+<p><code class="prettyprint">DataType: json</code></p>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>(string)</td>
+                    <td>Mã người dùng</td>
+                </tr>
+                <tr>
+                    <td>UserName</td>
+                    <td>(string)</td>
+                    <td>Tên đăng nhập</td>
+                </tr>
+                <tr>
+                    <td>Roles</td>
+                    <td>(string)</td>
+                    <td>Danh sách quyền hạn</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+
+<hr class="divider" />
+
+<h1 id="authentication">Thông tin Nhóm quyền hạn</h1>
+<h3 id="http-request">Danh sách nhóm quyền hạn</h3>
+<p><code class="prettyprint">GET @string.Format("{0}/odata/Group", endPoint)</code></p>
+<p><code class="prettyprint">DataType: json</code></p>
+<table>
+    <thead>
+        <tr>
+            <th>Biến&nbsp;params</th>
+            <th>Required</th>
+            <th>Mô tả</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>AppId</td>
+            <td>Không bắt&nbsp;buộc</td>
+            <td>Mã ứng dụng cần get thông tin, không truyền thì lấy theo mã ứng dụng của User đăng nhập</td>
+        </tr>
+    </tbody>
+</table>
+<aside class="notice">
+    Các biến params được truyền vào HTTP Request theo các cặp Key-Value, mở đầu chuỗi params bằng dấu “?” và giữa các biến phân tách nhau bằng dấu “&amp;”.
+</aside>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>(string)</td>
+                    <td>Tên nhóm</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+<h3 id="http-request">Thêm nhóm quyền hạn</h3>
+<p><code class="prettyprint">Post @string.Format("{0}/odata/Group", endPoint)</code></p>
+<p><code class="prettyprint">DataType: json</code></p>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>(string)</td>
+                    <td>Tên nhóm</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+<h3 id="http-request">Sửa nhóm quyền hạn</h3>
+<p><code class="prettyprint">PATCH @string.Format("{0}/odata/Group([key])", endPoint)</code></p>
+<p>[key] : Mã nhóm cần sửa</p>
+<p><code class="prettyprint">DataType: json</code></p>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>(string)</td>
+                    <td>Tên nhóm</td>
+                </tr>
+                <tr>
+                    <td>Roles</td>
+                    <td>(string)</td>
+                    <td>Danh sách quyền</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+<h3 id="http-request">Xóa nhóm</h3>
+<p>Lưu ý : Chỉ xóa được những nhóm không có User</p>
+<p><code class="prettyprint">Delete @string.Format("{0}/odata/Group([key])", endPoint)</code></p>
+<p>[key] : Mã nhóm cần xóa</p>
+
+<h3 id="http-request">Thêm user vào nhóm</h3>
+<p><code class="prettyprint">PUT @string.Format("{0}/odata/Group([key])", endPoint)</code></p>
+<p>[key] : Mã nhóm cần thêm sửa xóa user</p>
+<p><code class="prettyprint">DataType: json</code></p>
+<p>
+    <code class="prettyprint">
+        Data:
+        <table>
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>(int)</td>
+                    <td>Mã nhóm</td>
+                </tr>
+                <tr>
+                    <td>UserIds</td>
+                    <td>(string)</td>
+                    <td>Danh sách mã user, các user cách nhau bởi dấu phẩy ','</td>
+                </tr>
+            </tbody>
+        </table>
+    </code>
+</p>
+

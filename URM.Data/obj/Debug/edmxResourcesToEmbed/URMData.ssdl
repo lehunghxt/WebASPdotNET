@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="crm.zicki.vnModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AppInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Roles" Type="nvarchar(max)" />
+    <Property Name="AppId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="AppId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="AppId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="RoleGroup" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserAccount">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Roles" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserGroup">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="GroupId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppId" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="CreateBy" Type="int" />
+  </EntityType>
+  <Association Name="FK_Role_AppInfo">
+    <End Role="AppInfo" Type="Self.AppInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Role" Type="Self.Role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Role">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAccount_UserInfo">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGroup_AppInfo">
+    <End Role="AppInfo" Type="Self.AppInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Group" Type="Self.Group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Group">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGroup_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="1" />
+    <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserGroup">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGroup_UserInfo">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserGroup">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_AppInfo">
+    <End Role="AppInfo" Type="Self.AppInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="crmzickivnModelStoreContainer">
+    <EntitySet Name="AppInfo" EntityType="Self.AppInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserGroup" EntityType="Self.UserGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Role_AppInfo" Association="Self.FK_Role_AppInfo">
+      <End Role="AppInfo" EntitySet="AppInfo" />
+      <End Role="Role" EntitySet="Role" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAccount_UserInfo" Association="Self.FK_UserAccount_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserAccount" EntitySet="UserAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGroup_AppInfo" Association="Self.FK_UserGroup_AppInfo">
+      <End Role="AppInfo" EntitySet="AppInfo" />
+      <End Role="Group" EntitySet="Group" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGroup_Group" Association="Self.FK_UserGroup_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="UserGroup" EntitySet="UserGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGroup_UserInfo" Association="Self.FK_UserGroup_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserGroup" EntitySet="UserGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_AppInfo" Association="Self.FK_UserInfo_AppInfo">
+      <End Role="AppInfo" EntitySet="AppInfo" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

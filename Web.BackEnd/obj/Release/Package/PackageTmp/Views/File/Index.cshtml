@@ -1,0 +1,223 @@
+﻿@model Web.Backend.Models.CategoryViewModel
+@{
+    ViewBag.Title = "Album";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Quản lý Album
+                <div class="box-tools pull-right">
+                    <a href="/File/Album?catid=@Model.CatId" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Thêm</a>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Danh sách Album</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr role="row">
+                        <th>ID</th>
+                        <th>Tiêu đề</th>
+                        <th>Hình</th>
+                        <th>Mô tả</th>
+                        <th>Thứ tự</th>
+                        <th>Hiển thị</th>
+                        <th>Ngôn ngữ</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <tr @(category.PARENTID != null ? "ref='" + category.PARENTID + "'" : "" ) role="row">
+                            <td align="center">@category.ID</td>
+                            <td align="left">
+                                @category.Blank
+                                <a href="/File/Media/@category.ID">@category.NAME</a>
+                            </td>
+                            <td align="center">
+                                @if (!string.IsNullOrEmpty(category.IMAGE))
+                                {
+                                    <img width="50px" src="@category.PathImage" />
+                                }
+                            </td>
+                            <td align="left">@category.DESCRIPTION</td>
+                            <td align="center">
+                                <div class="row">
+                                    <span>@category.ORDERS</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <span>@category.PUBLISH</span>
+                            </td>
+                            <td align="center">@category.Languages</td>
+                            <td>
+                                <a href="/File/Media/@category.ID"  class="btn btn-info">Chi tiết</a>
+                                <button class="btn btn-warning" type="button" onclick="Select('@category.ID', '@category.PARENTID', '@category.IMAGE', '@category.PathImage', '@category.LANGUAGEID', '@category.NAME', '@category.DESCRIPTION', '@category.PUBLISH.ToString()', '@category.ORDERS');" data-toggle="modal" data-target="#addCategory" role="button">Sửa</button>
+                                <button class="btn btn-danger" type="button" onclick="Remove('@category.ID','@category.IMAGE');">Xóa</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div id="addCategory" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" onclick="Add();">&times;</button>
+                            <h4 id="title" class="modal-title">Chi tiết danh mục</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.Category.PARENTID, Model.Categories.Where(e => e.ID != Model.CatId).Select(e => new SelectListItem { Value = e.ID.ToString(), Text = e.Blank + e.NAME }), "-- Chọn Danh mục cha --", new { @class = "form-control", placeholder = "Danh mục cha" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                Hiển thị: <input type="checkbox" id="Category_PUBLISH" name="Category.PUBLISH" @(Model.Category.PUBLISH == true ? "checked='checked'" : "") value="true" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                @Html.EditorFor(model => model.Category.ORDERS, new { htmlAttributes = new { @class = "form-control", placeholder = "Thứ tự" } })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(e => Model.Category.LANGUAGEID, Model.Languages.Select(e => new SelectListItem { Text = e.NAME, Value = e.ID }), new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="choose-attach-file">
+                                        <input type="file" class="btn-chooseAttach" name="categoryimage" multiple="">
+                                    </div>
+                                    <img ID="img" style="max-width:100%; max-height:150px;" />
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.Category.NAME, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên danh mục" } })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        @Html.TextAreaFor(model => model.Category.DESCRIPTION, new { @class = "form-control", placeholder = "Mô tả", rows = "3" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" id="btnAdd">
+                                <input id="btnSubmit" type="button" class="btn btn-primary btn-block" value="Thêm" onclick="Post()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.HiddenFor(e => Model.CatId)
+    @Html.HiddenFor(e => Model.Category.ID)
+    @Html.HiddenFor(e => Model.Category.TYPEID)
+    @Html.HiddenFor(e => Model.Category.IMAGE)
+    @Html.HiddenFor(e => Model.Action)
+    <script>
+        function Post() {
+            $("form").submit();
+        }
+        function Remove(id, img) {
+            var r = confirm("Bạn chắn chắn muốn xóa tài liệu?");
+            if (r == true) {
+            $('#Action').val('REMOVE');
+            $('#Category_ID').val(id);
+            $('#Category_IMAGE').val(img);
+            $("form").submit();
+                }
+        }
+        function Add() {
+            $('#Action').val('ADD');
+            $('#title').text("Thêm danh mục");
+            $('#btnSubmit').val("Thêm");
+
+            $('#Category_ID').val(0);
+            $('#Category_NAME').val('');
+            $('#Category_DESCRIPTION').val('');
+            $('#img').attr("src", '');
+            $('#Category_ORDERS').val(50);
+        }
+        function Select(id, parent, img, imgPath, lang, name, des, pub, ord) {
+            $('#Action').val('UPDATE');
+            $('#title').text("Sửa danh mục");
+            $('#btnSubmit').val("Lưu");
+            $('#img').attr("src", imgPath);
+
+            $('#Category_PARENTID').val(parent);
+            if (pub == "TRUE") $('#Category_PUBLISH').prop('checked', "checked");
+            else $('#Category_PUBLISH').prop('checked', "");
+            $('#Category_LANGUAGEID').val(lang);
+            $('#Category_NAME').val(name);
+            $('#Category_DESCRIPTION').val(des)
+            $('#Category_IMAGE').val(img);;
+            $('#Category_ID').val(id);
+            $('#Category_ORDERS').val(ord);
+        }
+    </script>
+
+    <script>
+        $('#Category_LANGUAGEID').on('change', function () { // when the room_type changes
+
+            var language = $('#Category_LANGUAGEID').val();
+            var id = $('#Category_ID').val();
+        $.ajax({
+            url: "/odata/Category?Language=" + language + "&Type=@Model.Category.TYPEID&CategoryId=@Model.CatId&$filter=ID eq " + id,
+            method: "GET",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Token @ViewBag.Token");
+            },
+            success: function (data) {
+                $('#Category_NAME').val(data.value[0].NAME);
+                $('#Category_DESCRIPTION').val(data.value[0].DESCRIPTION);
+            }
+        });
+        });
+
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable({
+                "paging": true, "sort": false, "oLanguage": {
+                    "sProcessing": "Đang xử lý...",
+                    "sLengthMenu": "Xem _MENU_ mục",
+                    "sZeroRecords": "Không tìm thấy dòng nào phù hợp",
+                    "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
+                    "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
+                    "sInfoFiltered": "(được lọc từ _MAX_ mục)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Tìm:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "Đầu",
+                        "sPrevious": "Trước",
+                        "sNext": "Tiếp",
+                        "sLast": "Cuối"
+                    }
+                }
+                });
+        });
+    </script>
+}
+
+

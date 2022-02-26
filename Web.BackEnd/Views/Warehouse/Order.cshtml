@@ -1,0 +1,554 @@
+﻿@model Web.Backend.Models.OrderDetailViewModel
+@{
+    ViewBag.Title = "Chi tiết đơn hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row hidden-print">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                @(Model.Order.Id > 0 ? "Sửa" : "Thêm") đơn hàng
+                <div class="box-tools pull-right">
+                    <input class="btn btn-primary" type="button" value="Lưu" onclick="Save()" />
+                    @if (Model.Order.Id > 0)
+                    {
+                        <input type="button" class="btn btn-warning" value="In hóa đơn" onclick="Print();" />
+                        if (Model.Order.Status == 0)
+                        {
+                            <input type="button" class="btn btn-info" value="Xác nhận" onclick="Confirm()" />
+                        }
+                        else if (Model.Order.Status == 1)
+                        {
+                            <input type="button" class="btn btn-primary" value="Gửi" onclick="Send()" />
+                        }
+                        else if (Model.Order.Status == 2)
+                        {
+                            <input type="button" class="btn btn-success" value="Nhận" onclick="Receive()" />
+                            <input type="button" class="btn btn-danger" value="Không nhận" onclick="Cancle()" />
+                        }
+                    }
+                    <a href="/Warehouse/Orders" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại</a>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    if (Model.Order.Id > 0)
+    {
+        <div class="row hidden-print">
+            <div class="col-lg-12">
+                <div class="panel panel-danger">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-3"><strong>Mã đơn hàng: @Model.Order.Id</strong></div>
+                            <div class="col-lg-4"><strong>Ngày tạo: @Model.Order.CreateDate</strong></div>
+                            <div class="col-lg-5"><strong>Trạng thái: @(Model.Order.Status == 0 ? "Đơn hàng mới" : Model.Order.Status == 1 ? "Đã xác nhận" : Model.Order.Status == 2 ? "Đã gửi" : Model.Order.Status == 3 ? "Đã nhận" : "Đã hủy") @(Model.Order.IsPaid ? " - Đã thanh toán" : "")</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row hidden-print">
+        <div class="col-lg-5">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Thông tin khách hàng</div>
+                <div class="panel-body">
+                    <table width="100%">
+                        @if (Model.Order.CustomerId > 0)
+                        {
+                            <tr>
+                                <td>Khách hàng: </td>
+                                <td>@Html.LabelFor(model => model.Order.CustomerId)</td>
+                            </tr>
+                            <tr>
+                                <td>Họ tên: </td>
+                                <td>@Html.EditorFor(model => model.Order.CustomerName, new { htmlAttributes = new { @class = "form-control", placeholder = "Khách hàng" } })</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>Khách hàng: </td>
+                                <td>@Html.EditorFor(model => model.Order.CustomerName, new { htmlAttributes = new { @class = "form-control", placeholder = "Khách hàng" } })</td>
+                            </tr>
+                        }
+
+                        <tr>
+                            <td>Số ĐT: </td>
+                            <td>@Html.EditorFor(model => model.Order.CustomerPhone, new { htmlAttributes = new { @class = "form-control", placeholder = "Điện thoại" } })</td>
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ:</td>
+                            <td>@Html.EditorFor(model => model.Order.CustomerAddress, new { htmlAttributes = new { @class = "form-control", placeholder = "Địa chỉ" } })</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>@Html.EditorFor(model => model.Order.CustomerEmail, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })</td>
+                        </tr>
+                        <tr>
+                            <td>Ghi chú:</td>
+                            <td>@Html.TextAreaFor(model => model.Order.CustomerNote, new { @class = "form-control", placeholder = "Ghi chú" })</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-warning">
+                <div class="panel-heading">Thông tin vận chuyển</div>
+                <div class="panel-body">
+                    <table width="100%">
+                        @if (Model.Order.ShippingId != 0 && Model.Order.CustomerPayDelivery > 0)
+                        {
+                            <tr>
+                                <td>Khách chọn: </td>
+                                <td>
+                                    @(Model.Order.ShippingId == 2 ? "GHTK" : "GHN") - @String.Format("{0:0,0}", Model.Order.CustomerPayDelivery)
+                                    @if (string.IsNullOrEmpty(Model.Order.ShippingCode) && Model.Order.Status > 1)
+                                    {<input type="button" class="btn btn-success" value="Áp dụng" data-toggle="modal" data-target="#myModal" onclick="Delivery(@Model.Order.ShippingId, true)" />}
+                                </td>
+                            </tr>}
+                        @if (string.IsNullOrEmpty(Model.Order.ShippingCode) && Model.Order.Status > 1)
+                        {
+                            <tr>
+                                <td>Gửi: </td>
+                                <td>
+                                    <input type="button" class="btn btn-success" value="GHN" data-toggle="modal" data-target="#myModal" onclick="Delivery(1, false)" />
+
+                                    <input type="button" class="btn btn-success" value="GHTK" data-toggle="modal" data-target="#myModal" onclick="Delivery(2, false)" />
+
+                                </td>
+                            </tr>
+                        }
+                        <tr>
+                            <td>Mã vận chuyển: </td>
+                            <td>@Html.EditorFor(model => model.Order.ShippingCode, new { htmlAttributes = new { @class = "form-control", placeholder = "Mã vận chuyển" } })</td>
+                        </tr>
+                        <tr>
+                            <td>Phí vận chuyển:</td>
+                            <td>@Html.EditorFor(model => model.Order.DeliveryFee, new { htmlAttributes = new { @class = "form-control", placeholder = "Phí vận chuyển" } })</td>
+                        </tr>
+                        <tr>
+                            <td>Ghi chú:</td>
+                            <td>@Html.TextAreaFor(model => model.Order.Note, new { @class = "form-control", placeholder = "Ghi chú" })</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-warning">
+                <div class="panel-heading">Thông tin khuyến mãi</div>
+                <div class="panel-body">
+                    <table width="100%">
+                        <tr>
+                            <td>Voucher: </td>
+                            <td>@Html.EditorFor(model => model.Order.Voucher, new { htmlAttributes = new { @class = "form-control", placeholder = "Mã Voucher" } })</td>
+                            <td>= -@String.Format("{0:0,0}", Model.VoucherFee)</td>
+                        </tr>
+                        <tr>
+                            <td>Điểm:</td>
+                            <td>@Html.EditorFor(model => model.Order.Point, new { htmlAttributes = new { @class = "form-control", placeholder = "Dùng điểm tích lũy" } })</td>
+                            <td>= -@String.Format("{0:0,0}", Model.PointFee)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="panel panel-danger">
+                <div class="panel-heading">Tổng tiền</div>
+                <div class="panel-body">
+                    <table width="100%">
+                        <tr>
+                            <td>Tổng: @String.Format("{0:0,0}", Model.TotalFee)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Sản phẩm
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Tên</th>
+                                <th>Hình</th>
+                                <th>Số lượng</th>
+                                <th>Giá bán</th>
+                                <th><button class="btn btn-info" type="button" data-toggle="modal" data-target="#addProduct" role="button"><i class="glyphicon glyphicon-plus"></i></button></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var product in Model.OrderProducts)
+                            {
+                                <tr id="row_@product.ProductId">
+                                    <td>
+                                        @product.ProductId-@product.ProductCode 
+                                        <input type="hidden" value="@product.ProductId" name="product_id" />                            
+                                        <input type="hidden" value="@product.ProductProperties" name="product_properties" />
+                                    </td>
+                                    <td>@product.ProductName @(string.IsNullOrEmpty(product.ProductProperties) ? "" : "(" + product.ProductProperties + ")")</td>
+                                    <td><img src="@product.ProductImage" style="width:30px; height:30px" /></td>
+                                    <td style="width:100px"><input type="number" class="form-control" name="product_quantity" value="@product.Quantity" placeholder="Số lượng" /></td>
+                                    <td style="width:120px"><input type="number" class="form-control" name="product_price" value="@product.Price" placeholder="Giá nhập" /></td>
+                                    <td>
+                                        <button class="btn btn-danger" type="button" onclick="Remove('@product.ProductId');">Xóa</button>
+                                    </td>
+                                </tr>
+                            }
+                            <tr id="products_wrap">
+                                <td colspan="3" style="text-align:right">Tổng: </td>
+                                <td>@String.Format("{0:0,0}", Model.OrderProducts.Sum(e => e.Quantity))</td>
+                                <td>@String.Format("{0:0,0}", Model.OrderProducts.Sum(e => e.Quantity * e.Price))</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="addProduct" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 id="title" class="modal-title">Chọn sản phẩm</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                            <tr>
+                                                <th>Mã</th>
+                                                <th>Tên</th>
+                                                <th>Hình</th>
+                                                <th>Giá</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var product in Model.Products)
+                                            {
+                                                <tr id="productrow_@product.ID">
+                                                    <td>@product.ID-@product.Code</td>
+                                                    <td>@product.Title</td>
+                                                    <td><img src="@product.PathImage" style="width:30px; height:30px" /></td>
+                                                    <td>@(product.Sale > 0 ? product.Sale : product.Price)</td>
+                                                    <td><input type="button" value="Thêm" onclick="Add('@product.ID','@product.Code','@product.Title','@product.PathImage', '@(product.Sale > 0 ? product.Sale : product.Price)')" /></td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <script>
+                                        $(document).ready(function () {
+                                            $('#dataTables-example').dataTable({ "paging": true, "sort": false, "pageLength": 5 });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Thông tin giao hàng</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        @Html.CheckBoxFor(e => Model.Delivery.SendFromCenter, new { }) Gửi hàng tại kho
+                    </div>
+                    <div class="form-group form-inline">
+                        <label>Thu hộ (COD):</label>
+                        @Html.EditorFor(model => model.Delivery.COD, new { htmlAttributes = new { @class = "form-control", placeholder = "Thu hộ" } })
+                    </div>
+                    <div class="form-group form-inline">
+                        <label>Khu vực giao:</label>
+                        <select name="den" id="giaoden" style="width:100%">
+                            <option value="0">--- Giao đến ---</option>
+                            @foreach (var district in Model.Districts)
+                            {
+                                <option value="@district.ProvinceID-@district.DistrictID">
+                                    @district.ProvinceName - @district.DistrictName
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sronly" for="txtGHNWeight">Cân nặng (gram):</label>
+                        @Html.EditorFor(model => model.Delivery.Weight, new { htmlAttributes = new { @class = "form-control", placeholder = "Cân nặng" } })
+                    </div>
+                    <div class="form-group form-inline">
+                        <label>Kích thước (Cài x Rộng x Cao)(cm):</label>
+                        @Html.EditorFor(model => model.Delivery.Length, new { htmlAttributes = new { @class = "form-control input-sm", style = "width:75px", placeholder = "Dài" } }) x
+                        @Html.EditorFor(model => model.Delivery.Width, new { htmlAttributes = new { @class = "form-control input-sm", style = "width:75px", placeholder = "Rộng" } }) x
+                        @Html.EditorFor(model => model.Delivery.Height, new { htmlAttributes = new { @class = "form-control input-sm", style = "width:75px", placeholder = "Cao" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.CheckBoxFor(e => Model.Delivery.ReceiverPay, new { }) Người nhận trả phí
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" ID="btnGHCreate" OnClick="SendDelivery()" value="Gửi" class="btn btn-success" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="wrap-receipt100 p-l-30 p-r-30 p-t-30 p-b-30 visible-print">
+        <div class="receipt100-form validate-form">
+            <div class="receipt-header text-center">
+                <p>@Model.Company.ADDRESS</p>
+                <p>Hotline: @Model.Company.PHONE</p>
+                <h4><strong>PHIẾU THU</strong></h4>
+                <p class="receipt-code">
+                    (MĐH:<span>@Model.Order.Id</span>)
+                </p>
+            </div>
+            <div class="row">
+                <p class="customer-name">
+                    Họ tên: <span><strong>@Model.Order.CustomerName</strong></span>
+                </p>
+            </div>
+            <div class="row">
+                <p class="customer-addr">
+                    Địa chỉ: <span>@Model.Order.CustomerAddress</span>
+                </p>
+            </div>
+
+            <div class="row">
+                <p class="customer-phone">
+                    Số điện thoại: <span>@Model.Order.CustomerPhone</span>
+                </p>
+            </div>
+            <div class="row">
+                <div class="receipt-detail">
+                    <table class="table" cellspacing="0" style="width:100%">
+                        <thead>
+                            <tr>
+                                <td style="text-align:left; border-bottom:solid 1px #808080">Tên</td>
+                                <td style="text-align:center; border-bottom:solid 1px #808080">SL</td>
+                                <td style="text-align:center;padding:0px"></td>
+                                <td style="text-align:right; border-bottom:solid 1px #808080">Giá</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var p in Model.OrderProducts)
+                        {
+                            <tr>
+                                <td style="text-align:left">@p.ProductName</td>
+                                <td style="text-align:center">@String.Format("{0:0,0}", p.Quantity)</td>
+                                <td style="text-align:center;padding:8px 0px">x</td>
+                                <td style="text-align:right">@String.Format("{0:0,0}", p.Price)</td>
+                            </tr>
+                    }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+            <p class="temp-charge">
+                <span class="text-label">Tổng cộng </span>
+                <span class="fee-value">@String.Format("{0:0,0}", Model.OrderProducts.Sum(e => e.TotalCost))</span>
+            </p>
+            @if (Model.Order.DeliveryFee > 0)
+        {
+            <p class="cod">
+                <span class="text-label">Phí (COD) </span>
+                <span class="fee-value">@String.Format("{0:0,0}", Model.Order.DeliveryFee)</span>
+            </p>
+    }
+            @if (Model.PointFee + Model.VoucherFee > 0)
+        {
+            <p class="discount">
+                <span class="text-label">Miễn giảm </span>
+                <span class="fee-value">-@String.Format("{0:0,0}", Model.PointFee + Model.VoucherFee)</span>
+            </p>
+    }
+            @if (Model.PointFee + Model.VoucherFee + Model.Order.DeliveryFee > 0)
+        {
+            <p class="total-fee">
+                <span class="text-label">Thanh toán </span>
+                <span class="fee-value">@String.Format("{0:0,0}", (Model.OrderProducts.Sum(e => e.TotalCost) + Model.Order.DeliveryFee) - (Model.PointFee + Model.VoucherFee))</span>
+            </p>
+    }
+            @if (!string.IsNullOrEmpty(@Model.Order.CustomerNote) && !string.IsNullOrEmpty(@Model.Order.Note))
+        {
+            <p class="notes">
+                <span class="text-label">Ghi chú </span>
+                <span class="fee-value">@Model.Order.CustomerNote</span>
+                <span class="fee-value">@Model.Order.Note</span>
+            </p>
+    }
+            @{
+            var user = this.User as Web.Asp.Security.UserPrincipal;
+            if (user == null)
+            {
+                <script>window.location.href = "/login";</script>
+        }
+            }
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <p class="date-out text-center">
+                        Ngày @DateTime.Now.Day tháng @DateTime.Now.Month năm @DateTime.Now.Year
+                    </p>
+                    <p class="text-center">
+                        Thu ngân
+                    </p>
+                    <br />
+                    <p class="cashier text-center">@user.FullName</p>
+                </div>
+
+            </div>
+            <div class="text-center ">
+                <br />
+                <p>
+                    XIN CÁM ƠN QUÝ KHÁCH
+                </p>
+            </div>
+
+
+
+        </div>
+    </div>
+    @*<div class="visible-print">
+            <center>
+                <div>@Model.Company.ADDRESS</div>
+                <div>ĐT: @Model.Company.PHONE</div>
+                <div style="font-size:14px"><strong>@Model.Company.DISPLAYNAME</strong></div>
+            </center>
+            <hr />
+            <div>ID: @Model.Order.Id - @string.Format("{0:dd/MM/yyyy}", DateTime.Now)</div>
+            <div>Khách hàng: @Model.Order.CustomerName</div>
+            <div>@Model.Order.CustomerAddress</div>
+            <div>ĐT: @Model.Order.CustomerPhone</div>
+            <hr />
+            <table style="width:100%">
+                <tr>
+                    <td style="text-align:left; border-bottom:solid 1px #808080">Tên</td>
+                    <td style="text-align:center; border-bottom:solid 1px #808080">SL</td>
+                    <td style="text-align:center"></td>
+                    <td style="text-align:right; border-bottom:solid 1px #808080">Giá</td>
+                </tr>
+                @foreach (var p in Model.OrderProducts)
+                {
+                    <tr>
+                        <td style="text-align:left">@p.ProductName</td>
+                        <td style="text-align:center">@String.Format("{0:0,0}", p.Quantity)</td>
+                        <td style="text-align:center">x</td>
+                        <td style="text-align:right">@String.Format("{0:0,0}", p.Price)</td>
+                    </tr>
+                }
+            </table>
+            <hr />
+            <table style="width:100%">
+                <tr>
+                    <td style="text-align:left">Tổng: @String.Format("{0:0,0}", Model.OrderProducts.Sum(e => e.Quantity)) Sản phẩm</td>
+                    <td style="text-align:right;font-weight:bold;font-size:14px">@String.Format("{0:0,0}", Model.OrderProducts.Sum(e => e.TotalCost))</td>
+                </tr>
+            </table>
+            <br />
+            <div>Ghi chú: @Model.Order.CustomerNote</div>
+            <br />
+        </div>*@
+
+    <input id="Order_Id" name="Order.Id" type="hidden" value="@Model.Order.Id" />
+    <input id="Order_CustomerId" name="Order.CustomerId" type="hidden" value="@Model.Order.CustomerId" />
+    <input id="TotalFee" name="TotalFee" type="hidden" value="@Model.TotalFee" />
+    <input id="UseCustomerDeliverPay" name="UseCustomerDeliverPay" type="hidden" value="@Model.UseCustomerDeliverPay" />
+    <input id="Order_ShippingId" name="Order.ShippingId" type="hidden" value="@Model.Order.ShippingId" />
+    <input id="Order_CustomerPayDelivery" name="Order.CustomerPayDelivery" type="hidden" value="@Model.Order.CustomerPayDelivery" />
+    <input id="Delivery_ToDistrict" name="Delivery.ToDistrict" type="hidden" value="@Model.Delivery.ToDistrict" />
+    <input id="Delivery_Height" name="Delivery.Height" type="hidden" value="@Model.Delivery.Height" />
+    <input id="Delivery_Length" name="Delivery.Length" type="hidden" value="@Model.Delivery.Length" />
+    <input id="Delivery_Width" name="Delivery.Width" type="hidden" value="@Model.Delivery.Width" />
+    <input id="Action" name="Action" type="hidden" value="@Model.Action" />
+
+    <script>
+        function Remove(id) {
+            $("#row_" + id).remove();
+        }
+        function Add(id, code, name, img, price) {
+            $("#products_wrap").before('<tr id="row_' + id + '">'
+                + '<td>' + id + ' - ' + code + ' <input type= "hidden" value= "' + id + '" name= "product_id" /><input type="hidden" value="" name="product_properties" /></td>'
+                + '<td>' + name + '</td>'
+                + '<td><img src="' + img + '" style="width:30px; height:30px" /></td>'
+                + '<td style="width:100px"><input type="number" class="form-control" name="product_quantity" placeholder = "Số lượng" value="1"/></td>'
+                + '<td style="width:120px"><input type="number" class="form-control" name="product_price" placeholder="Giá nhập" value="' + price + '"/></td>'
+                + '<td><button class="btn btn-danger" type="button" onclick="Remove(' + id + ');">Xóa</button></td>'
+                + '</tr > ');
+            $("#productrow_" + id).remove();
+        }
+
+        function Delivery(id, flag) {
+            $('#UseCustomerDeliverPay').val(flag);
+            $('#Order_ShippingId').val(id);
+        }
+
+        function SendDelivery() {
+            $('#Action').val('DELIVERY');
+
+            var id = $('#Order_ShippingId').val();
+            if (id == 1) {
+                var value = $('#giaoden').val();
+                $('#Delivery_ToDistrict').val(value);
+            }
+            else if (id == 2) {
+                var text = $('#giaoden :selected').text();
+                $('#Delivery_ToDistrict').val(text);
+            }
+
+            $("form").submit();
+        }
+
+        function Save() {
+            $('#Action').val('UPDATE');
+            $("form").submit();
+        }
+        function Confirm() {
+            $('#Action').val('CONFIRM');
+            $("form").submit();
+        }
+        function Send() {
+            $('#Action').val('SENT');
+            $("form").submit();
+        }
+        function Receive() {
+            $('#Action').val('RECEIVE');
+            $("form").submit();
+        }
+        function Cancle() {
+            $('#Action').val('RETURN');
+            $("form").submit();
+        }
+        function Cancle() {
+            $('#Action').val('RETURN');
+            $("form").submit();
+        }
+    </script>
+
+    <script type="text/javascript">
+        function Print() {
+            window.print();
+        }
+    </script>
+}
+
+

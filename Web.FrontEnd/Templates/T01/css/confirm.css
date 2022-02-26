@@ -1,0 +1,119 @@
+.confirm-title {
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.logo img {
+    width: 100px;
+    background: #189eff;
+}
+
+.box .redirect-link,
+.shipping-info .shipping-time {
+    color: #189eff;
+
+}
+
+.box p {
+    color: black;
+}
+
+.box.recipt-info p {
+    margin: 10px 0;
+}
+
+.shipping-info p {
+    color: black;
+}
+
+.shipping-info p i {
+    color: #189eff
+}
+
+.heading-title {
+    font-weight: 600;
+}
+
+.deal-navi {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.deal-navi button {
+    background-color: #189eff;
+    border-radius: 0px;
+    font-size: 14px;
+    height: 38px;
+}
+
+@media (max-width: 767px) {
+    .deal-navi button {
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .deal-navi div {
+        margin: 10px 0;
+        width: 50%;
+    }
+
+    .shipping-addr {
+        border-left: 1px solid;
+    }
+}
+
+.deal-navi button span.red-deal {
+    color: red;
+    text-transform: uppercase;
+}
+
+span.reciept-code {
+    width: 120px;
+    padding: 5px 10px;
+    background: #189eff;
+    color: white;
+    text-align: center;
+}
+
+.confirm-header {
+    text-align: center
+}
+
+.confirm-header .quote {
+    color: #189eff;
+}
+
+.confirm-header span {
+    font-size: 64px;
+    color: #189eff;
+}
+
+.note-title {
+    color: black;
+    font-weight: 600;
+}
+
+.note-content {
+    color: gray;
+}
+
+.bt-1 {
+    border-top: 1px solid;
+}
+
+.bl-1 {
+    border-left: 1px solid;
+}
+
+.bb-1 {
+    border-bottom: 1px solid;
+}
+
+.br-1 {
+    border-right: 1px solid;
+}
+
+.border-gray {
+    border-color: #d6d5d5;
+}

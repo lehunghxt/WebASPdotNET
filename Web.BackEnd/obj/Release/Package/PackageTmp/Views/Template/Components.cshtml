@@ -1,0 +1,130 @@
+﻿@model Web.Backend.Models.ComponentViewModel
+@{
+    ViewBag.Title = "Quản lý Component";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Quản lý Component - @Model.Component.TemplateName
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addTemplate" role="button" onclick="Add();"><i class="glyphicon glyphicon-plus"></i> Thêm</button>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Danh sách Component</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr role="row">
+                        <th>ID</th>
+                        <th>Mô tả</th>
+                        <th>Position</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var component in Model.Components)
+    {
+                <tr>
+                    <td align="center">@component.ComponentName</td>
+                    <td align="center">@component.Summary</td>
+                    <td align="left">
+                        <a href="#" data-toggle="modal" data-target="#Positions_@component.ComponentName" role="button">@component.Positions</a>
+                        <div id="Positions_@component.ComponentName" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Danh sách Position</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        @{
+                            var posotions = Model.Positions.Where(e => e.ComponentName == component.ComponentName).ToList();
+                                        }
+                                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th>Tên</th>
+                                                    <th>Mô tả</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var position in posotions)
+                                {
+                                    <tr>
+                                        <td>@position.ID</td>
+                                        <td>@position.Summary</td>
+                                        <td>
+                                            <button class="btn btn-danger" type="button" onclick="RemovePosition('@position.ComponentName','@position.ID');">Xóa</button>
+                                        </td>
+                                    </tr>
+                }
+                                                <tr>
+                                                    <td><input type="text" class="form-control" placeholder="Tên vị trí" id="PositionName_@component.ComponentName" /></td>
+                                                    <td><input type="text" class="form-control" placeholder="Mo tả" id="PositionSummary_@component.ComponentName" /></td>
+                                                    <td> <button class="btn btn-info" type="button" onclick="AddPosition('@component.ComponentName');">Thêm</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" type="button" onclick="Remove('@component.ComponentName');">Xóa</button>
+                    </td>
+                </tr>
+}
+                    <tr>
+                        <td>@Html.EditorFor(model => model.Component.ComponentName, new { htmlAttributes = new { @class = "form-control", placeholder = "Component Name" } })</td>
+                        <td colspan="2">@Html.EditorFor(model => model.Component.Summary, new { htmlAttributes = new { @class = "form-control", placeholder = "Mô tả" } })</td>
+                        <td> <button class="btn btn-info" type="button" onclick="Add();">Thêm</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @Html.HiddenFor(e => Model.Component.TemplateName)
+    @Html.HiddenFor(e => Model.Action)
+    @Html.HiddenFor(e => Model.Position.ID)
+    @Html.HiddenFor(e => Model.Position.Summary)
+    <script>
+        function Remove(id) {
+            $('#Action').val('REMOVECOM');
+            $('#Component_ComponentName').val(id);
+            $("form").submit();
+        }
+        function RemovePosition(com, pos) {
+            $('#Action').val('REMOVEPOS');
+            $('#Component_ComponentName').val(com);
+            $('#Position_ID').val(pos);
+            $("form").submit();
+        }
+        function Add() {
+            $('#Action').val('ADDCOM');
+            $("form").submit();
+        }
+        function AddPosition(com) {
+            $('#Action').val('ADDPOS');
+            $('#Component_ComponentName').val(com);
+            var name = $('#PositionName_' + com).val();
+            $('#Position_ID').val(name);
+            var summary = $('#PositionSummary_' + com).val();
+            $('#Position_Summary').val(summary);
+            $("form").submit();
+        }
+    </script>
+}
+
+

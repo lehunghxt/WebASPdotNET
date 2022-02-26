@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Trang quản lý nội dung website</title>
+    <style>
+        .main-sidebar {
+            background-color: !important
+        }
+    </style>
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="@Url.Content("~/Content/")themes/base/jquery.ui.all.css">
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/datetimepicker")
+    @Scripts.Render("~/bundles/layout")
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <script src="~/Scripts/ScriptVIT.js"></script>
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="~/Content/ckeditor/plugins/ckfinder/ckfinder.js"></script>
+    <script src="~/Content/raphael/raphael-min.js"></script>
+    <script src="~/Content/morrisjs/morris.min.js"></script>
+</head>
+
+<body class="skin-blue-light sidebar-mini">
+    @{
+        var user = this.User as Web.Asp.Security.UserPrincipal;
+        if (user == null)
+        {
+            <script>window.location.href = "/login";</script>
+        }
+    }
+    <div id="wrapper">
+        <header class="main-header hidden-print">
+            <!-- Logo -->
+            <a href="\" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini">Admin</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Trang quản trị nội dung</b></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-custom-menu-left">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            @{Html.RenderAction("UserMenu", "Shared");}
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </div>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="">@user.FullName</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/User/Info">Thông tin cá nhân</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/User/MenuShortcuts">Tạo lối tắt</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/login/logout">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar hidden-print">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    @*<div class="pull-left image">
+                            <img src="http://via.placeholder.com/50/2196F3/ffffff?text=" + @username.Substring(0, 1) class="img-circle" alt="User Image">
+                        </div>*@
+                    <img src="@string.Format("/Uploads/C{0}/Webs/{1}", ViewBag.Company.ID, ViewBag.Company.IMAGE)" style="width:100%" />
+                </div>
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu" data-widget="tree" id="get-content">
+                    @*<li class="loadding" style="text-align:center;color:white"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></li>*@
+                    <li><hr /></li>
+                    <li>
+                        <a href="\">
+                            <i class="fa fa-users"></i> <span>Trang chủ</span>
+                        </a>
+                    </li>
+                    @if (user.Roles.Contains("ConfigWebsite") || user.Roles.Contains("ConfigAdvance"))
+                    {
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="glyphicon glyphicon-cog"></i> <span>Cấu hình</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                @if (user.Roles.Contains("ConfigWebsite"))
+                                {
+                                    <li>
+                                        <a href="/Config/Company">Thông tin web</a>
+                                    </li>
+                                }
+                                @if (user.Roles.Contains("ConfigAdvance"))
+                                {
+                                    <li>
+                                        <a href="/Config">Cấu hình nâng cao</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Config/ThirdParty">Mã nhúng</a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-edit"></i> <span>Bài viết</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="/Category?Type=ART">Danh mục bài viết</a>
+                            </li>
+                            <li>
+                                <a href="/Article">Danh sách bài viết</a>
+                            </li>
+                            <li>
+                                <a href="/Article/Comment">Bình luận bài viết</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-link"></i> <span>Liên kết - Logo - Banner</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="/Category?Type=LIN">Danh mục liên kết</a>
+                            </li>
+                            <li>
+                                <a href="/Article/Link">Danh sách liên kết</a>
+                            </li>
+                        </ul>
+                    </li>
+                    @if (user.Roles.Contains("Product"))
+                    {
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="glyphicon glyphicon-lock"></i> <span>Sản phẩm</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li>
+                                    <a href="/Category?Type=PRO">Danh mục sản phẩm</a>
+                                </li>
+                                <li>
+                                    <a href="/Product">Danh sách sản phẩm</a>
+                                </li>
+                                <li>
+                                    <a href="/Product/Attribute">Danh sách thuộc tính</a>
+                                </li>
+                                <li>
+                                    <a href="/Product/AttributeCategory">Giá trị thuộc tính</a>
+                                </li>
+                                <li>
+                                    <a href="/Product/Voucher">Voucher</a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                    @if (user.Roles.Contains("ShoppingCart"))
+                    {
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="glyphicon glyphicon-shopping-cart"></i> <span>Bán hàng - Kho</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li>
+                                    <a href="/Warehouse/Orders">Danh sách đơn hàng</a>
+                                </li>
+                                <li>
+                                    <a href="/Warehouse">Xuất nhập kho</a>
+                                </li>
+                                <li>
+                                    <a href="/Warehouse/Supplier">Nhà cung cấp</a>
+                                </li>
+                                <li>
+                                    <a href="/Product/Voucher">Khuyến mãi</a>
+                                </li>
+                                <li>
+                                    <a href="/Warehouse/Customers">Khách hàng</a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-book"></i> <span>Tài liệu - Media</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="/Category?Type=DOC">Danh mục tài liệu</a>
+                            </li>
+                            <li>
+                                <a href="/Article/Documents">Danh sách tài liệu</a>
+                            </li>
+                            <li>
+                                <a href="/File">Album ảnh</a>
+                            </li>
+                        </ul>
+                    </li>
+                    @if (user.Roles.Contains("TemplateManager"))
+                    {
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="glyphicon glyphicon-th"></i> <span>Giao diện</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li>
+                                    <a href="/Template">Danh sách Template</a>
+                                </li>
+                                <li>
+                                    <a href="/Template/Modules">Danh sách Module</a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </section>
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@Scripts.Render("~/bundles/js")*@
+    <script src="~/Content/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/Content/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="~/Content/bower_components/moment/min/moment.min.js"></script>
+    <script src="~/Content/dist/js/adminlte.min.js"></script>
+    <script src="~/Content/dist/js/demo.js"></script>
+    <script src="~/Content/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/Content/bower_components/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/plugins/iCheck/icheck.min.js"></script>
+    <script src="~/Content/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <script src="~/Content/bower_components/chart.js/Chart.2.3.0.min.js"></script>
+    <!-- page script -->
+</body>
+</html>

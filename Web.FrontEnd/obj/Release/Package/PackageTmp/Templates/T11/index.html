@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./responsive.css" />
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+  <header>
+    <br />
+    <div class="container">
+      <div class="row">
+        <div class="search-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+            <div class="logo">
+              <a href="#"><img src="./images/logo.jpg"/></a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" id="search-content" style="height: 42px">
+            <select
+            class="col-xs-12 col-sm-3 col-md-3 col-lg-3"
+            >
+            <option value="product" selected="">Sản phẩm</option>
+            <option value="article">Bài viết</option>
+          </select>
+
+          <input
+          id="lookup"
+          class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+          type="text"
+          autocomplete="off"
+          placeholder="Thỏa mãn nhu cầu trang trí nhà..."
+          />
+
+          <button
+          type="submit"
+          class="col-xs-12 col-sm-3 col-md-3 col-lg-3 btn"
+          >
+          <i class="fa fa-search"></i>
+          Tìm kiếm
+        </button>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 contacts">
+        <div class="row">
+          <div class="col-xs-7 col-sm-7 col-md-7" style="padding-left: 15%">
+            <div class="hot-line">
+              <p class="hotline-desc">Hotline tư vấn</p>
+              <a>0907-508-999</a>
+            </div>
+          </div>
+          <div class="col-xs-5 col-sm-3 col-md-3 col-lg-5">
+            <div class="top-cart dropdown">
+              <a
+              class="cart-contents"
+              href="#"
+              title="Xem giỏ hàng của bạn"
+              >
+              <i class="fa fa-shopping-cart"></i>
+              Giỏ hàng
+              <span class="count-cart-header">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</div>
+</header>
+<section>
+  <nav role="navigation" class="f_left f_xs_none d_xs_none">
+    <div class="mobile-nav">      
+      <button type="button" class="btn" onclick="ToggleSideBar();"><i class="fa fa-bars"></i></button>
+      <div class="contenedor-menu hide" >
+		<ul class="menu">
+			<li><a href="#">NỘI THẤT GỖ<i class="fa fa-chevron-down"></i></a>
+				<ul>
+					<li><a href="#">BÀN LÀM VIỆC</a></li>
+					<li><a href="#">GIÁ SÁCH</a></li>
+					<li><a href="#">KỆ TI VI</a></li>
+				</ul>
+			</li>
+			<li><a href="#">GỖ TRANG TRÍ<i class="fa fa-chevron-down"></i></a>
+				<ul>
+					<li><a href="#">TỦ TRANG TRÍ</a></li>
+					<li><a href="#">TỦ RƯỢU</a></li>
+					<li><a href="#">GHẾ TỰA LƯNG</a></li>
+				</ul>
+			</li>
+			<li><a href="#">NỘI THẤT VĂN PHÒNG <i class="fa fa-chevron-down"></i></a>
+				<ul>
+					<li><a href="#">BÀN HỌP</a></li>
+					<li><a href="#">BÀN NHÂN VIÊN</a></li>
+					<li><a href="#">GHÉ NHÂN VIÊN</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+    </div>
+    <div class="container web-nav">
+    <ul class="row">
+      <li class="col-xs-3 col-sm-2">
+        <div class="dropdown">
+        <a class="dropbtn">NỘI THẤT GỖ</a>
+        <div class="dropdown-content top_arrow">
+          <a href="#">BÀN LÀM VIỆC</a>
+          <a href="#">GIÁ SÁCH</a>
+          <a href="#">KỆ TI VI</a>
+        </div>
+      </div>
+      </li>
+      <li class="col-xs-4 col-sm-2" >
+        <div class="dropdown">
+        <a class="dropbtn">GỖ TRANG TRÍ</a>
+        <div class="dropdown-content top_arrow">
+          <a href="#">TỦ TRANG TRÍ</a>
+          <a href="#">TỦ RƯỢU</a>
+          <a href="#">GHẾ TỰA LƯNG</a>
+        </div>
+      </div>
+      <li class="col-xs-5 col-sm-3" >
+        <div class="dropdown ">
+        <a class="dropbtn">NỘI THẤT VĂN PHÒNG</a>
+        <div class="dropdown-content top_arrow">
+          <a href="#">BÀN HỌP</a>
+          <a href="#">BÀN NHÂN VIÊN</a>
+          <a href="#">GHẾ NHÂN VIÊN</a>
+        </div>
+      </div>
+      </li>
+      </ul>
+      
+    </div>
+</nav>
+</section>
+
+<section>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner ">
+      <div class="item active">
+        <img class="mx-auto" src="./images/banner (2).jpg" alt="" />
+      </div>
+      <div class="item">
+        <img class="mx-auto" src="./images/banner (5).jpg" alt="" />
+      </div>
+      <div class="item">
+        <img class="mx-auto" src="./images/banner (6).jpg" alt="" />
+      </div>
+	  <div class="item">
+        <img class="mx-auto" src="./images/banner (7).jpg" alt="" />
+      </div>
+	  <div class="item">
+        <img class="mx-auto" src="./images/banner (8).jpg" alt="" />
+      </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+
+<section class="products_container clearfix m_bottom_25 m_sm_bottom_15">
+  <div id="exTab1" class="container"> 
+    <ul  class="nav nav-pills">
+      <li class="active">
+        <a  href="#1a" data-toggle="tab">Sản phẩm</a>
+      </li>
+      <li><a href="#2a" data-toggle="tab">HOT</a>
+      </li>
+      <li><a href="#3a" data-toggle="tab">Mới</a>
+      </li>
+    </ul>
+    <div class="tab-content clearfix">
+      <div class="tab-pane active" id="1a">
+        <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" height="200px" src="./images/z2231186897158_c0c01f847025f9ee95194f5212ccf80a.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="document.location='products.html'">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186901236_2b95833e9545a4accade846b4d4e005c.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186901551_074eb81eab9464f09195d0570c9c6bbf.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186905803_ef01cf8fab4b17d5a0984aa36056abd7.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186906433_e60b03a4cd4bc64e62b558c76ffc886f.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186911306_66be17b356de3800c15f9fbd94d4b7fe.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186913040_3af064b095305f3af2f8025a02ae4616.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186914493_2f0ff2d8eb4bcf6f02c5bc59be7bc38e.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+            </div>
+            <div class="tab-pane fade" id="2a">
+               <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186897158_c0c01f847025f9ee95194f5212ccf80a.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186901236_2b95833e9545a4accade846b4d4e005c.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186901551_074eb81eab9464f09195d0570c9c6bbf.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186905803_ef01cf8fab4b17d5a0984aa36056abd7.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186906433_e60b03a4cd4bc64e62b558c76ffc886f.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186911306_66be17b356de3800c15f9fbd94d4b7fe.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186913040_3af064b095305f3af2f8025a02ae4616.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186914493_2f0ff2d8eb4bcf6f02c5bc59be7bc38e.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+            </div>
+            <div class="tab-pane fade" id="3a">
+               <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186897158_c0c01f847025f9ee95194f5212ccf80a.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186901236_2b95833e9545a4accade846b4d4e005c.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186901551_074eb81eab9464f09195d0570c9c6bbf.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186905803_ef01cf8fab4b17d5a0984aa36056abd7.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186906433_e60b03a4cd4bc64e62b558c76ffc886f.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186911306_66be17b356de3800c15f9fbd94d4b7fe.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186913040_3af064b095305f3af2f8025a02ae4616.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+          <div class="product_item col-md-3 col-xs-6 col-sm-4">
+          <figure class="photoframe">
+            <a href="#" class="d_block relative pp_wrap">
+              <img class="mx-auto" src="./images/z2231186914493_2f0ff2d8eb4bcf6f02c5bc59be7bc38e.jpg" class="tr_all_hover" alt=""/>
+            </a>
+            <figcaption>
+              <h5 class="m_bottom_10"><a href="#" class="color_dark">NO BRAND 3027</a>
+              </h5>
+              <div class="clearfix">
+                <p class="scheme_color f_size_large m_bottom_15">
+              300,000 VNĐ</p>
+            </div>
+            <button class="btn" onclick="">Xem</button>
+            </figcaption>
+          </figure>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <section class="row clearfix m_bottom_45 m_sm_bottom_35" id="banner-footer">
+        <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6 text-right">
+<a href="#">
+    <img class="mx-auto" src="https://bucket.nhanh.vn/store/22632/bn/sb_1528280412_266.jpg" alt="">
+</a>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
+    <a href="#">
+        <img class="mx-auto" src="https://bucket.nhanh.vn/store/22632/bn/sb_1528279833_742.jpg" alt="">
+    </a>
+</div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class=" col-xs-12 col-lg-3 col-md-3 col-sm-5 m_xs_bottom_30">
+      <h2>Hệ thống cửa hàng</h2>
+      <p>Cs1: 148 Hạ Đình, Thanh Xuân, HN</p>
+      <p>Hotline : 0886 223 311</p>
+      <p>Cs2: 71 Nguyễn Ngọc Doãn, Hà Nội</p>
+      <p>(Đ/c cũ số 71 Ngõ 82 Phạm Ngọc Thạch)</p>
+      <p>Hotline: 0858 968 881</p>
+      <p>Cs3: 356 Cầu Giấy, Hà Nội</p>
+      <p>Hotline: 0964 868 635</p>
+      <p>Email: lilyeyewear0911@gmail.com</p>
+    </div>
+
+    <div class=" col-xs-12 col-lg-3 col-md-3 col-sm-4 m_xs_bottom_30">
+      <h2>Thông tin</h2>
+      <ul>
+        <li style="border:none"><a style="color:#FFFFFF;" href="#">THÔNG TIN LIÊN HỆ</a></li>
+        <li style="border:none"><span style="font-size:26px;">Shopee Đồ Gỗ</span></li>
+        <li style="border:none"><a href="#"><img alt="mua tại shopee" src="./images/shoppe.png"></a></li>
+        <li><a href="#"><span>Chính sách bảo vệ thông tin khách hàng</span></a></li>
+        <li><a href="#"><span>Chính sách vận chuyển</span></a></li>
+        <li><a href="#"><span>Chính sách bảo hành và đổi trả</span></a></li>
+        <li><a href="#"><span>Điều khoản sử dụng</span></a></li>
+        <li><a href="http://online.gov.vn/Home/WebDetails/61930" target="_blank" rel="noreferrer noopener"><img alt="" src="./images/logosalenoti.png" style="height:76px;width:200px;"></a></li>
+        <li>
+           <table align="left" border="0" cellpadding="1" cellspacing="1" style="width:100%;">
+              <tbody>
+                 <tr>
+                    <td>
+                       <p style="text-align:center;"><span style="font-size:10px;"><span style="color:#FFFFFF;">CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ LILY GROUP VIỆT NAM</span></span></p>
+                       <p style="text-align:center;"><span style="color:rgb(255,255,255);font-size:17px;">Mã số thuế: 0108858234</span></p>
+                       <ul>
+                          <li style="text-align:center;"><span style="font-size:10px;"><span style="color:#FFFFFF;">Địa chỉ: Số 116A ngõ 72 Nguyễn Trãi, Phường Thượng Đình, Quận Thanh Xuân, Thành phố Hà Nội</span></span></li>
+                          <li style="text-align:center;"><span style="font-size:10px;"><span style="color:#FFFFFF;">Đại diện pháp luật: Nguyễn Tiến Dũng. Ngày cấp giấy phép: 14/08/2019. Ngày hoạt động: 14/08/2019</span></span></li>
+                       </ul>
+                    </td>
+                 </tr>
+              </tbody>
+           </table>
+        </li>
+     </ul>
+    </div>
+
+    <div class=" col-xs-12 col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30">
+      <h2>Danh mục sản phẩm</h2>
+      <ul>
+        <li><a href="#"><span>NỘI THẤT GỖ</span></a></li>
+        <li><a href="#"><span>NỘI THẤT GỖ</span></a></li>
+        <li><a href="#"><span>NỘI THẤT GỖ</span></a></li>
+        <li><a href="#"><span>NỘI THẤT GỖ</span></a></li>
+       
+     </ul>
+    </div>
+    <div class=" col-xs-12 col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30">
+      <h2>Fanpage</h2>
+      <ul>
+        <li><a href="#"><span>NỘI THẤT GỖ</span></a></li>
+        <li><a href="#"><span>NỘI THẤT GỖ</span></a></li>
+       
+     </ul>
+    </div>
+  </div>
+  <div class="container" style="color: white;display: none;" id="footer_end" >
+    <div class="row clearfix">
+       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <ul>
+             <li>
+                <a href=""><i class="fa fa-phone"></i> Hotline: 0907-508-999</a>
+             </li>
+             <li >
+              <a  class="col-xs-6 " style="padding: 0px;padding-bottom: 10px;" rel="nofollow" href="#"><i class="fa fa-key"></i> Đăng ký</a>
+              <a  class="col-xs-6 " style="padding: 0px;padding-bottom: 10px;" href="#"><i class="fa fa-user"></i> Đăng nhập</a>
+           </li>
+          
+          </ul>
+       </div>
+      
+    </div>
+ </div>
+
+</footer>
+  </body>
+  <script>
+    var availableTags = [];
+    $("#lookup").autocomplete({
+      source: availableTags,
+    });
+  
+    $(document).ready(function() {
+	$('.menu li:has(ul)').click(function(e) {
+		e.preventDefault();
+
+		if($(this).hasClass('activado')) {
+			$(this).removeClass('activado');
+			$(this).children('ul').slideUp();
+		} else {
+			$('.menu li ul').slideUp();
+			$('.menu li').removeClass('activado');
+			$(this).addClass('activado');
+			$(this).children('ul').slideDown();
+    }
+ 
+
+  });
+
+
+  $('.dropbtn').click(function(){
+    var check = $(this).parent().find('.dropdown-content').hasClass("show-menu");
+    if(check==false){
+      $('.dropdown-content').removeClass("show-menu");
+      $(this).parent().find('.dropdown-content').toggleClass("show-menu");
+    }else
+    {
+      $(this).parent().find('.dropdown-content').removeClass("show-menu");
+    }
+
+   
+   
+  });
+  $('.dropbtn').off("click",function(){
+    $('.dropdown-content').removeClass("show-menu");
+  });
+
+});
+function ToggleSideBar(){
+$(".contenedor-menu").toggleClass("hide", "show-mobile-nav");
+}
+  </script>
+  </html>
+

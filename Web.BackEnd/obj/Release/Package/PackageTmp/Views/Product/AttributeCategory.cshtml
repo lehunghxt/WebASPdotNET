@@ -1,0 +1,225 @@
+﻿@model Web.Backend.Models.AttributeCategoryViewModel
+@{
+    ViewBag.Title = "Danh mục nhóm giá trị thuộc tính";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Danh mục nhóm giá trị thuộc tính
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addAttribute" role="button" onclick="AddCategory();"><i class="glyphicon glyphicon-plus"></i> Thêm</button>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Danh mục nhóm giá trị thuộc tính</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr role="row">
+                        <th>Mã</th>
+                        <th>Tên nhóm</th>
+                        <th>Thuộc tính</th>
+                        <th>Kiểu dữ liệu</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cat in Model.Categories)
+                    {
+                        <tr>
+                            <td align="center">@cat.Id</td>
+                            <td align="left">@cat.Name</td>
+                            <td align="center">
+                                <a href="#" data-toggle="modal" data-target="#Values_@cat.Id" role="button">@cat.CountAttributeValues</a>
+                                <div id="Values_@cat.Id" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Danh sách giá trị thuộc tính</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th>Mã</th>
+                                                            <th>Giá trị</th>
+                                                            <th>Thứ tự</th>
+                                                            <th><button class="btn btn-success" type="button" data-toggle="modal" data-target="#addValue" role="button" onclick="AddValue('@cat.Id');"><i class="glyphicon glyphicon-plus"></i>Thêm</button></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @{
+                                                            var values = Model.Values.Where(e => e.CategoryId == cat.Id).ToList();
+                                                        }
+                                                        @foreach (var value in values)
+                                                        {
+                                                            <tr>
+                                                                <td>@value.Id</td>
+                                                                <td>@value.Value</td>
+                                                                <td>@value.Orders</td>
+                                                                <td>
+                                                                    <button class="btn btn-warning" type="button" onclick="SelectValue('@value.CategoryId', '@value.Id', '@value.Value', '@value.Orders');" data-toggle="modal" data-target="#addValue" role="button">Sửa</button>
+                                                                    <button class="btn btn-danger" type="button" onclick="RemoveValue('@value.Id');">Xóa</button>
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
+                            <td align="center">@cat.Type</td>
+                            <td>
+                                <button class="btn btn-warning" type="button" onclick="SelectCategory('@cat.Id', '@cat.Name', '@cat.Type', '@cat.CountAttributeValues');" data-toggle="modal" data-target="#addAttribute" role="button">Sửa</button>
+                                <button class="btn btn-danger" type="button" onclick="RemoveCategory('@cat.Id');">Xóa</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div id="addAttribute" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 id="title" class="modal-title">Chi tiết nhóm</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table width="100%">
+                                <tr>
+                                    <td>Tên nhóm:</td>
+                                    <td>
+                                        @Html.EditorFor(model => model.Category.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên nhóm" } })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Kiểu dữ liệu:</td>
+                                    <td>
+                                        <select id="Category.Type" name="Category_Type" class="form-control">
+                                            <option value="Text" selected="selected">Text</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div id="btnAdd">
+                                            <input id="btnSubmit" type="button" class="btn btn-primary btn-block" value="Thêm" onclick="Post()" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="addValue" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 id="titleValue" class="modal-title">Chi tiết Giá trị</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table width="100%">
+                                <tr>
+                                    <td>Giá trị:</td>
+                                    <td>
+                                        @Html.EditorFor(model => model.Value.Value, new { htmlAttributes = new { @class = "form-control", placeholder = "Giá trị" } })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Giá trị:</td>
+                                    <td>
+                                        @Html.EditorFor(model => model.Value.Orders, new { htmlAttributes = new { @class = "form-control", placeholder = "Thứ tự", type = "number" } })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div id="btnAdd">
+                                            <input id="btnSubmitValue" type="button" class="btn btn-primary btn-block" value="Thêm" onclick="Post()" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input id="Category_Id" name="Category.Id" type="hidden" value="@Model.Category.Id" />
+    <input id="Value_Id" name="Value.Id" type="hidden" value="@Model.Value.Id" />
+    <input id="Value_CategoryId" name="Value.CategoryId" type="hidden" value="@Model.Value.CategoryId" />
+    @Html.HiddenFor(e => Model.Action)
+    <script>
+        function Post() {
+            $("form").submit();
+        }
+        function RemoveCategory(id) {
+            $('#Action').val('REMOVECAT');
+            $('#Category_Id').val(id);
+            $("form").submit();
+        }
+        function AddCategory() {
+            $('#Action').val('ADDCAT');
+            $('#title').text("Thêm nhóm");
+            $('#btnSubmit').val("Thêm");
+
+            $('#Category_Id').val('');
+            $('#Category_Name').val('');
+            $('#Category_Type').val('');
+        }
+        function SelectCategory(id, name, type) {
+            $('#Action').val('UPDATECAT');
+            $('#title').text("Sửa nhóm");
+            $('#btnSubmit').val("Lưu");
+
+            $('#Category_Id').val(id);
+            $('#Category_Name').val(name);
+            $('#Category_Type').val(type);
+        }
+        function AddValue(id) {
+            $('#Action').val('ADDVALUE');
+            $('#titleValue').text("Thêm giá trị");
+            $('#btnSubmitValue').val("Thêm");
+
+            $('#Value_Id').val('');
+            $('#Value_CategoryId').val(id);
+            $('#Value_Value').val('');
+            $('#Value_Orders').val(10);
+        }
+        function SelectValue(categoryId, id, value, order) {
+            $('#Action').val('UPDATEVALUE');
+            $('#title').text("Sửa giá trị");
+            $('#btnSubmitValue').val("Lưu");
+
+            $('#Value_CategoryId').val(categoryId);
+            $('#Value_Id').val(id);
+            $('#Value_Value').val(value);
+            $('#Value_Orders').val(order);
+        }
+        function RemoveValue(id) {
+            $('#Action').val('REMOVEVALUE');
+            $('#Value_Id').val(id);
+            $("form").submit();
+        }
+    </script>
+}
+
+

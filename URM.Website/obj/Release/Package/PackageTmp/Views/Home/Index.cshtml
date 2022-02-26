@@ -1,0 +1,99 @@
+﻿@model URM.Website.Models.ProfileModel
+
+@{
+    ViewBag.Title = "Thông tin cá nhân - Hệ thống quản lý tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-primary" style="margin-top:10px">
+                <div class="panel-heading">Đổi mật khẩu</div>
+                <div class="panel-body">
+                    <p class="text-error" style="color:red">
+                        @ViewBag.ErrorChangePass
+                    </p>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.UserAccount.Account.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Mật khẩu củ", type = "password" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.UserAccount.Account.NewPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Mật khẩu mới", type = "password" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.UserAccount.ConfirmNewPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập lại mật khẩu", type = "password" } })
+                    </div>
+                    <div class="form-group">
+                        <input type="button" onclick="SetAction('CHANGEPASS')" class="btn btn-lg btn-primary btn-block" value="Lưu">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-info" style="margin-top:10px">
+                <div class="panel-heading">Cập nhật thông tin cá nhân</div>
+                <div class="panel-body">
+                    <p class="text-error" style="color:red">
+                        @ViewBag.ErrorInfo
+                    </p>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Info.FullName, new { htmlAttributes = new { @class = "form-control", placeholder = "Họ và tên" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Info.Birthday, new { htmlAttributes = new { @class = "form-control", placeholder = "Ngày sinh", type = "date" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Info.Phone, new { htmlAttributes = new { @class = "form-control", placeholder = "Số điện thoại" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Info.Address, new { htmlAttributes = new { @class = "form-control", placeholder = "Địa chỉ" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Info.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
+                    </div>
+                    <div class="form-group">
+                        <input type="button" onclick="SetAction('UPDATEPROFILE')" class="btn btn-lg btn-info btn-block" value="Lưu">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+@if (Model.IsAdministrator)
+{
+        <div class="col-md-4">
+            <div class="panel panel-success" style="margin-top:10px">
+                <div class="panel-heading">Đổi tên tứng dụng</div>
+                <div class="panel-body">
+                    <p class="text-error" style="color:red">
+                        @ViewBag.ErrorReName
+                    </p>
+                    <div class="form-group">
+                        @Html.Label("Mã ứng dụng: " + Model.AppId)
+                        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.AppName, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên ứng dụng" } })
+                        </div>
+                        <div class="form-group">
+                            <input type="button" onclick="SetAction('RENAMEAPP')" class="btn btn-lg btn-success btn-block" value="Lưu">
+                        </div>
+                    </div>
+            </div>
+        </div>
+}
+    </div>
+
+    @Html.HiddenFor(model => model.Action)
+    <script language="javascript">
+            function SetAction(value) {
+                $('#Action').val(value);
+                $("#frm").submit();
+            }
+    </script>
+
+}
+
+

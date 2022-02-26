@@ -1,0 +1,162 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Web.Asp.UI.VITTemplate"%>
+<%@ Register Assembly="Web.Asp" Namespace="Web.Asp.Controls" TagPrefix="VIT" %>
+<%@ Import Namespace="Web.Asp.Provider"%>
+<%@ Import Namespace="Library.Web" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+      </script>
+      <!--//meta tags ends here-->
+      <!--booststrap-->
+      <link href="/Templates/T08/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+      <!--//booststrap end-->
+      <!-- font-awesome icons -->
+      <link href="/Templates/T08/css/font-awesome.min.css" rel="stylesheet">
+      <!-- //font-awesome icons -->
+      <!--stylesheets-->
+      <link href="/Templates/T08/css/style.css" rel='stylesheet' type='text/css' media="all">
+
+    <script src="/Templates/T08/js/jquery.min.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <VIT:Form ID="frmMain" runat="server">
+        <asp:ScriptManager runat="server" ID="SptManager"></asp:ScriptManager>
+        <div class="main-top" id="home">
+         <!-- header -->
+         <div class="headder-top">
+            <div class="container-fluid">
+               <!-- nav -->
+               <nav>
+                  <div id="logo">
+                     <h1><a class="" href="/"><img src="<%=HREF.DomainStore %><%=this.Company.PathImage %>" alt="<%=this.Company.FULLNAME %>" style="height:50px"/></a></h1>
+                  </div>
+                  <label for="drop" class="toggle">Menu</label>
+                  <input type="checkbox" id="drop">
+                  <VIT:Position runat="server" ID="psTopRight" SkinName="Empty"></VIT:Position>
+               </nav>
+               <!-- //nav -->
+                <%if(Language.Languages.Count >1) { %>
+				<div class="w3-bar-item language">
+                <img src="http://<%=HREF.Domain %>/Templates/T08/images/uk.png" alt="English" onclick="changelang('en-US')"/>
+                <img src="http://<%=HREF.Domain %>/Templates/T08/images/vn.png" alt="VietNamese" onclick="changelang('vi-VN')"/>
+               
+                    </div>
+                 <script>
+                            function changelang(lang)
+                            {
+                                var url = window.location.href;
+                                window.location = url.split('?')[0] + "?<%=SettingsManager.Constants.SendLanguage%>=" + lang;
+                            }
+                        </script>
+                        <%} %>
+            </div>
+         </div>
+         <!-- //header -->
+         <!-- banner -->
+         <div class="main-banner">
+            <div class="container">
+               <div class="style-banner ">
+                  <h1 class="mb-1"><%=this.Company.DISPLAYNAME %></h1>
+                  <h5><%=this.Company.SLOGAN %>
+                  </h5>
+               </div>
+               <div class="two-demo-button mt-lg-4 mt-3">
+                   <div>
+                  <p>
+                      <%=this.Company.DESCRIPTION == null ? "" : this.Company.DESCRIPTION.Replace("\r\n","<br />") %> </p>
+                       </div>
+               </div>
+            </div>
+         </div>
+      </div>
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            <div class="address_mail_footer_grids">
+         <div id="gmap" class="contact-map">
+                                                <iframe style="Width:100%" src="//www.google.com/maps/embed/v1/search?q=<%=Company.GoogleMapAddress %>&zoom=15&key=<%=Company.GoogleApiKey %>">
+                                          </iframe> 
+                                    </div>
+      </div>
+        <footer class=" py-3">
+         <div class="container">
+            <div class="icons mt-3 text-center">
+               <ul class="d-flex justify-content-center pb-3 social-icons">
+                  <%if (!string.IsNullOrEmpty(Company.FacebookFanpage))
+                        { %>
+                    <li class="mx-3">
+                        <a class="fb-nav" href="<%=Company.FacebookFanpage %>">
+                        <span class="fa fa-facebook"></span>
+                        </a>
+                    </li>
+                    <%}%>
+                     <%if (!string.IsNullOrEmpty(Company.Twitter))
+                        { %>
+                    <li class="mx-3">
+                        <a class="t-nav" href="<%=Company.Twitter %>">
+                            <span class="fa fa-twitter"></span>
+                        </a>
+                    </li>
+                    <%}%>
+                     <%if (!string.IsNullOrEmpty(Company.GooglePlus))
+                        { %>
+                    <li class="mx-3">
+                        <a class="plus-nav" href="<%=Company.GooglePlus %>">
+                            <span class="fa fa-google-plus"></span>
+                        </a>
+                    </li>
+                    <%}%>
+                     <%if (!string.IsNullOrEmpty(Company.Youtube))
+                         { %>
+                    <li class="mx-3">
+                        <a class="pin-nav" href="<%=Company.Youtube %>">
+                            <span class="fa fa-youtube">
+                            </span>
+                        </a>
+                    </li>
+                    <%}%>
+                     <%if (!string.IsNullOrEmpty(Company.Instagram))
+                         { %>
+                    <li class="mx-3">
+                        <a class="pin-nav" href="<%=Company.Instagram %>">
+                            <span class="fa fa-instagram">
+                            </span>
+                        </a>
+                    </li>
+                    <%} %>
+               </ul>
+            </div>
+         </div>
+         <div class="footer-main txt-center">
+            <p> 
+               © <%=string.Format("{0:dd/MM/yyyy}", Company.CreateDate)%> - Bản quyền của <a href="/" title="<%=Company.FULLNAME %>"><%=Company.FULLNAME %></a> | Design by <a href="http://vdoni.com" target="_blank">vdoni</a>
+                <%if(!string.IsNullOrEmpty(Company.Certificate)){ %>
+                <br />
+                Giấy chứng nhận Đăng ký Kinh doanh số: <%=Company.Certificate %>
+                 <%} %>
+            </p>
+         </div>
+         <!-- move icon -->
+         <div class="txt-center">
+            <a href="#home" class="move-top txt-center mt-3"></a>
+         </div>
+         <!--//move icon -->
+      </footer>
+    </VIT:Form>
+    <%if (!string.IsNullOrEmpty(this.Company.Background))
+        {%> 
+    <script>$('.main-top').css("background-image", "url('<%=HREF.DomainStore %><%=this.Company.Background%>')");  </script>
+    <%}%>
+</body>
+</html>

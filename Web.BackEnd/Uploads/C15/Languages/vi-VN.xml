@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <Language Key ="Language">Ngôn ngữ</Language>
+  <Language Key ="vi-VN">Tiếng Việt</Language>
+  <Language Key ="en-US">Tiếng Anh</Language>
+
+  <Language Key ="Download">Tải về</Language>
+  <Language Key ="Upload">Tải lên</Language>
+  <Language Key ="Default">Mặc định</Language>
+  <Language Key ="Code">Mã</Language>
+  <Language Key ="Description">Mô tả</Language>
+  
+  <Language Key ="Home">Trang chủ</Language>
+  <Language Key ="Contact">Liên hệ</Language>
+  <Language Key ="AboutUs">Giới thiệu</Language>
+
+  <Language Key ="Translate">Dịch</Language>
+  <Language Key ="NoTranslationYet">Chưa có bản dịch</Language>
+  <Language Key ="FixTranslationYet">Sửa bản dịch</Language>
+  <Language Key ="SendTranslationYet">Đóng góp bản dịch</Language>
+  <Language Key ="Close">Đóng</Language>
+  <Language Key ="Send">Gửi</Language>
+</Languages>

@@ -1,0 +1,144 @@
+﻿@model Web.Backend.Models.DaskboardModel
+@{
+    ViewBag.Title = "Bảng điều khiển";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var user = this.User as Web.Asp.Security.UserPrincipal;
+    if (user == null)
+    {
+        <script>window.location.href = "/login";</script>
+    }
+}
+
+@using (Html.BeginForm())
+{
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Thông tin chung</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+            <div class="col-md-4">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>@String.Format("{0:0,0}", Model.BinhLuanMoi)</h3>
+                        <p>Bình luận mới!</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-comments-o"></i>
+                    </div>
+                    <a href="/Article/Comment" class="small-box-footer">Xem chi tiết <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            @if (user.Roles.Contains("ShoppingCart"))
+    {
+        <div class="col-md-4">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>@String.Format("{0:0,0}", Model.ThongKe.DonHangMoi)</h3>
+                    <p>Đơn hàng mới!</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+                <a href="/Warehouse/Orders" class="small-box-footer">Xem chi tiết <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>@String.Format("{0:0,0}", Model.ThongKe.SanPhamSapHet + Model.ThongKe.SanPhamDaHet + Model.ThongKe.SanPhamAm)</h3>
+                    <p>Sản phẩm hết hàng!</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-support"></i>
+                </div>
+                <a href="/Product" class="small-box-footer">Xem chi tiết <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+}
+        @*<div class="col-md-12">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <i class="glyphicon glyphicon-usd"></i> Số dư: @String.Format("{0:0,0} đ",UserContext.Balance)
+            </div>
+             /.panel-heading
+            <div class="panel-body">
+                <div style="margin:15px 0px">Nhận ngay 200.000đ vào tài khoản của mỗi người khi mời bạn bè sử dụng website.</div>
+                <div><b>Mã của bạn:</b> c<%=this.CompanyId u<%=this.UserContext.UserId </div>
+                <div><b>Link mời bạn bè:</b> <a target="_blank" href="<%=SettingsManager.AppSettings.DomainPublic.Trim().EndsWith("/") ? SettingsManager.AppSettings.DomainPublic.Trim().Substring(0, SettingsManager.AppSettings.DomainPublic.Trim().Length - 1) : SettingsManager.AppSettings.DomainPublic.Trim() ?refId=c<%=this.CompanyId u<%=this.UserContext.UserId "><%=SettingsManager.AppSettings.DomainPublic.Trim().EndsWith("/") ? SettingsManager.AppSettings.DomainPublic.Trim().Substring(0, SettingsManager.AppSettings.DomainPublic.Trim().Length - 1) : SettingsManager.AppSettings.DomainPublic.Trim() ?refId=c<%=this.CompanyId u<%=this.UserContext.UserId </a></div>
+            </div>
+        </div>
+    </div>*@
+            @if (user.Roles.Contains("ShoppingCart"))
+    {
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart"></i> Biểu đồ bán hàng
+                </div>
+                <div class="panel-body">
+                    <div id="line-chart"></div>
+                    <script>
+                            Morris.Line({
+                                element: 'line-chart',
+                                data: @Html.Raw(Model.ThongKeJson),
+                                xkey: 'Thang',
+                                ykeys: ['TongThu', 'TongChi', 'LoiNhuan'],
+                                labels: ['Tổng thu', 'Tổng chi', 'Số dư']
+                            });
+                    </script>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart"></i> Thống kê Doanh thu
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-sign-out"></i> Tổng thu
+                            <span class="pull-right text-muted small">
+                                <em>@String.Format("{0:0,0}", Model.ThongKe.TongTienBan)</em>
+                            </span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-sign-in"></i> Tổng chi
+                            <span class="pull-right text-muted small">
+                                <em>@String.Format("{0:0,0}", Model.ThongKe.TongTienNhap)</em>
+                            </span>
+                        </a>
+                    </div>
+
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-usd"></i> Số dư
+                        <span class="pull-right text-muted small">
+                            <em>@String.Format("{0:0,0}", Model.ThongKe.TongTienBan - Model.ThongKe.TongTienNhap)</em>
+                        </span>
+                    </a>
+
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-usd"></i> Tồn kho giá bán
+                        <span class="pull-right text-muted small">
+                            <em>@String.Format("{0:0,0}", Model.ThongKe.TongTienTonKho)</em>
+                        </span>
+                    </a>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+
+        </div>
+}
+        </div>
+
+}
+
+

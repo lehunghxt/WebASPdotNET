@@ -1,0 +1,667 @@
+﻿@model Web.Backend.Models.ProductGrouponViewModel
+@{
+    ViewBag.Title = "Chi tiết Groupon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                @(Model.Product.ID > 0 ? "Sửa" : "Thêm") Sản phẩm thời vụ
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-hdd"></i> Lưu</button>
+                    <a href="/Product?catid=@Model.CatId&active=groupon" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại</a>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Chi tiết Sản phẩm</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Ngày bắt đầu:
+                            <div class='input-group date' id='StartDate'>
+                                @Html.EditorFor(model => model.Groupon.StartDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Ngày bắt đầu" } })
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            Ngày kết thúc:
+                            <div class='input-group date' id='EndDate'>
+                                @Html.EditorFor(model => model.Groupon.EndDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Ngày bắt đầu" } })
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">Số lượng: @Html.EditorFor(model => model.Groupon.Quantity, new { htmlAttributes = new { @class = "form-control", placeholder = "Số lượng", @type = "number" } })</div>
+                        <div class="col-md-6">Giá bán trong chiến dịch: @Html.EditorFor(model => model.Groupon.Price, new { htmlAttributes = new { @class = "form-control", placeholder = "Giá bán", @type = "number" } })</div>
+                    </div>
+                    <hr />
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.DropDownListFor(model => model.Product.LanguageId, Model.Languages, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.Product.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên sản phẩm", required = "true", maxlength = "300" } })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.TextAreaFor(model => model.Product.Brief, new { @class = "form-control", placeholder = "Mô tả ngắn", rows = "3", required = "true" })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.DropDownListFor(model => model.Product.CategoryId, Model.Categories, new { @class = "form-control", placeholder = "Chọn danh mục" })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.Product.Code, new { htmlAttributes = new { @class = "form-control", placeholder = "Mã sản phẩm", maxlength = "30" } })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12 tag">
+                                        <label>Tags: </label>
+                                        @{var tags = Model.Product.Tag.Split(',');}
+                                        @foreach (var tag in tags)
+        {
+                                <span>
+                                    @tag <img src="/Content/remove.png" onclick="RemoveTag(this, '@tag.Trim()')" />
+                                </span>
+}
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <input id="Product_Tag" name="Product.Tag" type="hidden" value="@Model.Product.Tag" />
+                                        <input id="tag" type="text" class="form-control" maxlength="100" placeholder="Thêm tag" />
+                                    </div>
+                                    <div class="col-lg-2"><input type="button" class="btn btn-default" onclick="AddTag()" value="Thêm" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-inline form-group">
+                                Hiển thị: <input type="checkbox" id="Product_Publish" name="Product.Publish" @(Model.Product.Publish == true ? "checked='checked'" : "") value="true" />
+                                Thứ tự: @Html.EditorFor(model => model.Product.Orders, new { htmlAttributes = new { @class = "form-control", placeholder = "Thứ tự", @type = "number" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-inline form-group">
+                        <div class="choose-attach-file">
+                            Hình sản phẩm: <input type="file" class="btn-chooseAttach" name="grouponimage" multiple="">
+                        </div>
+                    </div>
+                    <img ID="img" style="max-width:100%; max-height:205px;" src="@Model.Product.PathImage" />
+                    <hr />
+                    <div class="form-inline form-group">
+                        <div class="choose-attach-file">
+                            Thêm hình: <input type="file" class="btn-chooseAttach" name="images" multiple="">
+                        </div>
+                    </div>
+                    <div>
+                        @foreach (var image in Model.Images)
+                        {
+                            <div style="float:left;height:50px; margin-left:5px;position:relative">
+                                <img src="~/Content/remove.png" class="remove_img" style="position:absolute;top:0;right:0;cursor:pointer; width:15px" onclick="XoaHinh('@image.ID','@image.Image')" />
+                                <img src="@image.PathImage" style="height:100%" />
+                            </div>
+                        }
+                        <input type="hidden" id="imagedetailremove" name="imagedetailremove" value="" />
+                        <input type="hidden" id="detailremove" name="detailremove" value="" />
+                        <script>
+                            $(wrapper).on("click", ".remove_img", function (e) { //user click on remove text
+                                e.preventDefault(); $(this).parent('div').remove();
+                            });
+
+                            function XoaHinh(id, img) {
+                                var imageCurrent = $("#imagedetailremove").val();
+                                imageCurrent = imageCurrent + "|" + img;
+                                $("#imagedetailremove").val(imageCurrent);
+                                var idCurrent = $("#detailremove").val();
+                                idCurrent = idCurrent + "|" + id;
+                                $("#detailremove").val(idCurrent);
+                            }
+                        </script>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <hr />
+                    <div class="form-inline form-group">
+                        Đặt tối thiểu @Html.EditorFor(model => model.Product.SaleMin, new { htmlAttributes = new { @class = "form-control", placeholder = "Đặt tối thiểu", @type = "number" } })
+                    </div>
+                    <div class="form-inline form-group">
+                        Giá @Html.EditorFor(model => model.Product.Price, new { htmlAttributes = new { @class = "form-control", placeholder = "Giá", @type = "number" } })
+                        Khuyến mãi: @Html.EditorFor(model => model.Product.Sale, new { htmlAttributes = new { @class = "form-control", placeholder = "Khuyến mãi", @type = "number" } })
+                        <input type="button" class="btn btn-info add_field_button" value="Thêm giá sỉ" />
+                    </div>
+                    <div class="form-group">
+                        <div class="input_fields_wrap">
+                            @foreach (var price in Model.Prices)
+                            {
+                                <div style="margin-bottom:5px;" class="form-inline form-group">
+                                    Số lượng: <input type="number" name="quatities" value="@price.Quantity">
+                                    Giá: <input type="number" name="prices" value="@price.Price">
+                                    <button type="button" class="remove_field btn btn-danger">Xóa</button>
+                                </div>
+                            }
+                        </div>
+                        <script type="text/jscript">
+                            $(document).ready(function () {
+                                var max_fields = 10; //maximum input boxes allowed
+                                var wrapper = $(".input_fields_wrap"); //Fields wrapper
+                                var add_button = $(".add_field_button"); //Add button ID
+
+                                var x = 1; //initlal text box count
+                                $(add_button).click(function (e) { //on add input button click
+                                    e.preventDefault();
+                                    if (x < max_fields) { //max input box allowed
+                                        x++; //text box increment
+                                        $(wrapper).append('<div style="margin-bottom:5px;">Số lượng: <input type="number" name="quatities" style="width:70px"> Giá: <input type="number" name="prices" style="width:120px"><a href="#" class="remove_field"> Xóa</a></div>'); //add input box
+                                    }
+                                });
+
+                                $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
+                                    e.preventDefault(); $(this).parent('div').remove(); x--;
+                                })
+                            });
+                        </script>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <hr />
+                    <input type="button" class="btn btn-info add_color_button" value="Thêm màu" />
+                    <table class="table table-bordered" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Hình</th>
+                                <th>Tên</th>
+                                <th>Value</th>
+                                <th>Giá</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="colors_wrap">
+                            @foreach (var color in Model.Colors)
+                            {
+                                <tr id='color_@color.Id'>
+                                    <td><img src="@color.ImagePath" style="float:left;height:50px;width:50px" /></td>
+                                    <td>@color.Name</td>
+                                    <td><div style="height:25px;width:30px;background:@color.Value;"></div></td>
+                                    <td>@color.Price</td>
+                                    <td><input type="button" class="btn btn-danger" onclick="RemoveColor('@color.Id', '@color.ImageName')" value="Xóa" /></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <input type="hidden" id="colorremove" name="colorremove" value="" />
+                    <input type="hidden" id="imageremove" name="imageremove" value="" />
+                    <script type="text/jscript">
+                        $(document).ready(function () {
+                            var max_fields = 10; //maximum input boxes allowed
+                            var wrapper = $(".colors_wrap"); //Fields wrapper
+                            var add_button = $(".add_color_button"); //Add button ID
+
+                            var x = 0; //initlal text box count
+                            $(add_button).click(function (e) { //on add input button click
+                                e.preventDefault();
+                                if (x < max_fields) { //max input box allowed
+                                    $(wrapper).append('<tr><td><input type="file" class="btn-chooseAttach" name="color_image_' + x + '"></td><td><input name="color_name" value=""></td><td><input name="color_value" type="color" value=""></td><td><input type="number" name="color_price" value="0"></td><td><input type="button" class="btn btn-danger remove_color" value="Xóa"/></td></tr>'); //add input box
+                                    x++; //text box increment
+                                }
+                            });
+
+                            $(wrapper).on("click", ".remove_color", function (e) { //user click on remove text
+                                e.preventDefault(); $(this).parent('td').parent('tr').remove(); x--;
+                            })
+                        });
+
+                        function RemoveColor(id, image) {
+                            var colorCurrent = $("#colorremove").val();
+                            colorCurrent = colorCurrent + "|" + id;
+                            $("#colorremove").val(colorCurrent);
+                            var imageCurrent = $("#imageremove").val();
+                            imageCurrent = imageCurrent + "|" + image;
+                            $("#imageremove").val(imageCurrent);
+                            $("#color_" + id).remove();
+                        }
+                    </script>
+                </div>
+                <div class="col-lg-12">
+                    <hr />
+                    <div class="form-group">
+                        <table class="table table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Thông số kỹ thuật</th>
+                                    <th>Giá trị</th>
+                                </tr>
+                            </thead>
+                            <tbody class="attributes_wrap">
+                                @foreach (var attribute in Model.Attributes)
+                                {
+                                    <tr>
+                                        <td>@attribute.Name</td>
+                                        <td>
+                                            @if (!attribute.Type.StartsWith("List"))
+                                            {
+                                                <input type="hidden" id="attribute_@attribute.ID" name="attribute_@attribute.ID" value="@attribute.Value" />
+                                            }
+                                            @switch (attribute.Type)
+                                            {
+                                                case "ListSelect":
+                                                    <select class="form-control" id="attribute_@attribute.ID" name="attribute_@attribute.ID">
+                                                        @{var values = Web.Backend.DataSource.GetListForAttribute(Model.CompanyId, attribute.CategoryId ?? 0);}
+                                                        @for (int i = 1; i < values.Count; i++)
+                                                        {
+                                                            <option value="@values[i].Value" @(attribute.Value == values[i].Value ? "selected" : "")>@values[i].Text</option>
+                                                        }
+                                                    </select>
+                                                    @*@Html.DropDownListFor(modelItem => attribute.Value, new SelectList(Web.Backend.DataSource.GetListForAttribute(Model.CompanyId, attribute.CategoryId ?? 0), "Value", "Text", attribute.Value), htmlAttributes: new { @class = "form-control", onchange = "myFn('" + attribute.ID + "',event)" })*@
+                                                    break;
+                                                case "Bool":
+                                                    <label class="radio-inline">@Html.RadioButtonFor(modelItem => attribute.Value, "True", new { @Name = "radio" + attribute.ID, onclick = "myFnRadio('" + attribute.ID + "',event)" }) Mở</label>
+                                                    <label class="radio-inline">@Html.RadioButtonFor(modelItem => attribute.Value, "False", new { @Name = "radio" + attribute.ID, onclick = "myFnRadio('" + attribute.ID + "',event)" }) Tắt</label>
+                                                    break;
+                                                case "Number":
+                                                    @Html.EditorFor(modelItem => attribute.Value, new { htmlAttributes = new { @class = "form-control", type = "number", onchange = "myFn('" + attribute.ID + "',event)" } })
+                                                    break;
+                                                case "String":
+                                                    @Html.EditorFor(modelItem => attribute.Value, new { htmlAttributes = new { @class = "form-control", onchange = "myFn('" + attribute.ID + "',event)" } })
+                                                    break;
+                                                case "Date":
+                                                    @Html.EditorFor(modelItem => attribute.Value, new { htmlAttributes = new { @class = "form-control", type = "date", onchange = "myFn('" + attribute.ID + "',event)" } })
+                                                    break;
+                                                case "Color":
+                                                    @Html.EditorFor(modelItem => attribute.Value, new { htmlAttributes = new { @class = "form-control", type = "color", onchange = "myFn('" + attribute.ID + "',event)" } })
+                                                    break;
+                                                case "ListCheck":
+                                                    var data = Web.Backend.DataSource.GetListForAttribute(Model.CompanyId, attribute.CategoryId ?? 0);
+                                                    <div class="ListCheck_@attribute.ID">
+                                                        @for (int i = 1; i < data.Count; i++)
+                                                        {
+                                                            <input type="checkbox" name="attribute_@attribute.ID" value="@data[i].Value" class="ListCheck_Item_@attribute.ID" /><label>&nbsp;@data[i].Text</label><br />
+                                                        }
+                                                        <script>
+                    if("@attribute.Type" == "ListCheck"){
+                        var ckBox = $(".ListCheck_@attribute.ID").find(".ListCheck_Item_@attribute.ID");
+                        for (var i = 0; i < ckBox.length; i++) {
+                            var str = "@attribute.Value";
+                            var str2 = ckBox.eq(i).val();
+                            var ck = str.indexOf(str2);
+                            if(ck != -1) { ckBox.eq(i).prop('checked', true); }
+                        }
+                    }
+                                                        </script>
+                                                    </div>
+                                                    break;
+                                                case "Dynamic":
+
+                                                    <div class="ListDynamic_@attribute.ID">
+                                                        <div class="row">
+                                                            <div class="col-lg-10">
+                                                                <input id="input_attribute_@attribute.ID" type="text" name="input_attribute_@attribute.ID" class="form-control" />
+                                                            </div>
+                                                            <div class="col-lg-2">
+                                                                <input type="button" class="btn btn-info" onclick="AddAttribute(@attribute.ID)" value="Thêm">
+                                                            </div>
+                                                        </div>
+                                                        @if (!string.IsNullOrEmpty(attribute.Value))
+                                                        {
+                                                            var dynamicValues = attribute.Value.Split(',');
+                                                            for (int i = 0; i < dynamicValues.Length; i++)
+                                                            {
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        @dynamicValues[i] (<a style="cursor:pointer" onclick="RemoveAttribute(this, @attribute.ID, '@dynamicValues[i]')">Xóa</a>)
+                                                                    </div>
+                                                                </div>
+                                                            }
+                                                        }
+                                                    </div>
+                                                    break;
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <script type="text/jscript">
+                            function AddAttribute(id) {
+                                var temp = $("#input_attribute_" + id).val();
+                                if (temp) {
+                                    var currentValue = $("#attribute_" + id).val();
+                                    if (currentValue) currentValue = currentValue + ", " + temp;
+                                    else currentValue = temp;
+                                    $("#attribute_" + id).val(currentValue);
+                                    $("#input_attribute_" + id).val('');
+                                    $(".ListDynamic_" + id).append('<div class="row"><div class="col-lg-12">' + temp + ' (<a style="cursor:pointer" onclick="RemoveAttribute(this,' + id + ',\'' + temp + '\')">Xóa</a>)</div></div>'); //add input box
+                                }
+                            }
+
+                            function RemoveAttribute(e, id, value) {
+                                var currentValue = $("#attribute_" + id).val();
+                                if (currentValue.startsWith(value + ",")) currentValue = currentValue.replace(value + ",", "");
+                                else if (currentValue.endsWith(", " + value)) currentValue = currentValue.replace(", " + value, "");
+                                else if (currentValue == value) currentValue = "";
+                                else currentValue = currentValue.replace(", " + value + ",", ",");
+                                $("#attribute_" + id).val(currentValue);
+                                $(e).parent('div').parent('div').remove();
+                            }
+                        </script>
+                        <script>
+                            function myFn(Id, event) {
+                                $('#attribute_' + Id).val(event.target.value);
+                            }
+                            function myFnRadio(Id, event) {
+                                $('#attribute_' + Id).val(event.target.value);
+                            }
+                        </script>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <hr />
+                    <div class="form-group">
+                        @Html.TextAreaFor(model => model.Product.Contents, new { @class = "form-control", placeholder = "Chi tiết", rows = "20" })
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="box box-danger">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Sản phẩm kèm theo</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Mã</th>
+                                                <th>Tên</th>
+                                                <th>Hình</th>
+                                                <th>Giá gốc</th>
+                                                <th>Giá KM</th>
+                                                <th>Số lượng</th>
+                                                <th><button class="btn btn-info" type="button" data-toggle="modal" data-target="#addProductAdOn" role="button"><i class="glyphicon glyphicon-plus"></i></button></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="addon_wrap">
+                                            @foreach (var product in Model.AddOns)
+                                            {
+                                                <tr id="addonrow_@product.Id">
+                                                    <td><a href="/Product/Detail?id=@product.Id">@product.Id</a><input type="hidden" value="@product.Id" name="addon_id" /></td>
+                                                    <td>@product.Name</td>
+                                                    <td><img src="@product.ImagePath" style="width:30px; height:30px" /></td>
+                                                    <td>@string.Format("{0: 0,0}", product.Price)</td>
+                                                    <td><input name="addon_price_@product.Id" value="@string.Format("{0: 0,0}", product.Sale)" type="text" class="form-control" /></td>
+                                                    <td><input name="addon_quantity_@product.Id" value="@product.Quantity" type="number" class="form-control" /></td>
+                                                    <td>
+                                                        <button class="btn btn-danger" type="button" onclick="RemoveAddOn('@product.Id');">Xóa</button>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <div id="addProductAdOn" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 id="title" class="modal-title">Chọn sản phẩm</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table class="table table-bordered table-hover" id="dataTables-addon">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Mã</th>
+                                                                <th>Tên</th>
+                                                                <th>Hình</th>
+                                                                <th>Giá</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach (var product in Model.Products)
+                                                            {
+                                                                <tr id="addonProductrow_@product.ID">
+                                                                    <td>@product.ID</td>
+                                                                    <td>@product.Title</td>
+                                                                    <td><img src="@product.PathImage" style="width:30px; height:30px" /></td>
+                                                                    <td>@string.Format("{0: 0,0}", product.Price) </td>
+                                                                    <td><input type="button" value="Thêm" onclick="AddAddOn('@product.ID','@product.Title','@product.PathImage','@string.Format("{0: 0,0}", product.Price)','@string.Format("{0: 0,0}", product.Sale)')" /></td>
+                                                                </tr>
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                    <script>
+                                                        $(document).ready(function () {
+                                                            $('#dataTables-addon').dataTable({ "paging": true, "sort": false, "pageLength": 5 });
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="box box-primary">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Sản phẩm liên quan</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Mã</th>
+                                                <th>Tên</th>
+                                                <th>Hình</th>
+                                                <th><button class="btn btn-info" type="button" data-toggle="modal" data-target="#addProductRelatied" role="button"><i class="glyphicon glyphicon-plus"></i></button></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="relatied_wrap">
+                                            @foreach (var product in Model.RelatiedProducts)
+                                            {
+                                                <tr id="relatiedrow_@product.ID">
+                                                    <td>
+                                                        @if (string.IsNullOrEmpty(product.URL))
+                                                        {
+                                                            @product.ID}
+                                                        else
+                                                        {
+                                                            <a href="/Product/Detail?id=@product.ID&catid=@Model.Product.CategoryId">
+                                                                @product.ID
+                                                            </a>
+                                                        }
+                                                        <input type="hidden" value="@product.ID" name="relatied_id" />
+                                                    </td>
+                                                    <td>@product.Title</td>
+                                                    <td><img src="@product.ImagePath" style="width:30px; height:30px" /></td>
+                                                    <td>
+                                                        <button class="btn btn-danger" type="button" onclick="RemoveRelatied('@product.ID');">Xóa</button>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <div id="addProductRelatied" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 id="title" class="modal-title">Chọn sản phẩm</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table class="table table-bordered table-hover" id="dataTables-example">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Mã</th>
+                                                                <th>Tên</th>
+                                                                <th>Hình</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach (var product in Model.Products)
+                                                            {
+                                                                <tr id="relatiedProductrow_@product.ID">
+                                                                    <td>@product.ID</td>
+                                                                    <td>@product.Title</td>
+                                                                    <td><img src="@product.PathImage" style="width:30px; height:30px" /></td>
+                                                                    <td><input type="button" value="Thêm" onclick="AddRelatied('@product.ID','@product.Title','@product.PathImage')" /></td>
+                                                                </tr>
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                    <script>
+                                                        $(document).ready(function () {
+                                                            $('#dataTables-example').dataTable({ "paging": true, "sort": false, "pageLength": 5 });
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="CatId" name="CatId" type="hidden" value="@Model.CatId" />
+    <input id="Product_ID" name="Product.ID" type="hidden" value="@Model.Product.ID" />
+    <input id="Product_Image" name="Product.Image" type="hidden" value="@Model.Product.Image" />
+
+    <script>
+        $(function () {
+            $('#Groupon_StartDate').datetimepicker();
+            $('#Groupon_EndDate').datetimepicker();
+        });
+    </script>
+    <script>
+        $('#Product_LanguageId').on('change', function () { // when the room_type changes
+            var language = $('#Product_LanguageId').val();
+            window.location.href = "/Product/Groupon?id=@Model.Product.ID&catid=@Model.CatId&language=" + language;
+            });
+    </script>
+    <script>
+        CKEDITOR.replace("Product_Contents");
+        CKFinder.setupCKEditor(null, '/Content/ckeditor/plugins/ckfinder');
+    </script>
+
+
+    <script>
+        function RemoveRelatied(id) {
+            $("#relatiedrow_" + id).remove();
+        }
+        function AddRelatied(id, name, img) {
+            $("#relatied_wrap").append('<tr id="relatiedrow_' + id + '">'
+                + '<td>' + id + '<input type= "hidden" value= "' + id + '" name= "relatied_id" /></td>'
+                + '<td>' + name + '</td>'
+                + '<td><img src="' + img + '" style="width:30px; height:30px" /></td>'
+                + '<td><button class="btn btn-danger" type="button" onclick="RemoveRelatied(' + id + ');">Xóa</button></td>'
+                + '</tr > ');
+            $("#relatiedProductrow_" + id).remove();
+        }
+
+        function RemoveAddOn(id) {
+            $("#addonrow_" + id).remove();
+        }
+        function AddAddOn(id, name, img, price, sale) {
+            $("#addon_wrap").append('<tr id="addonrow_' + id + '">'
+                + '<td>' + id + '<input type= "hidden" value= "' + id + '" name= "addon_id" /></td>'
+                + '<td>' + name + '</td>'
+                + '<td><img src="' + img + '" style="width:30px; height:30px" /></td>'
+                + '<td>' + price + '</td>'
+                + '<td><input name="addon_price_' + id + '" value="' + sale + '" type="text" class="form-control"/></td>'
+                + '<td><input name="addon_quantity_' + id + '" value="1" type="number" class="form-control"/></td>'
+                + '<td><button class="btn btn-danger" type="button" onclick="RemoveAddOn(' + id + ');">Xóa</button></td>'
+                + '</tr > ');
+            $("#addonProductrow_" + id).remove();
+        }
+    </script>
+
+    <script>
+        var SearchData = [
+        @foreach (var tag in Model.Tags) {
+            <text>{ value: "@tag", data: "@tag" },</text>
+            }
+          ];
+        $('#tag').autocomplete({
+            lookup: SearchData
+        });
+
+        function AddTag() {
+            var temp = $("#tag").val();
+            if (temp) {
+                var currentValue = $("#Product_Tag").val();
+                if (currentValue) currentValue = currentValue + "," + temp;
+                else currentValue = temp;
+                $("#Product_Tag").val(currentValue);
+                $("#tag").val('');
+                $(".tag").append('<span>' + temp + ' <img src="/Content/remove.png" onclick="RemoveTag(this, \'' + temp + '\')" /></span>'); //add input box
+            }
+        }
+
+        function RemoveTag(e, value) {
+            var currentValue = $("#Product_Tag").val();
+            if (currentValue.startsWith(value + ",")) currentValue = currentValue.replace(value + ",", "");
+            if (currentValue.startsWith(" " + value + ",")) currentValue = currentValue.replace(" " + value + ",", "");
+            else if (currentValue.endsWith(", " + value)) currentValue = currentValue.replace(", " + value, "");
+            else if (currentValue.endsWith("," + value)) currentValue = currentValue.replace("," + value, "");
+            else if (currentValue.trim() == value.trim()) currentValue = "";
+            else {
+                currentValue = currentValue.replace(", " + value + ",", ",");
+                currentValue = currentValue.replace("," + value + ",", ",");
+            }
+            $("#Product_Tag").val(currentValue);
+            $(e).parent('span').remove();
+        }
+    </script>
+}
+
+

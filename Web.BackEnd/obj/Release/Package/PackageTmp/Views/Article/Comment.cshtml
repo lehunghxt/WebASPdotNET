@@ -1,0 +1,66 @@
+﻿@model Web.Backend.Models.ArticleCommentViewModel
+@{
+    ViewBag.Title = "Quản lý bình luận";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Quản lý bình luận
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Danh bình luận</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr role="row">
+                        <th>ID</th>
+                        <th>Bài viết</th>
+                        <th>Bình luận</th>
+                        <th>Tên</th>
+                        <th>Điện thoại</th>
+                        <th>Email</th>
+                        <th>IP</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var comment in Model.Comments)
+                    {
+                        <tr>
+                            <td align="center">@comment.ID</td>
+                            <td align="left">
+                                <a href=''>@comment.ItemName</a>
+                            </td>
+                            <td align="left">@comment.CONTENT</td>
+                            <td align="center">@comment.NAME</td>
+                            <td align="center">@comment.PHONE</td>
+                            <td align="center">@comment.EMAIL</td>
+                            <td align="center">@comment.CLIENTID</td>
+                            <td>
+                                <button class="btn btn-danger" type="button" onclick="Remove('@comment.ID');">Xóa</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @Html.HiddenFor(e => Model.CommentId)
+    @Html.HiddenFor(e => Model.ArticleId)
+    <script>
+        function Remove(id) {
+            $('#CommentId').val(id);
+            $("form").submit();
+        }
+    </script>
+}
+
+

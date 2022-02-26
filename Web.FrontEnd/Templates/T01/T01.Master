@@ -1,0 +1,618 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Web.Asp.UI.VITTemplate"%>
+<%@ Register Assembly="Web.Asp" Namespace="Web.Asp.Controls" TagPrefix="VIT" %>
+<%@ Import Namespace="Library" %>
+<%@ Import Namespace="Library.Web" %>
+<%@ Import Namespace="Web.Asp.Provider"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Rubik:300,400,400i,500,500i,900,900i&subset=latin%2Clatin-ext" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="/Templates/T01/css/style.css">
+    <link rel="stylesheet" href="/Templates/T01/css/default.css">
+    <link rel="stylesheet" href="/Templates/T01/css/header.css">
+    <link rel="stylesheet" href="/Templates/T01/css/footer.css">
+    <link rel="stylesheet" href="/Templates/T01/css/plugins.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <link rel="stylesheet" href="/Templates/T01/css/product-item.css">
+    <link rel="stylesheet" href="/Templates/T01/css/section.css">
+    <link rel="stylesheet" href="/Templates/T01/lib/owl-carousel-2/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Templates/T01/lib/owl-carousel-2/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/Templates/T01/css/plugins.css">
+    <link rel="stylesheet" href="/Templates/T01/css/breadcrumb.css">
+    <link rel="stylesheet" href="/Templates/T01/css/product-detail.css">
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body class="home page-template page-template-template-homepage-v1 page-template-template-homepage-v1-php page page-id-396 kc-css-system group-blog can-uppercase user-not-logged-in woocommerce-active  pace-done">
+    <VIT:Form ID="frmMain" runat="server">
+        <asp:ScriptManager runat="server" ID="SptManager"></asp:ScriptManager>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <div id="page" class="hfeed site">
+            <div class="top-bar top-bar-v1">
+            <div class="col-full">
+                <VIT:Position ID="psTop" runat="server"></VIT:Position>
+            </div>
+        </div>
+            <header id="masthead" class="site-header header-v1" style="background-image: none; background:  linear-gradient(to right, #189eff ,#189eff )">
+            <div class="col-full desktop-only">
+                <div class="sticky-wrapper" style="height: 58px;">
+                    <div class="techmarket-sticky-wrap">
+                        <div class="row">
+                            <div class="site-branding">
+                                <a href="/" class="custom-logo-link" rel="home">
+                                    <img src="<%=HREF.DomainStore + Company.PathImage %>" alt="<%=Company.FULLNAME %>"/>
+                                </a>
+                            </div>
+                            <nav id="primary-navigation" class="primary-navigation" aria-label="Primary Navigation" data-nav="flex-menu">
+                                <ul id="menu-primary-menu" class="nav yamm">
+                                    <VIT:Position ID="psTopMiddle" runat="server"></VIT:Position>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="primary-menu-item-2944" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2944 animate-dropdown">
+                                        <a title="Hotline" href="tel:<%=Company.PHONE %>">Hot line: <%=Company.PHONE %>
+                                        </a>
+                                    </li>
+                                    <li class="techmarket-flex-more-menu-item dropdown" style="display: none;">
+                                        <a title="..." href="#" data-toggle="dropdown" class="dropdown-toggle">...
+                                        </a>
+                                        <ul class="overflow-items dropdown-menu">
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                                <nav id="secondary-navigation" class="secondary-navigation" aria-label="Secondary Navigation" data-nav="flex-menu" style="">
+                                <ul id="menu-secondary-menu" class="nav">
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="secondary-menu-item-2802" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2802 animate-dropdown">
+                                        <a title="Hỗ trợ" href="https://banmuagi.online/track-order/">
+                                            <i class="fa fa-question-circle">
+                                            </i>Hỗ trợ
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <%if (this.UserContext == null)
+                                            { %>
+                                        <a title="Register or Sign in" href="<%=HREF.LinkComponent("Login") %>">
+                                            <i class="fa fa-sign-in-alt">
+                                            </i>Đăng nhập
+                                        </a>
+                                        <%}
+    else
+    { %>
+<a title="<%=this.UserContext.FullName %>" href="<%=HREF.LinkComponent("Profile") %>">
+                                            <i class="fa fa-user">
+                                            </i><%=this.UserContext.FullName %>
+                                        </a>
+                                        <%} %>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <VIT:Position ID="psTopLeft" runat="server"></VIT:Position>
+                    <div class="navbar-search" method="get" action="https://banmuagi.online/">
+                        <label class="sr-only screen-reader-text" for="search">Bạn mua gì:
+                        </label>
+                        <div class="input-group">
+                            <input id="search" type="text" class="form-control search-field product-search-field" dir="ltr" value="" name="s" placeholder="Bạn mua gì?">
+
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-primary" onclick="searchTitle();">
+                                    <i class="fa fa-search">
+                                    </i>
+                                    <span class="search-btn">Tìm kiếm
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+						    $("#search").keypress(function (event) {
+                                    var keycode = (event.keyCode ? event.keyCode : event.which);
+                                    if (keycode == '13') {
+                                        searchTitle();
+                                    }
+                                });
+						    function searchTitle() {
+                                var key = $("#search").val();
+                                if (key) {
+                                    window.location = 'http://<%=HREF.Domain%>/Products/vit/key/' + key;
+                                }
+                            }
+                        </script>
+                    </div>
+
+                    <ul class="header-tracking nav navbar-nav">
+                        <li class="nav-item">
+                            <a href="profile.html#user-favorite" class="nav-link" title="Theo dõi đơn hàng">
+                                <i class="lnr lnr-book">
+                                </i>
+                                <span id="top-cart-wishlist-count" class="value">0
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="header-archive nav navbar-nav">
+                        <li class="nav-item">
+                            <a href="https://banmuagi.online/compare/" class="nav-link" title="Điểm tích lũy">
+                                <i class="lnr lnr-diamond">
+                                </i>
+                                <span id="top-cart-compare-count" class="value">0
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="header-wishlist nav navbar-nav">
+                        <li class="nav-item">
+                            <a href="profile.html#user-favorite" class="nav-link" title="Sản phẩm yêu thích">
+                                <i class="lnr lnr-heart">
+                                </i>
+                                <span id="top-cart-wishlist-count" class="value">0
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul id="site-header-cart" class="site-header-cart menu">
+                        <li class="animate-dropdown dropdown ">
+                            <a class="cart-contents" href="<%=HREF.LinkComponent("Carts") %>" data-toggle="dropdown" title="Xem giỏ hàng của bạn">
+                                <i class="lnr lnr-cart">
+                                </i>
+                                <span class="count" id="cartcount"><%=GioHang.Select(o => o.Quantity).Sum() %>
+                                </span>
+                                <span class="amount">
+                                    <span class="price-label">Giỏ hàng
+                                    </span>
+                                    <span id="cartprice"><%=string.Format("{0:0,0}", GioHang.Select(o => o.TotalCost).Sum()) %></span>đ
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-mini-cart">
+                                <%if (GioHang.Count == 0)
+                                    { %>
+                                <li>
+                                    <div class="widget_shopping_cart_content">
+                                        <p class="woocommerce-mini-cart__empty-message">Không có sản phẩm.
+                                        </p>
+                                    </div>
+                                </li>
+                                <%}
+                                else
+                                { %>
+                                <%foreach (var hang in GioHang)
+                                    { %>
+                                <li>
+                                    <div class="widget_shopping_cart_content">
+                                        <p class="woocommerce-mini-cart__empty-message"><%= hang.ProductName %>
+                                        </p>
+                                    </div>
+                                </li>
+                                <%} %>
+                                <%} %>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-full handheld-only">
+                <div class="handheld-header">
+                    <div class="row">
+                        <nav id="handheld-navigation" class="handheld-navigation" aria-label="Handheld Navigation">
+                            <button class="btn navbar-toggler" type="button"><i class="lnr lnr-list"></i><span>Menu</span></button>
+
+                            <div class="handheld-navigation-menu" tabindex="-1">
+
+                                <div class="row menu-user-panel">
+                                    <div class="col-12 pt-10 pb-10">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="mr-5">
+                                                    <img src="/Templates/T01/img/icon/user_circle.png">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <span class="mr-5">
+                                                    <a href="#">Đăng nhập</a>
+                                                    |
+                                                    <a href="#">Đăng ký</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul id="menu-departments-menu-1" class="nav">
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2925" class="highlight menu-item menu-item-type-post_type menu-item-object-page menu-item-2925 animate-dropdown">
+                                        <a title="Value of the Day" href="https://banmuagi.online/home-v2/">
+                                            <i class="fa fa-home"></i>Trang chủ
+                                        </a>
+                                    </li>
+                                    <hr class="separator">
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2926" class="highlight menu-item menu-item-type-post_type menu-item-object-page menu-item-2926 animate-dropdown"><a title="Danh mục ngành hàng" href="./product-categories.html"><i class="fa fa-th-large"></i>Danh mục ngành hàng</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Khuyến mãi hot" href="index-2.html"><i class="fa fa-asterisk"></i>Khuyến mãi hot</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Có thể bạn sẽ thích" href="index-2.html"><i class="lnr lnr-heart"></i>Có thể bạn sẽ thích</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active">
+                                        <a title="Tiện ích" href="index-2.html">
+                                            <i class="fas fa-layer-group"></i>
+                                            Tiện ích
+                                        </a>
+                                    </li>
+
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Thông báo" href="profile.html#user-notification" style="padding-left: 38px;">Thông báo</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Điểm tích luỹ" href="index-2.html" style="padding-left: 38px;">Điểm tích luỹ</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Kiểm tra đơn hàng" href="profile.html#checkout-manager" style="padding-left: 38px;">Kiểm tra đơn hàng</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Bán hàng cùng BMG" href="index-2.html" style="padding-left: 38px;">Bán hàng cùng BMG</a></li>
+
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Điểm tích luỹ" href="profile.html#user-profile" style="padding-left: 38px;">Quản lý tài khoản</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Bán hàng cùng BMG" href="profile.html#user-coupon" style="padding-left: 38px;">Ví điểm BMG</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Thông báo" href="profile.html#user-ticket" style="padding-left: 38px;">Phiếu quà tặng</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Điểm tích luỹ" href="profile.html#user-notification" style="padding-left: 38px;">Thông báo</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Kiểm tra đơn hàng" href="profile.html#user-comment" style="padding-left: 38px;">Nhận xét của tôi</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Bán hàng cùng BMG" href="profile.html#checkout-manager" style="padding-left: 38px;">Quản lý đơn hàng</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Thông báo" href="profile.html#user-address" style="padding-left: 38px;">Địa chỉ nhận hàng</a></li>
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="handheld-menu-item-2927" class="highlight menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-725 current_page_item menu-item-2927 animate-dropdown active"><a title="Điểm tích luỹ" href="profile.html#user-favorite" style="padding-left: 38px;">Sản phẩm yêu thích</a></li>
+                                </ul>
+                                <hr class="separator">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12 pt-10 pb-10">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>TRỢ GIÚP</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div>
+                                                        <p class="hotline">
+                                                            HOTLINE: <span class="highline-red">0899 343 249</span> (24/24)
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="tmhm-close">Đóng</span>
+
+                            </div>
+                        </nav>
+                        <div class="site-branding">
+                            <a href="\" class="custom-logo-link" rel="home">
+                                <img src="<%=HREF.DomainStore + Company.PathImage %>" alt="<%=Company.FULLNAME %>"/>
+                            </a> </div>
+                        <div class="handheld-header-links">
+                            <ul class="columns-3">
+                                <li class="my-account">
+                                    <a href="login.html" class="has-icon"><i class="lnr lnr-user"></i></a> </li>
+                                <li class="wishlist">
+                                    <a href="profile.html#user-favorite" class="has-icon"><i class="lnr lnr-heart"></i><span class="count">0</span></a> </li>
+                                <li class="compare">
+                                    <a href="https://banmuagi.online/compare/" class="has-icon"><i class="lnr lnr-inbox"></i><span class="count">0</span></a> </li>
+                            </ul>
+                        </div>
+                    </div><!-- /.row -->
+                    <div class="sticky-wrapper" style="">
+                        <div class="techmarket-sticky-wrap">
+                            <div class="row">
+                                <!-- #handheld-navigation -->
+                                <div class="site-search">
+                                    <div class="widget woocommerce widget_product_search">
+                                        <div class="woocommerce-product-search">
+                                            <label class="screen-reader-text" for="woocommerce-product-search-field-0">Search for:</label>
+                                            <input type="search" id="woocommerce-product-search-field-0" class="search-field" placeholder="Bạn mua gì?" value="" name="s" style="width:100%">
+                                            <%--<input type="button" value="Search" onclick="searchMobile();">--%>
+                                            <script type="text/javascript">
+                                                $("#woocommerce-product-search-field-0").keypress(function (event) {
+                                                    var keycode = (event.keyCode ? event.keyCode : event.which);
+                                                    if (keycode == '13') {
+                                                        searchMobile();
+                                                    }
+                                                });
+                                                function searchMobile() {
+                                                    var key = $("#woocommerce-product-search-field-0").val();
+                                                    if (key) {
+                                                        window.location = 'http://<%=HREF.Domain%>/Products/vit/key/' + key;
+                                                }
+                                                }
+                        </script>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="handheld-header-cart-link has-icon" href="<%=HREF.LinkComponent("Carts") %>" title="View your shopping cart">
+                                    <i class="header-cart-icon lnr lnr-cart"></i><span class="count-cart"><%=GioHang.Select(o => o.Quantity).Sum() %></span>
+                                </a>
+                            </div><!-- /.row -->
+                        </div>
+                    </div><!-- /.techmarket-sticky-wrap -->
+                </div>
+            </div>
+
+        </header>
+
+             <VIT:Position ID="psMiddle" runat="server"></VIT:Position>  
+     <div id="content" class="site-content" tabindex="-1">
+            <div class="col-full">
+                <div class="row">
+                    <div id="primary" class="content-area">
+                        <main id="main" class="site-main">
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                          
+                            <%if(DaXem.Count > 0){ %>
+                        <section id="recent-view" class="section-landscape-products-carousel">
+                                <header class="section-header">
+                                    <h2 class="section-title">Sản phẩm đã xem</h2>
+                                    <nav class="custom-slick-nav">
+                                        <a href="#" class="slick-arrow slick-disabled" aria-disabled="true" style="display: inline;"><i class="tm tm-arrow-left"></i>
+                                        </a>
+                                        <a href="#" class="slick-arrow" aria-disabled="false" style="display: inline;"><i class="tm tm-arrow-right"></i>
+                                        </a>
+                                    </nav>
+                                </header>
+                                <div class="products-carousel">
+                                    <div class="container-fluid">
+                                        <div class="woocommerce columns-5 swiper-container">
+                                            <div class="products x-carousel swiper-wrapper" role="toolbar">
+                                                <%foreach (var product in DaXem)
+                                                    { %>
+                                                <div class="landscape-product product swiper-slide" role="option" aria-hidden="false"> 
+                                                    <a href="<%=HREF.LinkComponent("Product", SettingsManager.Constants.SendProduct + "/"+ product.ID+"/"+ product.Title.ConvertToUnSign())%>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link" tabindex="0">
+                                                        <div class="media"><img width="224" height="197" src="<%=product.PathImage %>" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="<%=product.Title %>">
+                                                            <div class="media-body">
+                                                                <span class="price">
+                                                                    <ins>
+                                                                        <span class="woocommerce-Price-amount amount"><%=String.Format("{0:0,0đ}", product.Price)%><span class="woocommerce-Price-currencySymbol">đ</span></span></ins> <del>
+                                                                        <span class="woocommerce-Price-amount amount"><%=String.Format("{0:0,0đ}", product.Sale)%><span class="woocommerce-Price-currencySymbol">đ</span></span></del></span>
+                                                                <h2 class="woocommerce-loop-product__title"><%=product.Title %></h2>
+                                                                <div class="techmarket-product-rating">
+                                                                    <div class="star-rating" title="Rated 0 out of 5"><span style="width:0%"><strong class="rating">0</strong> out of 5</span></div> <span class="review-count">(<%=product.VoteNumber %>)</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a></div>
+                                                <%} %>
+                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <%} %>
+                        </main>
+                        </div>
+                    </div>
+                </div>
+         </div>
+
+            
+            <div class="features-list">
+                <div class="col-full features">
+                    <div class="d-flex flex-wrap">
+                        <div class="container-fluid single-support">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="support-icon">
+                                        <i class="fa fa-cubes"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="support-desc">
+                                        <h6>Siêu Nhiều Hàng Tốt</h6>
+                                        <span>Cần gì cũng có trên 26 ngành hàng và 10 triệu sản phẩm.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="container-fluid single-support">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="support-icon">
+                                        <i class="fa fa-grip-horizontal"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="support-desc">
+                                        <h6>Siêu tiện lợi</h6>
+                                        <span>Mạng Lưới Vận Chuyển Phủ Sóng Toàn Quốc</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="container-fluid single-support">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="support-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="support-desc">
+                                        <h6>Yên Tâm Mua Sắm</h6>
+                                        <span>Miễn phí đổi trả trong vòng 48h.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="container-fluid single-support">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="support-icon">
+                                        <i class="fas fa-tag"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="support-desc">
+                                        <h6>Giá Siêu Rẽ</h6>
+                                        <span>Giá siểu rẻ, hợp túi tiền, nhiều chương trình khuyến mãi</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <footer class="off-white-bg2 pt-30 bdr-top pt-sm-55">
+            <!-- Footer Top Start -->
+            <div class="footer-top">
+                <div class="container">
+                    <!-- Signup Newsletter Start -->
+                    <!-- Signup-Newsletter End -->
+                    <div class="row center">
+                        <VIT:Position ID="psBottom" runat="server"></VIT:Position>
+
+                        <div class="col-xl-3 col-lg-5 col-md-12 ml-auto">
+                            <div class="news-desc mb-10">
+                                <h3>ĐĂNG KÝ NHẬN BẢN TIN BANMUAGI</h3>
+                            </div>
+                            <div class="newsletter-box">
+                                <form action="#">
+                                    <input class="subscribe" placeholder="Nhập Email của bạn" name="email" id="subscribe" type="text">
+                                    <button type="submit" class="submit">Đăng Ký</button>
+                                    <div class="form-check form-check-inline mt-10">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Nam</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mt-10">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Single Footer Start -->
+
+
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Footer Top End -->
+            <!-- Footer Middle Start -->
+            <div class="footer-middle">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h3 class="footer-title">BANMUAGI APP</h3>
+                            <div class="row">
+                                <div class="col app">
+                                    <a href="#"><img src="/Templates/T01/img/social/social-img1.png" alt="google play" style="width: 30%"></a>
+                                    <a href="#"><img src="/Templates/T01/img/social/social-img2.png" alt="app store" style="width: 30%"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="single-footer mb-sm-40">
+                                <h3 class="footer-title">Phương Thức Thanh Toán</h3>
+                                <div class="footer-content">
+                                    <div class="payment">
+                                        <a href="#"><img class="img" style="width: 70%" src="/Templates/T01/img/payment/1.png" alt="payment-image"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="single-footer mb-sm-40">
+                                <h3 class="footer-title">Phương Thức Vận chuyển</h3>
+                                <div class="footer-content">
+                                    <div class="transfer">
+                                        <a href="#"><img class="img" style="width: 70%" src="/Templates/T01/img/transfer/transfers.png" alt="payment-image"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h3 class="footer-title">FOLLOW US</h3>
+                            <ul class="social-footer">
+                                <%if (!string.IsNullOrEmpty(Company.FacebookFanpage))
+                     {%>
+                                <li><a href="<%=Company.FacebookFanpage %>"><img class="img" width="30px" src="/Templates/T01/img/social/facebook.png"></a></li>
+                     <%} %>
+                     <%if (!string.IsNullOrEmpty(Company.Twitter))
+                     {%>
+                                <li><a href="<%=Company.Twitter %>"><img class="img" width="30px" src="/Templates/T01/img/social/twitter.png"></a></li>
+                     <%} %>
+                     <%if (!string.IsNullOrEmpty(Company.GooglePlus))
+                     {%>
+                                <li><a href="<%=Company.GooglePlus %>"><img class="img" width="30px" src="/Templates/T01/img/social/googleplus.png"></a></li>
+                     <%} %>
+                     <%if (!string.IsNullOrEmpty(Company.Linkedin))
+                     {%>
+                                <li><a href="<%=Company.Linkedin %>"><img class="img" width="30px" src="/Templates/T01/img/social/linkedin.png"></a></li>
+                     <%} %>
+                     <%if (!string.IsNullOrEmpty(Company.Instagram))
+                     {%>
+                        <li><a class="linkedin-nav" href="<%=Company.Instagram %>"><i class="instagram"></i></a></li>
+                     <%} %>
+                     <%if (!string.IsNullOrEmpty(Company.Pinterest))
+                     {%>
+                        <li><a href="<%=Company.Pinterest %>"><i class="pin"></i></a></li>
+                     <%} %>
+                     <%if (!string.IsNullOrEmpty(Company.Youtube))
+                     {%>
+                                 <li><a href="<%=Company.Youtube %>"><img class="img" width="30px" src="/Templates/T01/img/social/youtube.png"></a></li>
+                     <%} %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Footer Middle End -->
+            <!-- Footer Bottom Start -->
+            <div class="footer-bottom pb-30">
+                <div class="container pt-10">
+
+                    <div class="copyright-text">
+                        <p><%=Company.FULLNAME %><br>
+                            <%=Company.Certificate %><br>
+                            Điện Thoại: <%=Company.PHONE %> <br>
+                            Địa chỉ: <%=Company.ADDRESS %></p>
+                        <p>Copyright © <%=string.Format("{0:yyyy}", Company.CreateDate) %> <a target="_blank" href="<%=HREF.Domain%>"><%=HREF.Domain%></a></p>
+                    </div>
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Footer Bottom End -->
+        </footer>
+        <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647;"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/Templates/T01/js/header.js"></script>
+    <script src="/Templates/T01/lib/owl-carousel-2/owl.carousel.js"></script>
+    <script src="/Templates/T01/lib/jquery.countdown-2.1.0/jquery.countdown.min.js"></script>
+    <script src="/Templates/T01/js/plugins.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+    <script src="/Templates/T01/js/index.js"></script>
+    <script src="/Templates/T01/js/main.js"></script>
+        <script src="/Templates/T01/js/product.js"></script>
+    </VIT:Form>
+</body>
+</html>

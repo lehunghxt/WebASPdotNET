@@ -1,0 +1,140 @@
+﻿@model Web.Backend.Models.MenuShortcutViewModel
+@{
+    ViewBag.Title = "Shortcuts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Quản lý Lối tắt
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addShortcut" role="button" onclick="Add();"><i class="glyphicon glyphicon-plus"></i> Thêm</button>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Danh sách lối tắt</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr role="row">
+                        <th>ID</th>
+                        <th>Tiêu đề</th>
+                        <th>Danh mục</th>
+                        <th>Thứ tự</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var category in Model.Shortcuts)
+                    {
+                        <tr @(category.ParentId > 0 ? "ref='" + category.ParentId + "'" : "" ) role="row">
+                            <td align="center">@category.Id</td>
+                            <td align="left">
+                                @category.Blank
+                                @category.Name
+                            </td>
+                            <td align="left">@category.CategoryId - @category.CategoryType - @category.IsCategories </td>
+                            <td align="center">
+                                <div class="row">
+                                    <span>@category.No</span>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-warning" type="button" onclick="Select('@category.Id', '@category.ParentId', '@category.CategoryId', '@category.IsCategories', '@category.No', '@category.Name');" data-toggle="modal" data-target="#addShortcut" role="button">Sửa</button>
+                                <button class="btn btn-danger" type="button" onclick="Remove('@category.Id');">Xóa</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div id="addShortcut" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" onclick="Add();">&times;</button>
+                            <h4 id="title" class="modal-title">Chi tiết Lối tắt</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.Shortcut.ParentId, Model.Shortcuts.Select(e => new SelectListItem { Value = e.Id.ToString(), Text = e.Blank + e.Name }), "-- Chọn cấp cha --", new { @class = "form-control", placeholder = "Cấp cha" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.Shortcut.CategoryId, Model.Categories.Select(e => new SelectListItem { Value = e.ID.ToString(), Text = e.Blank + e.NAME }), "-- Chọn danh mục --", new { @class = "form-control", placeholder = "Danh mục" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                @Html.EditorFor(model => model.Shortcut.No, new { htmlAttributes = new { @class = "form-control", placeholder = "Thứ tự" } })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                Quản lý danh mục: <input type="checkbox" id="Shortcut_IsCategories" name="Shortcut.IsCategories" @(Model.Shortcut.IsCategories == true ? "checked='checked'" : "") value="true" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                @Html.EditorFor(model => model.Shortcut.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên lối tắt" } })
+                                            </div>
+                                        </div>
+                                
+                            </div>
+                            <div class="form-group" id="btnAdd">
+                                <input id="btnSubmit" type="button" class="btn btn-primary btn-block" value="Thêm" onclick="Post()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.HiddenFor(e => Model.Shortcut.Id)
+    @Html.HiddenFor(e => Model.Action)
+    <script>
+        function Post() {
+            $("form").submit();
+        }
+        function Remove(id, img) {
+            $('#Action').val('REMOVE');
+            $('#Shortcut_Id').val(id);
+            $("form").submit();
+        }
+        function Add() {
+            $('#Action').val('ADD');
+            $('#title').text("Thêm lối tắt");
+            $('#btnSubmit').val("Thêm");
+
+            $('#Shortcut_Id').val(0);
+            $('#Shortcut_Name').val('');
+            $('#Shortcut_No').val(10);
+        }
+        function Select(id, parent, carid, iscat, no, name) {
+            $('#Action').val('UPDATE');
+            $('#title').text("Sửa lối tắt");
+            $('#btnSubmit').val("Lưu");
+
+            $('#Shortcut_ParentId').val(parent);
+            if (iscat == "True") $('#Shortcut_IsCategories').prop('checked', "checked");
+            else $('#Shortcut_IsCategories').prop('checked', "");
+            $('#Shortcut_Name').val(name);
+            $('#Shortcut_Id').val(id);
+            $('#Shortcut_No').val(no);
+            $('#Shortcut_CategoryId').val(carid);
+        }
+    </script>
+}
+
+

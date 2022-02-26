@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <Language Key ="Language">Language</Language>
+  <Language Key ="vi-VN">Vietnamese</Language>
+  <Language Key ="en-US">English</Language>
+
+  <Language Key ="Download">Download</Language>
+  <Language Key ="Upload">Upload</Language>
+  <Language Key ="Default">Default</Language>
+  <Language Key ="Code">Code</Language>
+  <Language Key ="Description">Description</Language>
+  
+  <Language Key ="Home">Home</Language>
+
+  <Language Key ="Translate">Translate</Language>
+  <Language Key ="NoTranslationYet">No translation yet</Language>
+  <Language Key ="FixTranslationYet">Fix translationYet</Language>
+  <Language Key ="SendTranslationYet">Contribute TranslationYet</Language>
+  <Language Key ="Close">Close</Language>
+  <Language Key ="Send">Send</Language>
+</Languages>

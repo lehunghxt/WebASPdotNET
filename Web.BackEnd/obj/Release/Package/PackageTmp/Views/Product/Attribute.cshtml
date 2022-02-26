@@ -1,0 +1,125 @@
+﻿@model Web.Backend.Models.AttributeViewModel
+@{
+    ViewBag.Title = "Quản lý Thuộc tính";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Quản lý thuộc tính sản phẩm
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addAttribute" role="button" onclick="Add();"><i class="glyphicon glyphicon-plus"></i> Thêm</button>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Danh sách thuộc tính</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr role="row">
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Loại</th>
+                        <th>Source</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var attribute in Model.Attributes)
+                    {
+                        <tr>
+                            <td align="center">@attribute.ID</td>
+                            <td align="left">@attribute.Name</td>
+                            <td align="center">@attribute.Type</td>
+                            <td align="center">@attribute.CategoryId</td>
+                            <td>
+                                <button class="btn btn-warning" type="button" onclick="Select('@attribute.ID', '@attribute.Name', '@attribute.Type', '@attribute.CategoryId');" data-toggle="modal" data-target="#addAttribute" role="button">Sửa</button>
+                                <button class="btn btn-danger" type="button" onclick="Remove('@attribute.ID');">Xóa</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div id="addAttribute" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 id="title" class="modal-title">Chi tiết thuộc tính</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table width="100%">
+                                <tr>
+                                    <td>Tên thuộc tính:</td>
+                                    <td>
+                                        @Html.EditorFor(model => model.Attribute.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên thuộc tính" } })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Loại dữ liệu:</td>
+                                    <td>
+                                        @Html.DropDownListFor(model => model.Attribute.Type, DataSource.DataTyleCollection, new { @class = "form-control", placeholder = "Loại dữ liệu" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Data:</td>
+                                    <td>
+                                        @Html.DropDownListFor(model => model.Attribute.CategoryId, Model.AttributeCategories, "----- Dữ liệu danh sách -----", new { @class = "form-control", placeholder = "Data" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div id="btnAdd">
+                                            <input id="btnSubmit" type="button" class="btn btn-primary btn-block" value="Thêm" onclick="Post()" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input id="Attribute_ID" name="Attribute.ID" type="hidden" value="@Model.Attribute.ID" />
+    @Html.HiddenFor(e => Model.Action)
+    <script>
+        function Post() {
+            $("form").submit();
+        }
+        function Remove(id) {
+            $('#Action').val('REMOVE');
+            $('#Attribute_ID').val(id);
+            $("form").submit();
+        }
+        function Add() {
+            $('#Action').val('ADD');
+            $('#title').text("Thêm thuộc tính");
+            $('#btnSubmit').val("Thêm");
+
+            $('#Attribute_Name').val('');
+            $('#Attribute_CategoryId').val('');
+        }
+        function Select(id, name, type, cat) {
+            $('#Action').val('UPDATE');
+            $('#title').text("Sửa thuộc tính");
+            $('#btnSubmit').val("Lưu");
+
+            $('#Attribute_ID').val(id);
+            $('#Attribute_Name').val(name);
+            $('#Attribute_CategoryId').val(cat);
+            $('#Attribute_Type').val(type)
+        }
+    </script>
+}
+
+

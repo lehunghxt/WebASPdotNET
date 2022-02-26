@@ -1,0 +1,186 @@
+﻿@model Web.Backend.Models.ModuleConfigDetailViewModel
+@{
+    ViewBag.Title = "Chi tiết module";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                @(Model.Module.Id > 0 ? "Sửa" : "Thêm") module
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-hdd"></i> Lưu</button>
+                    <a href="/Config" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại</a>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Chi tiết Module</div>
+                <div class="panel-body">
+                    <table width="100%">
+                        <tr>
+                            <td colspan="2">
+                                Mã : @Model.Module.Id - @Model.Module.TemplateName
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="form-inline form-group">
+                                    Áp dụng: @Html.CheckBoxFor(e => Model.Module.Publish, new { @class = "form-control" })
+                                    Thứ tự : @Html.EditorFor(model => model.Module.Orders, new { htmlAttributes = new { @class = "form-control", placeholder = "Thứ tự" } })
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Loại : </td>
+                            <td>@Html.DropDownListFor(e => Model.Module.InTemplate, Model.ModuleTypes, new { @class = "form-control", placeholder = "Loại" })</td>
+                        </tr>
+                        <tr>
+                            <td>Trang : </td>
+                            <td>@Html.DropDownListFor(e => Model.Module.ComponentName, Model.Components, "-- Component --", new { @class = "form-control", placeholder = "Trang" })</td>
+                        </tr>
+                        <tr>
+                            <td>Vị trí : </td>
+                            <td>@Html.DropDownListFor(e => Model.Module.Position, Model.Poitions, new { @class = "form-control", placeholder = "Position" })</td>
+                        </tr>
+                        <tr>
+                            <td>Chức năng : </td>
+                            <td>@Html.DropDownListFor(e => Model.Module.ModuleName, Model.Modules, new { @class = "form-control", placeholder = "Module" })</td>
+                        </tr>
+                        <tr>
+                            <td>Khung : </td>
+                            <td>@Html.DropDownListFor(e => Model.Module.SkinName, Model.Skins, new { @class = "form-control", placeholder = "Skin" })</td>
+                        </tr>
+                        <tr>
+                            <td>Ngôn ngữ : </td>
+                            <td>@Html.DropDownListFor(e => Model.Module.LanguageId, Model.Languages, new { @class = "form-control", placeholder = "Language" })</td>
+                        </tr>
+                        <tr>
+                            <td>Tiêu đề : </td>
+                            <td>@Html.EditorFor(model => model.Module.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "Tiêu đề", required = "true" } })</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">Tham số</div>
+                <div class="panel-body">
+                    <table class="table table-bordered" width="100%">
+                        <thead class="panel-info">
+                        <th>Tham số</th>
+                        <th>Giá trị</th>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Params)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.ID - @item.Summary
+                                    </td>
+                                    <td>
+                                        @switch (item.Type)
+                                        {
+                                            case "ListSelect":
+                                                <input type="hidden" id="@item.ID" name="@item.ID" value="@item.Value" />
+                                                @Html.DropDownListFor(modelItem => item.Value, new SelectList(Web.Backend.DataSource.GetList(Model.CompanyId, Model.Module.LanguageId, item.ID), "Value", "Text", item.Value), htmlAttributes: new { @class = "form-control", onchange = "myFn('" + item.ID + "',event)" })
+                                                break;
+                                            case "Bool":
+                                                <input type="hidden" id="@item.ID" name="@item.ID" value="@item.Value" />
+                                                <label class="radio-inline">@Html.RadioButtonFor(modelItem => item.Value, "True", new { @Name = "radio" + item.ID, onclick = "myFnRadio('" + item.ID + "',event)" } ) Mở</label>
+                                                <label class="radio-inline">@Html.RadioButtonFor(modelItem => item.Value, "False", new { @Name = "radio" + item.ID, onclick = "myFnRadio('" + item.ID + "',event)" } ) Tắt</label>
+                                                break;
+                                            case "Number":
+                                                <input class="form-control" type="number" id="@item.ID" name="@item.ID" value="@item.Value" />
+                                                break;
+                                            case "String":
+                                                <input class="form-control" type="text" id="@item.ID" name="@item.ID" value="@item.Value" />
+                                                break;
+                                            case "Date":
+                                                <input class="form-control" type="date" id="@item.ID" name="@item.ID" value="@item.Value" />
+                                                break;
+                                            case "Color":
+                                                <input class="form-control" type="color" id="@item.ID" name="@item.ID" value="@item.Value" />
+                                                break;
+                                            case "ListCheck":
+                                                var data = Web.Backend.DataSource.GetList(Model.CompanyId, Model.Module.LanguageId, item.ID);
+                                                <div class="ListCheck_@item.ID">
+                                                    @foreach (var obj in data)
+                                                    {
+                                                        <input type="checkbox" name="@item.ID" value="@obj.Value" class="ListCheck_Item_@item.ID" /><label>&nbsp;@obj.Text</label><br />
+                                                    }
+                                                    <script>
+                                                                            if("@item.Type" == "ListCheck"){
+                                                                        var ckBox = $(".ListCheck_@item.ID").find(".ListCheck_Item_@item.ID");
+                                                                        for (var i = 0; i < ckBox.length; i++) {
+                                                                            var str = "@item.Value";
+                                                                            var str1 = str.split(',');
+                                                                            var str2 = ckBox.eq(i).val();
+                                                                            $.each(str1, function (key, value) {
+                                                                                if (value == str2) { ckBox.eq(i).prop('checked', true); }
+                                                                            });
+                                                                            
+                                                                        }
+                                                                    }
+                                                    </script>
+                                                </div>
+                                                break;
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="Module_Id" name="Module.Id" type="hidden" value="@Model.Module.Id"/>
+    @Html.HiddenFor(m => m.Module.TemplateName)
+    if (Model.Module.Id > 0)
+    {
+        <script>
+            $("#Module_ModuleName").prop("readonly", true);
+        </script>
+    }
+
+        <script>
+            $('#Module_InTemplate').on('change', function () { // when the room_type changes
+                var intemplate = $('#Module_InTemplate').val();
+                window.location.href = "/Config/Module?id=@Model.Module.Id&inTemplate=" + intemplate + "&language=@Model.Module.LanguageId&componentName=@Model.Module.ComponentName&moduleName=@Model.Module.ModuleName";
+            });
+            $('#Module_ComponentName').on('change', function () { // when the room_type changes
+                var intemplate = $('#Module_InTemplate').val();
+                if (intemplate == 'False') {
+                    var componentName = $('#Module_ComponentName').val();
+                    window.location.href = "/Config/Module?id=@Model.Module.Id&inTemplate=" + intemplate + "&language=@Model.Module.LanguageId&componentName=" + componentName+"&moduleName=@Model.Module.ModuleName";
+                }
+            });
+            $('#Module_LanguageId').on('change', function () { // when the room_type changes
+                var language = $('#Module_LanguageId').val();
+                window.location.href = "/Config/Module?id=@Model.Module.Id&inTemplate=@Model.Module.InTemplate&language=" + language + "&componentName=@Model.Module.ComponentName&moduleName=@Model.Module.ModuleName";
+            });
+            $('#Module_ModuleName').on('change', function () { // when the room_type changes
+                var moduleName = $('#Module_ModuleName').val();
+                window.location.href = "/Config/Module?id=@Model.Module.Id&inTemplate=@Model.Module.InTemplate&language=@Model.Module.LanguageId&componentName=@Model.Module.ComponentName&moduleName=" + moduleName;
+        });
+        </script>
+    <script>
+        function myFn(Id, event) {
+            $('#' + Id).val(event.target.value);
+        }
+        function myFnRadio(Id, event) {
+            $('#' + Id).val(event.target.value);
+        }
+    </script>
+}
+
+

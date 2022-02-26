@@ -1,0 +1,69 @@
+﻿@model Web.Backend.Models.ParamViewModel
+@{
+    ViewBag.Title = "Quản lý Tham số";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                @(Model.Param.ID != "" ? "Sửa" : "Thêm") Tham số
+                <div class="box-tools pull-right">
+                    <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-hdd"></i> Lưu</button>
+                    <a href="/Template/Modules" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại</a>
+                </div>
+            </h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Chi tiết Tham số</div>
+        <div class="panel-body">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="Param.ID">Tham số : </label>
+                        @Html.EditorFor(model => model.Param.ID, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên tham số" } })
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="Param.Summary">Mô tả : </label>
+                        @Html.EditorFor(model => model.Param.Summary, new { htmlAttributes = new { @class = "form-control", placeholder = "Mô tả" } })
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="Param.Type">Kiểu dữ liệu : </label>
+                        @Html.DropDownListFor(model => model.Param.Type, Model.Types, new { @class = "form-control", placeholder = "Kiểu dữ liệu" })
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="Param.DefaultValue">Giá trị mặc định : </label>
+                        @Html.EditorFor(model => model.Param.DefaultValue, new { htmlAttributes = new { @class = "form-control", placeholder = "Giá trị mặc định" } })
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="Param.DefaultValue">Thuộc tính giao diện : </label>
+                        @*<input type="checkbox" id="Param_UIProperty" name="Param.UIProperty" @(Model.Param.UIProperty == true ? "checked='checked'" : "") value="@Model.Param.UIProperty" />*@
+                        @Html.CheckBoxFor(m => m.Param.UIProperty, new { @checked = "checked" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.HiddenFor(e => Model.Param.ModuleName)
+    if (!string.IsNullOrEmpty(Model.Param.ID))
+    {
+        <script>
+            $("#Param_ID").prop("readonly", true);
+        </script>
+    }
+}
+

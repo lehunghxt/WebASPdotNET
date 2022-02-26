@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+	<meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <script>
+        var root = 'http://localhost:51925/';
+        $.ajax({
+            url: root + 'api/Authenticate/Post',
+            type: "POST",
+            dataType: "json",
+            contentType: 'application/json;odata=nometadata;streaming=true',
+            data: JSON.stringify({ UserName: "Administrator", Password: "123456" }),
+            success: function (data, status, xhr) {
+                $.ajax({
+                    url: root + 'odata/UserGroup',
+                    method: "GET",
+                    dataType: 'json',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", "token " + data.Token);
+                    },
+                    success: function (res) {
+                        console.log(res);
+                    }
+                });
+                $.ajax({
+                    url: root + 'odata/UserAccount(1)',
+                    method: "Put",
+                    dataType: 'json',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", "token " + data.Token);
+                    },
+                    success: function (res) {
+                        console.log(res);
+                    }
+                });
+              }
+        });
+    </script>
+</body>
+</html>

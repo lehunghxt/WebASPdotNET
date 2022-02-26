@@ -1,0 +1,608 @@
+﻿<!DOCTYPE html>
+<html>
+<title>GauBong</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="data/css.css">
+<link rel="stylesheet" href="data/w3.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script language="javascript" src="data/js.js"></script>
+<script language="javascript" src="data/w3js.js"></script>
+<style>
+   
+body{
+    width:100%
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+</style>
+<body class="container">
+    <div>
+        <!--HEADER-->
+        <header>
+            <div class="top_bar_outer w3-hide-small">
+                <div class="top_bar">
+                    <div class="ht_left">
+                        <div class="info_item email">
+                                <div class="info_icon w3-center">
+                                        <span><i style="font-size: 22px;line-height: 2; " class="material-icons">&#xe0be;</i></span>
+                                </div>
+                                <a class="info_txt" href="banchung.net@gmail.com">
+                                    banchung.net@gmail.com	
+                                </a>
+                        </div>
+                        <div class="info_item phone">
+                                <div class="info_icon w3-center">
+                                        <span><i style="font-size: 22px;line-height: 2; " class="material-icons">&#xe0b0;</i></span>
+                                </div>
+                                <div class="info_txt">
+                                    0868456400
+                                </div>
+                        </div>
+                    </div>
+                    <div class="ht_right">
+						<a class="share_header_icon w3-hover-text-blue w3-center" href="#" title="Facebook">
+                            <span> <i style="font-size:22px" class="fa">&#xf09a;</i></span>
+                        </a>
+						<a class="share_header_icon w3-hover-text-orange w3-center" href="#" title="Aliexpress">
+                            <span><i style="line-height: 1.7;" class="material-icons">&#xe8cc;</i></span>
+				        </a>
+						<a class="share_header_icon w3-hover-text-pink w3-center" href="#" title="Pinterest">
+                            <span><i style="font-size:22px" class="fa">&#xf09a;</i></span>
+                        </a>
+                        <a class="share_header_icon w3-hover-text-pink w3-center" href="#" title="Pinterest">
+                            <span><i style="font-size:22px" class="fa">&#xf09a;</i></span>
+                        </a>
+                        <select class="w3-bar-item language" name="option">
+                            <option value="" disabled selected>Tiếng việt</option>
+                            <option value="1">Tiếng Anh</option>
+                            <option value="2">Tiếng Trung</option>
+                            <option value="3">Tiếng Thái</option>
+                          </select>
+		            </div>
+                </div>
+            </div>
+            <div style="z-index: 99;" id="navbar" class="w3-bar w3-white w3-wide w3-padding w3-card ">
+                    <a href="#home" class="w3-bar-item"><img src="img/e93d44b6f1.jpg"></a>
+                    <!-- Float links to the right. Hide them on small screens -->
+                     <div style="line-height: 60px;"  class="w3-right w3-hide-large w3-hide-medium">
+                        <a href="javascript:void(0)" onclick="w3_open()" class="w3-bar-item w3-button"><i style="font-size:24px" class="fa">&#xf0c9;</i></a>
+                    </div>
+                    <div style="line-height: 60px;" class="w3-right">
+                      <a href="#projects" class="w3-bar-item w3-button w3-hide-small">Trang chủ</a>
+                      <a href="#about" class="w3-bar-item w3-button w3-hide-small">About</a>
+                      <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+                      <a href="#projects" class="w3-bar-item w3-button w3-hide-small">Projects</a>
+                      <a href="#projects" class="w3-bar-item w3-button w3-hide-small">Projects</a>
+                    </div>
+                    
+                <!-- Sidebar/menu -->
+
+                <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top w3-hide-large w3-hide-medium" style="z-index:9999;width:250px" id="mySidebar">
+                    <div class="w3-container w3-display-container w3-padding-16">
+                        <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+                        <h3 class="w3-wide"><b>LOGO</b></h3>
+                    </div>
+                    <div>
+                        <div class="cate_left_list">
+                            <ul>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa">&#xf219;</i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Trái cây
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa">&#xf219;</i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Thú bông sử tử
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa">&#xf219;</i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Thú bông sử tử
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa">&#xf219;</i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Trái cây
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa">&#xf219;</i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Thú bông sử tử
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa">&#xf219;</i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Thú bông sử tử
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa">&#xf219;</i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Trái cây
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa">&#xf219;</i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Thú bông sử tử
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="li_final">
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa">&#xf219;</i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Thú bông sử tử
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Overlay effect when opening sidebar on small screens -->
+                <div style="z-index: 999;" class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+                <!--END Sidebar/menu -->
+            </div>
+            <!-- banner -->
+            <div id="banner">
+                    <a class="banner" href="">
+                        <!-- hình 1920x400 5s đổi 1 lần -->
+                        <img class="nature" src="img/a1.jpg">
+                        <img class="nature" style="display: none" src="img/a11.jpg">
+                        <img class="nature" style="display: none" src="img/a111.jpg">
+                    </a>
+
+            </div>
+        </header>
+
+        <!--ENDHEADER-->
+       
+        <!--MID-->
+        <div>
+            <div class="search">
+                <form>
+                    <input type="search" placeholder="Search">
+                </form>
+            </div>
+            <div class="w3-row plr70">
+                <div class="w3-quarter w3-hide-small">
+                        <div class="cate_left_title">
+                            <b>Thú nhồi bông</b>
+                        </div>
+                        <div class="cate_left_list">
+                            <ul>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa"></i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Trái cây
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa"></i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Thú bông sử tử
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa"></i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Thú bông sử tử
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa"></i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Trái cây
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa"></i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Thú bông sử tử
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa"></i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Thú bông sử tử
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa"></i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Trái cây
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa"></i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Thú bông sử tử
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="li_final">
+                                    <a href="#" class="w3-row">
+                                        <div class="w3-col w3-center" style="width:20%">
+                                            <i class="fa"></i>
+                                        </div>
+                                        <div class="w3-col" style="width:80%">
+                                            Thú bông sử tử
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="w3-threequarter">
+                        <div class="products">
+                                <div style="padding:0 16px">
+                                    <div class="pro_list_title">
+                                        <div class="cate_title">
+                                            Product Center
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-top:20px">
+                                    <div class="w3-row-padding spham">
+                                        <div class="w3-col m4 s6 i6">
+                                            <div class="pro_item">
+                                                <div style="padding:5px">
+                                                    <div class="product-image">
+                                                        <img src="img/a2.jpg" >
+                                                    </div>
+                                                    <div class="pro_name">
+                                                            thú thú
+
+                                                    </div>
+                                                    <div style="    color: #e74c3c;
+                                                    font-size: 16px;
+                                                    font-weight: 500;">
+                                                        7.000đ
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-actions" style="cursor:pointer; display:" data-toggle="modal" data-target="#buyModal" onclick="SelectProduct('441','Thú nhồi bông mặt cười (nhiều kiểu)','http://v5.vdoni.com//Uploads/C4/Products/Thu-nhoi-bong-mat-cuoi-nhieu-kieu-180314101521.jpg','Móc khóa mặt cười giá sỉ','7.000')">
+                                                <span style="color:#fff">
+                                                    <span>
+                                                            <i style="font-size:24px" class="fa">&#xf291;</i>
+                                                        <span>Thêm vào giỏ</span>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="w3-col m4 s6 i6">
+                                                <div class="pro_item">
+                                                    <div style="padding:5px">
+                                                        <div class="product-image">
+                                                            <img src="img/a3.jpg" >
+                                                        </div>
+                                                        <div class="pro_name">
+                                                                thú thú
+    
+                                                        </div>
+                                                        <div style="    color: #e74c3c;
+                                                        font-size: 16px;
+                                                        font-weight: 500;">
+                                                            7.000đ
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-actions" style="cursor:pointer; display:" data-toggle="modal" data-target="#buyModal" onclick="SelectProduct('441','Thú nhồi bông mặt cười (nhiều kiểu)','http://v5.vdoni.com//Uploads/C4/Products/Thu-nhoi-bong-mat-cuoi-nhieu-kieu-180314101521.jpg','Móc khóa mặt cười giá sỉ','7.000')">
+                                                    <span style="color:#fff">
+                                                        <span>
+                                                                <i style="font-size:24px" class="fa">&#xf291;</i>
+                                                            <span>Thêm vào giỏ</span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                        </div>
+                                        <div class="w3-col m4 s6 i6">
+                                                <div class="pro_item">
+                                                    <div style="padding:5px">
+                                                        <div class="product-image">
+                                                            <img src="img/a4.jpg" >
+                                                        </div>
+                                                        <div class="pro_name">
+                                                                thú thú
+    
+                                                        </div>
+                                                        <div style="    color: #e74c3c;
+                                                        font-size: 16px;
+                                                        font-weight: 500;">
+                                                            7.000đ
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-actions" style="cursor:pointer; display:" data-toggle="modal" data-target="#buyModal" onclick="SelectProduct('441','Thú nhồi bông mặt cười (nhiều kiểu)','http://v5.vdoni.com//Uploads/C4/Products/Thu-nhoi-bong-mat-cuoi-nhieu-kieu-180314101521.jpg','Móc khóa mặt cười giá sỉ','7.000')">
+                                                    <span style="color:#fff">
+                                                        <span>
+                                                                <i style="font-size:24px" class="fa">&#xf291;</i>
+                                                            <span>Thêm vào giỏ</span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                        </div>
+                                        <div class="w3-col m4 s6 i6">
+                                                <div class="pro_item">
+                                                    <div style="padding:5px">
+                                                        <div class="product-image">
+                                                            <img src="img/a5.jpg" >
+                                                        </div>
+                                                        <div class="pro_name">
+                                                                thú thú
+    
+                                                        </div>
+                                                        <div style="    color: #e74c3c;
+                                                        font-size: 16px;
+                                                        font-weight: 500;">
+                                                            7.000đ
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-actions" style="cursor:pointer; display:" data-toggle="modal" data-target="#buyModal" onclick="SelectProduct('441','Thú nhồi bông mặt cười (nhiều kiểu)','http://v5.vdoni.com//Uploads/C4/Products/Thu-nhoi-bong-mat-cuoi-nhieu-kieu-180314101521.jpg','Móc khóa mặt cười giá sỉ','7.000')">
+                                                    <span style="color:#fff">
+                                                        <span>
+                                                                <i style="font-size:24px" class="fa">&#xf291;</i>
+                                                            <span>Thêm vào giỏ</span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                        </div>
+                                        <div class="w3-col m4 s6 i6">
+                                                <div class="pro_item">
+                                                    <div style="padding:5px">
+                                                        <div class="product-image">
+                                                            <img src="img/a6.jpg" >
+                                                        </div>
+                                                        <div class="pro_name">
+                                                                thú thú
+    
+                                                        </div>
+                                                        <div style="    color: #e74c3c;
+                                                        font-size: 16px;
+                                                        font-weight: 500;">
+                                                            7.000đ
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-actions" style="cursor:pointer; display:" data-toggle="modal" data-target="#buyModal" onclick="SelectProduct('441','Thú nhồi bông mặt cười (nhiều kiểu)','http://v5.vdoni.com//Uploads/C4/Products/Thu-nhoi-bong-mat-cuoi-nhieu-kieu-180314101521.jpg','Móc khóa mặt cười giá sỉ','7.000')">
+                                                    <span style="color:#fff">
+                                                        <span>
+                                                                <i style="font-size:24px" class="fa">&#xf291;</i>
+                                                            <span>Thêm vào giỏ</span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                        </div>
+                                        <div class="w3-col m4 s6 i6">
+                                                <div class="pro_item">
+                                                    <div style="padding:5px">
+                                                        <div class="product-image">
+                                                            <img src="img/a7.jpg" >
+                                                        </div>
+                                                        <div class="pro_name">
+                                                                thú thú
+    
+                                                        </div>
+                                                        <div style="    color: #e74c3c;
+                                                        font-size: 16px;
+                                                        font-weight: 500;">
+                                                            7.000đ
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-actions" style="cursor:pointer; display:" data-toggle="modal" data-target="#buyModal" onclick="SelectProduct('441','Thú nhồi bông mặt cười (nhiều kiểu)','http://v5.vdoni.com//Uploads/C4/Products/Thu-nhoi-bong-mat-cuoi-nhieu-kieu-180314101521.jpg','Móc khóa mặt cười giá sỉ','7.000')">
+                                                    <span style="color:#fff">
+                                                        <span>
+                                                                <i style="font-size:24px" class="fa">&#xf291;</i>
+                                                            <span>Thêm vào giỏ</span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!--ENDMID-->
+        <!--FOOTER-->
+        <footer>
+            <div class="footer_outer">
+                <div class="footer">
+                    <div class="w3-row">
+                        <div class="w3-col m5 w3-text-white">
+                                <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+                                    <h3>Address</h3>
+                                    <p>Swing by for a cup of coffee, or whatever.</p>
+                                    <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  Chicago, US</p>
+                                    <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +00 1515151515</p>
+                                    <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  test@test.com</p>
+                        </div>
+                        <div class="w3-col m7">
+                            <div style="margin-top: 50px;" class="footer_contact">
+                                <div class="lib_feedback_form">
+                                    <form method="post" name="feedback" id="feedback">
+                                        <div class="rows">
+                                            <span>
+                                                <input name="Name" type="text" class="input" maxlength="50" placeholder="Name" notnull="">
+                                            </span>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="rows">
+                                            <span>
+                                                <input name="Phone" type="text" class="input" maxlength="100" placeholder="Phone">
+                                            </span>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="rows">
+                                            <span>
+                                                <input name="Email" type="text" class="input" maxlength="20" placeholder="Email" notnull="" format="Email">
+                                            </span>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="rows">
+                                            <span>
+                                                <input name="Account" type="text" class="input" maxlength="20" placeholder="Skype / WhatsApp / Facebook">
+                                            </span>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="rows">
+                                            <span>
+                                                <textarea name="Message" class="form_area contents" placeholder="Looking for cooperation, or chat, you should say something..." notnull=""></textarea>
+                                            </span>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="rows">
+                                            <span>
+                                                <input name="Submit" type="submit" class="form_button" value="Submit">
+                                            </span>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <input type="hidden" name="Site" value="en">
+                                    </form>
+                                </div>		
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--END FOOTER-->
+         <!--LIÊN HỆ RIGHT-->
+         <div class="w3-hide-small" id="float_chat" class="ChatColor float_chat_0">
+                <div class="inner_chat">
+                    <div class="chat_box ChatColor">
+                            <a class="online_item item QQ" style="background-color:#8AC759;" href="#" title="FB">
+                                <i style="font-size:26px;    padding: 20px 22px 15px 22px;color:white" class="fa"></i>
+                                                </a>
+                            <div class="blank6"></div>
+                                        <a class="online_item item Skype" style="background-color:#8AC759;" href="#" title="Skype">
+                                                <i style="font-size:26px;    padding: 20px 18px 15px 18px;color:white" class="fa">&#xf1a0;</i>
+                                                </a>
+                            <div class="blank6"></div>
+                                    <a class="contact item" style="background: url('/static/themes/default/images/global/contact.png') no-repeat center #8AC759;" href="#footer_contact" target="_self" title="Contact Us">
+                                        <i style="font-size:26px;    padding: 20px 18px 15px 18px;color:white" class="material-icons">&#xe0b0;</i>                                        </a>
+                        <div class="blank6"></div>
+                    </div>
+                </div>
+                <a href="" style="background-color:#8AC759;" id="go_top"  onclick="topFunction()">
+                    <img style="padding: 20px 15px 15px 15px;" src="img/top.png">
+                </a>
+            </div>
+          <!--END LIÊN HỆ RIGHT-->
+    </div>
+
+</body>
+<script>
+        w3.slideshow(".nature", 5000);
+   </script>
+</html>
